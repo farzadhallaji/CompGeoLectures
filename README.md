@@ -28,6 +28,7 @@ mkdocs serve
 
 ### If you see 404
 
+- **`deploy-pages` fails with “Creating Pages deployment failed” / Not Found:** Pages is not enabled for the repo. Follow **[PAGES_SETUP.md](PAGES_SETUP.md)** (one-time **Settings → Pages → Source: GitHub Actions**).
 - **Settings → Pages → Source** must be **GitHub Actions**, not “Deploy from a branch”.
 - Open **Actions** and confirm the latest **Deploy MkDocs to GitHub Pages** run finished green for both **build** and **deploy**.
 - The first run may ask you to **approve** the `github-pages` environment (repo **Settings → Environments**).
