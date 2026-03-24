@@ -1,0 +1,5 @@
+/* Slide figures: keep readable width in Material layout */
+.md-typeset img {
+  max-width: 50%;
+  height: auto;
+}

@@ -1,0 +1,46 @@
+site_name: Computational Geometry Notes
+site_url: https://farzadhallaji.github.io/CompGeoLectures/
+site_description: Computational geometry lecture notes (MkDocs + Material)
+repo_url: https://github.com/farzadhallaji/CompGeoLectures
+repo_name: farzadhallaji/CompGeoLectures
+
+docs_dir: Lectures/docs
+
+theme:
+  name: material
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.superfences
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - Foundations:
+      - Coordinate systems and basic objects: 01_Foundations/01_coordinate_systems_and_basic_objects.md
+      - Polygons, convexity, planar graphs, polyhedra: 01_Foundations/02_polygons_convexity_planar_graphs_and_polyhedra.md
+      - Complexity basics and segment trees: 01_Foundations/03_complexity_basics_and_segment_trees.md
+      - PSLG and DCEL: 01_Foundations/04_pslg_and_dcel.md
+      - Vector algebra and trigonometry: 01_Foundations/05_vector_algebra_and_trigonometry.md
+      - Orientation, determinants, area: 01_Foundations/06_orientation_determinants_area_and_point_line_classification.md
+  - Geometric Search:
+      - Overview and polygon inclusion: 02_Geometric_Search/01_overview_and_polygon_inclusion.md
+      - Point location (brute force, slab, sweep): 02_Geometric_Search/02_point_location_bruteforce_slab_and_plane_sweep.md
+      - Point location (chain method): 02_Geometric_Search/03_point_location_chain_method.md
+      - Point location (triangle refinement): 02_Geometric_Search/04_point_location_triangle_refinement_method.md
+      - Range searching (overview, grid): 02_Geometric_Search/05_range_searching_overview_and_grid_method.md
+      - Range searching (quadtree): 02_Geometric_Search/06_range_searching_quadtree_method.md
+      - Range searching (k-d tree): 02_Geometric_Search/07_range_searching_kd_tree_method.md
+      - Range searching (direct access): 02_Geometric_Search/08_range_searching_direct_access_methods.md
+      - Range searching (range tree): 02_Geometric_Search/09_range_tree_method.md
+  - Convex Hulls:
+      - Overview, definitions, lower bounds: 03_Convex_Hulls/01_overview_definitions_and_lower_bounds.md
+      - Extreme points algorithm: 03_Convex_Hulls/02_extreme_points_algorithm.md
+      - Graham’s scan: 03_Convex_Hulls/03_grahams_scan.md
+      - Jarvis’ march: 03_Convex_Hulls/04_jarvis_march.md
+      - Quickhull: 03_Convex_Hulls/05_quickhull.md
+      - Divide and conquer: 03_Convex_Hulls/06_divide_and_conquer.md
+      - Dynamic hull (insertion): 03_Convex_Hulls/07_dynamic_hull_insertion.md
+      - Gift wrapping (higher dimensions): 03_Convex_Hulls/08_gift_wrapping_in_higher_dimensions.md

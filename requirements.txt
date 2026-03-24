@@ -1,0 +1,2 @@
+# Material pins a supported MkDocs range; see https://squidfunk.github.io/mkdocs-material/getting-started/
+mkdocs-material>=9.5.0,<10
