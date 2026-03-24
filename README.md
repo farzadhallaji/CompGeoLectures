@@ -23,7 +23,7 @@ mkdocs serve
      - `./scripts/push-to-github.sh`
    - **GitHub CLI:** `gh auth login`, then `git push -u origin main`
    - **SSH:** `git remote set-url origin git@github.com:farzadhallaji/CompGeoLectures.git` and `git push -u origin main`
-4. In the repo on GitHub: **Settings → Pages → Build and deployment → Source:** choose **GitHub Actions** (required for the included workflow).
+4. **Before the first deploy succeeds**, open the repo on GitHub → **Settings → Pages** → under **Build and deployment**, set **Source** to **GitHub Actions** (not “Deploy from a branch”) and save. If you skip this, workflows that call the Pages API can fail with “Get Pages site failed / Not Found”.
 5. After the workflow runs, open **https://farzadhallaji.github.io/CompGeoLectures/** (include the trailing slash; the repo name is case-sensitive in the path).
 
 ### If you see 404

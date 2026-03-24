@@ -30,8 +30,9 @@ jobs:
       - name: Build site
         run: mkdocs build
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+      # Skip actions/configure-pages here: it calls GET /repos/.../pages and returns 404
+      # until you enable Pages once (Settings → Pages → Source: GitHub Actions).
+      # enablement:true needs a PAT, not GITHUB_TOKEN (see configure-pages action.yml).
 
       - uses: actions/upload-pages-artifact@v3
         with:
