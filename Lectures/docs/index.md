@@ -2,7 +2,7 @@
 
 These notes cover slides 9–289 of `comp_geometry_slides.pdf`, stopping before the proximity topic starts at slide 290.
 
-The structure is topic folder → one markdown file per major subtopic or algorithm.
+The structure is topic folder → one markdown file per major subtopic or algorithm. Formulas use LaTeX rendered with MathJax (inline `\( ... \)`, display `\[ ... \]`).
 
 ## 01 Foundations
 

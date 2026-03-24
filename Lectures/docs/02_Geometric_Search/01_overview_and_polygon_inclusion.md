@@ -1,6 +1,6 @@
 # Geometric Search Overview and Polygon Inclusion
 
-**Slides covered:** 66-79  
+**Slides covered:** 66–79  
 
 **Topic folder:** 02 Geometric Search
 
@@ -18,187 +18,121 @@ Geometric search asks: after preprocessing a geometric data set, how can we answ
 
 ## Detailed lecture notes
 
-### Slide 66: In general terms a geometric query or search problem has this form:
+### Slide 66: Geometric search pattern
 
-- Given a set S of geometric objects and a distinct geometric object q
-- which is the query object, the objective is to determine the subset
-- of the objects in set S that are in some specified geometric
-- relationship with the query object.
-- Many variations are possible, depending on the specific problem.
-- 1. S may have 1 or more elements.
-- 2. The elements of S may be of the same type as q, or not.
-- 3. The answer set may be constrained to have exactly one element,
-- or it may vary from 0 to |S|.
-- Topics of this section
-- In this section, we will examine three specific problems of this type:
-- 1. Polygon inclusion
-- 2. Point location
-- 3. Range searching
+**Form:** Given a set \(S\) of geometric objects and a query object \(q\), find the subset of \(S\) in a specified geometric relation to \(q\).
 
-### Slide 67: Given polygon P and query point q, both in the plane, is q within P?
+Variations: \(|S|\), types of objects vs. \(q\), answer size (0, 1, or many).
 
-- P may be of different types (simple, convex, or star-shaped),
-- which will affect the method.
-- Methods
-- Left test (convex)
-- Intersection counting (Simple)
-- Wedges (Convex and star-shaped)
-- P q
+**This section covers:** (1) polygon inclusion, (2) point location, (3) range searching.
+
+### Slide 67: Polygon inclusion
+
+**Problem:** Given polygon \(P\) and point \(q\) in the plane, is \(q \in P\)?
+
+Methods depend on \(P\): **left test** (convex), **intersection counting** (simple), **wedges** (convex / star-shaped).
 
 ![Figure from slide 67](images/slide_067.png)
 
-### Slide 68: Given a partition of the geometric space into regions and a query
+### Slide 68: Point location
 
-- point q, determine which region contains q.
-- We will consider only d = 2, i.e., the plane.
-- Methods
-- Brute force
-- Slab method
-- Chain method
-- Triangle refinement q f6 f1 f2 f3 f4 f5
+Given a **partition** of the plane into regions and query point \(q\), find the region containing \(q\) (here \(d=2\)).
+
+Methods: brute force, **slab**, **chain**, **triangle refinement**.
 
 ![Figure from slide 68](images/slide_068.png)
 
-### Slide 69: RANGE SEARCHING
+### Slide 69: Range searching (preview)
 
-- INSTANCE:  Set S = {p1, p2, ..., pN}, pi = (xi, yi) of points in the
-- plane, and rectangle R = [lx, rx] × [ly, ry] in the plane.
-- QUESTION:  Which points of S are within R?
-- Methods
-- Brute force
-- Dominance
-- Grid
-- Quadtree k-D tree
-- Direct access
-- Range tree lx rx ly ry
+**INSTANCE:** \(S = \{p_1,\ldots,p_N\}\), \(p_i=(x_i,y_i)\), axis-aligned rectangle \(R = [\ell_x,r_x] \times [\ell_y,r_y]\).  
+**QUESTION:** Which points of \(S\) lie in \(R\)?
+
+Methods mentioned: brute force, dominance, grid, quadtree, k-D tree, direct access, range tree.
 
 ![Figure from slide 69](images/slide_069.png)
 
-### Slide 70: CONVEX POLYGON INCLUSION
+### Slide 70: Convex polygon inclusion
 
-- INSTANCE:  Convex polygon P = (e0 = v0v1, e1 = v1v2, ..., eN-1 = vN-1v0) with N edges and query point q, both in the plane.
-- QUESTION:  Is q within P?
-- Convex polygon inclusion by Left test
-- P is the intersection of the half-planes defined by its edges.
-- Query point q is within P iff q is to the left of or on all N edges of P.
-- (This is true iff P is convex.) v0 v3 v1 v2 vN - 1
-- ...
-- P q1 q2
+**INSTANCE:** Convex \(P\) with edges \(e_i = v_i v_{i+1}\) (cyclic) and query \(q\).  
+**QUESTION:** Is \(q \in P\)?
+
+Convex \(P\) = intersection of **closed half-planes** of its edges (consistent CCW orientation). Then \(q \in P\) iff \(q\) is **on or left** of **every** directed edge.
 
 ![Figure from slide 70](images/slide_070.png)
 
-### Slide 71: Convex polygon inclusion by Left test procedure ConvexInclusion(P,q)
+### Slide 71: `ConvexInclusion` and analysis
 
-- begin for i = 0 to N /* Check each edge */ c = PointLineClassify(vi,v(i+1) mod N,q)
-- if c = RIGHT return FALSE endif endfor return TRUE
-- 10 end procedure ConvexInclusion(P,q) begin for i = 0 to N /* Check each edge */
-- if
-- Left(v(i+1) mod N,vi,q)  /* Backwards edge */ return FALSE endif
-- endfor return TRUE end
-- Analysis
-- Time:  O(N);  N edges, O(1) each to classify.
-- Space:  O(N);  N edges.
+**Version A — point–line classify each edge:**
 
-### Slide 72: SIMPLE POLYGON INCLUSION
+```
+for i = 0 .. N-1
+  c ← PointLineClassify(v_i, v_{(i+1) mod N}, q)
+  if c = RIGHT return FALSE
+return TRUE
+```
 
-- INSTANCE:  Simple polygon P = (e0 = v0v1, e1 = v1v2, ..., eN -1 = vN -1v0) with N edges and query point q, both in the plane.
-- QUESTION:  Is q within P?
-- Simple polygon inclusion by Intersection counting
-- Query point q is within P iff a ray originating at q intersects
-- the boundary of P an odd number of times.
-- P
+**Version B — `Left` test on backward edge** (equivalent variant on slide).
+
+- **Time:** \(O(N)\); **space:** \(O(N)\).
+
+### Slide 72: Simple polygon inclusion
+
+**INSTANCE:** Simple polygon \(P\) and point \(q\).  
+**QUESTION:** Is \(q \in P\)?
+
+**Ray casting:** \(q \in P\) iff a ray from \(q\) (e.g. horizontally leftward) crosses \(\partial P\) an **odd** number of times.
 
 ![Figure from slide 72](images/slide_072.png)
 
-### Slide 73: Simple polygon inclusion by Intersection counting procedure SimpleInclusion(P,q)  /* Incomplete version */
+### Slide 73: `SimpleInclusion` (sketch) and analysis
 
-- begin c = 0 for i = 0 to N /* Check each edge */ if edge vi,v(i+1) mod N ∩ray -∞,q
-- c = (c + 1) mod 2 endif endfor if c = 1 return TRUE else return FALSE
-- endif
-- 14 end
-- Analysis
-- Time:  O(N);  N edges, O(1) each to test intersection.
-- Space:  O(N);  N edges.
+```
+c ← 0
+for each edge
+  if edge ∩ ray from q then c ← (c + 1) mod 2
+return (c = 1)
+```
 
-### Slide 74: Special cases, not explicitly handled by given procedure:
+- **Time:** \(O(N)\); **space:** \(O(N)\).
 
-- 1.  Ray collinear with horizontal edge of P
-- 2.  Ray intersects vertex of P
-- 3.  Query point q on edge of P
-- Resolving these special cases does not change complexity.
-- See Preparata, p. 42 or O’Rourke, p. 233-236 for details.
-- q2 Wrong q3 Right
-- Ray intersects vertex of P q1 Right q2 Wrong
-- Query point q on edge of P
-- Ray collinear with horizontal edge of P q3 Right q3 Wrong
+### Slide 74: Degenerate ray cases
+
+Handle carefully: ray **collinear** with a horizontal edge; ray through a **vertex**; \(q\) **on** an edge. Resolving these does not change asymptotic cost. See Preparata p. 42; O’Rourke pp. 233–236.
 
 ![Figure from slide 74](images/slide_074.png)
 
-### Slide 75: CONVEX POLYGON INCLUSION
+### Slide 75–76: Wedge method (convex)
 
-- INSTANCE:  Convex polygon P = (e0 = v0v1, e1 = v1v2, ..., eN -1 = vN -1v0) with N edges and query point q, both in the plane.
-- QUESTION:  Is q within P?
-- P convex ⇒ the vertices of P occur in angular order about any point within P.
-- v0 v3 v1 v2 vN - 1
-- ...
-- P c q
-- Rays from an internal point partition the plane into wedges.
-- Convex polygon inclusion query has two steps:
-- 1.  Determine wedge containing q
-- 2.  Determine which side of edge for that wedge q is on
+Vertices of convex \(P\) are in **angular order** about any **interior** point \(c\).
+
+**Preprocessing:** Pick \(c\) inside \(P\) (e.g. centroid of three vertices); store vertices in a structure supporting binary search.
+
+**Query:**
+
+1. **Binary search** on vertices to find wedge between \(v_i\) and \(v_{i+1}\) containing \(q\): \(q c v_i\) is a **right** turn and \(q c v_{i+1}\) is a **left** turn.  
+2. Then \(q \in P\) iff \(v_i v_{i+1} q\) is a **left** turn (with correct orientation).
 
 ![Figure from slide 75](images/slide_075.png)
 
-### Slide 76: 1. Find a point c internal to P (centroid of any three vertices).
-
-- 2. Arrange the vertices into a data structure suitable for binary search (e.g., an array).
-- Query
-- Given query point q,
-- 1. Find wedge containing q by binary search on the vertices.
-- Point q lies within the wedge for vertices vi and vi+1 iff qcpi is a Right turn and qcpi+1 is a Left turn.
-- 2. Once pi and pi+1 have been found, q is internal iff pi+1piq is a Left turn.
-- v0 v3 v1 v2 vN - 1
-- ...
-- P c q q
-
 ![Figure from slide 76](images/slide_076.png)
 
-### Slide 77: Preprocessing time:  O(N); to load vertices into data structure.
+### Slide 77: Complexity and caveats
 
-- Query time:  O(log N); binary search with O(1) time per comparison.
-- Space:  O(N); for N edges.
-- Comments
-- Note that O(N) preprocessing enables O(log N) query.
-- Since O(N) query exists, this method is useful for repetitive mode
-- queries, not for single shot queries.
-- Notation different in notes and text.
-- This algorithm in text appears to be in error.
-- Step 2, p. 43 seems to omit case of q on edge.
-- Determinant (area of triangle) = 0 if q on edge.
+- **Preprocessing:** \(O(N)\).  
+- **Query:** \(O(\log N)\).  
+- Useful in **repetitive mode**, not single-shot (scan is already \(O(N)\)).
 
-### Slide 78: STAR-SHAPED POLYGON INCLUSION
+Slide notes possible **text error** (p. 43): boundary case when \(q\) lies on an edge (determinant / area \(=0\)).
 
-- INSTANCE:  Star-shaped polygon P = (e0 = v0v1, e1 = v1v2, ...,
-- eN-1 = vN-1v0) with N edges and query point q, both in the plane.
-- QUESTION:  Is q within P?
-- A simple polygon P is star-shaped if ∃ a point c within
-- P ∋ for all points p within P the segment cp lies within P. The
-- locus of those points is the kernel of P.
-- (Note that convex polygons are star-shaped, and that for a convex polygon the entire polygon is the kernel.)
-- ∈kernel
-- ∉kernel c
-- P
+### Slide 78: Star-shaped polygons
+
+**Star-shaped:** \(\exists\, c \in P\) such that for all \(p \in P\), segment \(\overline{cp} \subseteq P\). The set of such \(c\) is the **kernel**. Convex polygons are star-shaped with kernel \(=P\).
 
 ![Figure from slide 78](images/slide_078.png)
 
-### Slide 79: P star-shaped ⇒ the vertices of P occur in angular order about any point in
+### Slide 79: Inclusion for star-shaped
 
-- the kernel of P ⇒
-- The convex polygon inclusion algorithm can be used, once a point in the kernel of P has been found.
-- This can be done in O(N) time ⇒
-- Preprocessing remains O(N).
-- c
-- P
+Vertices occur in angular order about any point in the **kernel**. Once a kernel point \(c\) is found in \(O(N)\), the **same wedge + binary search** method applies; preprocessing remains \(O(N)\).
 
 ![Figure from slide 79](images/slide_079.png)
 

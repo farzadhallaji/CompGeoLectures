@@ -1,6 +1,6 @@
 # Complexity Basics and Segment Trees
 
-**Slides covered:** 29-44  
+**Slides covered:** 29–44  
 
 **Topic folder:** 01 Foundations
 
@@ -18,243 +18,161 @@ This file explains how geometric algorithms are measured, what counting versus r
 
 ## Detailed lecture notes
 
-### Slide 29: RANGE SEARCHING
+### Slide 29: Range searching (informal)
 
-- Given N points in the plane, how many lie in a given rectangle with
-- sides parallel to the coordinate axes?  That is, how many points
-- (x, y) satisfy lx ≤x ≤rx, ly ≤y ≤ry, for given lx, rx, ly, ry?
-- ry lx rx ly
-- The range searching problem is (informally) defined above.
-- In this example, the instance of the range searching problem is a
-- particular set of points and a particular range.
-- In an instance like this, the points are the data set.
+**Problem:** Given \(N\) points in the plane, how many lie in an axis-aligned rectangle? That is, how many \((x,y)\) satisfy
+
+\[
+\ell_x \le x \le r_x,\qquad \ell_y \le y \le r_y
+\]
+
+for given \(\ell_x, r_x, \ell_y, r_y\)?
+
+An **instance** consists of the point set and the query rectangle (the points are the **data set**).
 
 ![Figure from slide 29](images/slide_029.png)
 
-### Slide 30: We are interested in efficient algorithms for geometric problems.
+### Slide 30: Model of computation
 
-- Efficiency is evaluated in terms of computational cost, given as a function of the size of the instance of the problem.
-- By convention, notation N denotes input instance size.
-- To determine the computational cost of an algorithm, we must know what primitive operations are available and
-- what they cost.  This is a model of computation.
-- Turing machine:  too primitive
-- C language on Unix workstation:  too specific
-- We will use a highly abstract model, the familiar random-access
-- machihine ne from from [A
-- [Aho, ho,1974]
-- 1974]. We us use a slight ghtly modi odifified d  realal RAM
-- model.
-- These operations are available at unit cost:
-- 1. arithmetic; +, -, *, /
-- 2. comparisons; <, ≤, =, ≠, ≥, >
-- 3. memory access
-- 4. analytic functions; root, trig, exp, log
-- Numbers are assumed to be real, with infinite precision.
-- This is considerably abstracted; in a real machine:
+We want **efficient** algorithms; cost is a function of instance size \(N\).
 
-### Slide 31: Order notation
+We use an abstract **real RAM** (random-access machine), a slight variant of the model in Aho et al. (1974). **Unit-cost** primitives include:
 
-- We are interested in the amount of time and memory used by algorithms, as a function of the input instance size N.
-- “Worst case” or Upper bound
-- O(f(N)) denotes the set of all functions g(N) such that there exist
-- positive constants C and N0 with g(N) ≤Cf(N) for all N ≥ N0.
-- “Best case” or Lower Bound
-- Ω(f(N)) denotes the set of all functions g(N) such that there exist
-- positive constants C and N0 with g(N) ≥Cf(N) for all N ≥ N0.
-- “Optimal case” Or Optimal Bound θ(f(N)) denotes the set of all functions g(N) such that there exist
-- positive constants C1, C2, and N0 with
-- C1f(N) ≤g(N) ≤ C2f(N) for all N ≥ N0.
-- Notes:
-- These notations denote sets:  f(N) ∈O(log N), not f(N) = O(log N).
-- Larger terms dominate the order, e.g.,
-- (4N + 20 log N + 100) ∈O(N)
-- We will use the notation for both time and memory.
-- Most of our attention will be towards “worst case”.
+1. Arithmetic: \(+, -, \times, /\)
+2. Comparisons: \(<, \le, =, \neq, \ge, >\)
+3. Memory access
+4. Analytic functions: roots, trig, exp, log
 
-### Slide 32: SEGMENT INTERSECTION COUNTING
+Numbers are **reals** with infinite precision (idealized vs. actual hardware).
 
-- INSTANCE:  Set S = {s1, s2, ..., sN} of line segments in the plane.
-- QUESTION:  Count the number of intersections of segments in S.
+### Slide 31: Asymptotic notation
+
+We measure **time** and **memory** as functions of input size \(N\).
+
+| Notation | Meaning (intuitive) |
+|----------|-------------------|
+| **\(O(f(N))\)** (upper / worst-case bound) | \(g(N) \le C f(N)\) for large \(N\), some constant \(C > 0\) |
+| **\(\Omega(f(N))\)** (lower bound) | \(g(N) \ge C f(N)\) for large \(N\) |
+| **\(\Theta(f(N))\)** (tight) | \(C_1 f(N) \le g(N) \le C_2 f(N)\) for large \(N\) |
+
+**Notes:**
+
+- These denote **sets** of functions; one writes \(f(N) \in O(\log N)\) (the slides also use “\(=\)” informally).
+- Dominant terms control growth, e.g. \(4N + 20\log N + 100 \in O(N)\).
+- Most discussion emphasizes **worst-case** bounds.
+
+### Slide 32–33: Segment intersection counting
+
+**INSTANCE:** A set \(S = \{s_1, s_2, \ldots, s_N\}\) of line segments in the plane.  
+**QUESTION:** Count how many **pairs** of distinct segments intersect.
+
+**Naive algorithm (conceptual):**
+
+```
+count ← 0
+for i = 1 to N
+  for j = 1 to N
+    if i ≠ j and s_i ∩ s_j ≠ ∅ then count ← count + 1
+output count
+```
+
+- **Storage:** \(O(N)\) for \(S\)  
+- **Time:** \(O(N^2)\) nested loops  
+- Assumes a primitive **segment–segment intersection** test.
 
 ![Figure from slide 32](images/slide_032.png)
 
-### Slide 33: SEGMENT INTERSECTION COUNTING
+### Slide 34: Preprocessing, query, storage; modes
 
-- INSTANCE:  Set S = {s1, s2, ..., sN} of line segments in the plane.
-- QUESTION:  Count the number of intersections of segments in S.
-- procedure SegmentIntersectionCounting(S) begin count = 0 for i = 1 to N
-- for j = 1 to N if  i ≠j and si ∩sj ≠∅ count = count + 1 dif endif
-- endfor endfor print count
-- 11 end
-- Storage:  O(N), for set S
-- Time:  O(N2), for nested loops
-- Notice the assumed primitive operation:  segment intersection.
-- What geometric operations are primitive?
+- **Preprocessing** — One-time cost to organize the data (often into a structure).
+- **Query** — Cost to answer one query against that structure.
+- **Storage** — Memory for static/dynamic structures.
 
-### Slide 34: Preprocessing. Time spent organizing the data set, usually into
+**Single-shot:** one data set, one query — often best to scan in \(O(N)\) time, \(O(N)\) space, **no** preprocessing.
 
-- some data structure.  Less important than query and storage.
-- Query. Time spent producing the answer for a query relative to
-- the data set.
-- Storage. Memory required for static and dynamic data structures
-- used by the query algorithm.
-- Single shot vs. repetitive-mode
-- Single shot.  Given a single data set and a single query, produce an
-- answer one time.  Almost always best handled by scan of data
-- set; no preprocessing, query O(N), storage O(N).
-- Repetitive-mode. Given a single data set and a sequence of queries,
-- produce the answer for each query relative to the data set.  Here, we
-- are willing to spend time preprocessing to enable query time
-- better than O(N).
+**Repetitive mode:** one data set, **many** queries — we may pay preprocessing to make each query faster than \(O(N)\).
 
-### Slide 35: satisfy the query.
+### Slide 35: Counting vs. reporting
 
-- Reporting. Report (list, identify) the objects that satisfy the
-- query.
-- For example, consider the standard range search problem:
-- RANGE SEARCHING.
-- INSTANCE:  Set S = {p1, p2, ..., pN}, pi = (xi, yi) of points in the
-- plane, and rectangle R = [lx, rx] × [ly, ry] in the plane.
-- Preliminaries p
-- , g
-- [ x, x]
-- [ y, y] p
-- QUESTION (counting):  How many points of S are within R?
-- QUESTION (reporting):  Which points of S are within R?
+**Reporting** — List all objects satisfying the query.
 
-### Slide 36: problems can have query time complexity that is output sensitive.
+**Range searching (formal instance):**
 
-- Output-sensitive example
-- INTERVAL ENCLOSURE
-- INSTANCE:  Set S = {x1, x2, ..., xN} of points on the number line (x-axis), and an interval Q = [l, r].
-- QUESTION: Which points of S are within Q, i.e. l ≤xi ≤ r?
-- Naive repetitive mode algorithm and analysis.
-- Preliminaries
-- Preprocessing:
-- 1. Sort S into an array A.  O(N log N)
-- Query:
-- 1. Binary search A for xi ≥l.  O(log N)
-- 2. Binary search A for xj ≤ r.  O(log N)
-- 3. Report points from xi to xj in A.  ?
-- There can be O(N) points from l to r ⇒step 3 is O(N)
-- ⇒query is O(N).
-- Without reporting, query is O(log N), with reporting O(N).
-- Time complexity of this type is usually written O(log N + K),
-- where N is input size and K is output size.
+- **INSTANCE:** Point set \(S = \{p_1,\ldots,p_N\}\), \(p_i = (x_i,y_i)\), and axis-aligned rectangle \(R = [\ell_x, r_x] \times [\ell_y, r_y]\).
+- **QUESTION (counting):** How many points of \(S\) lie in \(R\)?
+- **QUESTION (reporting):** **Which** points lie in \(R\)?
 
-### Slide 37: Pre-processing Cost: trade-off between space and time complexity with or without
+### Slide 36: Output-sensitive complexity
 
-- Pre-processing Cost: trade-off between space and time complexity with or without
-- pre-processing.
-- Amortized Cost: average  over expensive and inexpensive operations.
-- Normalization
-- It will sometimes be useful to have available normalized values for coordinates.  For a coordinate value x, its
-- normalized x coordinate is in [1, N], assigned in order of increasing x coordinate, relative to the set from which
-- the coordinates are/will be drawn.
-- Normalization usually implies an O(N log N) sort in preprocessing and O(log N) normalization search in query.
+**Interval enclosure example**
 
-### Slide 38: the real line whose extremes (endpoints) belong to a fixed set of
+- **INSTANCE:** Points \(S = \{x_1,\ldots,x_N\}\) on the real line and query interval \(Q = [\ell, r]\).
+- **QUESTION:** Which points satisfy \(\ell \le x_i \le r\)?
 
-- N abscissae (x-values).  It is the set of x-values from which the
-- endpoints are chosen that is fixed, not the intervals themselves.
-- The tree structure in which the intervals are stored is defined for
-- a scope interval [l, r].  For a given [l, r] there is exactly one
-- segment tree structure. The data intervals are stored within the
-- fixed tree.  We will assume WLOG that the data interval endpoints
-- have been normalized to [1, N] and the tree has been built for
-- scope interval [1, N].
-- Preliminaries
-- T(l, r) = Segment tree over scope interval [l, r].
-- Each node v of T(l, r) is associated with a scope interval ⊆[l, r].
-- A node v has these parameters:
-- B(v)
-- Beginning of scope interval associated with this node.
-- E(v)
-- End of scope interval associated with this node.
-- Lchild(v)
-- Left subtree = T(B(v), (B(v) + E(v)) / 2)
+**Repetitive-mode approach:**
 
-### Slide 39: [6,12]
+1. **Preprocessing:** Sort \(S\) into array \(A\) — **\(O(N \log N)\)**.  
+2. **Query:** Binary search for lower bound \(\ge \ell\) and upper bound \(\le r\) — **\(O(\log N)\)** each.  
+3. **Report** all points in the index range — **\(O(K)\)** if \(K\) points are reported.
 
-- [3,6)
-- [1,3)
-- [6,9)
-- [9,12]
-- Example
-- The structure of the segment tree T(1,12) is shown.
-- Each node is labeled with its associated interval [B(v), E(v)).
-- Preliminaries
-- [1,2)
-- [10,12]
-- [6,7)
-- [7,9)
-- [9,10)
-- [4,6)
-- [3,4)
-- [2,3)
-- [5,6)
-- [4,5)
+So query time is **\(O(\log N + K)\)** when reporting matters; without listing output, counting can be **\(O(\log N)\)**.
+
+### Slide 37: Other cost notions
+
+- **Preprocessing cost** — Trade-offs between space, preprocessing time, and query time.
+- **Amortized cost** — Average over mixes of cheap and expensive operations.
+- **Normalization** — Map coordinates into \([1,N]\) by rank order. Usually **\(O(N \log N)\)** preprocessing sort and **\(O(\log N)\)** rank lookup per query when needed.
+
+### Slide 38: Segment tree setup
+
+Consider intervals on the real line whose endpoints come from a fixed set of \(N\) **abscissae**. The **segment tree** for scope \([\ell, r]\) is a fixed tree shape; intervals are stored in auxiliary structures at nodes.
+
+Assume WLOG endpoints are **normalized** to \(\{1,\ldots,N\}\) and the tree is built for scope \([1,N]\).
+
+**Node \(v\)** stores:
+
+| Field | Meaning |
+|-------|---------|
+| \(B(v)\) | Start of \(v\)’s scope interval |
+| \(E(v)\) | End of \(v\)’s scope interval |
+| \(Lchild(v)\) | Left child = subtree over \([B(v), \lfloor(B(v)+E(v))/2\rfloor]\) |
+| \(Rchild(v)\) | Right child (upper half-interval) |
+
+Notation: \(T(\ell,r)\) = segment tree over scope \([\ell,r]\).
+
+### Slide 39: Example \(T(1,12)\)
+
+Each node is labeled with its associated half-open interval \([B(v), E(v))\) (see figure).
 
 ![Figure from slide 39](images/slide_039.png)
 
-### Slide 40: intervals with endpoints ∈{l, l + 1, l + 2, ..., r},  in
+### Slide 40: Inserting an interval
 
-- O(log N) time per operation.
-- For r - l > 3, an arbitrary interval [b, e] inserted into T(l, r) will
-- be partitioned into and “allocated” as a collection of standard
-- intervals of T(l, r).
-- There will be at most ( log2(r – 1)+ log2(r – 1)- 2) ∈ O(log N)
-- standard intervals in the partition.
-- Preliminaries
-- To insert interval [b, e] into segment tree T:
-- InsertSegmentTree(b, e, root(T)) procedure InsertSegmentTree(b, e, v)
-- begin if
-- (b ≤B(v) and E(v) ≤e) then add [b, e] to A(v) else if (b < (B(v) + E(v)) / 2) then
-- InsertSegmentTree(b, e, Lchild(v)) if ((B(v) + E(v)) / 2< e) then
-- InsertSegmentTree(b, e, Rchild(v)) end end
+Intervals with endpoints in \(\{\ell,\ell+1,\ldots,r\}\) can be maintained so insertion/deletion runs in **\(O(\log N)\)** per operation (per slide).
 
-### Slide 41: [1,12]
+For \(r - \ell > 3\), an interval \([b,e]\) is **partitioned** into **standard** (canonical) node intervals; the number of pieces is **\(O(\log N)\)**.
 
-- [1,6)
-- [6,12]
-- [1,3)
-- [6,9)
-- [9,12]
-- (B(v) + E(v)) / 2
-- [3,6)
-- Preliminaries
-- [1,2)
-- [10,12]
-- [7,9)
-- [9,10)
-- [3,4)
-- [4,6)
-- [5,6)
-- [4,5)
-- [11,12]
-- [10,11)
+**`InsertSegmentTree(b, e, v)`** (sketch):
+
+1. If \([B(v),E(v))\) is fully covered by \([b,e]\), attach the interval to \(A(v)\) and return.  
+2. Else, if \(b < \lfloor(B(v)+E(v))/2\rfloor\), recurse on \(Lchild(v)\).  
+3. If \(\lfloor(B(v)+E(v))/2\rfloor < e\), recurse on \(Rchild(v)\).
+
+### Slide 41: Structure after insertions
+
+Illustration of \(T(1,12)\) with midpoint splits \(\lfloor(B(v)+E(v))/2\rfloor\) at internal nodes (see figure).
 
 ![Figure from slide 41](images/slide_041.png)
 
-### Slide 42: Insertion
+### Slide 42–43: Insertion figures
 
 ![Figure from slide 42](images/slide_042.png)
 
-### Slide 43: Insertion
-
 ![Figure from slide 43](images/slide_043.png)
 
-### Slide 44: To delete interval [b, e] from segment tree T:
+### Slide 44: Deleting an interval
 
-- DeleteSegmentTree(b, e, root(T)) procedure DeleteSegmentTree(b, e, v)
-- begin if
-- (b ≤B(v) and E(v) ≤e) then remove [b, e] from A(v) else if (b < (B(v) + E(v)) / 2) then
-- D l t S tT
-- (b
-- L hild( ))
-- Preliminaries
-- DeleteSegmentTree(b, e, Lchild(v)) if ((B(v) + E(v)) / 2< e) then
-- DeleteSegmentTree(b, e, Rchild(v)) end end
+**`DeleteSegmentTree(b, e, v)`** mirrors insertion: if \([B(v),E(v))\) is fully inside \([b,e]\), remove the interval from \(A(v)\); otherwise recurse to children as in insertion.
 
 ## Recap
 

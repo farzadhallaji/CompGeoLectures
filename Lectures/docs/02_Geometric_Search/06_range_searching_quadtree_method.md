@@ -1,6 +1,6 @@
 # Range Searching by the Quadtree Method
 
-**Slides covered:** 142-151  
+**Slides covered:** 142–151  
 
 **Topic folder:** 02 Geometric Search
 
@@ -18,140 +18,70 @@ Quadtrees recursively split the plane into four equal parts. They adapt space de
 
 ## Detailed lecture notes
 
-### Slide 142: Definitions
+### Slide 142: Quadtree subdivision
 
-- A quadtree subdivision is a recursive subdivision of the plane into
-- four equal sized quadrants.  A quad is a quadrant or subquadrant
-- at any level of the subdivision, including the plane itself.
-- Each quad is represented by a node in a four-way branching tree
-- called a quadtree.  (The root represents the plane.)  Each node of
-- a quadtree has either 0 or 4 children, depending on whether the
-- corresponding quad is subdivided.  Each non-root node represents
-- one subquadrant of its parent’s quad.
-- Subdivision of a quad recurses until:
-- Th d t i
-- ≤M i t f S i t
-- M i th ll
-- 1. The quad contains ≤M points of S; integer M is the cell occupancy target.
-- 2. The node corresponding to the quad is at depth D in the quadtree; integer D is the cutoff depth.
-- M and D are the quadtree construction parameters.
-- Attached to each leaf node in the quadtree is a list of the points
-- located in the corresponding quad.
+**Quadtree:** recursive partition of a region into **four equal quadrants**. Each region = a **node**; non-leaf nodes have **4 children** (NW, NE, SW, SE per your indexing). **Stop** subdividing a quad when:
 
-### Slide 143: Point data set S.
+1. it contains **\(\le M\)** points of \(S\) (**cell occupancy** target), or  
+2. depth reaches **\(D\)** (**maximum depth**).
 
-- Quadtree subdivision for S with M = 2 and
-- D = 3.
-- Quad where D = 3 cut off further subdivision.
+**Leaves** store point lists for their quad.
+
+### Slides 143–144: Example
+
+Illustration with \(M=2\), \(D=3\): subdivision and tree with branch numbering and level labels.
 
 ![Figure from slide 143](images/slide_143.png)
 
-### Slide 144: Quadtree subdivision for S with M = 2 and
-
-- D = 3.
-- Quad where D = 3 cut off further subdivision.
-- Corresponding quadtree.
-- Branch numbering convention
-- Attached point list (showing number of points)
-- Level 2
-- Level 1
-- Level 0
-- Level 3
-
 ![Figure from slide 144](images/slide_144.png)
 
-### Slide 145: Construction
+### Slide 145: Bottom-up construction idea
 
-- A quadtree is built over a square subset of the plane, or domain,
-- defined to include all points of S; domain = [Lx, Rx] × [Ly, Ry].
-- Domain subdivided into a regular m × m grid of square cells,
-- each containing a list of points of S located in that cell; m = 2D + 1.
-- Conceptually, the overall quadtree is built bottom-up from the grid.
-- Associate with each cell a one-node quadtree, at level D + 1.
-- To construct a quadtree with root at level λ, the four quadtrees at
-- level λ + 1 that represent its subquadrants are “combined”.
-- To “combine” quadtrees q0, q1, q2, q3 at level λ + 1:
-- if t th t i ≤M i t λ + 1 > D th if q0, q1, q2, q3 together contain ≤M points or λ + 1 > D then
-- merge q0, q1, q2, q3 into a new single node at level λ else link q0, q1, q2, q3 as children of a new node at level λ
-- Notation
-- M
-- Cell occupancy target m
-- Grid parameter for smallest quads, m = 2D + 1
-- D
-- Cutoff (maximum) quadtree depth d
-- Dimensions (2 in this case)
+Domain **square** \([L_x,R_x] \times [L_y,R_y]\) containing all of \(S\). Build a regular **\(m \times m\)** grid of minimal cells with \(m = 2^D + 1\) (slide notation), attach point lists, then **combine** quadtrees from children: if all four children together have \(\le M\) points **or** depth limit hit, **merge** to one leaf; else keep four children.
 
-### Slide 146: Level 4.
+**Parameters:** \(M\) (occupancy), \(D\) (depth), \(m\) (fine grid size).
 
-- Level 3.
+### Slides 146–147: Level illustrations
 
-### Slide 147: Level 2.
+Figures showing tree levels (see slide PDF).
 
-- Levels 1 and 0.
+### Slide 148: Node fields and `ConstructQuadtree`
 
-### Slide 148: Preprocessing
+Per node \(q\):
 
-- Quadtree node q q.points
-- List of points of S within quad for this node; NULL if not leaf.
-- q.child[4] Pointers to subtrees, NULL if leaf.
-- q.size
-- Number of points within quads represented by the subtree rooted at this node.
-- q.quad
-- Boundaries of the quad represented by this node; format [lx, rx] × [ly, ry].
-- Q = ConstructQuadtree(G, M, D, 0, 0, m-1, 0,  m-1, domain) procedure ConstructQuadtree(G, M, D, level, imin, imax, jmin, jmax, quad)
-- begin
-- Allocate new quadtree node q.
-- if imin = imax  /* Lowest level, single grid cell. */ q.points = G[imin][jmin].points  /* Node’s point list comes from grid cell. */
-- q.child[0] = q.child[1] = q.child[2] = q.child[3] = NULL q.size =  G[imin][jmin]
-- q.quad = quad else q points = NULL q.points = NULL imid = (imin + imax) / 2
-- jmid = (jmin + jmax) / 2
-- [lx, rx] × [ly, ry] = quad q.child[0] = ConstructQuadtree(G, M, D, level+1, imid+1, imax, jmid+1, jmax,
-- [(lx+ rx ) / 2, rx] × [(ly+ ry ) / 2, ry]) q.child[1] = ConstructQuadtree(G, M, D, level+1, imid+1, imax, jmin, jmid,
-- [(lx+ rx ) / 2, rx] × [(ly, (ly+ ry ) / 2]) q.child[2] = ConstructQuadtree(G, M, D, level+1, imin, imid, jmin, jmid,
-- [(lx, (lx+ rx ) / 2]] × [(ly, (ly+ ry ) / 2]) q.child[3] = ConstructQuadtree(G, M, D, level+1, imin, imid, jmid+1, jmax,
+| Field | Meaning |
+|-------|---------|
+| `q.points` | Points in this quad (leaf); `NULL` if internal |
+| `q.child[0..3]` | Subtrees or `NULL` |
+| `q.size` | Point count in subtree |
+| `q.quad` | \([\ell_x,r_x]\times[\ell_y,r_y]\) bounds |
 
-### Slide 149: (l + r ) / 2 rx
+Recursive construction partitions grid index ranges \([i_{min},i_{max}] \times [j_{min},j_{max}]\) and splits quad geometry accordingly (see slide for child bounding boxes).
 
-- (lx + rx) / 2 lx
-- Geometry of recursive calls in CreateQuadtree jmid jmin imid
-- İmid+1 imax imin ly
-- (ly + ry) / 2
+### Slide 149: Child geometry
 
 ![Figure from slide 149](images/slide_149.png)
 
-### Slide 150: Query
+### Slide 150: `QueryQuadtree`
 
-- QueryQuadtree(root(Q),R)
-- /* Q is quadtree, R = [lx, rx] × [ly, ry] is range. */ procedure QueryQuadtree(q, R)
-- begin if
-- (q.quad ∩R) then  /* Query range overlaps node’s quad. */ if
-- (q.child[0] = NULL) then  /*Node q is a leaf. */ for each point pi on q.points  /* Scan the point list. */
-- if
-- (pi within R) then report pi endif df endfor else  /* Node q is not a leaf. */
-- for i = 0 to 3
-- QueryQuadtree(q.child[i],R)  /* Query subtrees. */ endfor endif
-- endif end
+```
+procedure QueryQuadtree(q, R)
+  if q.quad ∩ R ≠ ∅ then
+    if q is leaf then
+      for each point p in q.points
+        if p ∈ R then report p
+    else
+      for i = 0 to 3
+        QueryQuadtree(q.child[i], R)
+```
 
 ### Slide 151: Analysis
 
-- Preprocessing:  O(m2 + N); recall that m = 2D + 1.
-- Query:  O(2D + N).
-- Storage:  O(m2 + N).
-- Analysis comments
-- Note that ConstructQuadtree is O(m2), not O(m2 + N), because
-- point lists rather than points are handled (appending 4 lists can be
-- done in constant time).  However, constructing the grid G, input to
-- ConstructQuadtree, is O(m2 + N).
-- Th ti
-- O(2D + N) i t
-- The query time O(2D + N) is worst case.
-- O(2D) is the largest number of nodes that might be visited; it is O(2D) instead of O(4D) based on an analysis of the types of
-- possible range/quad intersections and a trick of storing points
-- at non-leaf as well as leaf nodes (see Laszlo pp. 239-242).
-- O(N) is the largest number of points that might be tested for
-- inclusion in the range.
-- Average case query performance can be much better, depending on
-- point distribution.
+- **Preprocessing:** \(O(m^2 + N)\) with \(m = 2^D + 1\) (grid build + tree combine). `ConstructQuadtree` itself is \(O(m^2)\) on list pointers.  
+- **Query (worst):** \(O(2^D + N)\) — at most \(O(2^D)\) nodes visited (slide cites refined argument vs. \(4^D\); see Laszlo pp. 239–242); up to \(O(N)\) point tests.  
+- **Storage:** \(O(m^2 + N)\).
+
+Average query time can be much better depending on distribution.
 
 ## Recap
 

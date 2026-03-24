@@ -1,6 +1,6 @@
 # Orientation, Determinants, Area, and Point-Line Classification
 
-**Slides covered:** 58-65  
+**Slides covered:** 58–65  
 
 **Topic folder:** 01 Foundations
 
@@ -18,118 +18,131 @@ This is the heart of many geometry algorithms. The orientation test tells left v
 
 ## Detailed lecture notes
 
-### Slide 58: A geometric primitive operation:  triangle orientation
+### Slide 58: Triangle orientation
 
-- Given three non-collinear points p0, p1, p2, the triangle Δ p0p1p2
-- is positively oriented if p2 lies to the left of p0p1, and negatively oriented if p2 lies to the right of p0p1.
-- Let vector a = p1 - p0 and vector b = p2 - p0  .
-- p0 p1 p2 a b p0 p1 p2 a b θab θab
-- 0 < θab < 180 positive orientation
-- 180 < θab < 360 negative orientation
-- p0, p1, p2 form a counter-clockwise cycle p0, p1, p2 form a clockwise cycle
+Given non-collinear points \(p_0, p_1, p_2\), triangle \(\triangle p_0 p_1 p_2\) is **positively oriented** if \(p_2\) lies **to the left** of the directed line \(p_0 p_1\), and **negatively oriented** if \(p_2\) lies **to the right**.
+
+Define \(\mathbf{a} = p_1 - p_0\) and \(\mathbf{b} = p_2 - p_0\). Let \(\theta_{\mathbf{a}\mathbf{b}}\) be the counterclockwise angle from \(\mathbf{a}\) to \(\mathbf{b}\).
+
+- If \(0^\circ < \theta_{\mathbf{a}\mathbf{b}} < 180^\circ\): **positive** orientation (CCW cycle \(p_0,p_1,p_2\)).  
+- If \(180^\circ < \theta_{\mathbf{a}\mathbf{b}} < 360^\circ\): **negative** orientation (CW cycle).
 
 ![Figure from slide 58](images/slide_058.png)
 
-### Slide 59: Vectors a and b can be in one of four possible configurations:
+### Slide 59: Four configurations and avoiding trig
 
-- In cases 1 and 3, 0 < θab < 180.
-- In cases 2 and 4, 180 < θab < 360.
-- In cases 1 and 2, the positive x axis pierces θab.
-- In cases 3 and 4, it does not.
-- We introduce the value Q = θb - θa (note that Q ≠θab).
-- Case
-- Range of Q = θb - θa sin Q
-- Orientation of Δ p0p1p2
-- -360 < Q < -180
-- -180 < Q < 0
-- 0 < Q < 180
-- 180 < Q < 360
-- (Equality holds if a and b are collinear.)
-- With this information, we could compute Q = θb - θa and then use the table to give the orientation of Δ p0p1p2.
-- But computing θa and θb require expensive trig. functions.
-- Can we do better?
+Vectors \(\mathbf{a},\mathbf{b}\) can sit in four relative configurations (slides 1–4). In cases 1 and 3, \(0^\circ < \theta_{\mathbf{a}\mathbf{b}} < 180^\circ\); in 2 and 4, \(180^\circ < \theta_{\mathbf{a}\mathbf{b}} < 360^\circ\). Cases 1 and 2 have the positive \(x\)-axis intersecting the wedge between \(\mathbf{a}\) and \(\mathbf{b}\); cases 3 and 4 do not.
+
+Define \(Q = \theta_{\mathbf{b}} - \theta_{\mathbf{a}}\) (note \(Q \neq \theta_{\mathbf{a}\mathbf{b}}\) in general). The slide relates intervals of \(Q\) (e.g. \((-360^\circ,-180^\circ)\), \((-180^\circ,0)\), \((0^\circ,180^\circ)\), \((180^\circ,360^\circ)\)) to the sign of \(\sin Q\) and hence to the orientation of \(\triangle p_0 p_1 p_2\); equality holds only when \(\mathbf{a}\) and \(\mathbf{b}\) are collinear. **See the figure** for the four geometric cases and the full correspondence.
+
+Using this path would require \(\theta_{\mathbf{a}}\) and \(\theta_{\mathbf{b}}\) — **expensive** trig. The next slide derives a **coordinate-only** test with the **same sign information**.
 
 ![Figure from slide 59](images/slide_059.png)
 
-### Slide 60: sin(Q) = sin(θb - θa) by definition of Q
+### Slide 60: Algebraic sign of \(\sin(\theta_{\mathbf{b}} - \theta_{\mathbf{a}})\)
 
-- = sin θb cos θa - cos θb sin θa by trig. identity
-- We know that cos θa = xa / |a|        sin θa = ya / |a| cos θb = xb / |b|        sin θb = yb / |b|
-- by definition of sine and cosine.  Then, by substitution sin(θb - θa) = (yb / |b|)(xa / |a|) - (xb / |b|)(ya / |a|)
-- = (1 / |a| |b|) (ybxa - xbya).
-- |a| and |b| are positive constants, so sign(sin(θb - θa)) = sign(ybxa - xbya).
-- By definition, xa = (x1 - x0)        ya = (y1 - y0) xb = (x2 - x0)        yb = (y2 - y0)
-- so sign(sin(θb - θa)) = sign((y2 - y0)(x1 - x0) - (x2 - x0)(y1 - y0)).
-- The latter expression can be used to find the orientation of Δ p0p1p2
-- from the coordinates of p0, p1, p2 in constant time.
+By definition \(Q = \theta_{\mathbf{b}} - \theta_{\mathbf{a}}\), so
 
-### Slide 61: | x0 y0 1 |
+\[
+\sin Q = \sin(\theta_{\mathbf{b}} - \theta_{\mathbf{a}})
+  = \sin\theta_{\mathbf{b}}\cos\theta_{\mathbf{a}} - \cos\theta_{\mathbf{b}}\sin\theta_{\mathbf{a}}.
+\]
 
-- D =
-- | x1 y1 1 |
-- | x2 y2 1 |
-- Evaluating this determinant gives the expression x0 y1 + x2 y0 + x1 y2 - x2 y1 - x0 y2 - x1 y0
-- which is the expansion of the final expression previously derived.
-- Observe that the determinant is equivalent to the cross product
-- (in 2 dimensions).
-- Left turn/Right Turn Test
-- If the sign of the determinant D is positive then Δ p0p1p2  is counterclockwise (p2 is left of p0p1 ) and if D is negative then Δ p0p1p2 is
-- clockwise (p2 is right of p0p1 ). If D=0, then the three points are
-- collinear.
-- p0 p1 p2 p2 left right
+With \(\mathbf{a} = (x_a,y_a)\), \(\mathbf{b} = (x_b,y_b)\) and unit-circle definitions \(\cos\theta_{\mathbf{a}} = x_a/\|\mathbf{a}\|\), \(\sin\theta_{\mathbf{a}} = y_a/\|\mathbf{a}\|\) (similarly for \(\mathbf{b}\)):
+
+\[
+\sin(\theta_{\mathbf{b}} - \theta_{\mathbf{a}})
+  = \frac{1}{\|\mathbf{a}\|\,\|\mathbf{b}\|}\,(y_b x_a - x_b y_a).
+\]
+
+Since \(\|\mathbf{a}\|,\|\mathbf{b}\| > 0\),
+
+\[
+\operatorname{sign}\bigl(\sin(\theta_{\mathbf{b}} - \theta_{\mathbf{a}})\bigr)
+  = \operatorname{sign}(y_b x_a - x_b y_a).
+\]
+
+With \(p_i = (x_i,y_i)\) and \(x_a = x_1-x_0\), \(y_a = y_1-y_0\), \(x_b = x_2-x_0\), \(y_b = y_2-y_0\),
+
+\[
+\operatorname{sign}(y_b x_a - x_b y_a)
+  = \operatorname{sign}\bigl((y_2-y_0)(x_1-x_0) - (x_2-x_0)(y_1-y_0)\bigr).
+\]
+
+So **orientation of \(\triangle p_0 p_1 p_2\)** is determined in **\(O(1)\)** time from coordinates **without** inverse trig.
+
+### Slide 61: Determinant form (2D orientation / turn test)
+
+Define the **homogeneous** \(3\times 3\) determinant
+
+\[
+D =
+\begin{vmatrix}
+x_0 & y_0 & 1 \\
+x_1 & y_1 & 1 \\
+x_2 & y_2 & 1
+\end{vmatrix}
+= x_0 y_1 + x_2 y_0 + x_1 y_2 - x_2 y_1 - x_0 y_2 - x_1 y_0,
+\]
+
+matching the expression above up to sign conventions. In 2D this is the **scalar cross product** \((p_1-p_0) \times (p_2-p_0)\) (embedded in 3D with \(z=0\)).
+
+**Left / right turn test**
+
+- \(D > 0\): \(\triangle p_0 p_1 p_2\) is **counterclockwise** (\(p_2\) **left** of directed line \(p_0 p_1\)).  
+- \(D < 0\): **clockwise** (\(p_2\) **right** of \(p_0 p_1\)).  
+- \(D = 0\): **collinear** points.
 
 ![Figure from slide 61](images/slide_061.png)
 
-### Slide 62: The value of the determinant D is twice the signed area of the triangle Δ p0p1p2 . The
+### Slide 62: Signed area and 3D generalization
 
-- signed area is positive if p0p1p2 form a counter clockwise sequence, it is negative if this sequence is clockwise. If the
-- area is zero, then D is 0.
-- Generalization
-- The three points p0   p1 and p2  form a plane in
-- 3-d with a positive normal. A fourth point p3 is on the upside if p3 falls on the positive side of the plane and
-- on the downside if  p3 falls on the negative side of the plane.
-- The test for this is with respect to the sign of the determinant.
-- |  x0  y0  z0   1 |
-- |  x1  y1  z1   1 |
-- D =    |  x2  y2  z2   1 |
-- |  x3  y3  z3   1 |
-- This D represents the signed volume of the polyhedron.
-- The formulation extends to n-dimensional space.
-- (Reading Assignment: Section 1:3(p.17) to Section 1:5 (p.35),
-- in O’Rourke text).
+**\(D\)** equals **twice the signed area** of \(\triangle p_0 p_1 p_2\): positive for CCW order, negative for CW, zero for degenerate triangle.
 
-### Slide 63: We use the following equation of a line:
+**3D:** Points \(p_0,p_1,p_2\) define an oriented plane. Point \(p_3\) lies on the **positive** or **negative** side according to the sign of
 
-- line = {α(p0) + (1 - α)(p1) }, where α ∈ ℜ(real numbers) where p0 and p1 as usual are the points determining the line.
-- p0 = (x0, y0) p1 = (x1, y1)
-- Substituting gives
-- {α(x0, y0) + (1 - α)(x1, y1) }
-- Multiplying through gives the coordinates
-- {αx0 + (1 - α)x1, αy0 + (1 - α)y1 } p1 p0 α > 1 α = 1 α = 0 α < 0
-- 1 < α < 0
+\[
+D =
+\begin{vmatrix}
+x_0 & y_0 & z_0 & 1 \\
+x_1 & y_1 & z_1 & 1 \\
+x_2 & y_2 & z_2 & 1 \\
+x_3 & y_3 & z_3 & 1
+\end{vmatrix},
+\]
+
+related to **signed volume** of the tetrahedron. The pattern extends to \(n\) dimensions.
+
+*(Reading: O’Rourke, §§1.3–1.5, pp. 17–35.)*
+
+### Slide 63: Line parametrization (review)
+
+Line through \(p_0, p_1\):
+
+\[
+\{\alpha p_0 + (1-\alpha) p_1 : \alpha \in \mathbb{R}\},
+\qquad p_i = (x_i, y_i),
+\]
+
+coordinates \((\alpha x_0 + (1-\alpha)x_1,\; \alpha y_0 + (1-\alpha)y_1)\). Values \(\alpha \in [0,1]\) give the **segment**; \(\alpha < 0\) or \(\alpha > 1\) give extensions beyond the endpoints (see figure).
 
 ![Figure from slide 63](images/slide_063.png)
 
-### Slide 64: Point-Line classification
+### Slide 64: Point–line classification
 
-- We now consider the geometric primitive operation of classifying a point w.r.t. a line (both in the plane).
-- A directed line segment partitions the plane into 7 non-overlapping regions.  The possibilities are shown below.
-- The problem, given p0, p1, and p2, is to determine which region p2 lies in.
-- p0 p1 terminus origin beyond right left behind between
+Classify \(p_2\) with respect to directed segment \(p_0 p_1\). The line splits the plane into **seven** disjoint regions (origin, terminus, between, left, right, behind, beyond — see figure).
 
 ![Figure from slide 64](images/slide_064.png)
 
-### Slide 65: We have seen the following primitives:
+### Slide 65: Primitive operations (summary)
 
-- 1. Triangle orientation
-- 2. Left test
-- 3. Point-line classification
-- Others I have implemented:
-- 1. Point-on-plane test
-- 2. Segment-segment intersection
-- 3. Segment-triangle intersection
-- All require constant time (if d is fixed).
-- There are many others.  If in doubt, ask.
+From the lectures:
+
+1. Triangle orientation  
+2. Left-turn test  
+3. Point–line classification  
+
+Other primitives (constant time for fixed dimension \(d\)) include point–plane tests, segment–segment intersection, segment–triangle intersection, and more.
 
 ## Recap
 

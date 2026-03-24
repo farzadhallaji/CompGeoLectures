@@ -1,6 +1,6 @@
 # Vector Algebra and Trigonometry
 
-**Slides covered:** 52-57  
+**Slides covered:** 52–57  
 
 **Topic folder:** 01 Foundations
 
@@ -18,61 +18,72 @@ These slides build the algebra behind geometric tests. Vectors, scaling, subtrac
 
 ## Detailed lecture notes
 
-### Slide 52: An ordered pair (x, y) can be a point in the plane, or a vector.
+### Slide 52: Points vs. vectors, addition
 
-- (x, y)
-- Vector addition
-- Given vectors a = (xa, ya) and b = (xb, yb), vector addition is defined as a + b = (xa + xb, ya + yb).
-- Geometrically, vectors a and b determine a parallelogram with
-- vertices 0, a, b, and a + b.
+An ordered pair \((x,y)\) may denote a **point** in the plane or a **vector** from the origin.
+
+**Vector addition.** For \(\mathbf{a} = (x_a, y_a)\) and \(\mathbf{b} = (x_b, y_b)\),
+
+\[
+\mathbf{a} + \mathbf{b} = (x_a + x_b,\; y_a + y_b).
+\]
+
+Geometrically, \(\mathbf{a}\) and \(\mathbf{b}\) span a parallelogram with vertices \(\mathbf{0}, \mathbf{a}, \mathbf{b}, \mathbf{a}+\mathbf{b}\).
 
 ![Figure from slide 52](images/slide_052.png)
 
-### Slide 53: Multiplication of vector b by a scalar (a real number) t.
+### Slide 53: Scalar multiplication
 
-- Scalar multiplication is defined as tb = (txb, tyb).
-- The vector length is scaled by t.
-- If t < 0, the direction is reversed.
+For scalar \(t \in \mathbb{R}\) and \(\mathbf{b} = (x_b, y_b)\),
+
+\[
+t\mathbf{b} = (t x_b,\; t y_b).
+\]
+
+Length scales by \(|t|\); if \(t < 0\), direction reverses.
 
 ![Figure from slide 53](images/slide_053.png)
 
-### Slide 54: Vector subtraction
+### Slide 54: Subtraction and length
 
-- Given vectors a = (xa, ya) and b = (xb, yb), vector subtraction is defined as b - a = b + (-1)a,
-- carried out as b - a = (xb - xa, yb - ya).
-- Vector length
-- Length of vector a = (xa, ya) is defined as |a| = sqrt(xa
-- 2).
+**Subtraction:**
+
+\[
+\mathbf{b} - \mathbf{a} = \mathbf{b} + (-1)\mathbf{a} = (x_b - x_a,\; y_b - y_a).
+\]
+
+**Length** of \(\mathbf{a} = (x_a, y_a)\):
+
+\[
+\|\mathbf{a}\| = \sqrt{x_a^2 + y_a^2}.
+\]
 
 ![Figure from slide 54](images/slide_054.png)
 
-### Slide 55: -a b-a p q o
+### Slide 55: Translation and canonical segments
 
-- Let a =op and b =oq. Then, b-a is a translation of the vector pq at the origin o. Thus, two line
-- segments having same length and direction are translates of each other and can be
-- identified with the same canonical line segment originating at the origin o.
+Let \(\mathbf{a} = \overrightarrow{op}\) and \(\mathbf{b} = \overrightarrow{oq}\). Then \(\mathbf{b} - \mathbf{a}\) is the vector \(\overrightarrow{pq}\) placed at the origin. Segments with the same length and direction are **translates** of one another and correspond to the same vector from the origin.
 
 ![Figure from slide 55](images/slide_055.png)
 
-### Slide 56: The direction of vector a is described by its polar angle θa,
+### Slide 56: Polar angles
 
-- the angle the vector makes with the positive x axis.
-- Measured in counterclockwise rotation, starting at the positive x axis.
-- Values are in the range 0 ≤θa < 360.
-- Given two vectors a and b, the angle between them θab is measured counterclockwise starting at vector a.
+The **polar angle** \(\theta_{\mathbf{a}}\) of vector \(\mathbf{a}\) is the angle from the **positive \(x\)-axis** to \(\mathbf{a}\), measured **counterclockwise**, with \(\theta_{\mathbf{a}} \in [0^\circ, 360^\circ)\) (or use radians).
+
+The **angle from \(\mathbf{a}\) to \(\mathbf{b}\)** , denoted \(\theta_{\mathbf{a}\mathbf{b}}\), is measured counterclockwise **starting along \(\mathbf{a}\)**.
 
 ![Figure from slide 56](images/slide_056.png)
 
-### Slide 57: Definition of sine and cosine based on unit circle.
+### Slide 57: Sine and cosine on the unit circle
 
-- x = cos θ y = sin θ
-- 0 < θ < 180
-- ⇒y > 0
-- ⇒sin θ > 0
-- 180 < θ < 360 ⇒y < 0
-- ⇒sin θ < 0
-- (x, y) θ
-- Unit circle x2 + y2 = 1
+For angle \(\theta\) from the \(x\)-axis to point \((x,y)\) on the **unit circle** \(x^2 + y^2 = 1\):
+
+\[
+x = \cos\theta,\qquad y = \sin\theta.
+\]
+
+- If \(0^\circ < \theta < 180^\circ\), then \(y > 0\) and \(\sin\theta > 0\).  
+- If \(180^\circ < \theta < 360^\circ\), then \(y < 0\) and \(\sin\theta < 0\).
 
 ![Figure from slide 57](images/slide_057.png)
 

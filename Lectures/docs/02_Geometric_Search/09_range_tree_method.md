@@ -1,6 +1,6 @@
 # Range Searching by the Range Tree Method
 
-**Slides covered:** 174-180  
+**Slides covered:** 174–180  
 
 **Topic folder:** 02 Geometric Search
 
@@ -20,89 +20,38 @@ A range tree combines segment-tree style decomposition with ordered secondary st
 
 ### Slide 174: Definition
 
-- A range tree is a segment tree where the allocation list A(v) for each
-- node has been replaced with a standard threaded binary tree.  Stored
-- (“allocated”) in the allocation tree for each node are the points
-- of S with x-coordinates within the scope interval associated with
-- that node.  The trees are organized in ascending y-coordinate order.
-- Note that in a range tree the scope intervals are all semi-closed.
-- The allocation tree for node for [i, j) does not contain pj.
-- For that reason the range tree for S = {p1, p2, ..., pN} is
-- T(1, N + 1).
-- Only a few of the binary trees are shown; there is one for each node.
-- [1,12)
-- [1,6)
-- [6,12)
-- [3,6)
-- [1,3)
-- [6,9)
-- [9,11)
-- [1,2)
+A **range tree** is a **segment tree** on **\(x\)** (semi-closed scopes \([i,j)\)) where each node’s allocation list \(A(v)\) is replaced by a **threaded binary search tree** on **\(y\)** holding exactly those points of \(S\) whose **\(x\)** lies in \(v\)’s scope interval, sorted by \(y\).
+
+For \(S=\{p_1,\ldots,p_N\}\) sorted by \(x\), the primary tree is **\(T(1,N+1)\)** in half-open indexing (node \([i,j)\) **excludes** right endpoint \(p_j\) in the slide convention).
 
 ![Figure from slide 174](images/slide_174.png)
 
-### Slide 175: Query
+### Slide 175: `SearchRangeTree`
 
-- Informally, traverse the segment tree as if inserting the x-range;
-- at each allocation node, search the allocation tree of the node
-- for points in the y-range.
-- More formally, to perform range query R = [lx, rx] × [ly, ry]
-- in range tree T:
-- SearchRangeTree(lx, rx + 1, ly, ry, root(T)) procedure SearchRangeTree(lx, rx , ly, ry, v)
-- begin if
-- (lx ≤B(v) and E(v) ≤rx) then h d ’ ll ti t f i t i [l
-- ] search node’s allocation tree for points in [ly, ry] else if (lx < (B(v) + E(v)) / 2) then
-- SearchRangeTree(lx, rx , ly, ry, Lchild(v)) endif if ((B(v) + E(v)) / 2< rx) then
-- SearchRangeTree(lx, rx , ly, ry, Rchild(v)) endif endif end
-- Note that “rx + 1” in the initial call allows for the semi-closed
-- intervals in the main tree.
+To query \(R = [\ell_x,r_x] \times [\ell_y,r_y]\), call `SearchRangeTree(lx, rx+1, ly, ry, root)` to match semi-closed \(x\)-intervals.
 
-### Slide 176: Analysis
+At node \(v\):
 
-- Preprocessing:  O(N log N)
-- Query:  O((log N)2 + K); O(log N) allocation nodes in the segment tree structure for the query x-range,
-- with an O(log N) binary tree search for each.
-- Storage:  O(N log N); see Preparata, p. 86.
-- Comments
-- The query time can be improved to O(log N + K).
-- Observe that once the query y-range starting point  in S has been
-- found (via a binary search at one node) there is no need to find it
-- i
-- I b id d t ll b t f th d bi t again.  In a bridged range tree, all but one of the node binary trees
-- are replaced with lists in y-order (the root retains a binary tree).
-- Pointers connect the entries in the lists in such a way that only
-- one binary search is needed.  Thereafter, the list at each allocation
-- node is simply scanned (in O(K)) from the y starting point given
-- by the pointer.
+- If \([B(v),E(v))\) is **fully contained** in \([\ell_x,r_x)\), search \(v\)’s **allocation tree** for all points with \(y \in [\ell_y,r_y]\).  
+- Else recurse to children whose \(x\)-intervals intersect \([\ell_x,r_x)\) (standard segment-tree descent with \(\lfloor(B+E)/2\rfloor\) splits).
 
-### Slide 177: Range tree method
+The **`rx+1`** in the initial call aligns closed input \(r_x\) with half-open primary intervals.
+
+### Slide 176: Analysis and bridging trick
+
+- **Preprocessing:** **\(O(N\log N)\)**.  
+- **Query:** **\(O((\log N)^2 + K)\)** — \(O(\log N)\) canonical nodes for the \(x\)-range, each with an \(O(\log N)\) \(y\)-search.  
+- **Storage:** **\(O(N\log N)\)** (Preparata p. 86).
+
+**Improvement:** **Bridged range tree** achieves **\(O(\log N + K)\)** query by replacing most allocation BSTs with **\(y\)-sorted lists** linked so one binary search at the root supplies start positions; other levels **scan** in \(O(K)\) along threads.
+
+### Slides 177–179: Figures
 
 ![Figure from slide 177](images/slide_177.png)
 
-### Slide 178: Range tree method
+### Slide 180: Topic summary table (partial on slide)
 
-### Slide 179: Range tree method
-
-### Slide 180: Summary of this topic
-
-- Problem/Algorithm
-- Preprocessing
-- Query
-- Storage
-- Polygon inclusion
-- Left test (convex)
-- O(N)
-- Intersection counting (simple)
-- O(N)
-- Wedges (convex and star shaped)
-- O(N)
-- O(log N)
-- O(N)
-- Point location
-- Brute force
-- O(N)
-- Slab method
-- O(N2)
+The slide begins a summary of polygon inclusion, point location, and range methods with preprocessing/query/storage columns (truncated in source export). Use the per-section notes in this site for full bounds.
 
 ## Recap
 

@@ -1,6 +1,6 @@
 # Divide-and-Conquer Convex Hull
 
-**Slides covered:** 235-244  
+**Slides covered:** 235–244  
 
 **Topic folder:** 03 Convex Hulls
 
@@ -18,131 +18,97 @@ This algorithm splits the points into left and right subsets, builds hulls recur
 
 ## Detailed lecture notes
 
-### Slide 235: Divide-and-conquer design goal
+### Slide 235: Design goal vs. Quickhull
 
-- QUICKHULL recursively subdivides point set S, and assembles the convex hull H(S) by “merging”
-- the subproblem results.
-- Advantages:
-- 1. Subdivision allows parallelization
-- 2. Merge process is very simple (concatenation)
-- Disadvantage:
-- 1. Inability to control or guarantee subproblem size results in suboptimum worst case time performance.
-- We seek a divide-and-conquer algorithm which divides the problem into subproblems of approximately equal size.
+**Quickhull** recurses by pruning subsets but does not guarantee **balanced** subproblem sizes → poor worst-case time.
 
-### Slide 236: Union of convex hulls, 1
+Goals for divide-and-conquer:
 
-- Suppose we have S and want to compute H(S).
-- Further suppose S has been partitioned into S1 and S2, each containing half the points of S.
-- If H(S1) and H(S2) are found separately (recursively), how much additional work is required to compute H(S1 ∪S2),
-- i.e., H(S)?
-- In other words, is it easier to find H(S) = H(S1 ∪S2) given H(S1) and H(S2) than to find H(S) directly?
-- To do so, we use the relation:
-- H(S1 ∪S2) = H(H(S1) ∪H(S2))
-- The convex hull of the union of the two subsets is the same as
-- the convex hull of the union of the convex hulls of the two subsets.
+- **Pros:** natural **parallelism**; merge by **concatenation**-style composition.  
+- **Con:** unbalanced splits hurt worst-case performance.
 
-### Slide 237: Union of convex hulls, 2
+We want a split into two subsets of **approximately equal size**.
 
-- The relation is:  H(S1 ∪S2) = H(H(S1) ∪H(S2))
-- Computing the convex hull of the union of convex hulls is made simpler because H(S1) and H(S2) are convex polygons
-- and thus have an ordering on their vertices.
-- HULL OF UNION OF CONVEX POLYGONS
-- INSTANCE:  Convex polygons P1 and P2.
-- QUESTION:  Find the convex hull of their union.
-- This problem is the merge step of a divide-and-conquer algorithm for convex hull construction.
-- An efficient algorithm for the merge is necessary for an efficient divide-and-conquer algorithm.
-- H(S1)
-- H(S2)
+### Slide 236: Reducing union to hulls of hulls
+
+Partition \(S\) into \(S_1, S_2\) of roughly \(N/2\) points each. If we know \(H(S_1)\) and \(H(S_2)\), how hard is \(H(S_1 \cup S_2) = H(S)\)?
+
+Key identity:
+
+\[
+H(S_1 \cup S_2) = H\bigl(H(S_1) \cup H(S_2)\bigr).
+\]
+
+The hull of a union equals the hull of the union of the two **subhulls** — \(H(S_1)\) and \(H(S_2)\) are **convex polygons** with cyclically ordered vertices.
+
+### Slide 237: Merge subproblem
+
+**HULL OF UNION OF CONVEX POLYGONS**
+
+- **INSTANCE:** Convex polygons \(P_1, P_2\).  
+- **QUESTION:** Find \(H(P_1 \cup P_2)\).
+
+This **merge** step, in **\(O(N)\)** time, yields overall **\(O(N \log N)\)** with balanced recursion.
 
 ![Figure from slide 237](images/slide_237.png)
 
-### Slide 238: Overview of divide-and-conquer algorithm
+### Slide 238: Divide-and-conquer skeleton
 
-- 1. If |S|  k0 (k0 is a small integer), construct the convex hull
-- directly by some method and stop, else go to step 2.
-- (For example, for k0 = 3 the hull is a triangle, O(1).)
-- 2. Partition the set S arbitrarily into two subsets S1 and S2
-- of approximately equal sizes.
-- 3. Recursively find the convex hulls H(S1) and H(S2).
-- 4. Merge the two hulls together to form H(S).
-- Let U(N) denote the time needed to find the hull of the union of
-- two convex polygons (convex hulls), each with N/2 vertices.
-- Let T(N) is the time required to find the convex hull of N points.
-- T(N)  2T(N/2) + U(N) total time    subproblem time    merge time
-- If U(N)  O(N), then T(N)  O(N log N) (by recurrence relation),
-- so we seek an O(N) merge algorithm, i.e., an O(N) convex polygon union algorithm.
+1. If \(|S| \le k_0\) (small constant), build \(H(S)\) directly (e.g. \(k_0=3\) → triangle in \(O(1)\)).  
+2. Else partition \(S\) into \(S_1,S_2\) of nearly equal size.  
+3. Recursively compute \(H(S_1), H(S_2)\).  
+4. Merge to \(H(S)\).
+
+Let \(U(N)\) = time to merge two convex \(n\)-gons each with \(O(N)\) vertices, and \(T(N)\) = time for \(N\) points:
+
+\[
+T(N) \le 2\,T(N/2) + U(N).
+\]
+
+If \(U(N) \in O(N)\), then **\(T(N) \in O(N \log N)\)**. So we need an **\(O(N)\)** merge (convex polygon union / hull of union).
 
 ![Figure from slide 238](images/slide_238.png)
 
-### Slide 239: Merge algorithm, 1
+### Slide 239: Merge — case \(p \in P_2\)
 
-- This procedure finds the convex hull of the union of two convex polygons P1 and P2.
-- 1. Find a point p that is internal to P1 (e.g. centroid).
-- Note that this point p will be internal to H(P1  P2).
-- 2. Determine whether or not p is internal to P2.
-- This can be done in O(N) time (convex polygon inclusion).
-- If p is not internal to P2, go to step 4.
-- 3. Point p is internal to P2.  The vertices of both P1 and P2
-- occur in sorted angular order about p.
-- Merge the lists of vertices in O(N) time to obtain a sorted list of the vertices of both P1 and P2.
-- Go to step 5.
-- P1
-- P2
+**Input:** Convex polygons \(P_1, P_2\).
+
+1. Pick \(p\) **inside** \(P_1\) (e.g. centroid). Then \(p \in H(P_1 \cup P_2)\).  
+2. Test whether \(p \in P_2\) (**convex inclusion**) in **\(O(N)\)**.  
+3. If **yes:** vertices of \(P_1\) and \(P_2\) appear in sorted **angular order** about \(p\). **Merge** the two vertex lists in **\(O(N)\)** like merging sorted arrays → sorted list of all vertices around \(p\). Go to step 5 (Graham scan on that list — slide 241).  
+4. If **no:** go to slide 240.
 
 ![Figure from slide 239](images/slide_239.png)
 
-### Slide 240: Merge algorithm, 2
+### Slide 240: Merge — wedge when \(p \notin P_2\)
 
-- 4. Point p is not internal to P2.  Relative to p, polygon P2 lies in a wedge whose apex angle is ≤π.
-- The wedge is delimited by two vertices of P2, call them u and v,
-- which can be found in O(N) time by a single pass around P2.
-- Vertices u and v partition P2 into two chains of vertices that are monotonic in polar angle w.r.t. p,
-- with one chain increasing and the other decreasing.
-- The chain convex towards p can be discarded, because its vertices will be internal to H(S1 ∪S2).
-- The other chain of P2 and all of P1 constitute two lists of at most
-- O(N) total vertices that occur in sorted angular order around p.
-- This can be merged in O(N) time to form a list of vertices of
-- P1 ∪P2, sorted about p.
-- P1
-- P2 u v
+Relative to \(p\), polygon \(P_2\) lies in a wedge of apex angle \(\le \pi\). Vertices \(u,v\) delimiting the wedge are found in **\(O(N)\)** by one pass around \(P_2\). The two chains from \(u\) to \(v\) are monotone in polar angle about \(p\); discard the chain **bulging away** from \(p\) (its vertices are interior to \(H(P_1 \cup P_2)\)). The other chain of \(P_2\) plus all of \(P_1\) give two lists, total **\(O(N)\)** vertices, still sorted angularly about \(p\); merge in **\(O(N)\)**.
 
 ![Figure from slide 240](images/slide_240.png)
 
-### Slide 241: Merge algorithm, 3
+### Slide 241: Finish merge with Graham scan
 
-- 5. Use the Graham scan on the sorted list to construct the convex hull of the vertices on the list, which requires O(N) time.
-- If polygon P1 has m vertices and polygon P2 has n vertices, this algorithm constructs H(P1 ∪P2) ∈O(m + n)∈O(N) time.
-- As mentioned, an O(N) merge gives an O(N log N) divide-and-conquer algorithm for convex hull.
+5. Run **Graham’s scan** on the merged cyclic order in **\(O(N)\)** to produce \(H(P_1 \cup P_2)\).
+
+If \(P_1\) has \(m\) vertices and \(P_2\) has \(n\) vertices, merge time is \(O(m+n) = O(N)\), hence overall hull time \(O(N \log N)\).
 
 ![Figure from slide 241](images/slide_241.png)
 
-### Slide 242: Supporting lines, 1
+### Slide 242: Supporting lines
 
-- A by-product of the convex hull union algorithm is a method of determining supporting lines of two convex hulls.
-- A supporting line of a convex polygon P is a straight line L
-- passing through a vertex of P such that the interior of P lies entirely to one side of L.
-- The idea is analogous to the notion of tangent for circles.
-- L
-- P
+A **supporting line** of convex polygon \(P\) passes through a vertex and has **all of \(P\)** on one closed side (2D analog of a tangent to a circle).
 
 ![Figure from slide 242](images/slide_242.png)
 
-### Slide 243: Supporting lines, 2
+### Slide 243: Common supporting lines of two polygons
 
-- Two convex polygons P1 and P2, with n and m vertices, such that one is not entirely contained within the other,
-- have common supporting lines.
-- The number of common supporting lines is ≥2 and ≤2*min(n,m).
-- (Maximum is achieved when convex polygons are partially overlapping.)
-- P1
-- P2
+Two disjoint-inclusion convex polygons \(P_1,P_2\) (neither contains the other) admit **common supporting lines** (tangents touching both). There are **at least 2** and **at most** \(2\min(m,n)\) (slide).
 
 ![Figure from slide 243](images/slide_243.png)
 
-### Slide 244: Supporting lines, 3
+### Slide 244: Finding common supports from \(H(P_1 \cup P_2)\)
 
-- Once the convex hull of the union of P1 and P2 has been constructed, common supporting lines can be found.
-- Scan the vertex list of H(P1 ∪P2); any pair of consecutive vertices where one originated in P1
-- and the other in P2 defines a common supporting line.
+After constructing \(H(P_1 \cup P_2)\), scan its vertex cycle: each **consecutive** pair where one vertex comes from \(P_1\) and the other from \(P_2\) determines a **common supporting line**.
 
 ![Figure from slide 244](images/slide_244.png)
 

@@ -1,6 +1,6 @@
 # Point Location: Brute Force, Slab Method, and Plane Sweep
 
-**Slides covered:** 80-90  
+**Slides covered:** 80–90  
 
 **Topic folder:** 02 Geometric Search
 
@@ -18,151 +18,88 @@ Point location asks which face of a planar subdivision contains the query point.
 
 ## Detailed lecture notes
 
-### Slide 80: PLANAR POINT LOCATION
+### Slide 80: Planar point location
 
-- INSTANCE:  PSLG G = (V, E), with G connected and no vertex v ∈V having degree < 2, and query point q.
-- QUESTION:  Which face of G is q within?
-- With the assumptions that degree(v) ≥2 ∀v ∈ V and G is connected,
-- G partitions the plane into simple polygons.
-- q f6 f1 f2 f3 f4 f5
+**INSTANCE:** Connected PSLG \(G=(V,E)\) with \(\deg(v) \ge 2\) for all \(v \in V\), and query point \(q\).  
+**QUESTION:** Which **face** of \(G\) contains \(q\)?
+
+Under these assumptions, \(G\) partitions the plane into simple polygonal faces.
 
 ![Figure from slide 80](images/slide_080.png)
 
-### Slide 81: Consider a point location method using known techniques.
+### Slide 81: Face scan with DCEL
 
-- We represent PSLG G with a DCEL
-- (which requires O(N) preprocessing to construct, as seen).
-- Query for each face f of G /* found via HF */ assemble a simple polygon P from edges of f
-- retrieved using FACE operation  /* p. 17 */ test simple polygon inclusion for q within P
-- endfor
-- Analysis
-- Seemingly:
-- Time:  O(N2); O(N) faces and 2× O(N) operations each
-- Space:  O(N); O(N) for DCEL and O(N) for P
-- But each edge is in exactly 2 faces, so all executions of the loop
-- have a total time of at most O(2N)  O(N), not O(N2).
-- Time:  O(N)
-- Space:  O(N)
+Represent \(G\) by a **DCEL** (\(O(N)\) preprocessing). For each face \(f\) (via `HF`), build polygon \(P_f\) from `FACE` traversal, test **simple polygon inclusion** for \(q\).
 
-### Slide 82: The fundamental technique for general search is to apply bisection,
+Naively one might guess \(O(N^2)\), but each edge lies in **two** faces only, so **total** work over all faces is \(O(N)\) edge traversals → **\(O(N)\)** per query, **\(O(N)\)** space.
 
-- i.e., binary search.
-- A binary search on N items requires O(log N) time.
-- Often applied to alphanumeric values.
-- We will see ways to apply the idea to geometric objects.
-- Slab method is an example.
-- Slab method query, part 1
-- Given PSLG G, construct a horizontal line through each vertex.
-- These lines divide the plane into (at most) N + 1 “slabs”.
-- Sorting the y-coordinates of the slabs during preprocessing makes it possible to find the slab that contains a query point
-- q = (xq,yq) by binary search on y, in O(log N) time.
-- N + 1
+### Slide 82: Slab method — slabs
+
+**Binary search** on \(N\) sorted items costs \(O(\log N)\). **Slab method:** draw a **horizontal line** through **each** vertex; these divide the plane into at most **\(N+1\)** horizontal **slabs**. Preprocess slab boundaries; locate \(q=(x_q,y_q)\)’s slab by **binary search on \(y\)** in \(O(\log N)\).
 
 ![Figure from slide 82](images/slide_082.png)
 
-### Slide 83: The intersection of a slab with G is a set of segments, from the edges of G.
+### Slide 83: Slab method — segments inside a slab
 
-- The segments define trapezoids, which may degenerate to triangles.
-- G a PSLG ⇒edges intersect only at vertices.
-- Each vertex defines a slab boundary ⇒
-- No segments intersect within a slab.
-- Segments in a slab can be totally ordered (e.g., left to right).
-- Binary search can be used to find the trapezoid containing q.
-- If face stored with each trapezoid during preprocessing, this gives the answer to the point location problem.
-- N + 1
+Inside a slab, edges of \(G\) become disjoint **segments** (no crossings). They are **totally ordered** left-to-right. **Second** binary search finds the trapezoid (or strip) containing \(q\). If each region stores its face id, point location is answered.
 
 ![Figure from slide 83](images/slide_083.png)
 
-### Slide 84: Binary search requires a comparison operator that returns
+### Slide 84: Comparisons for binary search
 
-- “less than”, “equal”, or “greater than” to direct the next step.
-- p0,1 p0,2 p0,3 p0,4 p1,1 p1,2 p1,3 p1,4 q
-- < p0,1p1,1q Right p0,2p1,2q Right p0,1 p0,2 p0,3 p0,4 p1,1 p1,2
-- p1,3 p1,4 q
-- = p0,2p1,2q Right p0,3p1,3q Left p0,1 p0,2 p0,3 p0,4 p1,1 p1,2
-- p1,3 p1,4 q
-- > p0,3p1,3q Left p0,4p1,4q Left
+Compare \(q\) against segment pairs \((p_{0,j},p_{1,j})\) using **orientation** (left / on / right) to decide branch.
 
 ![Figure from slide 84](images/slide_084.png)
 
-### Slide 85: Query time:  O(log N); 2× O(log N) binary search.
+### Slide 85: Slab method complexity
 
-- At most N slabs, at most N segments per slab.
-- Cannot be improved (optimum).
-- Preprocessing time:  O(N2 log N); each of O(N) slabs can have as many as N segments, requiring an O(N log N) sort.
-- This can be improved.
-- Space:  O(N2); O(N) slabs, each with O(N) segments.
-- Cannot be improved (for this algorithm).
+- **Query:** \(O(\log N)\) (two binary searches).  
+- **Preprocessing (naive):** \(O(N^2 \log N)\) — up to \(O(N)\) segments per slab, each sorted in \(O(N \log N)\).  
+- **Space:** \(O(N^2)\) worst case for explicit slab structures.
 
-![Figure from slide 85](images/slide_085.png)
+### Slide 86: Plane sweep paradigm
 
-### Slide 86: Plane sweep algorithmic technique
-
-- Plane sweep is an algorithmic technique, or pattern, that is used frequently in computational geometry.
-- The essential idea is that a geometric object, or collection of
-- objects, in the plane is processed with an algorithm that is suggested by the idea of a vertical (or horizontal) line
-- passing over the object(s).
-- Processing occurs at discrete abscissa (or ordinates) as the line
-- passes over key points in the object(s).
-- Those points are called events.
-- We will see how to apply this technique to perform preprocessing
-- for the slab method more efficiently than O(N2 log N).
-- This will also serve to introduce this important technique.
+Sweep a **vertical** (or horizontal) line across the plane; **process events** at discrete \(x\) (or \(y\)) where combinatorial structure changes. Used here to **build** slab structures faster than the naive \(O(N^2\log N)\).
 
 ![Figure from slide 86](images/slide_086.png)
 
-### Slide 87: Plane sweep algorithms often use two data structures:
+### Slide 87: Sweep data structures
 
-- 1. Event-point schedule
-- Sequence of positions to be assumed by the sweep-line.
-- 2. Sweep-line status
-- Description of the intersection of the sweep-line with the geometric object(s) being swept at the current event.
-- Sweep line status
-- For the slab method preprocessing, the sweep-line status is a
-- left-to-right sequence of edges of G that intersect the sweep-line.
-- Note that the set of edges intersected changes only at the vertices of G.
-- Event-point schedule
-- For the slab method, the event-point schedule is simply the vertices of G, arranged in ascending y-coordinate.
-- (The sweep is bottom-to-top.)
+1. **Event-point schedule** — positions where the sweep stops (here: vertex \(y\)-order, **bottom-to-top** sweep).  
+2. **Sweep-line status** — edges intersecting the sweep line, ordered along the line (here: **left-to-right**).
 
-### Slide 88: At each event, i.e., vertex v ∈V,
+Status changes only at **vertices** of \(G\).
 
-- 1. the edges terminating at v are deleted from the sweep-line status
-- 2. the edges originating at v are added to the sweep-line status
-- 3. the sweep-line status data structure is reported, and used to construct a slab.
-- The sweep-line status can be maintained in a height balanced
-- binary tree (e.g., a AVL tree) that provides INSERT and DELETE operations in O(log N).
+### Slide 88: Event processing
+
+At vertex \(v\): delete edges ending at \(v\), insert edges starting at \(v\), read ordered intersection list to **define** the slab structure. Maintain status in a **balanced BST** with \(O(\log N)\) insert/delete.
 
 ![Figure from slide 88](images/slide_088.png)
 
-### Slide 89: Data structures
+### Slide 89: `SlabPreprocessing(G)` sketch
 
-- VERTEX
-- Array storing vertices of G, ordered by increasing y-coordinates
-- B[i]
-- Set of edges incident on VERTEX[i] from below, ordered counterclockwise
-- A[i]
-- Set of edges incident on VERTEX[i] from above, ordered clockwise
-- L
-- Height balanced tree, sweep-line status.
-- procedure SlabPreprocessing(G) begin
-- VERTEX[1:2N] = sort the vertices of G by increasing y
-- L = ∅ for i = 1 to N
-- DELETE the edges in B[i] from L
-- INSERT the edges in A[i] to L construct slab for edges in L endfor
-- 10 end
-- A and B can be built in O(N) time each from the DCEL for G.
+- `VERTEX[1:N]` — vertices sorted by increasing \(y\).  
+- `B[i]` — edges incident from **below** at `VERTEX[i]`, CCW order.  
+- `A[i]` — edges incident **above**, clockwise.  
+- `L` — balanced tree = sweep-line status.
 
-### Slide 90: Preprocessing analysis
+```
+VERTEX ← sort vertices by y
+L ← ∅
+for i = 1 to N
+  DELETE edges B[i] from L
+  INSERT edges A[i] into L
+  construct slab from current L
+endfor
+```
 
-- Preprocessing time:  O(N2); O(N) slabs, each requiring O(N) time to construct a slab.
-- There will be at most O(N) insertions and deletions to L, each requiring O(log N) time, so without the slab construction
-- the time required is in O(N log N).
-- Comments
-- The slab method’s O(log N) query time is optimal.
-- Preprocessing time reduced from O(N2 log N) to O(N2) through
-- use of the plane-sweep technique.
-- Still, O(N2) is unacceptable for some applications.
+Arrays `A`, `B` built from DCEL in \(O(N)\).
+
+### Slide 90: Improved preprocessing analysis
+
+Still **\(O(N^2)\)** time to **materialize** all slab lists if each costs \(O(N)\). The sweep reduces the **sorting** bottleneck inside slabs vs. the older \(O(N^2\log N)\) approach; \(O(N\log N)\) work maintains `L` across events.
+
+**Query** remains optimal **\(O(\log N)\)** for this structure; **\(O(N^2)\)** space/preprocessing remains a limitation for large \(N\).
 
 ## Recap
 

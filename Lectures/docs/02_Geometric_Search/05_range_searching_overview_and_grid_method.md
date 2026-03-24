@@ -1,6 +1,6 @@
 # Range Searching Overview and the Grid Method
 
-**Slides covered:** 135-141  
+**Slides covered:** 135–141  
 
 **Topic folder:** 02 Geometric Search
 
@@ -18,86 +18,60 @@ Range searching asks which points lie inside a query rectangle. The grid method 
 
 ## Detailed lecture notes
 
-### Slide 135: Range searching example
+### Slide 135: Example
 
-- Given N points in the plane, how many lie in a given rectangle with
-- sides parallel to the coordinate axes?  That is, how many points
-- (x, y) satisfy lx ≤x ≤rx, ly ≤y ≤ry, for given lx, rx, ly, ry?
-- ry lx rx ly
-- Answer:  6
+How many (or which) of \(N\) points lie in rectangle \([\ell_x,r_x] \times [\ell_y,r_y]\)? Example answer on slide: 6.
 
 ![Figure from slide 135](images/slide_135.png)
 
-### Slide 136: General range searching problem
+### Slide 136: General \(d\)-dimensional range search
 
-- Given a data set of N objects, each consisting of an ordered d-tuple
-- of values (x1, x2, ..., xd), and a query domain consisting of d ranges
-- [li, ri] for 1 ≤i ≤d, count or report the objects whose values are
-- within the query domain (i.e., where li ≤xi ≤ri for 1 ≤i ≤d).
-- The domain is itself often called the query range, hence the term
-- range searching.
-- It is natural to view the d-tuples as points in d-dimensional
-- Cartesian space (d-space) and the range as a region in that space.
-- For example, in 2-space the objects and the range are points and
-- t l ti l a rectangle, respectively.
+**Data:** \(N\) objects, each a \(d\)-tuple \((x_1,\ldots,x_d)\).  
+**Query:** Orthogonal range \(\prod_{i=1}^d [\ell_i, r_i]\) — **count** or **report** all tuples with \(\ell_i \le x_i \le r_i\).
 
-### Slide 137: pi = (xi, yi) for 1 ≤i ≤N, and rectangular range R = [lx, rx] × [ly, ry],
+View tuples as points in \(\mathbb{R}^d\); the query range is an **axis-aligned box**.
 
-- also in the plane.
-- QUESTION:  Report the points of S located within R, i.e. points pi ∈S where lx ≤xi ≤rx and ly ≤yi ≤ry.
-- Range searching assumptions
-- Unless otherwise noted, we will assume the following for all
-- range searching problems and algorithms.
-- 1. Two dimensional, all points and range within plane.
-- 2 All i t d i iti d t
-- Geometric Search, Range Searching
-- Introduction to range searching
-- 2. All points and range in positive quadrant.
-- 3. Repetitive mode (single data set, multiple queries).
-- 4. Static data set S (no changes to S after preprocessing).
-- 5. Reporting (points in R must be identified).
+### Slide 137: Planar reporting assumptions (default)
 
-### Slide 138: Concept p1 p5 p2 p3 p7 p6 p4 p8 p9 p12 p11 p10 y x
+Unless noted:
 
-- Point data set S = {p1, p2, ..., pN}, pi = (xi, yi)
-- Subdivision of plane into m × m grid (m is grid parameter)
+1. \(d=2\), points and query in the plane.  
+2. Often assume **first quadrant** (or bounded domain after scaling).  
+3. **Repetitive mode** — one static \(S\), many queries.  
+4. **Static** \(S\) after preprocessing.  
+5. **Reporting** — list points in range.
 
-### Slide 139: Preprocessing procedure ConstructGrid begin
+**Formal:** \(p_i=(x_i,y_i)\), \(R=[\ell_x,r_x]\times[\ell_y,r_y]\); report all \(p_i \in R\).
 
-- Initialize m × m array of lists g to NULL.
-- for i = 1 to N add pi to list g[xi /size(m)][yi /size(m)]
-- end
-- Quantity size(m) is the coordinate distance represented by one grid interval.
-- m × m array of pointers to lists p1 p2 p5 p3 p7 p4 p10 p6 p8
-- Lists associated with grid cells
-- Points on cell edges are placed in cell to right or above.
-- All three points are in the cell shown.
+### Slide 138: Uniform grid
+
+Partition the plane into an **\(m \times m\)** grid of cells; each cell holds a list of points of \(S\) falling in that cell.
+
+### Slide 139: `ConstructGrid`
+
+Let \(\text{size}(m)\) be the side length of one cell in coordinate units.
+
+```
+initialize m×m array g of empty lists
+for i = 1 to N
+  add p_i to g[⌊x_i / size(m)⌋][⌊y_i / size(m)⌋]
+```
+
+Boundary rule: points on cell edges go to the cell **right** or **above** (slide convention).
 
 ![Figure from slide 139](images/slide_139.png)
 
-### Slide 140: Query procedure QueryGrid begin for i = lx/size(m) to rx/size(m) 
+### Slide 140: `QueryGrid`
 
-- for j = ly/size(m) to ry/size(m)  for each point pk on list g[i][j]
-- if lx ≤xk ≤rx and ly ≤yk ≤ry report pk endif endfor endfor endfor
-- d end
+Enumerate all grid cells intersecting \(R\); for each point in those cells’ lists, test \(\ell_x \le x_k \le r_x\) and \(\ell_y \le y_k \le r_y\) and **report** if true.
 
 ### Slide 141: Analysis
 
-- Preprocessing:  O(m2 + N).
-- Query: O(m2 + N).
-- Storage: O(m2 + N).
-- Analysis comments
-- Query not O(m2N) because each point only checked once.
-- Not O(m2 + K) because some points are checked that are not reported. O(m2 + K) is better than O(m2 + N) and the former
-- is allowed only when only points to be reported are checked.
-- Al ith ti d t d d t id t
-- Algorithm time and storage are dependent on grid parameter m.
-- m too large ⇒small cells, many empty.
-- m too small ⇒large cells, many containing numerous points.
-- Degenerate case, m = 1, equivalent to linear scan of data set.
-- Best value for m depends on application.
-- This method is substantially suboptimal in worst-case analysis.
-- However, in practice runs in O(K) time in average case, if points are uniformly distributed.  See Laszlo, p. 231.
+- **Preprocessing:** \(O(m^2 + N)\).  
+- **Query:** \(O(m^2 + N)\) worst case (visit many cells / points).  
+- **Storage:** \(O(m^2 + N)\).
+
+**Comments:** Not \(O(m^2 N)\) because each point is stored once. Not output-sensitive \(O(m^2 + K)\) unless only reported points are examined. Choice of \(m\) trades empty cells vs. overloaded cells; \(m=1\) degenerates to linear scan. Worst-case theory is weak, but **uniform** point sets can yield ~\(O(K)\) average behavior (Laszlo, p. 231).
 
 ## Recap
 
