@@ -103,6 +103,7 @@ The walk cycles through incident edges using `PredE` / `NextE` depending on whet
 
 ## Recap
 
-- Keep the formal problem statement precise.
-- Focus on the geometric invariant used by the method.
-- Remember the key complexity bound and when it applies.
+- A **PSLG** embeds a planar graph with straight segments that meet only at endpoints.
+- The **DCEL** stores **one directed edge record per edge** with \((V_1,V_2)\), left/right **faces** \((F_1,F_2)\), and **next** pointers around \(V_1\) and \(V_2\) (\(P_1,P_2\) / Pred–Next variants).
+- **Euler** gives \(N - M + F = 2\); with \(M = O(N)\), the DCEL uses **\(O(N)\)** storage; **vertex** and **face** entry arrays (`HV`, `HF`) need scans of **both** \(V_1\) and \(V_2\) (and both face columns).
+- **`EdgesIncident`** walks the cycle of edges around a vertex in time **proportional to the degree** reported ( \(O(N)\) worst case over the subdivision).

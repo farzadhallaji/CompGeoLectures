@@ -63,6 +63,6 @@ Overall: **\(O(N^4)\)** dominated by the extreme-point phase.
 
 ## Recap
 
-- Keep the formal problem statement precise.
-- Focus on the geometric invariant used by the method.
-- Remember the key complexity bound and when it applies.
+- A point is **extreme** iff it is not strictly inside a segment between two other points of \(S\); the extreme set \(E\) is the vertex set of \(H(S)\).
+- **Test:** \(p\) is non-extreme iff \(p\) lies in some **triangle** determined by three other points of \(S\) — **\(O(N^3)\)** triangles, **\(O(1)\)** test each → **\(O(N^4)\)** naively for all points.
+- After finding \(E\), sort by **polar angle** about an interior point (e.g. centroid) in **\(O(|E|\log |E|)\)** to produce a polygon boundary; total remains **\(O(N^4)\)**.

@@ -80,6 +80,7 @@ At node \(v\), let \([\ell,r]\) be the query’s \(x\)-interval if `t(v)=vert`, 
 
 ## Recap
 
-- Keep the formal problem statement precise.
-- Focus on the geometric invariant used by the method.
-- Remember the key complexity bound and when it applies.
+- **k-D tree:** binary splits by **median coordinate** alternating **vertical/horizontal** (in 2D), balancing point counts — **data-adaptive** unlike fixed grids.
+- **Build:** **\(O(N\log N)\)** via median splits (often aided by presorting); each node stores split line and **\(O(1)\)** discriminator data.
+- **Query:** recurse into both children when the query interval **straddles** the split; **\(O(d\,N^{1-1/d}+K)\)** in \(d\) dimensions — **\(O(\sqrt{N}+K)\)** for \(d=2\).
+- **Space** **\(O(dN)\)**.

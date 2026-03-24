@@ -174,6 +174,7 @@ Here \(d\) appears in the **exponent** of \(N\) even when treated as a constant 
 
 ## Recap
 
-- Keep the formal problem statement precise.
-- Focus on the geometric invariant used by the method.
-- Remember the key complexity bound and when it applies.
+- In \(d>2\), \(H(S)\) is a **convex polytope**; boundary faces range from **vertices** to **facets** (\((d-1)\)-faces); **simplicial** hulls have every facet a \((d-1)\)-simplex.
+- **Gift wrapping:** from a known **facet**, pivot around a **ridge** (subfacet) to the adjacent facet by choosing the supporting hyperplane through that ridge and the “best” point (e.g. **cotangent** comparison in 3D).
+- **Initialization** builds a supporting facet by a sequence of **\(d\)** hyperplane refinements in **\(O(N d^2)\)**-style cost.
+- **Complexity (slides):** worst-case time **\(T(d,N) = O(N^{\lfloor d/2\rfloor+1} + N^{\lfloor d/2\rfloor}\log N)\)** using bounds on numbers of faces/subfacets.

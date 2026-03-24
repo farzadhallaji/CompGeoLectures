@@ -176,6 +176,7 @@ Illustration of \(T(1,12)\) with midpoint splits \(\lfloor(B(v)+E(v))/2\rfloor\)
 
 ## Recap
 
-- Keep the formal problem statement precise.
-- Focus on the geometric invariant used by the method.
-- Remember the key complexity bound and when it applies.
+- **Asymptotics:** \(O\), \(\Omega\), \(\Theta\) describe worst-case, lower, and tight bounds as \(N \to \infty\); they are sets of functions (informally written with “\(=\)”).
+- **Cost models:** Real RAM with unit-cost arithmetic, comparisons, memory, and analytic primitives; use these to state **preprocessing**, **query**, and **storage** separately.
+- **Modes:** **Single-shot** vs. **repetitive**; **counting** vs. **reporting**; **output-sensitive** bounds like \(O(\log N + K)\) when listing \(K\) objects.
+- **Segment tree:** Built on a fixed scope interval \([\ell,r]\); each node stores a sub-interval \([B(v),E(v))\); intervals are **canonical** into \(O(\log N)\) nodes; **insert/delete** walk the tree in \(O(\log N)\) per update.

@@ -146,6 +146,7 @@ Other primitives (constant time for fixed dimension \(d\)) include point–plane
 
 ## Recap
 
-- Keep the formal problem statement precise.
-- Focus on the geometric invariant used by the method.
-- Remember the key complexity bound and when it applies.
+- **Orientation** of \(\triangle p_0 p_1 p_2\) is CCW iff \(p_2\) is left of directed line \(p_0 p_1\); comparing angles via \(\sin(\theta_b-\theta_a)\) leads to the **2D cross product** \((y_b x_a - x_b y_a)\) without calling \(\arctan\).
+- The **\(3\times 3\) determinant** \(D\) in homogeneous coordinates equals **twice the signed triangle area**; sign gives **left-/right-turn** (collinear iff \(D=0\)).
+- In **3D/ higher \(d\)**, the same idea uses larger determinants for **signed volume** / sidedness of hyperplanes.
+- **Point–line classification** combines half-plane tests with the **seven** regions of a directed segment (between, left, right, endpoints, extensions).

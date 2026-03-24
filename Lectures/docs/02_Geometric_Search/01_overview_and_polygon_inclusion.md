@@ -138,6 +138,7 @@ Vertices occur in angular order about any point in the **kernel**. Once a kernel
 
 ## Recap
 
-- Keep the formal problem statement precise.
-- Focus on the geometric invariant used by the method.
-- Remember the key complexity bound and when it applies.
+- **Convex:** \(q \in P\) iff \(q\) is **on or left** of every directed edge (halfplane intersection test) — **\(O(N)\)** per query.
+- **Simple:** **ray casting** — odd number of crossings of a ray from \(q\) iff **inside**; handle degeneracies (vertex on ray, collinear edge, \(q\) on boundary).
+- **Convex faster:** sort vertices angularly about an interior \(c\); **binary search** for wedge then one **orientation** — **\(O(\log N)\)** query after **\(O(N)\)** preprocess.
+- **Star-shaped:** same wedge method from any \(c\) in the **kernel** (found in **\(O(N)\)**).

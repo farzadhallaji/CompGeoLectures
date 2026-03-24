@@ -146,6 +146,7 @@ A **rectangle** is a quadrilateral with opposite sides parallel and only right a
 
 ## Recap
 
-- Keep the formal problem statement precise.
-- Focus on the geometric invariant used by the method.
-- Remember the key complexity bound and when it applies.
+- **Objects:** In \(d\)-space, a **point** is a \(d\)-tuple; **lines**, **segments**, **rays**, and **planes** are built from points and parametric or implicit equations; **intervals** on an axis and **axis-parallel rectangles** (Cartesian products of intervals) are the usual “simple” regions.
+- **Lines:** \(\alpha p_0 + (1-\alpha)p_1\) gives a line; restricting \(0 \le \alpha \le 1\) gives the **segment** (convex combination of endpoints). Vertical lines need the **implicit** form when slope–intercept breaks down.
+- **Affine combinations** (\(\sum \alpha_i = 1\)) generalize lines (\(k=2\)), planes (\(k=3\)), and hyperplanes in higher \(d\).
+- **Naming:** the prefix **\(d\)-** fixes dimension; **hyper-** means \(d\) is general (e.g. hyper-rectangle).

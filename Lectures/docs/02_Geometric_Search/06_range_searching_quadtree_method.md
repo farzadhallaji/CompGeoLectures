@@ -85,6 +85,7 @@ Average query time can be much better depending on distribution.
 
 ## Recap
 
-- Keep the formal problem statement precise.
-- Focus on the geometric invariant used by the method.
-- Remember the key complexity bound and when it applies.
+- **Quadtree:** recursive **four-way** partition of a bounding square; stop when a cell has **\(\le M\)** points or depth **\(D\)** (parameters \(M,D\)).
+- **Build** often uses a fine **grid** of minimal cells then **bottom-up merge** of subtrees when occupancy allows.
+- **Query:** recurse into children whose quads intersect the query rectangle; **\(O(2^D + N)\)** worst-case style bound in the slides (with refinements vs. \(4^D\) node visits).
+- **Preprocess/storage** **\(O(m^2+N)\)** with grid size related to \(2^D\).

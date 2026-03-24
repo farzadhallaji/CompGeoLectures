@@ -111,6 +111,6 @@ Balanced splits would give \(O(N \log N)\) worst case, but Quickhull does not gu
 
 ## Recap
 
-- Keep the formal problem statement precise.
-- Focus on the geometric invariant used by the method.
-- Remember the key complexity bound and when it applies.
+- Like **Quicksort**, **Quickhull** **partitions** points by a line through **min/max \(x\)** (or synthetic \(r_0\)) and recurses on **outside** sets after picking an **apex** (max triangle area / tie-break angle) on each side.
+- **Primitives:** point–line classification and triangle area in **\(O(1)\)**.
+- **Complexity:** **expected** **\(O(N \log N)\)** with balanced splits; **worst case** **\(O(N^2)\)** time and **\(O(N^2)\)** storage when splits are highly unbalanced.

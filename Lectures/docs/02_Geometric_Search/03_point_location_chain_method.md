@@ -155,6 +155,7 @@ Chain method achieves \(O(\log^2 N)\); triangle refinement (next lectures) impro
 
 ## Recap
 
-- Keep the formal problem statement precise.
-- Focus on the geometric invariant used by the method.
-- Remember the key complexity bound and when it applies.
+- **Monotone chains** w.r.t. a line allow **\(O(\log N)\)** point–chain discrimination via **projection + binary search + one turn test**.
+- A **monotone complete** set of chains covering the PSLG supports **nested binary search** — **\(O(\log^2 N)\)** query.
+- **Regularize** the PSLG (add edges so every interior vertex has incoming/outgoing in the \(y\)-order); **weight-balancing** on edges yields multiplicities, then **build chains**.
+- **Preprocessing** **\(O(N \log N)\)** (sweeps + construction); **space** **\(O(N)\)**; slide notes subtle issues on sweep implementation and text errata.

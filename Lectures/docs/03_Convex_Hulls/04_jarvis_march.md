@@ -63,6 +63,7 @@ Let \(h = |H(S) \cap S|\) be the number of hull vertices. Actual work is **\(O(h
 
 ## Recap
 
-- Keep the formal problem statement precise.
-- Focus on the geometric invariant used by the method.
-- Remember the key complexity bound and when it applies.
+- Segment \(\overline{pq}\) is a **hull edge** iff all other points lie in one closed halfplane bounded by line \(pq\).
+- **Naive:** \(O(N^3)\) edge tests; **marching** reuses the last vertex to avoid re-scanning all pairs → **\(O(N^2)\)** worst case.
+- **Jarvis walk:** from the **rightmost lowest** point, repeatedly pick the next hull vertex by **minimum polar angle** at the current vertex (use **orientation** on the other chain); time **\(O(hN)\)** for \(h\) hull vertices.
+- When **\(h \ll N\)**, **\(O(hN)\)** can beat **\(O(N \log N)\)** (e.g. \(h < \log N\)); this is the planar **gift-wrapping** idea before higher dimensions.

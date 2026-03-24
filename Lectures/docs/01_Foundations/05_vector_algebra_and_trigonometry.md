@@ -89,6 +89,7 @@ x = \cos\theta,\qquad y = \sin\theta.
 
 ## Recap
 
-- Keep the formal problem statement precise.
-- Focus on the geometric invariant used by the method.
-- Remember the key complexity bound and when it applies.
+- Vectors support **addition** (parallelogram rule), **scalar multiplication** (length scales, sign flips direction), **subtraction** \(b-a\), and **Euclidean length** \(\sqrt{x^2+y^2}\).
+- A segment \(\overrightarrow{pq}\) corresponds to the vector \(b-a\) when \(a,b\) are position vectors from the origin.
+- **Polar angle** measures rotation from the \(x\)-axis CCW; the angle **from** \(\mathbf{a}\) **to** \(\mathbf{b}\) is measured starting along \(\mathbf{a}\).
+- **\(\cos\theta\)** and **\(\sin\theta\)** come from the **unit circle**; sign of \(\sin\theta\) matches the sign of \(y\) for \(\theta\) in \((0^\circ,360^\circ)\).

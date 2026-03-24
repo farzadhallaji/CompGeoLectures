@@ -103,6 +103,6 @@ Still **\(O(N^2)\)** time to **materialize** all slab lists if each costs \(O(N)
 
 ## Recap
 
-- Keep the formal problem statement precise.
-- Focus on the geometric invariant used by the method.
-- Remember the key complexity bound and when it applies.
+- **Brute force with DCEL:** test \(q\) in each face polygon — **\(O(N)\)** total edge work per query, not \(O(N^2)\), because each edge is used twice.
+- **Slab method:** **two binary searches** — slab by \(y\), then segment/trapezoid by \(x\) — **\(O(\log N)\)** query; naive preprocessing **\(O(N^2\log N)\)** and **\(O(N^2)\)** space.
+- **Plane sweep** maintains **sweep-line order** of edges in a balanced tree (**\(O(\log N)\)** per event) to build slab structures faster than naively sorting every slab from scratch; still **\(O(N^2)\)** worst-case preprocessing in the basic slab construction.

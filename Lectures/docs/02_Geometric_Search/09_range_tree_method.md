@@ -55,6 +55,6 @@ The slide begins a summary of polygon inclusion, point location, and range metho
 
 ## Recap
 
-- Keep the formal problem statement precise.
-- Focus on the geometric invariant used by the method.
-- Remember the key complexity bound and when it applies.
+- **Range tree:** **segment tree on \(x\)** (half-open scopes \([i,j)\)) with each node’s **associated structure** = **BST (or sorted list) on \(y\)** for points whose \(x\) falls in that scope; primary tree is **\(T(1,N+1)\)** in the slide indexing.
+- **Query:** decompose \([ \ell_x, r_x ]\) into **\(O(\log N)\)** canonical nodes; each does a **\(y\)-range search** — **\(O((\log N)^2 + K)\)** total.
+- **Preprocess** **\(O(N\log N)\)**; **storage** **\(O(N\log N)\)**; **bridged** variant drops to **\(O(\log N + K)\)** query by threading \(y\)-lists and reusing one binary search.

@@ -114,6 +114,7 @@ After constructing \(H(P_1 \cup P_2)\), scan its vertex cycle: each **consecutiv
 
 ## Recap
 
-- Keep the formal problem statement precise.
-- Focus on the geometric invariant used by the method.
-- Remember the key complexity bound and when it applies.
+- **Identity:** \(H(S_1 \cup S_2) = H(H(S_1) \cup H(S_2))\) — merge only needs the two **convex polygon** hulls.
+- **Recurrence:** \(T(N) \le 2T(N/2) + U(N)\); an **\(O(N)\)** merge \(U(N)\) yields **\(O(N \log N)\)** total.
+- **Merge:** interior point \(p\); either merge **angular orders** about \(p\) when \(p\) lies in both polygons, or split one polygon by a **wedge** and merge chains, then **Graham scan** in **\(O(N)\)**.
+- **Supporting lines** of two disjoint convex polygons appear as edges of \(H(P_1 \cup P_2)\) and can be read off the merged hull boundary.

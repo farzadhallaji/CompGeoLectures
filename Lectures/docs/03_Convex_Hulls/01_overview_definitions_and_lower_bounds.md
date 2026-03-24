@@ -175,6 +175,7 @@ The \(O(N)\) reduction cost is dominated by the \(\Omega(N\log N)\) bound. Thus 
 
 ## Recap
 
-- Keep the formal problem statement precise.
-- Focus on the geometric invariant used by the method.
-- Remember the key complexity bound and when it applies.
+- The **convex hull** \(H(S)\) can be defined equivalently as: smallest enclosing convex polygon, intersection of halfplanes or convex supersets, all **convex combinations** of points in \(S\), or (in the plane) union of triangles spanned by points of \(S\).
+- **Extreme points** are exactly the vertices of \(H(S)\); listing them **unordered** is a different output than the **cyclic vertex sequence** of \(\partial H(S)\).
+- **Problem reduction:** if problem \(A\) \(\tau(N)\)-transforms to \(B\), lower bounds transfer (minus \(\tau\)) and upper bounds compose (plus \(\tau\)).
+- **SORTING** \(\to\) **CONVEX HULL** by lifting \(x_i \mapsto (x_i, x_i^2)\) in **\(O(N)\)** proves any hull algorithm that outputs vertices in **\(x\)-order** needs **\(\Omega(N \log N)\)** time (hence optimal algorithms match **\(\Theta(N \log N)\)** in the usual models).

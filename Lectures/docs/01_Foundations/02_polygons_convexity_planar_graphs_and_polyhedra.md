@@ -118,6 +118,8 @@ A polygon vertex is **convex** if its interior angle is **\(\le \pi\)** (\(180^\
 
 ## Recap
 
-- Keep the formal problem statement precise.
-- Focus on the geometric invariant used by the method.
-- Remember the key complexity bound and when it applies.
+- A **polygon** is a simple closed chain of edges in the plane; vertices are listed **counterclockwise**; **Jordan’s theorem** separates interior, exterior, and boundary.
+- **Simple** means non-adjacent edges do not cross; **convex** means the segment between any two points of the polygon stays inside.
+- A set \(C\) is **convex** iff it contains every segment between pairs of points in \(C\) (equivalently \(\alpha p + (1-\alpha)q \in C\) for \(\alpha \in [0,1]\)).
+- **Planar graphs** satisfy **Euler:** \(v - e + f = 2\); combined with degree bounds this yields linear inequalities on \(e\) and \(f\) (e.g. \(e \le 3v-6\) for simple planar graphs with \(n\ge 3\)).
+- A **polyhedron** in 3D is a glued set of polygonal facets; **simple** polyhedra have interior/exterior; **convex** / **reflex** vertices are classified by interior angle \(\le \pi\) vs. \(> \pi\).

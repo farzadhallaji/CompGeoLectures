@@ -157,6 +157,7 @@ Per insertion:
 
 ## Recap
 
-- Keep the formal problem statement precise.
-- Focus on the geometric invariant used by the method.
-- Remember the key complexity bound and when it applies.
+- **On-line / real-time hull:** after each insertion, maintain \(H(\{p_1,\ldots,p_i\})\); insertion-only dynamic hull generalizes to deletions later.
+- **External point:** find **left and right supporting vertices** from \(p_i\) to the previous hull; **splice** out the chain between them and insert \(p_i\).
+- **Data structure:** **concatenable queue** (balanced tree + threading) supports search, split, splice in **\(O(\log N)\)**; **case analysis** on \((m,M,\alpha)\) guides binary search for supports.
+- **Total:** **\(O(N \log N)\)** for \(N\) insertions, **\(O(N)\)** storage.

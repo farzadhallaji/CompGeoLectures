@@ -79,6 +79,6 @@ Instead of **all** \(x\)-intervals, use a **coarse** partition plus **fine** ref
 
 ## Recap
 
-- Keep the formal problem statement precise.
-- Focus on the geometric invariant used by the method.
-- Remember the key complexity bound and when it applies.
+- **Equivalence classes:** only **\(O(N^4)\)** distinct orthogonal ranges matter for combinatorial answers; full table preprocessing is **\(O(N^5)\)** time and **\(O(N^5)\)** space — impractical.
+- **Single-stage:** direct index on normalized **\(x\)-interval** \((i,j)\) → **threaded BST on \(y\)** for points whose \(x\)-rank lies in \([i,j]\); **query** **\(O(\log N + K)\)**, **storage** **\(O(N^3)\)**, preprocess **\(O(N^3\log N)\)**.
+- **Multistage:** **coarse + fine** gauges cover any query range with **\(O(1)\)** pieces per side; cuts storage to **\(O(N^2)\)** while keeping **\(O(\log N + K)\)**-style queries (constant-factor overhead vs. single-stage).

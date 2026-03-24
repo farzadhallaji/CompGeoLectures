@@ -75,6 +75,6 @@ Enumerate all grid cells intersecting \(R\); for each point in those cells’ li
 
 ## Recap
 
-- Keep the formal problem statement precise.
-- Focus on the geometric invariant used by the method.
-- Remember the key complexity bound and when it applies.
+- **Orthogonal range reporting:** list all points in an axis-aligned box; default assumptions: static 2D point set, **repetitive** queries, **reporting** output.
+- **Uniform grid:** bucket points into an **\(m\times m\)** array of lists; query enumerates **grid cells** overlapping the rectangle then **filters** coordinates.
+- **Costs:** preprocessing **\(O(m^2+N)\)**; query **\(O(m^2+N)\)** worst case; tuning \(m\) trades empty cells vs. overloaded cells; uniform data can behave much better in practice.

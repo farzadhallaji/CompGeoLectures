@@ -140,6 +140,7 @@ Sort the **lower** subset by **increasing** \(x\). Graham scan from \(\ell\) to 
 
 ## Recap
 
-- Keep the formal problem statement precise.
-- Focus on the geometric invariant used by the method.
-- Remember the key complexity bound and when it applies.
+- **Preparation:** interior point \(O\) (often centroid), sort by **(polar angle, distance)** from \(O\), doubly-linked cyclic list; **polar order** compared via **orientation**, not trig.
+- **Scan:** walk the sorted cycle; on a **non-left** turn at \(p_1,p_2,p_3\), delete \(p_2\) and **backtrack**; only **\(O(N)\)** advances/backtracks total after **\(O(N \log N)\)** sort.
+- **Overall:** **\(O(N \log N)\)** time, **\(O(N)\)** space; **upper/lower hull** variant splits by min/max \(x\) and sorts along monotone chains.
+- **Why more algorithms later:** expected case, **\(d>2\)**, dynamic updates, and parallel structure differ from this static planar scan.

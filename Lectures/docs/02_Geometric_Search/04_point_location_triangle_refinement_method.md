@@ -129,6 +129,6 @@ Method is **asymptotically optimal** but can be **heavy in practice**.
 
 ## Recap
 
-- Keep the formal problem statement precise.
-- Focus on the geometric invariant used by the method.
-- Remember the key complexity bound and when it applies.
+- Start from a **triangulated** PSLG with a **triangular outer face**; build a **sequence** of coarser triangulations by deleting a **maximal independent set** of low-degree interior vertices and **retriangulating**.
+- The **DAG** \(T\) links each removed triangle to new triangles it intersects; query walks **down** \(T\) using **\(O(1)\)** point-in-triangle tests.
+- With **fractional progress** per level and **bounded fan-out** \(H\) between consecutive triangulations, **query** is **\(O(\log N)\)**, **storage** **\(O(N)\)**; preprocessing is **\(O(N\log N)\)** unless linear-time triangulation is used.
