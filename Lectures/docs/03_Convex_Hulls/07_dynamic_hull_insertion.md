@@ -4,6 +4,24 @@
 
 **Topic folder:** 03 Convex Hulls
 
+
+## Fast take
+
+- In the insertion-only setting, maintain the hull as points arrive one by one.
+- If the new point lies inside the current hull, nothing changes.
+- If it lies outside, find the left and right supporting tangents and replace the visible chain.
+- Dynamic quality is judged differently: update time matters, not just final total time.
+
+## Recording notes
+
+**Recording references:** `CS 564 - 03.04 12.1.txt`
+
+- The lecture carefully separated **static**, **dynamic**, **online**, **offline**, and **real-time**. Do not merge those words into one fuzzy blob.
+- For insertion-only hull maintenance, the essential operation is tangent search from the new point to the current hull.
+- Real-time claims only make sense relative to the inter-arrival delay of updates.
+- Dynamic algorithms are about maintaining structure under change, not rerunning a static algorithm and pretending that counts as clever.
+
+
 ## Motivation
 
 Here the hull is maintained as points arrive one by one. The key task is to find the two supporting vertices from the new point and update the stored hull efficiently.

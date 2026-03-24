@@ -4,6 +4,24 @@
 
 **Topic folder:** 01 Foundations
 
+
+## Fast take
+
+- Work in **d-space** and be precise about what the object is: point, line, segment, ray, plane, interval, rectangle.
+- Use the **parametric form** of a line because it also tells you where points are: on the segment, beyond an endpoint, or behind it.
+- A segment is the same line equation with **0 ≤ α ≤ 1**, so it is a **convex combination** of the endpoints.
+- **Rectilinear / axis-parallel** means aligned with the coordinate axes. **Hyper-** means the dimension is unspecified.
+
+## Recording notes
+
+**Recording references:** `CS 564 - 01.23 1.1.txt`, `CS 564 - 01.28 2.1.txt`
+
+- The lecture treated this as vocabulary you must get right before algorithms start. If the object type is vague, everything later becomes a mess.
+- The instructor repeatedly preferred the **parametric view** over slope-intercept form because it works cleanly for vertical lines and classification tasks.
+- Be careful with naming: **rectangle** usually means 2D, **d-rectangle** fixes the dimension explicitly, and **hyper-rectangle** leaves it open.
+- This topic is not “just definitions”. These objects become the inputs, query ranges, and primitive test operands in later algorithms.
+
+
 ## Motivation
 
 This file introduces the language of computational geometry: coordinates, dimensions, points, lines, segments, rays, planes, and rectangles. The goal is to know exactly what the basic objects are before any algorithm starts doing clever things.

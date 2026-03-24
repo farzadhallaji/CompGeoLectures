@@ -4,6 +4,24 @@
 
 **Topic folder:** 01 Foundations
 
+
+## Fast take
+
+- Separate **preprocessing**, **query**, and **storage**. Geometric search algorithms are usually judged by all three.
+- Also separate **single-shot** from **repetitive-mode** and **counting** from **reporting**.
+- Reporting problems are often **output-sensitive**, so query time becomes **O(log N + K)** or similar.
+- A segment tree stores intervals via a **canonical decomposition** into **O(log N)** standard intervals.
+
+## Recording notes
+
+**Recording references:** `CS 564 - 01.23 1.1.txt`, `CS 564 - 01.30 3.1.txt`
+
+- The lecture kept coming back to the same practical question: are you paying preprocessing for one query or for many queries? That choice changes the whole design.
+- Normalization here is basically rank-based coordinate compression. It is boring but useful, like most things humans try to ignore until implementation time.
+- For segment trees, the important fact is not the picture but the guarantee that one interval is allocated to only **O(log N)** nodes.
+- Do not blur counting and reporting. Listing objects can dominate the runtime even if search itself is logarithmic.
+
+
 ## Motivation
 
 This file explains how geometric algorithms are measured, what counting versus reporting means, and why preprocessing matters. It also introduces the segment tree, a basic data structure used later.

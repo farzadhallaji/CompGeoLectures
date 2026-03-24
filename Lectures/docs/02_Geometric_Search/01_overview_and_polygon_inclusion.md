@@ -4,6 +4,24 @@
 
 **Topic folder:** 02 Geometric Search
 
+
+## Fast take
+
+- Geometric search asks which stored objects satisfy a geometric relation with a query object.
+- For **convex** polygons, inclusion is a sequence of **left tests**.
+- For **simple** polygons, the standard method is **ray intersection counting** with special-case care.
+- For **convex** or **star-shaped** polygons in repetitive mode, the **wedge** method gives faster queries after preprocessing.
+
+## Recording notes
+
+**Recording references:** `CS 564 - 01.30 3.2.txt`, `CS 564 - 02.04 4.1.txt`
+
+- The lecture emphasized choosing the method from the **polygon class first**. If the polygon is convex, use that fact instead of pretending it is arbitrary.
+- Ray casting is conceptually simple but implementation is full of annoying boundary cases. Humans love “simple” methods that explode at vertices.
+- The wedge method is worth it only when there are many queries. Otherwise the plain linear scan is usually the sane choice.
+- For star-shaped polygons, the kernel point is the whole reason the wedge trick works.
+
+
 ## Motivation
 
 Geometric search asks: after preprocessing a geometric data set, how can we answer queries quickly? The first examples are polygon inclusion problems for convex, simple, and star-shaped polygons.

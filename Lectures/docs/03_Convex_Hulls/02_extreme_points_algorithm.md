@@ -4,6 +4,24 @@
 
 **Topic folder:** 03 Convex Hulls
 
+
+## Fast take
+
+- A point is non-extreme if it lies inside some triangle formed by other points.
+- So a brute-force hull algorithm can test each point against many triangles.
+- The method is correct but far too slow to be a serious general solution.
+- Its real value is conceptual: it explains what makes a hull vertex special.
+
+## Recording notes
+
+**Recording references:** `CS 564 - 02.20 9.2.txt`
+
+- The lecture used this algorithm mainly as a foil for better ones, not as something you should admire.
+- It makes the definition of “extreme” concrete, which is why it shows up before Graham scan.
+- If you are still checking huge numbers of triangles, the algorithm has already lost the asymptotic war.
+- This is the baseline that motivates every smarter hull method afterward.
+
+
 ## Motivation
 
 The extreme points algorithm is the straightforward idea: a point is a hull vertex if it is not inside any triangle formed by the others. It is conceptually simple and computationally painful, which sounds exactly like the kind of algorithm humans invent first.

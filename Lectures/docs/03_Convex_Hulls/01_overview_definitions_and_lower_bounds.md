@@ -4,6 +4,24 @@
 
 **Topic folder:** 03 Convex Hulls
 
+
+## Fast take
+
+- The convex hull is the smallest convex set containing the point set.
+- Know the difference between **extreme points**, **extreme edges**, and the hull boundary.
+- Lower bounds come from reductions, especially **sorting → convex hull** in 2D.
+- This is why **O(N log N)** is the main target for planar hull algorithms.
+
+## Recording notes
+
+**Recording references:** `CS 564 - 02.20 9.1.txt`, `CS 564 - 02.20 9.2.txt`
+
+- The lecture kept returning to reductions because lower bounds tell you when a faster runtime claim is probably nonsense.
+- Sorting to hull is the standard story: if hull were easier than sorting in the model, sorting would become easier too.
+- This topic is mostly about setting expectations before diving into algorithms.
+- A lot of later comparison between hull algorithms is really about output sensitivity, dimension, dynamic updates, or parallelism, not just the planar worst case.
+
+
 ## Motivation
 
 The convex hull is one of the central objects in computational geometry. These slides explain what it is, give many equivalent definitions, and show how lower bounds are argued using problem transformations.

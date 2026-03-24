@@ -4,6 +4,24 @@
 
 **Topic folder:** 02 Geometric Search
 
+
+## Fast take
+
+- Range searching asks for points inside an axis-parallel rectangle.
+- Always classify the setting first: static vs dynamic, single-shot vs repetitive, counting vs reporting.
+- The **grid method** partitions the plane into regular cells and scans only cells overlapping the query range.
+- Performance depends heavily on point distribution and cell size.
+
+## Recording notes
+
+**Recording references:** `CS 564 - 02.13 7.1.txt`
+
+- The lecture kept hammering the meta-question before the algorithm question: what exactly is the workload?
+- A grid is simple and often good enough, but only if the cell size is chosen sensibly and the data is not badly skewed.
+- For reporting, query cost is “overlapped cells plus the points you still have to inspect”, not some magical constant.
+- This topic is the start of comparing structures by their trade-offs, not by one isolated runtime number.
+
+
 ## Motivation
 
 Range searching asks which points lie inside a query rectangle. The grid method is the first space decomposition idea: divide space into cells, preprocess counts or lists, then answer queries from those cells.

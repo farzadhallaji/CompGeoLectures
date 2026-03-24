@@ -4,6 +4,24 @@
 
 **Topic folder:** 03 Convex Hulls
 
+
+## Fast take
+
+- Jarvis march wraps the hull one edge at a time by selecting the next extreme point.
+- Its running time is **O(Nh)**, where **h** is the number of hull vertices.
+- So it is **output-sensitive** and can beat sort-based methods when **h** is small.
+- The method finds hull edges directly instead of sorting all points first.
+
+## Recording notes
+
+**Recording references:** `CS 564 - 02.27 11.1.txt`
+
+- The lecture sold Jarvis march mainly on output sensitivity: if the hull is tiny, this method can be quite appealing.
+- The gift-wrapping picture is not just a cute name. It is the correct geometric intuition for the edge-by-edge construction.
+- Compared with Graham scan, Jarvis march spends work only on the hull it actually reveals.
+- It is still static and can be slow when many points lie on the hull.
+
+
 ## Motivation
 
 Jarvis’ march, also called gift wrapping in 2D, walks from one hull vertex to the next by always choosing the most counterclockwise candidate. It is output-sensitive because its time depends on the number of hull vertices.

@@ -4,6 +4,24 @@
 
 **Topic folder:** 03 Convex Hulls
 
+
+## Fast take
+
+- Pick an interior reference point, sort by polar order, then scan and delete non-left turns.
+- Orientation replaces expensive angle computation whenever possible.
+- The scan phase is linear after sorting, so total time is **O(N log N)**.
+- Collinear middle points must be removed because they are not hull vertices.
+
+## Recording notes
+
+**Recording references:** `CS 564 - 02.25 10.1.txt`
+
+- The lecture emphasized that the real trick is not sorting by angle itself, but comparing order with **left-turn tests** instead of trig.
+- Backtracking is the mechanism that repairs local mistakes as the scan moves forward.
+- This is worst-case optimal in 2D, but it is still a static planar algorithm, not the universal answer to everything.
+- If you only memorize the pseudocode and miss why non-left turns are deleted, you missed the algorithm.
+
+
 ## Motivation
 
 Graham’s scan sorts points around a reference point and then removes right turns while scanning. It is one of the classic optimal planar convex hull algorithms.

@@ -4,6 +4,24 @@
 
 **Topic folder:** 01 Foundations
 
+
+## Fast take
+
+- A **PSLG** is a geometric embedding of a planar graph using straight segments.
+- A **DCEL** stores each edge with an orientation, its left/right faces, and the neighboring edges around its endpoints.
+- **HV** and **HF** are entry-point arrays for vertex-based and face-based traversal.
+- The whole structure is linear in size for planar subdivisions.
+
+## Recording notes
+
+**Recording references:** `CS 564 - 01.23 1.2.txt`
+
+- The lecture used PSLGs as the standard representation behind point-location algorithms, not as an isolated data-structure topic.
+- Edge orientation matters because “left face” and “right face” are defined relative to it. Ignore the direction and the representation falls apart.
+- When constructing helper arrays, you must scan both endpoint and both face columns. Missing one side is a classic silent bug.
+- Think of `EdgesIncident` as a cyclic walk around one vertex, not as a random lookup.
+
+
 ## Motivation
 
 A PSLG is the standard way to represent planar subdivisions. The DCEL is the classic data structure used to store edges, faces, and adjacency so algorithms can move around the subdivision efficiently.

@@ -4,6 +4,24 @@
 
 **Topic folder:** 03 Convex Hulls
 
+
+## Fast take
+
+- Split the points, solve left and right hulls recursively, then merge them with upper and lower tangents.
+- The merge step is the real geometric core.
+- This gives worst-case **O(N log N)** time in 2D.
+- It is structurally friendly to parallelization.
+
+## Recording notes
+
+**Recording references:** `CS 564 - 02.27 11.1.txt`, `CS 564 - 02.27 11.2.txt`
+
+- The lecture emphasized supporting lines / tangents because the merge is where the geometry actually lives.
+- This method is the safe contrast to Quickhull: worse romance, better worst-case guarantees.
+- It also explains how common supporting lines of two convex polygons can be produced as a byproduct.
+- If you understand only the recursive split and not the tangent merge, you do not really understand the algorithm.
+
+
 ## Motivation
 
 This algorithm splits the points into left and right subsets, builds hulls recursively, and then merges the two hulls using upper and lower tangents.

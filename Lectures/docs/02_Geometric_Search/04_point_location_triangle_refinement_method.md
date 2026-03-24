@@ -4,6 +4,24 @@
 
 **Topic folder:** 02 Geometric Search
 
+
+## Fast take
+
+- Triangulate, remove a maximal independent set, retriangulate, and link levels with a DAG.
+- Queries walk from coarse triangles down to the original triangulation.
+- The result is **O(log N)** query time with linear space.
+- Preprocessing is typically **O(N log N)** unless triangulation is handed to you for free by some geometry fairy.
+
+## Recording notes
+
+**Recording references:** `CS 564 - 02.11 6.1.txt`
+
+- The lecture treated this as the asymptotically beautiful method that people still often avoid in practice.
+- The key idea is not the DAG syntax. It is the repeated **constant-factor shrinkage** from removing a maximal independent set.
+- Selecting the independent set correctly is the real conceptual step; the rest is structured bookkeeping.
+- Good to know, theoretically strong, not the first thing most people would choose to implement under deadline pressure.
+
+
 ## Motivation
 
 This method triangulates the subdivision and builds a directed acyclic search structure across a sequence of triangulations. Querying becomes a guided walk through that structure.

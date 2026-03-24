@@ -4,6 +4,24 @@
 
 **Topic folder:** 03 Convex Hulls
 
+
+## Fast take
+
+- Quickhull recursively splits the point set by a hull line and a farthest point, then discards interior points.
+- The overall pattern mirrors Quicksort: partition, recurse, concatenate.
+- Average / expected behavior is good, but worst-case time is **O(N^2)**.
+- Its recursive structure makes it attractive for some implementations and parallel settings.
+
+## Recording notes
+
+**Recording references:** `CS 564 - 02.27 11.2.txt`
+
+- The lecture framed Quickhull as the hull analogue of Quicksort for exactly the same reason: elegant recursion with bad worst-case luck when splits are poor.
+- The appeal is not worst-case theory. It is practical behavior on many inputs and the clean recursive decomposition.
+- Use it when you accept average-case reasoning or want a conceptually simple recursive algorithm.
+- Do not confuse “often fast” with “guaranteed fast”. Humans do that constantly.
+
+
 ## Motivation
 
 Quickhull copies the divide-and-prune spirit of Quicksort. It splits the point set by a line through extreme points and recurses on the outside subsets.

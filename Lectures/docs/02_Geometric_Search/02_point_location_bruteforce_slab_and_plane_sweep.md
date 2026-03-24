@@ -4,6 +4,24 @@
 
 **Topic folder:** 02 Geometric Search
 
+
+## Fast take
+
+- Brute force checks faces directly and is easy but linear.
+- The **slab method** uses binary search on **y** to find a slab, then binary search inside that slab to find the trapezoid.
+- This gives **O(log N)** query time but expensive **O(N^2)** space and preprocessing.
+- **Plane sweep** is the preprocessing trick that improves slab construction from **O(N^2 log N)** to **O(N^2)**.
+
+## Recording notes
+
+**Recording references:** `CS 564 - 02.04 4.1.txt`, `CS 564 - 02.06 5.1.txt`
+
+- The lecture explicitly separated “optimal query time” from “good algorithm”. Slab queries are optimal, but the preprocessing can still be too expensive.
+- Event points are the vertices, sorted by **y**. The sweep-line status is just the left-to-right order of edges crossing the sweep line at that moment.
+- If you understand what changes at a vertex and what does not, the sweep becomes much less mystical.
+- This method is a good benchmark, but not always the practical winner when memory or preprocessing time matters.
+
+
 ## Motivation
 
 Point location asks which face of a planar subdivision contains the query point. The slides start with slow direct methods, then move to slab decomposition and plane sweep based preprocessing.

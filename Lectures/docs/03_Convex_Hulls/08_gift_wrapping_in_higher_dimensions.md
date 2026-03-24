@@ -4,6 +4,24 @@
 
 **Topic folder:** 03 Convex Hulls
 
+
+## Fast take
+
+- Generalize gift wrapping from edges in 2D to **facets** in higher dimensions.
+- The algorithm grows the hull by discovering adjacent facets across shared subfacets.
+- In 3D, think in terms of facets, edges as subfacets, and supporting planes.
+- The method is output-sensitive in spirit, but dimensional growth makes it expensive fast.
+
+## Recording notes
+
+**Recording references:** `CS 564 - 03.06 13.1.txt`, `CS 564 - 03.06 13.2.txt`
+
+- The lecture stayed close to the 3D picture even though the definitions are d-dimensional. That is the only way this remains human-readable.
+- You need the terminology clean: **facet**, **subfacet**, **supporting hyperplane**, **simplex**, and adjacency between facets.
+- The algorithm is elegant, but higher dimensions punish runtime brutally. That is why it shows up as a project-worthy method.
+- This is the natural generalization of wrapping, except the geometry gets meaner every time the dimension increases.
+
+
 ## Motivation
 
 For \(d > 2\), the convex hull is no longer just a cycle of vertices. The algorithm wraps facets instead of edges, so the ideas from 2D survive but the bookkeeping becomes much nastier.

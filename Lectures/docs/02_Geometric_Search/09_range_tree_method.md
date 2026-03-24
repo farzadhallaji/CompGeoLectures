@@ -4,6 +4,24 @@
 
 **Topic folder:** 02 Geometric Search
 
+
+## Fast take
+
+- A range tree is a **tree of trees**: primary search on one coordinate, secondary search structures on the other.
+- Canonical node decomposition on the primary tree is the core search idea.
+- Classic 2D reporting is **O(log^2 N + K)** with **O(N log N)** space.
+- Fractional cascading improves the query but not the need for careful preprocessing.
+
+## Recording notes
+
+**Recording references:** `CS 564 - 02.18 8.1.txt`
+
+- The lecture tied range trees back to segment-tree-style canonical decomposition. That is the right mental bridge.
+- Compared with k-D trees, range trees spend more preprocessing and memory to get cleaner asymptotic guarantees.
+- The x-search finds the canonical nodes; the y-structures finish the job inside those nodes.
+- It is a beautiful structure on paper and a perfectly decent way to burn memory for performance.
+
+
 ## Motivation
 
 A range tree combines segment-tree style decomposition with ordered secondary structures. It is one of the standard clean solutions for orthogonal range searching.

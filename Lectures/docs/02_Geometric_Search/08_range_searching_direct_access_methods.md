@@ -4,6 +4,24 @@
 
 **Topic folder:** 02 Geometric Search
 
+
+## Fast take
+
+- Direct-access methods trade memory for very fast counting queries.
+- They rely on normalized / discrete coordinates and precomputed cumulative information.
+- They are excellent when the coordinate universe is manageable.
+- They are terrible when the coordinate universe is huge and memory is not imaginary.
+
+## Recording notes
+
+**Recording references:** `CS 564 - 02.18 8.1.txt`
+
+- The lecture framed this as the “spend memory, save query time” family of methods.
+- Normalization is not an afterthought here. Without a bounded index universe, direct access is not really direct at all.
+- This approach shines for **counting**. Reporting actual points is a different beast.
+- Useful when the data domain is small enough, otherwise you just build a monument to wasted space.
+
+
 ## Motivation
 
 Direct access methods trade a lot of preprocessing and storage for very fast queries. The single-stage version is simple but expensive in space; the multistage version reduces that space.

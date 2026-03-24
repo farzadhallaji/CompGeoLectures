@@ -4,6 +4,24 @@
 
 **Topic folder:** 02 Geometric Search
 
+
+## Fast take
+
+- Regularize the PSLG, build a **monotone complete** set of chains, then binary-search the chains and one chain segment.
+- Monotonicity makes point-chain discrimination logarithmic instead of linear.
+- Idealized bounds are **O(log^2 N)** query, **O(N log N)** preprocessing, **O(N)** space.
+- The construction is the hard part, not the query idea.
+
+## Recording notes
+
+**Recording references:** `CS 564 - 02.06 5.1.txt`, `CS 564 - 02.06 5.2.txt`
+
+- The lecture stressed that “monotone” means **no doubling back** with respect to the chosen axis. That is the property binary search feeds on.
+- There are slide/textbook issues around regularization, and the instructor called them out directly. So do not memorize the textbook blindly.
+- The method is elegant in theory, but the implementation details are much less friendly than the top-level story suggests.
+- If you only remember one thing: the chain method pays a lot of preprocessing pain to turn geometric search into two nested binary searches.
+
+
 ## Motivation
 
 The chain method regularizes a planar subdivision, decomposes it into monotone chains, and then uses binary search twice. It is a classic example of paying preprocessing cost to get fast queries.

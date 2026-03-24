@@ -1,8 +1,30 @@
 # Lectures index
 
+
+## Fast take
+
+- These notes cover **slides 9–289** of `comp_geometry_slides.pdf`.
+- Each lecture file now starts with a **Fast take** and **Recording notes** section for quicker review.
+- Use the files in order: **Foundations → Geometric Search → Convex Hulls**.
+- The detailed slide-by-slide notes remain below the short summaries in each file.
+
+## Recording notes
+
+- The refined version is meant to be skim-friendly first and detailed second.
+- Recording-based notes were merged into the lecture files so the pages read more like real lecture notes and less like a cleaned OCR dump.
+- If you are studying for homework or exams, start with the Fast take, then jump to the detailed section only where you still have gaps.
+- Because apparently humans enjoy revisiting the same course topic from three different angles before it sticks.
+
 These notes cover slides 9–289 of `comp_geometry_slides.pdf`, stopping before the proximity topic starts at slide 290.
 
 The structure is topic folder → one markdown file per major subtopic or algorithm. Formulas use LaTeX rendered with MathJax (inline `\( ... \)`, display `\[ ... \]`).
+
+## How to use these notes
+
+- Start with **Fast take** if you want the shortest useful version.
+- Read **Recording notes** for lecturer emphasis, pitfalls, and what matters in practice.
+- Use the detailed section when you need formulas, proofs, pseudocode, or slide-level detail.
+- The files are ordered to match the course flow from basics to search to convex hulls.
 
 ## 01 Foundations
 

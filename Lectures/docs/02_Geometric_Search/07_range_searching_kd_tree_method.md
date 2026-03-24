@@ -4,6 +4,24 @@
 
 **Topic folder:** 02 Geometric Search
 
+
+## Fast take
+
+- A k-D tree alternates the split dimension as it recursively partitions the point set.
+- Each node represents both a stored point and a split of the search region.
+- The point of the structure is pruning: discard whole subtrees outside the query range.
+- In 2D, it is usually easier to use and explain than heavier range structures.
+
+## Recording notes
+
+**Recording references:** `CS 564 - 02.13 7.2.txt`
+
+- The lecture presented the k-D tree as a practical middle ground: more adaptive than a grid, lighter than a range tree.
+- What matters is not traversing the tree, but **why a subtree can be skipped entirely**.
+- Keep the split-dimension alternation consistent. If you lose the region semantics, the query logic becomes nonsense fast.
+- This is one of those structures that feels obvious only after someone else already did the hard design work.
+
+
 ## Motivation
 
 The k-D tree splits by the data, not by a fixed grid. In 2D it alternates x-splits and y-splits, giving a binary search tree for multidimensional point searching.

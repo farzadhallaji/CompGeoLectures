@@ -4,6 +4,24 @@
 
 **Topic folder:** 02 Geometric Search
 
+
+## Fast take
+
+- A quadtree recursively subdivides space into four equal quadrants.
+- Subdivision adapts to clustering better than a rigid grid.
+- Range queries visit only nodes whose regions intersect the query rectangle.
+- Depth and balance depend on the data, so worst-case behavior can still be unpleasant.
+
+## Recording notes
+
+**Recording references:** `CS 564 - 02.13 7.1.txt`
+
+- The lecture used the quadtree as the clean spatial-recursion alternative to a flat grid.
+- Unlike balanced search trees, quadtrees are not automatically balanced. That is a feature and a headache at the same time.
+- Think in terms of **regions** first and stored points second. The structure is really about recursive space decomposition.
+- Good on clustered data, much less impressive when the decomposition becomes deep for unhelpful reasons.
+
+
 ## Motivation
 
 Quadtrees recursively split the plane into four equal parts. They adapt space decomposition through recursion and are useful when point distribution is uneven.

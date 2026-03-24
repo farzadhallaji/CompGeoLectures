@@ -4,6 +4,24 @@
 
 **Topic folder:** 01 Foundations
 
+
+## Fast take
+
+- The determinant / signed-area test gives **left**, **right**, or **collinear** in **O(1)** time.
+- **D > 0** means counterclockwise, **D < 0** means clockwise, **D = 0** means collinear.
+- Point-line classification extends orientation into cases like left, right, beyond, behind, between, origin, and terminus.
+- This is the primitive test behind many later algorithms.
+
+## Recording notes
+
+**Recording references:** `CS 564 - 01.30 3.2.txt`
+
+- The lecture was blunt about this: do **not** compute actual angles if the sign of a determinant already answers the question.
+- Orientation is the primitive that keeps showing up in hulls, polygon inclusion, line classification, and point location. Learn it once properly.
+- The determinant viewpoint and the 2D cross-product viewpoint are the same idea wearing different clothes.
+- When you see a geometric comparison later, first ask whether it is secretly just a left-turn test.
+
+
 ## Motivation
 
 This is the heart of many geometry algorithms. The orientation test tells left versus right, determinants turn that into a formula, and the signed area view explains why the test works.

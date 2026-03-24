@@ -4,6 +4,24 @@
 
 **Topic folder:** 01 Foundations
 
+
+## Fast take
+
+- A polygon is meaningful for search and inclusion only when it is **simple**.
+- A polygon is **convex** when every segment between two points in it stays inside it.
+- For planar subdivisions, keep **Euler’s formula** in your head: **V - E + F = 2**.
+- A polyhedron is the 3D analogue: facets replace edges as the main boundary pieces.
+
+## Recording notes
+
+**Recording references:** `CS 564 - 01.23 1.2.txt`, `CS 564 - 01.28 2.1.txt`
+
+- The lecture emphasized that, in computational geometry, geometry matters. An edge is not just an abstract graph relation; it has location and shape.
+- Only **simple** polygons give a clean interior/exterior split. That is why non-simple polygons are mostly cautionary examples here.
+- The instructor explicitly treated “polygon” as **interior + boundary** unless the notes say otherwise.
+- Convex vs reflex vertices matter later for triangulation, hulls, and monotonicity arguments, so do not skip them as cosmetic definitions.
+
+
 ## Motivation
 
 This part defines polygons and their inside/outside, then connects geometry with graph structure. It also introduces convexity, planar graphs, Euler’s formula, and polyhedra.

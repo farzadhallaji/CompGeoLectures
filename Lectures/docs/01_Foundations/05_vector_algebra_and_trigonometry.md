@@ -4,6 +4,24 @@
 
 **Topic folder:** 01 Foundations
 
+
+## Fast take
+
+- Treat vectors as translated segments: add, subtract, scale, and measure length.
+- Vector subtraction is the clean way to move geometry to the origin.
+- Direction is described by angle, but later algorithms usually avoid computing the angle explicitly.
+- Sine and cosine facts are here mainly to support orientation-style reasoning.
+
+## Recording notes
+
+**Recording references:** `CS 564 - 01.30 3.1.txt`, `CS 564 - 01.30 3.2.txt`
+
+- The lecture used vector subtraction as the bridge from geometry-on-the-plane to algebra-at-the-origin.
+- Do not over-focus on slope. Vectors and coordinates survive vertical cases without the drama.
+- Polar-angle language is helpful for explanation, but the instructor keeps replacing expensive angle computations with sign tests as soon as possible.
+- This section is setup for determinants, left-turn tests, and hull sorting arguments later.
+
+
 ## Motivation
 
 These slides build the algebra behind geometric tests. Vectors, scaling, subtraction, direction, sine, and cosine are the tools used later to tell where points and segments lie relative to each other.
