@@ -111,18 +111,36 @@ These are cropped from the main slide PDF. Do not skip them.
 - No point can be eliminated more than once.
 
 ### p. 214 - Graham’s scan
-- Algorithm
-- (See Preparata, p. 108.)
-- 1. Find an internal point O.
-- 2. Using O as the coordinate origin, sort the N points of S
-- lexicographically by polar angle and distance from O.
-- Arrange the points into a doubly-linked circular list,
-- with pointers NEXT and PRED for each entry,
-- and with pointer START pointing to the starting point.
-- 3. Scan:
+- Algorithm (see Preparata, p. 108).
+
+1. Find an internal point **O** (e.g. centroid of **S**).
+2. Using **O** as the coordinate origin, sort the **N** points of **S** lexicographically by polar angle and distance from **O**. Arrange the sorted points into a doubly-linked circular list with pointers **NEXT** and **PRED** for each entry, and pointer **START** to the starting vertex (minimum **y**-coordinate; rightmost among ties—the “rightmost smallest ordinate” point from the informal scan).
+3. **Scan:** walk the circular list and repeatedly examine consecutive triples **(p1, p2, p3)**. If **p1p2p3** is a right turn, delete **p2** and backtrack; if a left turn, advance; handle collinear cases per the course tie-breaking rule. The scan ends when it cycles through **START** as in the slides.
 
 ```text
+procedure GRAHAM_SCAN(S)
 begin
+  O ← interior point of H(S)
+  translate every point of S so O is the origin
+  sort S lexicographically by (polar angle about O, distance from O)
+  build doubly-linked circular list L over S with fields NEXT, PRED
+  START ← vertex with minimum y-coordinate (rightmost if ties)
+
+  { List-based scan as on slides p.212–213 }
+  repeat
+    let (p1, p2, p3) be three consecutive vertices on L
+    if p1p2p3 is a right turn then
+      delete p2 from L
+      { backtrack to new triple ending at successor of p1 }
+    else if p1p2p3 is a left turn then
+      advance along L to the next consecutive triple
+    else
+      { collinear case: eliminate middle point per course rule }
+      delete p2 from L (or apply stated collinear policy)
+  until the scan completes (returns through START / hull closed)
+
+  return vertices of H(S) in circular order
+end
 ```
 
 ## What you must be able to say or do in an exam

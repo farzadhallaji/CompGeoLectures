@@ -125,7 +125,14 @@ These are cropped from the main slide PDF. Do not skip them.
 ```text
 procedure QUICKHULL(S, l, r)
 begin
-S = {l, r} then
+  { S: points strictly on one side of oriented line lr; l, r are hull vertices }
+  if S = {l, r} or every point of S lies on segment lr then
+    return ordered list [l, r]
+  h ← FURTHEST(S, l, r)          { farthest from line lr among points left of lr }
+  S1 ← { points of S strictly left of directed line lh }
+  S2 ← { points of S strictly left of directed line hr }
+  return QUICKHULL(S1, l, h) || QUICKHULL(S2, h, r)   { || = list concatenation }
+end
 ```
 
 ### p. 234 - Quickhull

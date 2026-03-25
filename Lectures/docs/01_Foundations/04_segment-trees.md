@@ -88,11 +88,16 @@ These are cropped from the main slide PDF. Do not skip them.
 ```text
 procedure DeleteSegmentTree(b, e, v)
 begin
-(b ≤B(v) and E(v) ≤e) then
-remove [b, e] from A(v)
-if (b < (B(v) + E(v)) / 2) then
-D l t S
-tT
+  if [b, e) fully covers standard interval [B(v), E(v)) then
+    remove [b, e] from auxiliary set A(v)
+  if v is a leaf then
+    return
+  mid ← ⌊(B(v) + E(v)) / 2⌋
+  if b < mid then
+    DeleteSegmentTree(b, e, left_child(v))
+  if e > mid then
+    DeleteSegmentTree(b, e, right_child(v))
+end
 ```
 
 ## What you must be able to say or do in an exam

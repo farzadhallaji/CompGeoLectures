@@ -89,14 +89,17 @@ These are cropped from the main slide PDF. Do not skip them.
 - and TRIANGLE(v) to the triangle represented by node v.
 
 ```text
-procedure PointLocation(T,q)
+procedure PointLocation(T, q)
 begin
-(q ∉TRIANGLE(root(T)))
-“q in unbounded face”
-v = root(T)
-while (Γ(v) ≠ ∅)
-for each u ∈Γ(v)
-(q ∈TRIANGLE(u))
+  if q ∉ triangle(root(T)) then return “q lies in unbounded face”
+  v ← root(T)
+  while refined children Γ(v) ≠ ∅ do
+    for each child u ∈ Γ(v) do
+      if q ∈ triangle(u) then
+        v ← u
+        break inner loop
+  return face / triangle associated with leaf v
+end
 ```
 
 ### p. 130 - Query time

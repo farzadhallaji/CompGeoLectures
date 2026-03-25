@@ -80,14 +80,20 @@ These are cropped from the main slide PDF. Do not skip them.
 - Output: δ, the distance between the two closest points.
 
 ```text
+procedure CPAIR1(S)
+  { X[1:N]: points of S sorted along the line; |S| = N }
 begin
-(|S| = 2) then
-δ = |X[2] - X[1]|
-else if (|S| = 1) then
-δ = ∞
-Construct(S1, S2) /* S1 = {p: p ≤m}, S2 = {p: p > m} */
-δ1 = CPAIR1(S1)
-δ2 = CPAIR1(S2)
+  if |S| = 1 then
+    return δ ← ∞
+  if |S| = 2 then
+    return δ ← |X[2] - X[1]|
+  Construct(S1, S2)   { split at median m: S1 = {p : p ≤ m}, S2 = {p : p > m} }
+  δ1 ← CPAIR1(S1)
+  δ2 ← CPAIR1(S2)
+  δ ← min(δ1, δ2)
+  { Combine: only points within δ of split m can improve δ; in 1D at most one per side }
+  return δ
+end
 ```
 
 ### p. 313 - Generalizing to d = 2

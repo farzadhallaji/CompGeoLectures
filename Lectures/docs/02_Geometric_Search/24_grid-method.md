@@ -40,13 +40,13 @@ These are cropped from the main slide PDF. Do not skip them.
 ```text
 procedure ConstructGrid
 begin
-Initialize m × m array of lists g to NULL.
-for i = 1 to N
-add pi to list g[xi /size(m)][yi /size(m)]
-Quantity size(m) is the coordinate distance represented by
-one grid interval.
-m × m array of pointers to lists
-Lists associated with grid cells
+  initialize m × m array g of lists to empty
+  for i ← 1 to N do
+    ci ← ⌊xi / size(m)⌋
+    cj ← ⌊yi / size(m)⌋
+    append point pi to list g[ci][cj]
+  { size(m) = coordinate length of one cell edge }
+end
 ```
 
 ### p. 140 - Grid method
@@ -55,12 +55,11 @@ Lists associated with grid cells
 ```text
 procedure QueryGrid
 begin
-for i = lx/size(m) to rx/size(m) 
-for j = ly/size(m) to ry/size(m) 
-for each point pk on list g[i][j]
-lx ≤xk ≤rx and ly ≤yk ≤ry
-report pk
-endfor
+  for i ← ⌊lx / size(m)⌋ to ⌊rx / size(m)⌋ do
+    for j ← ⌊ly / size(m)⌋ to ⌊ry / size(m)⌋ do
+      for each point pk on list g[i][j] do
+        if lx ≤ xk ≤ rx and ly ≤ yk ≤ ry then report pk
+end
 ```
 
 ### p. 141 - Grid method

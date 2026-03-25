@@ -78,40 +78,33 @@ These are cropped from the main slide PDF. Do not skip them.
 - two convex polygons (convex hulls), each with N/2 vertices.
 
 ### p. 239 - Divide-and-conquer
-- Merge algorithm, 1
+- Merge algorithm, 1 (steps 1–3 below).
 
 ```text
-This procedure finds the convex hull of the union
-of two convex polygons P1 and P2.
-1. Find a point p that is internal to P1 (e.g. centroid).
-Note that this point p will be internal to H(P1  P2).
-2. Determine whether or not p is internal to P2.
-This can be done in O(N) time (convex polygon inclusion).
-If p is not internal to P2, go to step 4.
-3. Point p is internal to P2. The vertices of both P1 and P2
-occur in sorted angular order about p.
+procedure MERGE_CONVEX_HULLS(P1, P2)
+  { P1, P2 convex polygons; compute H(P1 ∪ P2) in O(m + n) }
+begin
+  1. Find a point p internal to P1 (e.g. centroid). Then p lies inside H(P1 ∪ P2).
+  2. Test whether p is internal to P2 — O(N) convex inclusion.
+     If p is not internal to P2, go to step 4.
+  3. { p inside P2 } Vertices of P1 and P2 appear in sorted angular order about p.
+     Merge these orders; continue at step 5 with that vertex list.
+
+  4. { p not inside P2 } Relative to p, P2 lies in a wedge of apex angle ≤ π,
+     bounded by vertices u, v of P2 (found in O(N) by one pass around P2).
+     Partition P2 into two angle-monotone chains; discard the chain concave toward p
+     (its vertices lie inside H(P1 ∪ P2)).
+
+  5. Run Graham’s scan on the resulting vertex list in angular order about p
+     to build H(P1 ∪ P2) in O(m + n) = O(N) time.
+end
 ```
 
 ### p. 240 - Divide-and-conquer
-- Merge algorithm, 2
-- 4. Point p is not internal to P2. Relative to p,
-- polygon P2 lies in a wedge whose apex angle is ≤π.
-- The wedge is delimited by two vertices of P2, call them u and v,
-- which can be found in O(N) time by a single pass around P2.
-- Vertices u and v partition P2 into two chains of vertices
-- that are monotonic in polar angle w.r.t. p,
-- with one chain increasing and the other decreasing.
-- The chain convex towards p can be discarded,
-- because its vertices will be internal to H(S1 ∪S2).
+- Merge algorithm, 2: corresponds to **step 4** above (wedge from **p**, vertices **u** and **v**, discard the concave-toward-**p** chain).
 
 ### p. 241 - Divide-and-conquer
-- Merge algorithm, 3
-- 5. Use the Graham scan on the sorted list to construct the
-- convex hull of the vertices on the list, which requires O(N) time.
-- If polygon P1 has m vertices and polygon P2 has n vertices,
-- this algorithm constructs H(P1 ∪P2) ∈O(m + n)∈O(N) time.
-- As mentioned, an O(N) merge gives an O(N log N)
-- divide-and-conquer algorithm for convex hull.
+- Merge algorithm, 3: **step 5** — Graham scan on the merged list yields **H(P1 ∪ P2)** in **O(m + n)**; with an **O(N)** merge, divide-and-conquer convex hull is **O(N log N)** overall.
 
 ## What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.

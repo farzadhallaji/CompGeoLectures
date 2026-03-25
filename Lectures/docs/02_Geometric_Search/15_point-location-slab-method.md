@@ -45,11 +45,13 @@ These are cropped from the main slide PDF. Do not skip them.
 - Query
 
 ```text
-for each face f of G /* found via HF */
-assemble a simple polygon P from edges of f
-retrieved using FACE operation /* p. 17 */
-test simple polygon inclusion for q within P
-endfor
+procedure BruteForceFaceLocation(G, q)
+begin
+  for each face f of G do
+    assemble simple polygon P from edges of f using DCEL FACE traversal
+    if SimpleInclusion(P, q) then return f
+  return unbounded face
+end
 ```
 
 - Analysis

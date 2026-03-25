@@ -1,10 +1,11 @@
 /*
- * Slide figures: render at 70% of content width (centered), block layout so
+ * Slide figures: cap size (50% of column, max 28rem), centered; block layout so
  * tall PNGs are not clipped by inline/baseline line-box quirks in some browsers.
  */
-.md-typeset img {
+.md-content__inner.md-typeset img {
   display: block;
-  max-width: 70%;
+  max-width: min(50%, 28rem);
+  width: auto;
   height: auto;
   margin: 0.75em auto;
 }

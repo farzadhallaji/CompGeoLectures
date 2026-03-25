@@ -95,6 +95,15 @@ These are cropped from the main slide PDF. Do not skip them.
 
 ```text
 procedure ConstructQuadtree(G, M, D, level, imin, imax, jmin, jmax, quad)
+begin
+  { G: m×m grid of lists; quad is node for cell [imin..imax]×[jmin..jmax]; D = max depth }
+  if level = D or cell has ≤ 1 point then
+    quad ← leaf storing merged point lists from G over this cell
+    return
+  imid ← ⌊(imin + imax) / 2⌋
+  jmid ← ⌊(jmin + jmax) / 2⌋
+  recursively build quad.child[0..3] for the four sub-quadrants (SW, SE, NW, NE)
+end
 ```
 
 ### p. 149 - Quadtree method
@@ -117,11 +126,14 @@ procedure ConstructQuadtree(G, M, D, level, imin, imax, jmin, jmax, quad)
 /* Q is quadtree, R = [lx, rx] × [ly, ry] is range. */
 procedure QueryQuadtree(q, R)
 begin
-(q.quad ∩R) then /* Query range overlaps node’s quad. */
-(q.child[0] = NULL) then /*Node q is a leaf. */
-for each point pi on q.points /* Scan the point list. */
-(pi within R) then
-report pi
+  if q.quad ∩ R = ∅ then return
+  if q is leaf (all q.child[k] = NULL) then
+    for each point pi on q.points do
+      if pi ∈ R then report pi
+    return
+  for k ← 0 to 3 do
+    if q.child[k] ≠ NULL then QueryQuadtree(q.child[k], R)
+end
 ```
 
 ### p. 151 - Quadtree method

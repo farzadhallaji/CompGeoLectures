@@ -52,9 +52,20 @@ These are cropped from the main slide PDF. Do not skip them.
 - SearchRangeTree(lx, rx + 1, ly, ry, root(T))
 
 ```text
-procedure SearchRangeTree(lx, rx , ly, ry, v)
+procedure SearchRangeTree(lx, rx, ly, ry, v)
 begin
-(lx ≤B(v) and E(v) ≤rx) then
+  if v is a leaf then
+    if lx ≤ x(v) ≤ rx and ly ≤ y(v) ≤ ry then report v
+    return
+  if node interval [B(v), E(v)) is disjoint from query [lx, rx) then
+    return
+  if lx ≤ B(v) and E(v) ≤ rx then
+    { v is fully covered by x-query — search its secondary structure for y-range }
+    SearchAllocationTree(ly, ry, root of associated y-structure at v)
+    return
+  SearchRangeTree(lx, rx, ly, ry, left_child(v))
+  SearchRangeTree(lx, rx, ly, ry, right_child(v))
+end
 ```
 
 ### p. 176 - Range tree method

@@ -115,12 +115,21 @@ These are cropped from the main slide PDF. Do not skip them.
 ```text
 procedure GiftWrapping(S)
 begin
-Q = ∅
-ℑ= ∅
-F = find an initial convex hull facet
-insert into ℑall subfacets of F
-insert(F,Q) /* insert F into Q */
-while (Q ≠∅) do
+  Q ← ∅
+  ℑ ← ∅
+  F ← find an initial convex hull facet of S
+  insert all subfacets of F into pool ℑ
+  enqueue F on Q
+  while Q ≠ ∅ do
+    F ← dequeue(Q)
+    for each subfacet e of F that is a candidate in ℑ do
+      wrap: construct the adjacent facet F′ sharing e (supporting hyperplane)
+      insert new subfacets of F′ into ℑ per adjacency rules
+      if F′ is new then enqueue F′ on Q
+    end for
+    update ℑ after processing F  { e.g. remove subfacets whose two incident facets are both built }
+  end while
+end
 ```
 
 ## What you must be able to say or do in an exam

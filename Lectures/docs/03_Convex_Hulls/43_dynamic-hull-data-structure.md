@@ -94,6 +94,20 @@ These are cropped from the main slide PDF. Do not skip them.
 
 ```text
 procedure LEFTSEARCH(T)
+begin
+  { T: balanced tree on hull vertices of C_{i-1}; locate left supporting vertex l of p_i }
+  v ← root(T)
+  while true do
+    classify v w.r.t. p_i (and edge p_i v): supporting / concave / reflex / internal
+    if v is left supporting then
+      return v
+    else if v is concave toward p_i then
+      v ← child on the subchain that may still contain l
+    else if v is reflex or internal then
+      v ← other child (per slide case analysis)
+  end while
+  { Symmetric RIGHTSEARCH(T) finds r. Together they trace O(log N) nodes per insertion. }
+end
 ```
 
 ### p. 260 - Dynamic hull (insertion)

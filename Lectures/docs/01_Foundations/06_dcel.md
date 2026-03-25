@@ -62,16 +62,18 @@ These are cropped from the main slide PDF. Do not skip them.
 
 ### p. 50 - procedure EdgesIncident(j) /* VERTEX in text */
 ```text
+procedure EdgesIncident(j)
 begin
-a = HV[j]
-/* Get first DCEL entry for vj, a is index. */
-a0 = a
-/* Save starting index. */
-A[1] = a
-i = 2
-/* i is index for A */
-if (V1[a] = j) then
-a =PredE[a]
+  a ← HV[j]              /* first DCEL record where v_j is V1 or V2 */
+  a0 ← a
+  i ← 1
+  repeat
+    A[i] ← a; i ← i + 1
+    if V1[a] = j then a ← PredE[a]
+    else a ← NextE[a]    /* v_j is V2[a]; step to next incident record */
+  until a = a0
+  return A[1 .. i - 1]   /* all edge records incident to v_j */
+end
 ```
 
 ### p. 51 - DCEL notes

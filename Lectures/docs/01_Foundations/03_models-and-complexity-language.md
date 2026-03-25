@@ -78,11 +78,13 @@ These are cropped from the main slide PDF. Do not skip them.
 ```text
 procedure SegmentIntersectionCounting(S)
 begin
-count = 0
-for i = 1 to N
-for j = 1 to N
-if i ≠j and si ∩sj ≠∅
-count = count + 1
+  count ← 0
+  for i ← 1 to N do
+    for j ← 1 to N do
+      if i ≠ j and segment s_i intersects s_j then
+        count ← count + 1
+  return count / 2   { unordered segment pairs; adjust if slides count ordered pairs }
+end
 ```
 
 ### p. 34 - Algorithmic complexity measures

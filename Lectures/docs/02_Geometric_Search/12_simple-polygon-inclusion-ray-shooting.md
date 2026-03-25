@@ -41,16 +41,15 @@ These are cropped from the main slide PDF. Do not skip them.
 
 ### p. 73 - Simple polygon inclusion by Intersection counting
 ```text
-procedure SimpleInclusion(P,q) /* Incomplete version */
+procedure SimpleInclusion(P, q)
+  { parity / ray-shooting test; handle degeneracies separately (slide p.74) }
 begin
-c = 0
-for
-i = 0 to N /* Check each edge */
-edge vi,v(i+1) mod N ∩ray -∞,q
-c = (c + 1) mod 2
-endfor
-c = 1
-return TRUE
+  c ← 0
+  for i ← 0 to N - 1 do
+    if horizontal ray from q to +∞ crosses edge (v_i, v_{(i+1) mod N}) transversally then
+      c ← (c + 1) mod 2
+  if c = 1 then return TRUE else return FALSE
+end
 ```
 
 ### p. 74 - Simple polygon inclusion by Intersection counting

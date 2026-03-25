@@ -39,16 +39,15 @@ These are cropped from the main slide PDF. Do not skip them.
 
 ### p. 71 - Convex polygon inclusion by Left test
 ```text
-procedure ConvexInclusion(P,q)
+procedure ConvexInclusion(P, q)
+  { P: convex polygon v_0,…,v_{N-1} in CCW order }
 begin
-for
-i = 0 to N /* Check each edge */
-c = PointLineClassify(vi,v(i+1) mod N,q)
-c = RIGHT
-return FALSE
-endfor
-return TRUE
-Left(v(i+1) mod N,vi,q) /* Backwards edge */
+  for i ← 0 to N - 1 do
+    c ← PointLineClassify(v_i, v_{(i+1) mod N}, q)
+    if c = RIGHT then return FALSE
+    { backward-oriented edge: use Left(v_{(i+1) mod N}, v_i, q) per slide convention }
+  return TRUE
+end
 ```
 
 ## What you must be able to say or do in an exam

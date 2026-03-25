@@ -82,15 +82,25 @@ These are cropped from the main slide PDF. Do not skip them.
 - Preprocessing
 
 ```text
-procedure CreatekDNode(S,t) /* S is set of points, t is direction. */
+procedure CreatekDNode(S, t)   /* S: point set; t ∈ {vert, horz} */
 begin
-S = ∅then
-return NULL /* Leaf nodes are NULL pointers. */
-Allocate new node v
-t = vert then
-Find pi ∈S ∋xi is median for all x ∈S
-M(v) = xi /* x coordinate of bisecting line */
-SL = {pj ∈S - {pi} xj < xi}
+  if S = ∅ then return NULL
+  allocate node v; v.t ← t
+  if t = vert then
+    choose pi ∈ S with median x-coordinate xi among S
+    M(v) ← xi
+    SL ← { pj ∈ S \ {pi} : xj < xi }
+    SR ← { pj ∈ S \ {pi} : xj > xi }
+  else
+    choose pi ∈ S with median y-coordinate yi among S
+    M(v) ← yi
+    SL ← { pj ∈ S \ {pi} : yj < yi }
+    SR ← { pj ∈ S \ {pi} : yj > yi }
+  t_next ← the other orientation of t  { alternate vertical / horizontal splits }
+  v.left  ← CreatekDNode(SL, t_next)
+  v.right ← CreatekDNode(SR, t_next)
+  return v
+end
 ```
 
 ### p. 157 - Analysis
@@ -122,14 +132,20 @@ SL = {pj ∈S - {pi} xj < xi}
 - SearchkDTree(root(T),R)
 
 ```text
-/* T is k-D tree. */
-/* R = [lx, rx] × [ly, ry] is search range. */
-procedure SearchkDTree(v,R) /* v is a tree node, R is range. */
+/* T is k-D tree; R = [lx, rx] × [ly, ry]. */
+procedure SearchkDTree(v, R)
 begin
-(v ≠NULL) then
-(t(v) = vert) then
-[l, r] = [lx, rx]
-[l, r] = [ly, ry]
+  if v = NULL then return
+  if v is leaf then
+    report every point stored at v that lies in R
+    return
+  if t(v) = vert then
+    if lx < M(v) then SearchkDTree(v.left, R)
+    if rx > M(v) then SearchkDTree(v.right, R)
+  else
+    if ly < M(v) then SearchkDTree(v.left, R)
+    if ry > M(v) then SearchkDTree(v.right, R)
+end
 ```
 
 ### p. 160 - k-D tree method

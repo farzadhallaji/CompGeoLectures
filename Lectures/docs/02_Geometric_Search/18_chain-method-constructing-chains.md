@@ -88,7 +88,13 @@ These are cropped from the main slide PDF. Do not skip them.
 ```text
 procedure WeightBalancingInRegularPSLG(G)
 begin
-for each edge e in G /* Initialization */
+  for each edge e in G do
+    w(e) ← initial weight  { slide: how many chains will use e }
+  repeat
+    for each interior vertex v of the regular PSLG do
+      rebalance weights on the edges incident to v per the slide’s local rules
+  until weights stable after an O(N) sweep  { assigns chain multiplicities; does not emit chains }
+end
 ```
 
 ### p. 107 - Constructing C, part 4

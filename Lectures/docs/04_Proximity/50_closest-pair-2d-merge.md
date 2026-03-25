@@ -101,7 +101,15 @@ These are cropped from the main slide PDF. Do not skip them.
 - * be an array of size N with two fields: index and y.
 
 ```text
-1 for i = 1 to N /* Initialize P1
+{ Preparata p.199: build P1* — strip of S1 points within δ of line l, in y-order — in O(N) }
+for i ← 1 to N do
+  initialize P1*[i] (inactive / sentinel)
+for i ← 1 to N scanning presorted array Y by increasing y do
+  if point Y[i] lies in S1 and horizontal distance from Y[i] to dividing line l ≤ δ then
+    Y[i].active ← true
+    append (index, y) of Y[i] to the merge list backing P1*
+{ Symmetric pass builds P2* for S2. Merge step: for each active point in y-order,
+  compare only to O(1) neighbors in the δ×2δ strip (packing lemma: ≤ 6 candidates). }
 ```
 
 ## What you must be able to say or do in an exam
