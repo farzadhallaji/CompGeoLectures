@@ -7,13 +7,13 @@ This pack is meant to stand on its own. The markdown files now include slide dig
 - Included pages: **9-321** only
 - Supporting sources folded in: lecture recording transcripts and the assigned homeworks
 
-## How to study
+How to study
 - Read files in numeric order.
 - In each file, do not just skim the summary. Study the slide-by-slide notes, then the `What you must be able to say/do in an exam` section, then the exam drills at the end.
 - For algorithm files, memorize: problem statement, data structure, algorithm steps, invariant/correctness idea, and time/space bounds.
 - For proof/lower-bound files, memorize the exact direction of the reduction or counting argument. Humans love reversing reductions and then acting surprised on exam day.
 
-## Reading order
+Reading order
 1. [Coordinate systems and basic geometric entities](01_Foundations/01_coordinate-systems-and-basic-entities.md) - pp. 9-18
 2. [Polygonal geometry, convexity, planarity, and polyhedra](01_Foundations/02_polygonal-geometry-planarity-and-polyhedra.md) - pp. 19-28
 3. [Computational models and complexity language](01_Foundations/03_models-and-complexity-language.md) - pp. 29-37
@@ -84,7 +84,7 @@ This pack is meant to stand on its own. The markdown files now include slide dig
 - **Recording files touching this material:** CS 564 - 01.23 1.1.txt, CS 564 - 01.28 2.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This file is the foundation layer. The slides fix the language used everywhere else: what a point is, what a segment is, how a line is represented, and how dimension is written. If this part is shaky, later algorithms look magical when they are really just repeated uses of clean representations.
 
 ## What you must know cold
@@ -93,13 +93,13 @@ This file is the foundation layer. The slides fix the language used everywhere e
 - Parametric line equation and the meaning of restricting the parameter to [0,1] for a segment.
 - Plane and axis-parallel / rectilinear rectangles as standard objects used in search problems.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - A point in d-space is an ordered d-tuple. This is the data representation that lets algorithms compare, sort, and test geometry.
 - A line through p0 and p1 is represented parametrically as $p(\alpha)=p_0+\alpha(p_1-p_0)$. The segment is the same expression with 0 ≤ α ≤ 1.
 - The parametric view is more useful than slope-intercept form in geometry algorithms because vertical lines do not need a special case.
 - Later primitive tests such as point-line classification and segment intersection reduce to this representation.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 17
@@ -122,7 +122,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - one per dimension.
 - d-dimensional space (d-space)
 
-### p. 10 - Definitions
+p. 10 - Definitions
 - Point
 - Object with d dimensions and 0 extent.
 - Location in d-space.
@@ -134,7 +134,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - (x, y, z)
 - d ≥4
 
-### p. 11 - Definitions
+p. 11 - Definitions
 - Segment
 - Finite 1-dimensional subset of a line,
 - determined by two endpoints p0, p1.
@@ -143,7 +143,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - determined by two points p0, p1 ∋p0 ≠p1,
 - where one point is denoted as the endpoint.
 
-### p. 12 - Point-Line classification
+p. 12 - Point-Line classification
 - We now consider the geometric primitive operation of
 - classifying a point w.r.t. a line (both in the plane).
 - A directed line segment partitions the plane into 7
@@ -155,7 +155,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - terminus
 - origin
 
-### p. 13 - Parametric equation of a line
+p. 13 - Parametric equation of a line
 - We use the following equation of a line:
 - line = {α(p0) + (1 - α)(p1) }, where α ∈ ℜ(real numbers)
 - where p0 and p1 as usual are the points determining the line.
@@ -167,7 +167,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - {αx0 + (1 - α)x1, αy0 + (1 - α)y1 }
 - W k
 
-### p. 14 - Line Segment
+p. 14 - Line Segment
 - A line segment is a closed subset of a line
 - contained between two points which are
 - called the end points. The subset is closed in
@@ -178,7 +178,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - This is also called the convex combination
 - of the two end points.
 
-### p. 15 - Explicit Form of Line Equation
+p. 15 - Explicit Form of Line Equation
 - y= mx +c
 - m=slope=tanθ, where θ is the angle
 - made by the line with positive x-axis
@@ -190,7 +190,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - write
 - y=[(y2-y1)/(x2-x1)] x + (y1x2 -y2x1)/(x2-x1)
 
-### p. 16 - can be specified as
+p. 16 - can be specified as
 - Ax + By + C = 0
 - where A, B and C are constants. A
 - vertical line is simply a line with B=0.
@@ -202,7 +202,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - p= α1 p1+ α2 p2+….+ ακ pk
 - such that the α−coefficients are real and
 
-### p. 17 - Definitions
+p. 17 - Definitions
 - Plane
 - Infinite 2-dimensional subset of space,
 - determined by three points p0, p1, p2, ∋ p0 ≠ p1 ≠ p2 ≠ p0;
@@ -214,7 +214,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - [l, r]
 - closed; x ∋l ≤x ≤r is within interval
 
-### p. 18 - Definitions
+p. 18 - Definitions
 - Rectilinear or axis-parallel rectangle
 - Rectangle
 - Quadrilateral with opposite sides parallel and only right angles.
@@ -225,19 +225,19 @@ These are cropped from the main slide PDF. Do not skip them.
 - Cartesian product of d intervals.
 - 2-rectangle or simply rectangle
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - Give the precise definitions.
 - Distinguish similar notions cleanly.
 - Use the right primitive test or formula on a concrete example.
 
-## Complexity and performance facts
+Complexity and performance facts
 No main algorithm here. What matters is having constant-time primitive operations and a representation that avoids unnecessary case splits.
 
 ## Common mistakes and danger points
 - Do not mix up affine combination (any real α) with convex combination (restricted coefficients).
 - Do not assume every line has a slope; vertical-line special cases are exactly why parametric form is preferred.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### Definition drill
 **Question.** Give the precise definitions and the most important consequences from coordinate systems and basic geometric entities.
 
@@ -249,17 +249,17 @@ No main algorithm here. What matters is having constant-time primitive operation
 - Difference between a line, a line segment, and a point as geometric objects.
 - Parametric line equation and the meaning of restricting the parameter to [0,1] for a segment.
 - Plane and axis-parallel / rectilinear rectangles as standard objects used in search problems.
-### Core test / key idea
+Core test / key idea
 - A point in d-space is an ordered d-tuple. This is the data representation that lets algorithms compare, sort, and test geometry.
 - A line through p0 and p1 is represented parametrically as $p(\alpha)=p_0+\alpha(p_1-p_0)$. The segment is the same expression with 0 ≤ α ≤ 1.
 - The parametric view is more useful than slope-intercept form in geometry algorithms because vertical lines do not need a special case.
 - Later primitive tests such as point-line classification and segment intersection reduce to this representation.
-### Complexity
+Complexity
 - No main algorithm here. What matters is having constant-time primitive operations and a representation that avoids unnecessary case splits.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Do not mix up affine combination (any real α) with convex combination (restricted coefficients).
 - Do not assume every line has a slope; vertical-line special cases are exactly why parametric form is preferred.
-## End-of-file summary
+End-of-file summary
 - Cartesian coordinates in d dimensions, and why d is part of the object model, not decoration.
 - Difference between a line, a line segment, and a point as geometric objects.
 - Parametric line equation and the meaning of restricting the parameter to [0,1] for a segment.
@@ -267,7 +267,7 @@ No main algorithm here. What matters is having constant-time primitive operation
 - Do not mix up affine combination (any real α) with convex combination (restricted coefficients).
 - Do not assume every line has a slope; vertical-line special cases are exactly why parametric form is preferred.
 
-## Everything related to this topic
+Everything related to this topic
 - **Next file in reading order:** [Polygonal geometry, convexity, planarity, and polyhedra](01_Foundations/02_polygonal-geometry-planarity-and-polyhedra.md)
 - **Source slide range:** pp. 9-18 of `comp_geometry_slides_new.pdf`
 - **Related recordings:** CS 564 - 01.23 1.1.txt, CS 564 - 01.28 2.1.txt
@@ -284,7 +284,7 @@ No main algorithm here. What matters is having constant-time primitive operation
 - **Recording files touching this material:** CS 564 - 01.23 1.1.txt, CS 564 - 01.28 2.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This section tells you what kinds of geometric structures the course is willing to call legal. A surprising amount of later correctness depends on these definitions being exact.
 
 ## What you must know cold
@@ -293,13 +293,13 @@ This section tells you what kinds of geometric structures the course is willing 
 - Planar graph, planar embedding, faces, and the intuition behind Euler-style counting.
 - Polyhedron and the analogue of simplicity / convexity in 3D.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - A polygon is not just the ordered list of vertices; it is the region bounded by the edges when the edges form a simple closed curve.
 - Convexity is a structural property, not a visual vibe. The segment test and the interior-angle test are the important equivalent formulations.
 - A planar embedding subdivides the plane into faces. This is what later point-location and DCEL algorithms are built on.
 - In 3D, the analogous objects are polyhedra and their faces, edges, and vertices.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 22
@@ -321,7 +321,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - hyper-rectangle = d-rectangle, d unspecified
 - “d-dimensional rectilinear hyper-rectangle”
 
-### p. 20 - Definitions
+p. 20 - Definitions
 - Polygons
 - O’Rourke, pp. 1-2
 - A polygon is the region of a plane bounded by a finite set of
@@ -333,7 +333,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - connecting the points; the segments are called edges.
 - The edges bound a polygon iff the intersection of each pair
 
-### p. 21 - Definitions
+p. 21 - Definitions
 - Interior and exterior
 - Jordan curve theorem. Every simple closed plane curve
 - divides the plane into two parts.
@@ -345,7 +345,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - they will be referred to as such.
 - (Same as true for other similar objects, e.g., rectangle.)
 
-### p. 22 - Definitions
+p. 22 - Definitions
 - Polygon
 - Not vertices
 - Simple polygon
@@ -355,7 +355,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Simple (planar
 - version of above)
 
-### p. 23 - Definitions
+p. 23 - Definitions
 - In computational geometry, the relative geometric positions
 - matter, the edges do not correspond to abstract relations, as
 - in Graph Theory.
@@ -366,7 +366,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - convex
 - not convex
 
-### p. 24 - Convex Set
+p. 24 - Convex Set
 - Let p and q be two arbitrary points in a
 - d-dimensional Euclidean space belonging
 - to a set of points C. Then C is said to be
@@ -378,7 +378,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - connecting p and q also belong to C.
 - When d=2, the points belong to a convex
 
-### p. 25 - Planar Graph
+p. 25 - Planar Graph
 - A graph G(V,E) is planar if it can be embedded
 - in a plane without crossings.
 - A straight line planar embedding of a planar
@@ -390,7 +390,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Proof: A simple polygon has always v=e and
 - f=2 (interior and exterior).
 
-### p. 26 - creates one extra face. v remains same, e becomes
+p. 26 - creates one extra face. v remains same, e becomes
 - e+1 and f becomes f+1. So the equation remains
 - valid. If a chain is used with t new vertices and
 - necessarily with t+1 edges, we have v becomes
@@ -402,7 +402,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - e <= 3v -6. Using Euler’s formula, we then
 - have f <= 2/3 e and f <= 2v-4, giving the upper
 
-### p. 27 - Polyhedron
+p. 27 - Polyhedron
 - In 3-d Euclidean space, a polyhedron is defined
 - to be a finite set of planar polygons such that every
 - edge of the polygon is shared by exactly one other
@@ -414,26 +414,26 @@ These are cropped from the main slide PDF. Do not skip them.
 - non-adjacent facets sharing a point. A simple
 - polyhedron partitions the 3-d space into two
 
-### p. 28 - Definitions
+p. 28 - Definitions
 - Vertices
 - A polygon vertex is convex if its interior angle ≤ π (180°).
 - It is reflex if its interior angle > π (180°).
 - convex
 - In a convex polygon, all the vertices are convex.
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - Give the precise definitions.
 - Distinguish similar notions cleanly.
 - Use the right primitive test or formula on a concrete example.
 
-## Complexity and performance facts
+Complexity and performance facts
 No main complexity result, but this section sets up the combinatorial objects that later algorithms store and search.
 
 ## Common mistakes and danger points
 - A self-intersecting polygon does not have a clean single interior in the sense used by these algorithms.
 - Do not use “planar graph” and “specific straight-line embedding” as synonyms. The embedding matters.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### Definition drill
 **Question.** Give the precise definitions and the most important consequences from polygonal geometry, convexity, planarity, and polyhedra.
 
@@ -445,17 +445,17 @@ No main complexity result, but this section sets up the combinatorial objects th
 - Convex polygon definition in two equivalent forms: every internal segment stays inside, or every interior angle is less than π.
 - Planar graph, planar embedding, faces, and the intuition behind Euler-style counting.
 - Polyhedron and the analogue of simplicity / convexity in 3D.
-### Core test / key idea
+Core test / key idea
 - A polygon is not just the ordered list of vertices; it is the region bounded by the edges when the edges form a simple closed curve.
 - Convexity is a structural property, not a visual vibe. The segment test and the interior-angle test are the important equivalent formulations.
 - A planar embedding subdivides the plane into faces. This is what later point-location and DCEL algorithms are built on.
 - In 3D, the analogous objects are polyhedra and their faces, edges, and vertices.
-### Complexity
+Complexity
 - No main complexity result, but this section sets up the combinatorial objects that later algorithms store and search.
-### Common mistakes / danger points
+Common mistakes / danger points
 - A self-intersecting polygon does not have a clean single interior in the sense used by these algorithms.
 - Do not use “planar graph” and “specific straight-line embedding” as synonyms. The embedding matters.
-## End-of-file summary
+End-of-file summary
 - Simple polygon vs non-simple polygon, and why only a simple closed curve gives a clean inside/outside notion.
 - Convex polygon definition in two equivalent forms: every internal segment stays inside, or every interior angle is less than π.
 - Planar graph, planar embedding, faces, and the intuition behind Euler-style counting.
@@ -463,7 +463,7 @@ No main complexity result, but this section sets up the combinatorial objects th
 - A self-intersecting polygon does not have a clean single interior in the sense used by these algorithms.
 - Do not use “planar graph” and “specific straight-line embedding” as synonyms. The embedding matters.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Coordinate systems and basic geometric entities](01_Foundations/01_coordinate-systems-and-basic-entities.md)
 - **Next file in reading order:** [Computational models and complexity language](01_Foundations/03_models-and-complexity-language.md)
 - **Source slide range:** pp. 19-28 of `comp_geometry_slides_new.pdf`
@@ -481,7 +481,7 @@ No main complexity result, but this section sets up the combinatorial objects th
 - **Recording files touching this material:** CS 564 - 01.23 1.1.txt, CS 564 - 01.28 2.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This is the meta-language for the entire midterm. Nearly every proof or comparison later says preprocessing, query time, output size, or worst case. This file is where those words are defined precisely.
 
 ## What you must know cold
@@ -490,12 +490,12 @@ This is the meta-language for the entire midterm. Nearly every proof or comparis
 - Different cost components: preprocessing, storage, single query time, total reporting time.
 - Difference between counting problems and reporting problems, and why output size matters.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - Geometric data structures often spend time up front to organize a static set, then answer many queries fast.
 - For reporting problems the true running time is often something like O(f(n) + k), where k is the number of reported answers.
 - Worst-case analysis is the default unless the slides or theorem explicitly say average / expected.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 29
@@ -516,7 +516,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - particular set of points and a particular range.
 - In an instance like this, the points are the data set.
 
-### p. 30 - Algorithms and models of computation
+p. 30 - Algorithms and models of computation
 - We are interested in efficient algorithms for geometric problems.
 - Efficiency is evaluated in terms of computational cost,
 - given as a function of the size of the instance of the problem.
@@ -528,7 +528,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - C language on Unix workstation: too specific
 - We will use a highly abstract model, the familiar random-access
 
-### p. 31 - Order notation
+p. 31 - Order notation
 - We are interested in the amount of time and memory used by
 - algorithms, as a function of the input instance size N.
 - “Worst case” or Upper bound
@@ -540,12 +540,12 @@ These are cropped from the main slide PDF. Do not skip them.
 - “Optimal case” Or Optimal Bound
 - θ(f(N)) denotes the set of all functions g(N) such that there exist
 
-### p. 32 - Example analysis
+p. 32 - Example analysis
 - SEGMENT INTERSECTION COUNTING
 - INSTANCE: Set S = {s1, s2, ..., sN} of line segments in the plane.
 - QUESTION: Count the number of intersections of segments in S.
 
-### p. 33 - Example analysis
+p. 33 - Example analysis
 - SEGMENT INTERSECTION COUNTING
 - INSTANCE: Set S = {s1, s2, ..., sN} of line segments in the plane.
 - QUESTION: Count the number of intersections of segments in S.
@@ -572,7 +572,7 @@ count = count + 1
 - answer one time. Almost always best handled by scan of data
 - set; no preprocessing, query O(N), storage O(N).
 
-### p. 35 - Counting vs. reporting
+p. 35 - Counting vs. reporting
 - Counting. Determine the number of objects in the data set that
 - satisfy the query.
 - Reporting. Report (list, identify) the objects that satisfy the
@@ -584,7 +584,7 @@ count = count + 1
 - Preliminaries
 - [ x,
 
-### p. 36 - Output sensitive or report-mode algorithms
+p. 36 - Output sensitive or report-mode algorithms
 - The time complexity of algorithms is often expressed as a
 - function of input data set size, e.g. O(N log N). Reporting
 - problems can have query time complexity that is output sensitive.
@@ -596,7 +596,7 @@ count = count + 1
 - Naive repetitive mode algorithm and analysis.
 - Preliminaries
 
-### p. 37 - Average Complexity: observed complexity in
+p. 37 - Average Complexity: observed complexity in
 - practice.
 - Space or Storage Complexity.
 - Pre-processing Cost: trade-off between space
@@ -608,19 +608,19 @@ count = count + 1
 - It will sometimes be useful to have available normalized
 - values for coordinates. For a coordinate value x, its
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - Give the precise definitions.
 - Distinguish similar notions cleanly.
 - Use the right primitive test or formula on a concrete example.
 
-## Complexity and performance facts
+Complexity and performance facts
 This section is itself complexity language: separate preprocessing, storage, and query complexity whenever you describe a data structure.
 
 ## Common mistakes and danger points
 - Do not write “the lower bound of Graham scan is …”. Lower bounds are for convex hull as a problem.
 - Do not forget output size when a query reports many objects.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### Definition drill
 **Question.** Give the precise definitions and the most important consequences from computational models and complexity language.
 
@@ -632,16 +632,16 @@ This section is itself complexity language: separate preprocessing, storage, and
 - Asymptotic notation as set-based growth classes, used to compare algorithms.
 - Different cost components: preprocessing, storage, single query time, total reporting time.
 - Difference between counting problems and reporting problems, and why output size matters.
-### Core test / key idea
+Core test / key idea
 - Geometric data structures often spend time up front to organize a static set, then answer many queries fast.
 - For reporting problems the true running time is often something like O(f(n) + k), where k is the number of reported answers.
 - Worst-case analysis is the default unless the slides or theorem explicitly say average / expected.
-### Complexity
+Complexity
 - This section is itself complexity language: separate preprocessing, storage, and query complexity whenever you describe a data structure.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Do not write “the lower bound of Graham scan is …”. Lower bounds are for convex hull as a problem.
 - Do not forget output size when a query reports many objects.
-## End-of-file summary
+End-of-file summary
 - Problem vs algorithm. Lower bounds belong to problems, not to your current favorite algorithm.
 - Asymptotic notation as set-based growth classes, used to compare algorithms.
 - Different cost components: preprocessing, storage, single query time, total reporting time.
@@ -649,7 +649,7 @@ This section is itself complexity language: separate preprocessing, storage, and
 - Do not write “the lower bound of Graham scan is …”. Lower bounds are for convex hull as a problem.
 - Do not forget output size when a query reports many objects.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Polygonal geometry, convexity, planarity, and polyhedra](01_Foundations/02_polygonal-geometry-planarity-and-polyhedra.md)
 - **Next file in reading order:** [Segment trees as a warm-up search structure](01_Foundations/04_segment-trees.md)
 - **Source slide range:** pp. 29-37 of `comp_geometry_slides_new.pdf`
@@ -667,7 +667,7 @@ This section is itself complexity language: separate preprocessing, storage, and
 - **Recording files touching this material:** CS 564 - 01.23 1.1.txt, CS 564 - 01.28 2.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 Segment trees appear early as a warm-up, but they quietly become a template for later structures like range trees. You need both the representation and the standard-interval decomposition idea.
 
 ## What you must know cold
@@ -676,12 +676,12 @@ Segment trees appear early as a warm-up, but they quietly become a template for 
 - Deletion as the reverse maintenance operation.
 - How this becomes a search structure rather than just a tree drawing.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - The key abstraction is that an arbitrary interval is represented by a small set of canonical node intervals.
 - Insertion walks the tree and allocates the query interval to nodes whose scopes are fully covered and as large as possible.
 - This decomposition is what later lets other structures answer queries by visiting only logarithmically many regions.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 39
@@ -704,7 +704,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - have been normalized to [1, N] and the tree has been built for
 - scope interval [1, N].
 
-### p. 39 - Example
+p. 39 - Example
 - The structure of the segment tree T(1,12) is shown.
 - Each node is labeled with its associated interval [B(v), E(v)).
 - Preliminaries
@@ -714,7 +714,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - These are simply [i, i + 1) for l ≤i < r and [r - 1, r].
 - T(l, r) is balanced, with depth log2(r – l)∈O(log N).
 
-### p. 40 - Insertion
+p. 40 - Insertion
 - The segment tree structure supports insertions and deletions of
 - intervals with endpoints ∈{l, l + 1, l + 2, ..., r}, in
 - O(log N) time per operation.
@@ -726,7 +726,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Preliminaries
 - To insert interval [b, e] into segment tree T:
 
-### p. 41 - Example
+p. 41 - Example
 - Insertion of [2, 8) into T(1,12):
 - (B(v) + E(v)) / 2
 - Preliminaries
@@ -735,13 +735,13 @@ These are cropped from the main slide PDF. Do not skip them.
 - and deleted is closed on the left and open on the right. Thus if
 - we have to represent [2,8], we will have to start with [2,9).
 
-### p. 42 - Insertion
+p. 42 - Insertion
 - This slide is mainly visual. Use the figure crop in this file and make sure you can explain what the diagram is showing.
 
-### p. 43 - Insertion
+p. 43 - Insertion
 - This slide is mainly visual. Use the figure crop in this file and make sure you can explain what the diagram is showing.
 
-### p. 44 - Deletion
+p. 44 - Deletion
 - Deletion is symmetric with insertion.
 - To delete interval [b, e] from segment tree T:
 - DeleteSegmentTree(b, e, root(T))
@@ -763,20 +763,20 @@ tT
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 Typical allocation/search cost is O(log n) nodes per interval decomposition, with linear or near-linear space depending on what is stored per node.
 
 ## Common mistakes and danger points
 - Students often confuse the query interval with a node interval. The tree stores standard intervals; your input interval is decomposed into them.
 - Use the course convention for closed/half-open intervals consistently. Sloppy endpoints break proofs.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 Existing drill reminders from the earlier pack:
 - Prove the maximum number of standard intervals allocated to an interval in a segment tree, then give a worst-case example.
 - Trace the allocation of a specific interval into a perfect segment tree and justify each visited node.
 - Adapted from HW1-Q5: Show the maximum number of standard intervals allocated to a query interval in a segment tree and give a worst-case example for T(1,16).
 
-### HW1-Q5 adapted
+HW1-Q5 adapted
 **Question.** Given a segment tree T(l,r), state the maximum number of standard intervals allocated to one interval [b,e], justify the formula, and give an example for T(1,16).
 
 **How to answer.** Answer by tracing canonical decomposition from the two search paths to b and e. The bound comes from the number of complete sibling subtrees collected on the left and right search paths.
@@ -797,16 +797,16 @@ Existing drill reminders from the earlier pack:
 - Insertion of an interval by decomposing it into O(log n) standard intervals.
 - Deletion as the reverse maintenance operation.
 - How this becomes a search structure rather than just a tree drawing.
-### Core test / key idea
+Core test / key idea
 - The key abstraction is that an arbitrary interval is represented by a small set of canonical node intervals.
 - Insertion walks the tree and allocates the query interval to nodes whose scopes are fully covered and as large as possible.
 - This decomposition is what later lets other structures answer queries by visiting only logarithmically many regions.
-### Complexity
+Complexity
 - Typical allocation/search cost is O(log n) nodes per interval decomposition, with linear or near-linear space depending on what is stored per node.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Students often confuse the query interval with a node interval. The tree stores standard intervals; your input interval is decomposed into them.
 - Use the course convention for closed/half-open intervals consistently. Sloppy endpoints break proofs.
-## End-of-file summary
+End-of-file summary
 - Rooted binary tree over an interval domain, with each node storing a standard interval.
 - Insertion of an interval by decomposing it into O(log n) standard intervals.
 - Deletion as the reverse maintenance operation.
@@ -814,7 +814,7 @@ Existing drill reminders from the earlier pack:
 - Students often confuse the query interval with a node interval. The tree stores standard intervals; your input interval is decomposed into them.
 - Use the course convention for closed/half-open intervals consistently. Sloppy endpoints break proofs.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Computational models and complexity language](01_Foundations/03_models-and-complexity-language.md)
 - **Next file in reading order:** [Planar straight-line graphs and face-edge structure](01_Foundations/05_pslg-basics.md)
 - **Source slide range:** pp. 38-44 of `comp_geometry_slides_new.pdf`
@@ -832,7 +832,7 @@ Existing drill reminders from the earlier pack:
 - **Recording files touching this material:** CS 564 - 01.23 1.2.txt, CS 564 - 01.30 3.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 A PSLG is the bridge between graph theory and geometry. It is not enough to know the adjacency graph; the embedding in the plane matters because faces, incidence, and point location all depend on it.
 
 ## What you must know cold
@@ -840,11 +840,11 @@ A PSLG is the bridge between graph theory and geometry. It is not enough to know
 - Vertices, edges, faces, and the idea that coordinates are part of the representation.
 - Why PSLGs are the natural input model for planar search and subdivision problems.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - The same abstract planar graph can have different embeddings, but a PSLG fixes one geometric embedding.
 - Faces are induced by the embedding. That is why later algorithms can ask “which face contains q?”.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 45
@@ -858,7 +858,7 @@ These are cropped from the main slide PDF. Do not skip them.
 ### p. 45 - Slide p. 45
 - This slide is mainly visual. Use the figure crop in this file and make sure you can explain what the diagram is showing.
 
-### p. 46 - Planar straight line graph
+p. 46 - Planar straight line graph
 - A planar straight line graph (PSLG) is a planar embedding
 - of a planar graph G = (V, E) with:
 - 1. each vertex v ∈V mapped to a distinct point in the plane,
@@ -870,25 +870,25 @@ These are cropped from the main slide PDF. Do not skip them.
 - face (6)
 - Observe that PSLG is defined by mapping a mathematical object
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - Give the precise definitions.
 - Distinguish similar notions cleanly.
 - Use the right primitive test or formula on a concrete example.
 
-## Complexity and performance facts
+Complexity and performance facts
 Representation issue more than algorithmic issue.
 
 ## Common mistakes and danger points
 - Do not forget the no-crossing condition except at common endpoints.
 - Do not treat a PSLG as just an undirected graph; geometric incidence is part of the object.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 Existing drill reminders from the earlier pack:
 - Use Euler’s formula and degree/face counting to derive inequalities for a PSLG.
 - Explain why a triangulated PSLG satisfies e = 3v - 6 under the standard assumptions.
 - Adapted from HW1-Q4: Using Euler’s formula, prove standard inequalities for a PSLG with minimum degree at least 3; also prove e = 3v - 6 for triangulated PSLGs.
 
-### HW1-Q4 adapted
+HW1-Q4 adapted
 **Question.** Starting from Euler's formula, derive the standard inequalities for a PSLG with minimum degree at least 3, and explain why triangulated PSLGs satisfy e = 3v - 6.
 
 **How to answer.** Use degree counting, face-edge counting, and Euler's formula together. Keep the assumptions straight: the minimum-degree assumption is used for some inequalities, but triangulated graphs can contain degree-2 vertices.
@@ -903,15 +903,15 @@ Existing drill reminders from the earlier pack:
 - Formal definition of a planar straight-line graph: vertices as points, edges as straight segments, no crossings except shared endpoints.
 - Vertices, edges, faces, and the idea that coordinates are part of the representation.
 - Why PSLGs are the natural input model for planar search and subdivision problems.
-### Core test / key idea
+Core test / key idea
 - The same abstract planar graph can have different embeddings, but a PSLG fixes one geometric embedding.
 - Faces are induced by the embedding. That is why later algorithms can ask “which face contains q?”.
-### Complexity
+Complexity
 - Representation issue more than algorithmic issue.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Do not forget the no-crossing condition except at common endpoints.
 - Do not treat a PSLG as just an undirected graph; geometric incidence is part of the object.
-## End-of-file summary
+End-of-file summary
 - Formal definition of a planar straight-line graph: vertices as points, edges as straight segments, no crossings except shared endpoints.
 - Vertices, edges, faces, and the idea that coordinates are part of the representation.
 - Why PSLGs are the natural input model for planar search and subdivision problems.
@@ -919,7 +919,7 @@ Existing drill reminders from the earlier pack:
 - Do not forget the no-crossing condition except at common endpoints.
 - Do not treat a PSLG as just an undirected graph; geometric incidence is part of the object.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Segment trees as a warm-up search structure](01_Foundations/04_segment-trees.md)
 - **Next file in reading order:** [DCEL representation and auxiliary structures](01_Foundations/06_dcel.md)
 - **Source slide range:** pp. 45-46 of `comp_geometry_slides_new.pdf`
@@ -937,7 +937,7 @@ Existing drill reminders from the earlier pack:
 - **Recording files touching this material:** CS 564 - 01.23 1.2.txt, CS 564 - 01.30 3.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 The DCEL is the workhorse representation for planar subdivisions. If the professor asks you to actually manipulate a subdivision, this is the structure you are expected to think in.
 
 ## What you must know cold
@@ -946,12 +946,12 @@ The DCEL is the workhorse representation for planar subdivisions. If the profess
 - How auxiliary arrays for vertices/faces support traversal.
 - Why DCEL is a representation for embeddings, not just connectivity.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - The orientation of an edge record matters because left-face and right-face fields depend on it.
 - Traversing around a face or around a vertex is done by following linked incidence pointers, not by rescanning all edges.
 - Many exam/homework questions on DCEL reduce to building the correct dual or incidence traversal.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 47
@@ -974,12 +974,12 @@ These are cropped from the main slide PDF. Do not skip them.
 - when proceeding counterclockwise around V1
 - Index of entry for first edge after edge V1V2,
 
-### p. 48 - Concrete DCEL table example
+p. 48 - Concrete DCEL table example
 - This slide is the worked table for one planar subdivision encoded as a DCEL.
 - Read each row as one directed edge together with its origin, destination, left face, right face, predecessor edge, and successor edge.
 - The point of the page is not memorizing the numbers. The point is being able to decode one row correctly.
 
-### p. 49 - Supplementary data structures
+p. 49 - Supplementary data structures
 - If the PSLG has N vertices, M edges and F faces then we know
 - N - M + F = 2 by Euler’s formula. DCEL can be described
 - by six arrays V1[1:M], V2[1:M], LeftF[1:M], Right[1:M],
@@ -991,7 +991,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - where vi is in V1 or V2 column. Thus for our example in the
 - preceding slide HV=(1, 1, 2, 3, 7, 5, 6, 10, 11)
 
-### p. 50 - procedure EdgesIncident(j) /* VERTEX in text */
+p. 50 - procedure EdgesIncident(j) /* VERTEX in text */
 ```text
 begin
 a = HV[j]
@@ -1017,21 +1017,21 @@ a =PredE[a]
 - We have these facts about planar graphs (and thus PSLGs):
 - (1) v - e + f = 2
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.
 - Explain the invariant or ordering that makes the method work.
 - Trace the method by hand on a small example.
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 Local incidence operations are constant time once the structure is built; naive global tasks may still be O(E) or O(N).
 
 ## Common mistakes and danger points
 - Left/right face is relative to the edge orientation. Get the orientation wrong and every face answer flips.
 - Do not forget the outer face. Homework questions often include it.
 
-## Professor emphasis from recordings
+Professor emphasis from recordings
 These points are distilled from the related recordings and focus on what the professor slowed down for, warned about, or connected to homework/exam reasoning.
 
 - The lecture treats DCEL as the representation you are supposed to think in for planar subdivisions: many later questions reduce to walking the correct pointer cycle instead of rescanning the whole graph.
@@ -1039,7 +1039,7 @@ These points are distilled from the related recordings and focus on what the pro
 - He also links the representation to homework-style graph facts: once the subdivision is represented correctly, Euler-based bounds and face-adjacency questions become manageable.
 - When constructing DCEL helper information (e.g., first incident edge for a vertex/face), check both endpoint/face columns; do not look only at one side.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 Existing drill reminders from the earlier pack:
 - Build the dual graph of faces from a DCEL and test whether it is bipartite to decide 2-colorability of faces.
 - Given a face F, delete exactly the edges whose two incident faces lie in {F} union Neighbors(F) to expand F by union with adjacent faces.
@@ -1048,7 +1048,7 @@ Existing drill reminders from the earlier pack:
 - Adapted from HW1-Q3: Given a DCEL of a PSLG and a face F, expand F to absorb all neighbor faces by deleting the right edges.
 - Adapted from HW2-Q1: Given a DCEL of a PSLG and a query point P, find the face containing P in O(N) using a naive method.
 
-### HW1-Q2 adapted
+HW1-Q2 adapted
 **Question.** Given a DCEL of a PSLG, decide whether all faces can be colored with two colors so that adjacent faces get different colors.
 
 **How to answer.** Build the dual graph of faces by traversing twin half-edges, then run BFS/DFS two-coloring. A conflict means the face-adjacency graph is not bipartite.
@@ -1079,21 +1079,21 @@ Existing drill reminders from the earlier pack:
 - How to recover vertex-incidence and face-boundary information from the records.
 - How auxiliary arrays for vertices/faces support traversal.
 - Why DCEL is a representation for embeddings, not just connectivity.
-### Core test / key idea
+Core test / key idea
 - The orientation of an edge record matters because left-face and right-face fields depend on it.
 - Traversing around a face or around a vertex is done by following linked incidence pointers, not by rescanning all edges.
 - Many exam/homework questions on DCEL reduce to building the correct dual or incidence traversal.
-### Complexity
+Complexity
 - Local incidence operations are constant time once the structure is built; naive global tasks may still be O(E) or O(N).
-### Common mistakes / danger points
+Common mistakes / danger points
 - Left/right face is relative to the edge orientation. Get the orientation wrong and every face answer flips.
 - Do not forget the outer face. Homework questions often include it.
-### Professor emphasis (from recordings)
+Professor emphasis (from recordings)
 - The lecture treats DCEL as the representation you are supposed to think in for planar subdivisions: many later questions reduce to walking the correct pointer cycle instead of rescanning the whole graph.
 - A practical warning tied to this material is that orientation matters. Left face and right face are relative to the directed edge, so reversing the edge flips the interpretation.
 - He also links the representation to homework-style graph facts: once the subdivision is represented correctly, Euler-based bounds and face-adjacency questions become manageable.
 - When constructing DCEL helper information (e.g., first incident edge for a vertex/face), check both endpoint/face columns; do not look only at one side.
-## End-of-file summary
+End-of-file summary
 - Each edge record stores origin, destination, left face, right face, and predecessor/successor-style incidence links.
 - How to recover vertex-incidence and face-boundary information from the records.
 - How auxiliary arrays for vertices/faces support traversal.
@@ -1101,7 +1101,7 @@ Existing drill reminders from the earlier pack:
 - Left/right face is relative to the edge orientation. Get the orientation wrong and every face answer flips.
 - Do not forget the outer face. Homework questions often include it.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Planar straight-line graphs and face-edge structure](01_Foundations/05_pslg-basics.md)
 - **Next file in reading order:** [Vector algebra and trigonometric groundwork](01_Foundations/07_vectors-and-trig-groundwork.md)
 - **Source slide range:** pp. 47-51 of `comp_geometry_slides_new.pdf`
@@ -1119,7 +1119,7 @@ Existing drill reminders from the earlier pack:
 - **Recording files touching this material:** CS 564 - 01.23 1.2.txt, CS 564 - 01.30 3.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This is the algebra underneath every primitive. The course does not care about vector notation because it looks pretty; it cares because almost every geometric predicate becomes one subtraction and one determinant.
 
 ## What you must know cold
@@ -1127,12 +1127,12 @@ This is the algebra underneath every primitive. The course does not care about v
 - Direction as an angle/order concept, not just a picture.
 - Basic trigonometric facts used to compare directions or reason about left/right.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - Given points p and q, the vector q - p is the displacement from p to q.
 - Most primitives first translate so one point becomes the origin; then orientation and comparison become algebraic.
 - Trig is supporting material, but determinant-based comparisons are preferred because they avoid expensive angle computation.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 55
@@ -1152,7 +1152,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - vertices 0, a, b, and a + b.
 - a + b
 
-### p. 53 - Scalar multiplication
+p. 53 - Scalar multiplication
 - Multiplication of vector b by a scalar (a real number) t.
 - Scalar multiplication is defined as tb = (txb, tyb).
 - The vector length is scaled by t.
@@ -1160,7 +1160,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - 2b
 - -b
 
-### p. 54 - Vector subtraction
+p. 54 - Vector subtraction
 - Given vectors a = (xa, ya) and b = (xb, yb),
 - vector subtraction is defined as b - a = b + (-1)a,
 - carried out as b - a = (xb - xa, yb - ya).
@@ -1169,7 +1169,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Length of vector a = (xa, ya) is defined as |a| = sqrt(xa
 - 2 + ya
 
-### p. 55 - Vector Translation
+p. 55 - Vector Translation
 - -a
 - b-a
 - Let a =op and b =oq. Then, b-a is a translation
@@ -1179,7 +1179,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - identified with the same canonical line
 - segment originating at the origin o.
 
-### p. 56 - Vector direction
+p. 56 - Vector direction
 - The direction of vector a is described by its polar angle θa,
 - the angle the vector makes with the positive x axis.
 - Measured in counterclockwise rotation,
@@ -1190,7 +1190,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - is measured counterclockwise starting at vector a.
 - θab
 
-### p. 57 - Trigonometry reminder
+p. 57 - Trigonometry reminder
 - Definition of sine and cosine based on unit circle.
 - x = cos θ
 - y = sin θ
@@ -1201,19 +1201,19 @@ These are cropped from the main slide PDF. Do not skip them.
 - ⇒sin θ < 0
 - Unit circle x2 + y2 = 1
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - Give the precise definitions.
 - Distinguish similar notions cleanly.
 - Use the right primitive test or formula on a concrete example.
 
-## Complexity and performance facts
+Complexity and performance facts
 Primitive vector operations are constant time and are assumed cheap enough to use inside loops.
 
 ## Common mistakes and danger points
 - Do not confuse a point with a vector until you have fixed the reference point.
 - Avoid actual angle computation when a sign test or determinant is enough.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### Definition drill
 **Question.** Give the precise definitions and the most important consequences from vector algebra and trigonometric groundwork.
 
@@ -1224,16 +1224,16 @@ Primitive vector operations are constant time and are assumed cheap enough to us
 - Vector addition, subtraction, scalar multiplication, and translation view.
 - Direction as an angle/order concept, not just a picture.
 - Basic trigonometric facts used to compare directions or reason about left/right.
-### Core test / key idea
+Core test / key idea
 - Given points p and q, the vector q - p is the displacement from p to q.
 - Most primitives first translate so one point becomes the origin; then orientation and comparison become algebraic.
 - Trig is supporting material, but determinant-based comparisons are preferred because they avoid expensive angle computation.
-### Complexity
+Complexity
 - Primitive vector operations are constant time and are assumed cheap enough to use inside loops.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Do not confuse a point with a vector until you have fixed the reference point.
 - Avoid actual angle computation when a sign test or determinant is enough.
-## End-of-file summary
+End-of-file summary
 - Vector addition, subtraction, scalar multiplication, and translation view.
 - Direction as an angle/order concept, not just a picture.
 - Basic trigonometric facts used to compare directions or reason about left/right.
@@ -1241,7 +1241,7 @@ Primitive vector operations are constant time and are assumed cheap enough to us
 - Do not confuse a point with a vector until you have fixed the reference point.
 - Avoid actual angle computation when a sign test or determinant is enough.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [DCEL representation and auxiliary structures](01_Foundations/06_dcel.md)
 - **Next file in reading order:** [Orientation tests and signed-area interpretation](01_Foundations/08_orientation-and-signed-area.md)
 - **Source slide range:** pp. 52-57 of `comp_geometry_slides_new.pdf`
@@ -1259,7 +1259,7 @@ Primitive vector operations are constant time and are assumed cheap enough to us
 - **Recording files touching this material:** CS 564 - 01.23 1.2.txt, CS 564 - 01.30 3.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This is one of the most important files in the whole pack. Orientation is the primitive behind convex hulls, polygon inclusion, sweep-line ordering, and half-plane tests. Break this and the course collapses in an impressively efficient way.
 
 ## What you must know cold
@@ -1268,12 +1268,12 @@ This is one of the most important files in the whole pack. Orientation is the pr
 - Determinant equals twice the signed area of triangle abc.
 - Cycle interpretation: counterclockwise vs clockwise.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - Translate so a is at the origin. Then orient(a,b,c) = (b_x-a_x)(c_y-a_y) - (b_y-a_y)(c_x-a_x).
 - The sign tells relative turning direction without computing any angle.
 - Signed area explains why the same formula appears in both combinatorial and geometric arguments.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 58
@@ -1296,7 +1296,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - 180 < θab < 360
 - negative orientation
 
-### p. 59 - translations of the line segments at the origin.
+p. 59 - translations of the line segments at the origin.
 - Vectors a and b can be in one of four possible configurations:
 - In cases 1 and 3, 0 < θab < 180.
 - In cases 2 and 4, 180 < θab < 360.
@@ -1308,7 +1308,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Orientation of Δ p0p1p2
 - -360 < Q < -180
 
-### p. 60 - Observe from the table that sin(Q) has the same sign as the
+p. 60 - Observe from the table that sin(Q) has the same sign as the
 - orientation of Δ p0p1p2.
 - sin(Q) = sin(θb - θa)
 - by definition of Q
@@ -1320,7 +1320,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - by definition of sine and cosine. Then, by substitution
 - sin(θb - θa) = (yb / |b|)(xa / |a|) - (xb / |b|)(ya / |a|)
 
-### p. 61 - Another way of reaching the same expression is with the
+p. 61 - Another way of reaching the same expression is with the
 - determinant of the coordinates of the points:
 - | x0 y0 1 |
 - D =
@@ -1332,7 +1332,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Observe that the determinant is equivalent to the cross product
 - (in 2 dimensions).
 
-### p. 62 - Area Interpretation
+p. 62 - Area Interpretation
 - The value of the determinant D is twice
 - the signed area of the triangle Δ p0p1p2 . The
 - signed area is positive if p0p1p2 form a counter clockwise
@@ -1344,12 +1344,12 @@ These are cropped from the main slide PDF. Do not skip them.
 - upside if p3 falls on the positive side of the plane and
 - on the downside if p3 falls on the negative side of the plane.
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - Give the precise definitions.
 - Distinguish similar notions cleanly.
 - Use the right primitive test or formula on a concrete example.
 
-## Complexity and performance facts
+Complexity and performance facts
 Constant-time primitive. Entire algorithms are built by repeating this test.
 
 ## Common mistakes and danger points
@@ -1357,13 +1357,13 @@ Constant-time primitive. Entire algorithms are built by repeating this test.
 - Zero means collinear; if an algorithm assumes general position, say so explicitly.
 - Boundary handling is where many exam solutions die.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 Existing drill reminders from the earlier pack:
 - Use the orientation test to compare angular order of points around a query point without trigonometric functions.
 - Explain how left/right tests implement half-plane membership in convex-polygon inclusion.
 - Adapted from HW1-Q1: Given a circular linked list of points and a point P outside the list, decide whether the points are in counterclockwise order around P.
 
-### HW1-Q1 adapted
+HW1-Q1 adapted
 **Question.** Given a circular linked list of points around P, test whether the list is in counterclockwise order around P without using trigonometric angles.
 
 **How to answer.** Use a half-plane test plus the orientation determinant as an angle comparator. Pure determinant sign on consecutive pairs is not enough because the cyclic order can wrap past π.
@@ -1379,17 +1379,17 @@ Existing drill reminders from the earlier pack:
 - Positive sign means c is to the left of directed edge ab; negative means right; zero means collinear.
 - Determinant equals twice the signed area of triangle abc.
 - Cycle interpretation: counterclockwise vs clockwise.
-### Core test / key idea
+Core test / key idea
 - Translate so a is at the origin. Then orient(a,b,c) = (b_x-a_x)(c_y-a_y) - (b_y-a_y)(c_x-a_x).
 - The sign tells relative turning direction without computing any angle.
 - Signed area explains why the same formula appears in both combinatorial and geometric arguments.
-### Complexity
+Complexity
 - Constant-time primitive. Entire algorithms are built by repeating this test.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Direction matters. orient(a,b,c) = -orient(b,a,c).
 - Zero means collinear; if an algorithm assumes general position, say so explicitly.
 - Boundary handling is where many exam solutions die.
-## End-of-file summary
+End-of-file summary
 - Orientation determinant for three points a, b, c.
 - Positive sign means c is to the left of directed edge ab; negative means right; zero means collinear.
 - Determinant equals twice the signed area of triangle abc.
@@ -1397,7 +1397,7 @@ Existing drill reminders from the earlier pack:
 - Direction matters. orient(a,b,c) = -orient(b,a,c).
 - Zero means collinear; if an algorithm assumes general position, say so explicitly.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Vector algebra and trigonometric groundwork](01_Foundations/07_vectors-and-trig-groundwork.md)
 - **Next file in reading order:** [Primitive formulas and summary](01_Foundations/09_primitive-formulas-summary.md)
 - **Source slide range:** pp. 58-62 of `comp_geometry_slides_new.pdf`
@@ -1415,7 +1415,7 @@ Existing drill reminders from the earlier pack:
 - **Recording files touching this material:** CS 564 - 01.23 1.2.txt, CS 564 - 01.30 3.2.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This range compresses the earlier primitives into a small toolkit. Treat it as your local formula sheet for the rest of the midterm.
 
 ## What you must know cold
@@ -1423,12 +1423,12 @@ This range compresses the earlier primitives into a small toolkit. Treat it as y
 - Point-line classification in terms of left, right, behind, beyond, between, origin, destination if your notes use that extended vocabulary.
 - How these formulas combine in intersection and inclusion tests.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - Given a directed segment ab and point q, first use orientation to classify left/right/collinear.
 - If collinear, parameter values or dot-product style comparisons decide whether q is behind a, beyond b, or on the segment.
 - Most later algorithms are just structured uses of these formulas.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 63
@@ -1451,7 +1451,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - {αx0 + (1 - α)x1, αy0 + (1 - α)y1 }
 - α > 1
 
-### p. 64 - Point-Line classification
+p. 64 - Point-Line classification
 - We now consider the geometric primitive operation of
 - classifying a point w.r.t. a line (both in the plane).
 - A directed line segment partitions the plane into 7
@@ -1463,7 +1463,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - beyond
 - right
 
-### p. 65 - Summary of geometric primitives
+p. 65 - Summary of geometric primitives
 - We have seen the following primitives:
 - 1. Triangle orientation
 - 2. Left test
@@ -1475,23 +1475,23 @@ These are cropped from the main slide PDF. Do not skip them.
 - All require constant time (if d is fixed).
 - There are many others. If in doubt, ask.
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - Give the precise definitions.
 - Distinguish similar notions cleanly.
 - Use the right primitive test or formula on a concrete example.
 
-## Complexity and performance facts
+Complexity and performance facts
 Constant-time primitives.
 
 ## Common mistakes and danger points
 - Do not stop at collinear. Many algorithms need the follow-up between/behind/beyond logic.
 - Maintain a consistent directed-edge convention.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 Existing drill reminders from the earlier pack:
 - Adapted from HW1-Q1: Given a circular linked list of points and a point P outside the list, decide whether the points are in counterclockwise order around P.
 
-### Definition drill
+Definition drill
 **Question.** Give the precise definitions and the most important consequences from primitive formulas and summary.
 
 **How to answer.** A strong answer distinguishes similar objects and uses the course terminology exactly.
@@ -1501,16 +1501,16 @@ Existing drill reminders from the earlier pack:
 - Parametric line equation and segment restriction.
 - Point-line classification in terms of left, right, behind, beyond, between, origin, destination if your notes use that extended vocabulary.
 - How these formulas combine in intersection and inclusion tests.
-### Core test / key idea
+Core test / key idea
 - Given a directed segment ab and point q, first use orientation to classify left/right/collinear.
 - If collinear, parameter values or dot-product style comparisons decide whether q is behind a, beyond b, or on the segment.
 - Most later algorithms are just structured uses of these formulas.
-### Complexity
+Complexity
 - Constant-time primitives.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Do not stop at collinear. Many algorithms need the follow-up between/behind/beyond logic.
 - Maintain a consistent directed-edge convention.
-## End-of-file summary
+End-of-file summary
 - Parametric line equation and segment restriction.
 - Point-line classification in terms of left, right, behind, beyond, between, origin, destination if your notes use that extended vocabulary.
 - How these formulas combine in intersection and inclusion tests.
@@ -1518,7 +1518,7 @@ Existing drill reminders from the earlier pack:
 - Do not stop at collinear. Many algorithms need the follow-up between/behind/beyond logic.
 - Maintain a consistent directed-edge convention.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Orientation tests and signed-area interpretation](01_Foundations/08_orientation-and-signed-area.md)
 - **Next file in reading order:** [Search problem taxonomy and inclusion basics](02_Geometric_Search/10_search-taxonomy.md)
 - **Source slide range:** pp. 63-65 of `comp_geometry_slides_new.pdf`
@@ -1536,7 +1536,7 @@ Existing drill reminders from the earlier pack:
 - **Recording files touching this material:** CS 564 - 01.30 3.2.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This is the map of geometric search. The midterm then spends many pages filling in specific algorithmic answers to these generic search questions.
 
 ## What you must know cold
@@ -1544,12 +1544,12 @@ This is the map of geometric search. The midterm then spends many pages filling 
 - Static data set plus many queries viewpoint.
 - Why preprocessing is worth paying for in search problems.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - Polygon inclusion asks whether one query point lies inside a given polygon.
 - Point location asks which face of a planar subdivision contains the query point.
 - Range searching asks which points of a set lie inside a query range, often an axis-parallel rectangle.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 67
@@ -1572,7 +1572,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - 2. The elements of S may be of the same type as q, or not.
 - 3. The answer set may be constrained to have exactly one element,
 
-### p. 67 - Polygon inclusion
+p. 67 - Polygon inclusion
 - Given polygon P and query point q, both in the plane, is q within P?
 - P may be of different types (simple, convex, or star-shaped),
 - which will affect the method.
@@ -1581,7 +1581,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Intersection counting (Simple)
 - Wedges (Convex and star-shaped)
 
-### p. 68 - Point location
+p. 68 - Point location
 - Given a partition of the geometric space into regions and a query
 - point q, determine which region contains q.
 - We will consider only d = 2, i.e., the plane.
@@ -1591,7 +1591,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Chain method
 - Triangle refinement
 
-### p. 69 - Range searching
+p. 69 - Range searching
 - RANGE SEARCHING
 - INSTANCE: Set S = {p1, p2, ..., pN}, pi = (xi, yi) of points in the
 - plane, and rectangle R = [lx, rx] × [ly, ry] in the plane.
@@ -1603,19 +1603,19 @@ These are cropped from the main slide PDF. Do not skip them.
 - Quadtree
 - k-D tree
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - Give the precise definitions.
 - Distinguish similar notions cleanly.
 - Use the right primitive test or formula on a concrete example.
 
-## Complexity and performance facts
+Complexity and performance facts
 Always report preprocessing, storage, and query time separately.
 
 ## Common mistakes and danger points
 - Do not mix a single-shot problem with a repeated-query data-structure problem.
 - For range searching, remember the query region is x-range cross y-range.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### Definition drill
 **Question.** Give the precise definitions and the most important consequences from search problem taxonomy and inclusion basics.
 
@@ -1626,16 +1626,16 @@ Always report preprocessing, storage, and query time separately.
 - Difference between inclusion, point location, and range searching.
 - Static data set plus many queries viewpoint.
 - Why preprocessing is worth paying for in search problems.
-### Core test / key idea
+Core test / key idea
 - Polygon inclusion asks whether one query point lies inside a given polygon.
 - Point location asks which face of a planar subdivision contains the query point.
 - Range searching asks which points of a set lie inside a query range, often an axis-parallel rectangle.
-### Complexity
+Complexity
 - Always report preprocessing, storage, and query time separately.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Do not mix a single-shot problem with a repeated-query data-structure problem.
 - For range searching, remember the query region is x-range cross y-range.
-## End-of-file summary
+End-of-file summary
 - Difference between inclusion, point location, and range searching.
 - Static data set plus many queries viewpoint.
 - Why preprocessing is worth paying for in search problems.
@@ -1643,7 +1643,7 @@ Always report preprocessing, storage, and query time separately.
 - Do not mix a single-shot problem with a repeated-query data-structure problem.
 - For range searching, remember the query region is x-range cross y-range.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Primitive formulas and summary](01_Foundations/09_primitive-formulas-summary.md)
 - **Next file in reading order:** [Convex polygon inclusion by left test](02_Geometric_Search/11_convex-inclusion-left-test.md)
 - **Source slide range:** pp. 66-69 of `comp_geometry_slides_new.pdf`
@@ -1661,7 +1661,7 @@ Always report preprocessing, storage, and query time separately.
 - **Recording files touching this material:** CS 564 - 01.30 3.2.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This is the cleanest inside test in the course: a convex polygon is just an intersection of half-planes. One primitive repeated N times and you are done.
 
 ## What you must know cold
@@ -1669,12 +1669,12 @@ This is the cleanest inside test in the course: a convex polygon is just an inte
 - Why convexity is essential for this characterization.
 - Boundary policy: on an edge usually counts as inside unless the question says strict interior.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - Assume the polygon boundary is ordered counterclockwise. For each edge v_i v_{i+1}, compute orient(v_i, v_{i+1}, q).
 - If any value is negative, q is outside. If all are nonnegative, q is inside or on the boundary.
 - This works because a convex polygon is exactly the intersection of the interior half-planes of its edges.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 70
@@ -1692,7 +1692,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Query point q is within P iff q is to the left of or on all N edges of P.
 - (This is true iff P is convex.)
 
-### p. 71 - Convex polygon inclusion by Left test
+p. 71 - Convex polygon inclusion by Left test
 ```text
 procedure ConvexInclusion(P,q)
 begin
@@ -1713,14 +1713,14 @@ Left(v(i+1) mod N,vi,q) /* Backwards edge */
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 O(N) query time, O(1) extra space, no preprocessing beyond having the vertex order.
 
 ## Common mistakes and danger points
 - This fails for general non-convex polygons.
 - If the polygon is clockwise, the sign convention reverses.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### Core exam drill
 **Question.** State the problem solved by convex polygon inclusion by left test, describe preprocessing/query/update steps if any, and give the time and space bounds.
 
@@ -1736,16 +1736,16 @@ O(N) query time, O(1) extra space, no preprocessing beyond having the vertex ord
 - Inside iff the query point is on the left side of every directed edge of a consistently oriented convex polygon.
 - Why convexity is essential for this characterization.
 - Boundary policy: on an edge usually counts as inside unless the question says strict interior.
-### Core test / key idea
+Core test / key idea
 - Assume the polygon boundary is ordered counterclockwise. For each edge v_i v_{i+1}, compute orient(v_i, v_{i+1}, q).
 - If any value is negative, q is outside. If all are nonnegative, q is inside or on the boundary.
 - This works because a convex polygon is exactly the intersection of the interior half-planes of its edges.
-### Complexity
+Complexity
 - O(N) query time, O(1) extra space, no preprocessing beyond having the vertex order.
-### Common mistakes / danger points
+Common mistakes / danger points
 - This fails for general non-convex polygons.
 - If the polygon is clockwise, the sign convention reverses.
-## End-of-file summary
+End-of-file summary
 - Inside iff the query point is on the left side of every directed edge of a consistently oriented convex polygon.
 - Why convexity is essential for this characterization.
 - Boundary policy: on an edge usually counts as inside unless the question says strict interior.
@@ -1753,7 +1753,7 @@ O(N) query time, O(1) extra space, no preprocessing beyond having the vertex ord
 - This fails for general non-convex polygons.
 - If the polygon is clockwise, the sign convention reverses.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Search problem taxonomy and inclusion basics](02_Geometric_Search/10_search-taxonomy.md)
 - **Next file in reading order:** [Simple polygon inclusion by intersection counting](02_Geometric_Search/12_simple-polygon-inclusion-ray-shooting.md)
 - **Source slide range:** pp. 70-71 of `comp_geometry_slides_new.pdf`
@@ -1771,7 +1771,7 @@ O(N) query time, O(1) extra space, no preprocessing beyond having the vertex ord
 - **Recording files touching this material:** CS 564 - 01.30 3.2.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 For non-convex simple polygons, the half-plane shortcut is gone, so the course uses parity via a ray. This is the version where endpoint degeneracies become the whole game.
 
 ## What you must know cold
@@ -1779,12 +1779,12 @@ For non-convex simple polygons, the half-plane shortcut is gone, so the course u
 - Odd count means inside, even count means outside for a simple polygon.
 - Need a consistent endpoint rule to avoid double counting.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - A common implementation uses a horizontal ray to the right.
 - Count an edge only if the ray crosses it according to a half-open endpoint convention, for example one endpoint strictly below and the other at or above the ray.
 - If the query lies on the boundary, handle that first with a segment-membership check.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 72
@@ -1804,7 +1804,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Query point q is within P iff a ray originating at q intersects
 - the boundary of P an odd number of times.
 
-### p. 73 - Simple polygon inclusion by Intersection counting
+p. 73 - Simple polygon inclusion by Intersection counting
 ```text
 procedure SimpleInclusion(P,q) /* Incomplete version */
 begin
@@ -1830,14 +1830,14 @@ return TRUE
 - Ray intersects vertex of P
 - q1 Right
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.
 - Explain the invariant or ordering that makes the method work.
 - Trace the method by hand on a small example.
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 O(N) time, O(1) extra space.
 
 ## Common mistakes and danger points
@@ -1845,18 +1845,18 @@ O(N) time, O(1) extra space.
 - You must decide boundary behavior separately from odd-even logic.
 - Ray-degeneracy checklist: be consistent about (1) a ray passing through a polygon vertex, (2) a ray collinear with an edge, and (3) the query point lying on the boundary; otherwise parity can be wrong.
 
-## Professor emphasis from recordings
+Professor emphasis from recordings
 These points are distilled from the related recordings and focus on what the professor slowed down for, warned about, or connected to homework/exam reasoning.
 
 - The lecture spends time on degeneracies for ray shooting: rays can hit a vertex or line up with an edge, so you need a consistent counting convention instead of hand-waving.
 - The real idea is parity, not the particular ray direction. Count crossings consistently, then odd means inside and even means outside.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 Existing drill reminders from the earlier pack:
 - Design a robust ray-shooting test that correctly handles rays passing through polygon vertices.
 - Explain why parity works only for simple polygons.
 
-### Core exam drill
+Core exam drill
 **Question.** State the problem solved by simple polygon inclusion by intersection counting, describe preprocessing/query/update steps if any, and give the time and space bounds.
 
 **How to answer.** An excellent answer names the input, the output, the invariant or ordering exploited by the method, and the exact asymptotic costs.
@@ -1871,20 +1871,20 @@ Existing drill reminders from the earlier pack:
 - Shoot a ray from the query point and count intersections with the boundary.
 - Odd count means inside, even count means outside for a simple polygon.
 - Need a consistent endpoint rule to avoid double counting.
-### Core test / key idea
+Core test / key idea
 - A common implementation uses a horizontal ray to the right.
 - Count an edge only if the ray crosses it according to a half-open endpoint convention, for example one endpoint strictly below and the other at or above the ray.
 - If the query lies on the boundary, handle that first with a segment-membership check.
-### Complexity
+Complexity
 - O(N) time, O(1) extra space.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Vertex hits can double count if you use a sloppy rule.
 - You must decide boundary behavior separately from odd-even logic.
 - Ray-degeneracy checklist: be consistent about (1) a ray passing through a polygon vertex, (2) a ray collinear with an edge, and (3) the query point lying on the boundary; otherwise parity can be wrong.
-### Professor emphasis (from recordings)
+Professor emphasis (from recordings)
 - The lecture spends time on degeneracies for ray shooting: rays can hit a vertex or line up with an edge, so you need a consistent counting convention instead of hand-waving.
 - The real idea is parity, not the particular ray direction. Count crossings consistently, then odd means inside and even means outside.
-## End-of-file summary
+End-of-file summary
 - Shoot a ray from the query point and count intersections with the boundary.
 - Odd count means inside, even count means outside for a simple polygon.
 - Need a consistent endpoint rule to avoid double counting.
@@ -1892,7 +1892,7 @@ Existing drill reminders from the earlier pack:
 - Vertex hits can double count if you use a sloppy rule.
 - You must decide boundary behavior separately from odd-even logic.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Convex polygon inclusion by left test](02_Geometric_Search/11_convex-inclusion-left-test.md)
 - **Next file in reading order:** [Convex polygon inclusion by wedges](02_Geometric_Search/13_convex-inclusion-by-wedges.md)
 - **Source slide range:** pp. 72-74 of `comp_geometry_slides_new.pdf`
@@ -1910,7 +1910,7 @@ Existing drill reminders from the earlier pack:
 - **Recording files touching this material:** CS 564 - 01.30 3.2.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This is the accelerated convex-polygon inclusion method. The idea is to preprocess angular order around an interior point and reduce the query to a wedge search plus one local test.
 
 ## What you must know cold
@@ -1918,12 +1918,12 @@ This is the accelerated convex-polygon inclusion method. The idea is to preproce
 - Use binary search in angular order to find the wedge containing the query direction.
 - Finish with a local orientation test in the found wedge.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - The polygon is decomposed into fan triangles relative to an interior point or anchor.
 - The query point determines a direction from the anchor; binary search locates the wedge in O(log N).
 - Then test whether q lies inside the corresponding triangle/wedge.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 75
@@ -1946,7 +1946,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - 1. Determine wedge containing q
 - 2. Determine which side of edge for that wedge q is on
 
-### p. 76 - Preprocessing
+p. 76 - Preprocessing
 - 1. Find a point c internal to P (centroid of any three vertices).
 - 2. Arrange the vertices into a data structure suitable for
 - binary search (e.g., an array).
@@ -1958,7 +1958,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - 2. Once pi and pi+1 have been found,
 - q is internal iff pi+1piq is a Left turn.
 
-### p. 77 - Analysis
+p. 77 - Analysis
 - Preprocessing time: O(N); to load vertices into data structure.
 - Query time: O(log N); binary search with O(1) time
 - per comparison.
@@ -1970,14 +1970,14 @@ These are cropped from the main slide PDF. Do not skip them.
 - Notation different in notes and text.
 - This algorithm in text appears to be in error.
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.
 - Explain the invariant or ordering that makes the method work.
 - Trace the method by hand on a small example.
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 Typical preprocessing O(N), query O(log N), storage O(N).
 
 ## Common mistakes and danger points
@@ -1985,7 +1985,7 @@ Typical preprocessing O(N), query O(log N), storage O(N).
 - Binary search is on wedges, not on x- or y-coordinates.
 - Boundary case matters: when the query point lies exactly on an edge (orientation/determinant = 0), handle it according to the problem's inside/boundary policy; do not skip the determinant-zero branch.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### Core exam drill
 **Question.** State the problem solved by convex polygon inclusion by wedges, describe preprocessing/query/update steps if any, and give the time and space bounds.
 
@@ -2001,17 +2001,17 @@ Typical preprocessing O(N), query O(log N), storage O(N).
 - Choose an interior reference point and partition the polygon into wedges/triangles.
 - Use binary search in angular order to find the wedge containing the query direction.
 - Finish with a local orientation test in the found wedge.
-### Core test / key idea
+Core test / key idea
 - The polygon is decomposed into fan triangles relative to an interior point or anchor.
 - The query point determines a direction from the anchor; binary search locates the wedge in O(log N).
 - Then test whether q lies inside the corresponding triangle/wedge.
-### Complexity
+Complexity
 - Typical preprocessing O(N), query O(log N), storage O(N).
-### Common mistakes / danger points
+Common mistakes / danger points
 - You need a consistent angular order and a point known to be interior.
 - Binary search is on wedges, not on x- or y-coordinates.
 - Boundary case matters: when the query point lies exactly on an edge (orientation/determinant = 0), handle it according to the problem's inside/boundary policy; do not skip the determinant-zero branch.
-## End-of-file summary
+End-of-file summary
 - Choose an interior reference point and partition the polygon into wedges/triangles.
 - Use binary search in angular order to find the wedge containing the query direction.
 - Finish with a local orientation test in the found wedge.
@@ -2019,7 +2019,7 @@ Typical preprocessing O(N), query O(log N), storage O(N).
 - You need a consistent angular order and a point known to be interior.
 - Binary search is on wedges, not on x- or y-coordinates.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Simple polygon inclusion by intersection counting](02_Geometric_Search/12_simple-polygon-inclusion-ray-shooting.md)
 - **Next file in reading order:** [Star-shaped polygon inclusion by wedges](02_Geometric_Search/14_star-shaped-inclusion-by-wedges.md)
 - **Source slide range:** pp. 75-77 of `comp_geometry_slides_new.pdf`
@@ -2037,7 +2037,7 @@ Typical preprocessing O(N), query O(log N), storage O(N).
 - **Recording files touching this material:** CS 564 - 01.30 3.2.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This extends the wedge idea from convex polygons to star-shaped polygons. The cost is that you now rely on a kernel point rather than arbitrary interior structure.
 
 ## What you must know cold
@@ -2045,12 +2045,12 @@ This extends the wedge idea from convex polygons to star-shaped polygons. The co
 - Why a kernel point sees the entire boundary.
 - How wedge partitioning around a kernel point supports inclusion testing.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - Pick a point in the kernel. Every boundary point is visible from it.
 - Order vertices around that point, find the wedge containing the query direction, then test locally.
 - The method is an extension of the convex fan idea but requires star-shaped visibility.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 78
@@ -2073,7 +2073,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - convex polygon the entire polygon is the kernel.)
 - ∈kernel
 
-### p. 79 - Star-shaped polygon inclusion by Wedges
+p. 79 - Star-shaped polygon inclusion by Wedges
 - P star-shaped ⇒
 - the vertices of P occur in angular order about any point in
 - the kernel of P ⇒
@@ -2082,14 +2082,14 @@ These are cropped from the main slide PDF. Do not skip them.
 - This can be done in O(N) time ⇒
 - Preprocessing remains O(N).
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.
 - Explain the invariant or ordering that makes the method work.
 - Trace the method by hand on a small example.
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 After suitable preprocessing, queries can be handled similarly to wedge-based convex inclusion.
 
 ## Common mistakes and danger points
@@ -2097,7 +2097,7 @@ After suitable preprocessing, queries can be handled similarly to wedge-based co
 - Do not claim this works for every simple polygon.
 - Boundary case matters: when the query point lies exactly on an edge (orientation/determinant = 0), handle it according to the problem's inside/boundary policy; do not skip the determinant-zero branch.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### Core exam drill
 **Question.** State the problem solved by star-shaped polygon inclusion by wedges, describe preprocessing/query/update steps if any, and give the time and space bounds.
 
@@ -2113,17 +2113,17 @@ After suitable preprocessing, queries can be handled similarly to wedge-based co
 - Definition of a star-shaped polygon and its kernel.
 - Why a kernel point sees the entire boundary.
 - How wedge partitioning around a kernel point supports inclusion testing.
-### Core test / key idea
+Core test / key idea
 - Pick a point in the kernel. Every boundary point is visible from it.
 - Order vertices around that point, find the wedge containing the query direction, then test locally.
 - The method is an extension of the convex fan idea but requires star-shaped visibility.
-### Complexity
+Complexity
 - After suitable preprocessing, queries can be handled similarly to wedge-based convex inclusion.
-### Common mistakes / danger points
+Common mistakes / danger points
 - An arbitrary interior point is not enough; it must lie in the kernel.
 - Do not claim this works for every simple polygon.
 - Boundary case matters: when the query point lies exactly on an edge (orientation/determinant = 0), handle it according to the problem's inside/boundary policy; do not skip the determinant-zero branch.
-## End-of-file summary
+End-of-file summary
 - Definition of a star-shaped polygon and its kernel.
 - Why a kernel point sees the entire boundary.
 - How wedge partitioning around a kernel point supports inclusion testing.
@@ -2131,7 +2131,7 @@ After suitable preprocessing, queries can be handled similarly to wedge-based co
 - An arbitrary interior point is not enough; it must lie in the kernel.
 - Do not claim this works for every simple polygon.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Convex polygon inclusion by wedges](02_Geometric_Search/13_convex-inclusion-by-wedges.md)
 - **Next file in reading order:** [Point location by slab decomposition](02_Geometric_Search/15_point-location-slab-method.md)
 - **Source slide range:** pp. 78-79 of `comp_geometry_slides_new.pdf`
@@ -2149,7 +2149,7 @@ After suitable preprocessing, queries can be handled similarly to wedge-based co
 - **Recording files touching this material:** CS 564 - 02.04 4.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 The slab method is one of the first genuine geometric-search data structures. It shows how binary search enters geometry by cutting the plane into horizontal bands.
 
 ## What you must know cold
@@ -2157,12 +2157,12 @@ The slab method is one of the first genuine geometric-search data structures. It
 - Binary search on slab y-order to find the slab containing q.
 - Within the slab, use the left-to-right edge order to identify the containing face.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - After preprocessing, every slab has a fixed combinatorial order of intersecting edges.
 - Query step 1: binary search over y-coordinates of slab boundaries.
 - Query step 2: locate q among the ordered edges inside that slab.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 82
@@ -2181,7 +2181,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - With the assumptions that degree(v) ≥2 ∀v ∈ V and G is connected,
 - G partitions the plane into simple polygons.
 
-### p. 81 - Point location by brute force
+p. 81 - Point location by brute force
 - Consider a point location method using known techniques.
 - We represent PSLG G with a DCEL
 - (which requires O(N) preprocessing to construct, as seen).
@@ -2197,7 +2197,7 @@ endfor
 
 - Analysis
 
-### p. 82 - Point location by Slab method
+p. 82 - Point location by Slab method
 - The fundamental technique for general search is to apply bisection,
 - i.e., binary search.
 - A binary search on N items requires O(log N) time.
@@ -2209,7 +2209,7 @@ endfor
 - These lines divide the plane into (at most) N + 1 “slabs”.
 - Sorting the y-coordinates of the slabs during preprocessing
 
-### p. 83 - Slab method query, part 2
+p. 83 - Slab method query, part 2
 - The intersection of a slab with G is a set of segments,
 - from the edges of G.
 - The segments define trapezoids, which may degenerate to triangles.
@@ -2221,12 +2221,12 @@ endfor
 - If face stored with each trapezoid during preprocessing,
 - this gives the answer to the point location problem.
 
-### p. 84 - Comparison operation during binary search
+p. 84 - Comparison operation during binary search
 - This slide illustrates how the query point is compared against ordered slab segments during binary search.
 - The comparison is implemented with orientation/left-right tests against the candidate segment.
 - In an exam trace, be ready to say whether the query lies to the left or right of the segment and which side the search should continue on.
 
-### p. 85 - Analysis
+p. 85 - Analysis
 - Query time: O(log N); 2× O(log N) binary search.
 - At most N slabs, at most N segments per slab.
 - Cannot be improved (optimum).
@@ -2236,33 +2236,33 @@ endfor
 - Space: O(N2); O(N) slabs, each with O(N) segments.
 - Cannot be improved (for this algorithm).
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.
 - Explain the invariant or ordering that makes the method work.
 - Trace the method by hand on a small example.
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 Binary search finds the slab in O(log N); storage/preprocessing may be high because each slab stores edge order information.
 
 ## Common mistakes and danger points
 - The expensive part is building/storing edge orders for slabs.
 - Within a slab, you compare q against edges, not against face labels directly.
 
-## Professor emphasis from recordings
+Professor emphasis from recordings
 These points are distilled from the related recordings and focus on what the professor slowed down for, warned about, or connected to homework/exam reasoning.
 
 - This method is presented as one of the first clean examples of binary search being transferred into geometry.
 - He explicitly notes the geometric degeneracy that slab regions can become triangles; the left-to-right order still exists, so the query logic still works.
 - A big warning from lecture is the preprocessing blow-up: many slabs may each contain many segments, so the simple slab method is fast at query time but expensive to build.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 Existing drill reminders from the earlier pack:
 - Given a PSLG and a query point, describe a naive face-location method using a horizontal ray and identify the incident face of the first crossed edge.
 - Adapted from HW2-Q1: Given a DCEL of a PSLG and a query point P, find the face containing P in O(N) using a naive method.
 
-### HW2-Q1 adapted
+HW2-Q1 adapted
 **Question.** For a PSLG and query point P, explain the naive O(N) point-location method, then explain how the slab method improves the query step.
 
 **How to answer.** Contrast brute-force ray shooting with slab preprocessing. The key gain is binary search on slabs plus ordered edge search inside one slab.
@@ -2282,20 +2282,20 @@ Existing drill reminders from the earlier pack:
 - Construct horizontal lines through all vertices to form slabs.
 - Binary search on slab y-order to find the slab containing q.
 - Within the slab, use the left-to-right edge order to identify the containing face.
-### Core test / key idea
+Core test / key idea
 - After preprocessing, every slab has a fixed combinatorial order of intersecting edges.
 - Query step 1: binary search over y-coordinates of slab boundaries.
 - Query step 2: locate q among the ordered edges inside that slab.
-### Complexity
+Complexity
 - Binary search finds the slab in O(log N); storage/preprocessing may be high because each slab stores edge order information.
-### Common mistakes / danger points
+Common mistakes / danger points
 - The expensive part is building/storing edge orders for slabs.
 - Within a slab, you compare q against edges, not against face labels directly.
-### Professor emphasis (from recordings)
+Professor emphasis (from recordings)
 - This method is presented as one of the first clean examples of binary search being transferred into geometry.
 - He explicitly notes the geometric degeneracy that slab regions can become triangles; the left-to-right order still exists, so the query logic still works.
 - A big warning from lecture is the preprocessing blow-up: many slabs may each contain many segments, so the simple slab method is fast at query time but expensive to build.
-## End-of-file summary
+End-of-file summary
 - Construct horizontal lines through all vertices to form slabs.
 - Binary search on slab y-order to find the slab containing q.
 - Within the slab, use the left-to-right edge order to identify the containing face.
@@ -2303,7 +2303,7 @@ Existing drill reminders from the earlier pack:
 - The expensive part is building/storing edge orders for slabs.
 - Within a slab, you compare q against edges, not against face labels directly.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Star-shaped polygon inclusion by wedges](02_Geometric_Search/14_star-shaped-inclusion-by-wedges.md)
 - **Next file in reading order:** [Plane sweep as a recurring paradigm](02_Geometric_Search/16_plane-sweep-paradigm.md)
 - **Source slide range:** pp. 80-85 of `comp_geometry_slides_new.pdf`
@@ -2321,7 +2321,7 @@ Existing drill reminders from the earlier pack:
 - **Recording files touching this material:** CS 564 - 02.04 4.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 Plane sweep is not one algorithm. It is a habit of mind: move an imaginary line, process events in order, and maintain exactly the active structure you need.
 
 ## What you must know cold
@@ -2329,12 +2329,12 @@ Plane sweep is not one algorithm. It is a habit of mind: move an imaginary line,
 - Event queue and status structure.
 - Why geometry often becomes easier when you impose a global order.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - Sort critical events such as vertex coordinates, segment endpoints, or intersections.
 - Maintain a balanced structure for currently active objects intersecting the sweep line.
 - Update only when the combinatorial situation changes.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 86
@@ -2357,7 +2357,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Those points are called events.
 - We will see how to apply this technique to perform preprocessing
 
-### p. 87 - Plane sweep data structures
+p. 87 - Plane sweep data structures
 - Plane sweep algorithms often use two data structures:
 - 1. Event-point schedule
 - Sequence of positions to be assumed by the sweep-line.
@@ -2369,7 +2369,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - left-to-right sequence of edges of G that intersect the
 - sweep-line.
 
-### p. 88 - Event processing
+p. 88 - Event processing
 - At each event, i.e., vertex v ∈V,
 - 1. the edges terminating at v are deleted from the sweep-line status
 - 2. the edges originating at v are added to the sweep-line status
@@ -2379,7 +2379,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - binary tree (e.g., a AVL tree) that provides INSERT
 - and DELETE operations in O(log N).
 
-### p. 89 - Preprocessing algorithm
+p. 89 - Preprocessing algorithm
 - Data structures
 - VERTEX
 - Array storing vertices of G,
@@ -2391,7 +2391,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Set of edges incident on VERTEX[i] from above,
 - ordered clockwise
 
-### p. 90 - Preprocessing analysis
+p. 90 - Preprocessing analysis
 - Preprocessing time: O(N2); O(N) slabs, each requiring O(N)
 - time to construct a slab.
 - There will be at most O(N) insertions and deletions to L,
@@ -2403,21 +2403,21 @@ These are cropped from the main slide PDF. Do not skip them.
 - use of the plane-sweep technique.
 - Still, O(N2) is unacceptable for some applications.
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.
 - Explain the invariant or ordering that makes the method work.
 - Trace the method by hand on a small example.
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 Usually O((number of events) log N) plus output size, depending on the problem.
 
 ## Common mistakes and danger points
 - Do not store everything in the status, only active objects.
 - Correct event ordering and tie handling are part of the algorithm, not implementation trivia.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### Definition drill
 **Question.** Give the precise definitions and the most important consequences from plane sweep as a recurring paradigm.
 
@@ -2428,16 +2428,16 @@ Usually O((number of events) log N) plus output size, depending on the problem.
 - Sweep line or sweep plane idea.
 - Event queue and status structure.
 - Why geometry often becomes easier when you impose a global order.
-### Core test / key idea
+Core test / key idea
 - Sort critical events such as vertex coordinates, segment endpoints, or intersections.
 - Maintain a balanced structure for currently active objects intersecting the sweep line.
 - Update only when the combinatorial situation changes.
-### Complexity
+Complexity
 - Usually O((number of events) log N) plus output size, depending on the problem.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Do not store everything in the status, only active objects.
 - Correct event ordering and tie handling are part of the algorithm, not implementation trivia.
-## End-of-file summary
+End-of-file summary
 - Sweep line or sweep plane idea.
 - Event queue and status structure.
 - Why geometry often becomes easier when you impose a global order.
@@ -2445,7 +2445,7 @@ Usually O((number of events) log N) plus output size, depending on the problem.
 - Do not store everything in the status, only active objects.
 - Correct event ordering and tie handling are part of the algorithm, not implementation trivia.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Point location by slab decomposition](02_Geometric_Search/15_point-location-slab-method.md)
 - **Next file in reading order:** [Chain method: basics, definitions, and query idea](02_Geometric_Search/17_chain-method-basics-and-query.md)
 - **Source slide range:** pp. 86-90 of `comp_geometry_slides_new.pdf`
@@ -2463,7 +2463,7 @@ Usually O((number of events) log N) plus output size, depending on the problem.
 - **Recording files touching this material:** CS 564 - 02.06 5.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 The chain method is a point-location structure for PSLGs. Conceptually it regularizes the subdivision, builds a monotone complete set of chains, then uses binary search twice.
 
 ## What you must know cold
@@ -2471,12 +2471,12 @@ The chain method is a point-location structure for PSLGs. Conceptually it regula
 - How chains partition the subdivision into searchable regions.
 - Two-stage query: binary search among chains, then binary search within a chain.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - A chain is monotone with respect to the chosen axis, so its vertices appear in order by projection.
 - Two neighboring chains bound a region; locating the query between chains narrows the candidate face.
 - The method is geometric binary search over ordered chains.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 91
@@ -2498,7 +2498,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - that are on either side of the query point.
 - 2. Binary search on one of those chains to determine the face.
 
-### p. 92 - Chain method overview, “overture”
+p. 92 - Chain method overview, “overture”
 - PSLG G
 - Monotone complete
 - set of chains C for G
@@ -2510,7 +2510,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Queries
 - Preprocessing
 
-### p. 93 - Definition of a chain
+p. 93 - Definition of a chain
 - A chain C = (v1, v2, ..., vp) is a PSLG with vertex set {v1, v2, ..., vp}
 - and edge set{(vi,vi+1): i = 1, 2, ..., p - 1}.
 - Notational notes:
@@ -2519,14 +2519,14 @@ These are cropped from the main slide PDF. Do not skip them.
 - A chain is a planar embedding of a graph theoretic chain.
 - Sometimes called polygonal line.
 
-### p. 94 - Subdividing a PSLG with a chain
+p. 94 - Subdividing a PSLG with a chain
 - Consider a chain C which is a subgraph of PSLG G
 - and has as its extreme endpoints vertices on the boundary of G.
 - Suppose C is extended from those endpoints
 - with semi-infinite parallel rays.
 - C subdivides the partition of the plane induced by G into two parts.
 
-### p. 95 - Point-chain discrimination
+p. 95 - Point-chain discrimination
 - To use a binary search for point location based on chains,
 - we must be able to determine which side of a chain C
 - a query point q is on.
@@ -2537,7 +2537,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - We need to do better than O(N) for the binary search comparison.
 - To do so we need a more restricted type of chain.
 
-### p. 96 - Monotone chains
+p. 96 - Monotone chains
 - A chain C = (v1, v2, ..., vp) is monotone w.r.t. a line l if a line
 - orthogonal to l intersects C in at most one point.
 - There is no “doubling back” or “overlap” of C w.r.t. l.
@@ -2549,13 +2549,13 @@ These are cropped from the main slide PDF. Do not skip them.
 - mentioned semi-infinite rays, but the definition doesn’t say so.
 - p. 49, Figure 2.11(b)
 
-### p. 97 - In a monotone chain C, the orthogonal projections onto l
+p. 97 - In a monotone chain C, the orthogonal projections onto l
 - {l(v1), l(v2), ..., l(vp)} of the vertices (v1, v2, ..., vp) of C
 - have the same order as the vertices: (l(v1), l(v2), ..., l(vp)).
 - Not true for non-monotone chains.
 - orthogonal projections onto l
 
-### p. 98 - Point-chain discrimination with a monotone chain
+p. 98 - Point-chain discrimination with a monotone chain
 - The point-chain discrimination operation can be performed
 - more efficiently with a monotone chain.
 - Assumptions:
@@ -2567,7 +2567,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - 1. Compute orthogonal projection l(q) of q on l. O(1)
 - 2. Binary search “on l” for i ∋l(vi) ≤l(q) ≤l(vi+1). O(log N)
 
-### p. 99 - Point location query with monotone chains, part 1
+p. 99 - Point location query with monotone chains, part 1
 - Given an O(log N) point-chain discrimination operation,
 - how can it be used for a point location query?
 - Suppose there is a set C = {C1, C2, ..., Cr} of chains
@@ -2579,7 +2579,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - which are not members of Cj lie on the same side of Cj.
 - Such a set C is a monotone complete set of chains of G.
 
-### p. 100 - Point location query with monotone chains, part 2
+p. 100 - Point location query with monotone chains, part 2
 - Property 2 means that the chains of C are ordered.
 - Therefore, C can be binary searched with the
 - point-chain discrimination operation as the comparison operator.
@@ -2589,7 +2589,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - The latter is often written O(log2 N), e.g., see text p. 56.
 - (For clarity, not all rays shown.)
 
-### p. 101 - Chain method overview, “reprise 1”
+p. 101 - Chain method overview, “reprise 1”
 - PSLG G
 - Monotone complete
 - set of chains C for G
@@ -2601,27 +2601,27 @@ These are cropped from the main slide PDF. Do not skip them.
 - Queries
 - Preprocessing
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.
 - Explain the invariant or ordering that makes the method work.
 - Trace the method by hand on a small example.
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 Fast query time after significant preprocessing to regularize the PSLG and construct the chains.
 
 ## Common mistakes and danger points
 - The query logic only makes sense after regularization and complete chain construction.
 - Know exactly what “monotone” means relative to the chosen axis.
 
-## Professor emphasis from recordings
+Professor emphasis from recordings
 These points are distilled from the related recordings and focus on what the professor slowed down for, warned about, or connected to homework/exam reasoning.
 
 - The point of the chain method in the lectures is to beat the naive slab idea by organizing the subdivision into monotone chains rather than storing every slab independently.
 - He repeatedly ties the query procedure to locating the two neighboring chains around the query point, then identifying the face trapped between them.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### Core exam drill
 **Question.** State the problem solved by chain method: basics, definitions, and query idea, describe preprocessing/query/update steps if any, and give the time and space bounds.
 
@@ -2637,19 +2637,19 @@ These points are distilled from the related recordings and focus on what the pro
 - Regular PSLG idea and monotone chains.
 - How chains partition the subdivision into searchable regions.
 - Two-stage query: binary search among chains, then binary search within a chain.
-### Core test / key idea
+Core test / key idea
 - A chain is monotone with respect to the chosen axis, so its vertices appear in order by projection.
 - Two neighboring chains bound a region; locating the query between chains narrows the candidate face.
 - The method is geometric binary search over ordered chains.
-### Complexity
+Complexity
 - Fast query time after significant preprocessing to regularize the PSLG and construct the chains.
-### Common mistakes / danger points
+Common mistakes / danger points
 - The query logic only makes sense after regularization and complete chain construction.
 - Know exactly what “monotone” means relative to the chosen axis.
-### Professor emphasis (from recordings)
+Professor emphasis (from recordings)
 - The point of the chain method in the lectures is to beat the naive slab idea by organizing the subdivision into monotone chains rather than storing every slab independently.
 - He repeatedly ties the query procedure to locating the two neighboring chains around the query point, then identifying the face trapped between them.
-## End-of-file summary
+End-of-file summary
 - Regular PSLG idea and monotone chains.
 - How chains partition the subdivision into searchable regions.
 - Two-stage query: binary search among chains, then binary search within a chain.
@@ -2657,7 +2657,7 @@ These points are distilled from the related recordings and focus on what the pro
 - The query logic only makes sense after regularization and complete chain construction.
 - Know exactly what “monotone” means relative to the chosen axis.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Plane sweep as a recurring paradigm](02_Geometric_Search/16_plane-sweep-paradigm.md)
 - **Next file in reading order:** [Chain method: regular PSLGs and constructing the chain family](02_Geometric_Search/18_chain-method-constructing-chains.md)
 - **Source slide range:** pp. 91-101 of `comp_geometry_slides_new.pdf`
@@ -2675,7 +2675,7 @@ These points are distilled from the related recordings and focus on what the pro
 - **Recording files touching this material:** CS 564 - 02.06 5.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This is the construction phase students often hand-wave. Do not. The chain method is only as good as the monotone complete set it builds.
 
 ## What you must know cold
@@ -2683,12 +2683,12 @@ This is the construction phase students often hand-wave. Do not. The chain metho
 - Edge orientation by vertex order.
 - Graph-weight balancing idea behind constructing a monotone complete chain family.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - Edges are directed from lower to higher ordered vertex.
 - Weights are assigned so that for each non-extreme vertex, total incoming and outgoing weight balance.
 - The second pass peels off chains according to these weights until a monotone complete set is produced.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 102
@@ -2709,7 +2709,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - is regular (i.e., except v1 and vN).
 - v9 = v N
 
-### p. 103 - Edge orientation in a regular PSLG
+p. 103 - Edge orientation in a regular PSLG
 - We may think of an edge vivj as directed from vi to vj if i < j.
 - Thus, for a specific vertex vj, all edges vivj with i < j are
 - “incoming” and all edges vjvk with j < k are “outgoing”.
@@ -2721,7 +2721,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - v9 = v N
 - IN(v6) = (v3, v4, v5)
 
-### p. 104 - Constructing C, part 1
+p. 104 - Constructing C, part 1
 - For any vertex vj (j ≠ 1) in a regular PSLG, we can construct a
 - y-monotone chain from v1 to vj.
 - (y-monotone ≡ monotone w.r.t. the y axis)
@@ -2733,7 +2733,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - By the inductive hypothesis, ∃ a y-monotone chain from v1 to vi.
 - Adding edge vivj to that chain gives the desired y-monotone
 
-### p. 105 - Constructing C, part 2
+p. 105 - Constructing C, part 2
 - Those properties are:
 - (1) The union of the members of C contains the PSLG G
 - (a given edge of G may be in more than one chain in C).
@@ -2745,7 +2745,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - ∑ W(e)
 - Sum of weights of “incoming” edges
 
-### p. 106 - Constructing C, part 3
+p. 106 - Constructing C, part 3
 - Assigning edges weights ∋WIN(vj) = WOUT(vj) is an old problem.
 - A two pass algorithm accomplishes it.
 - All weights W(e) are initialized to 1.
@@ -2766,7 +2766,7 @@ for each edge e in G /* Initialization */
 - 2nd pass
 - 1st pass
 
-### p. 108 - Constructing C, part 5
+p. 108 - Constructing C, part 5
 - The algorithm requires O(N) time.
 - Observe that the algorithm assigns weights that tell how many
 - chains each edge will be in, but it does not actually construct chains.
@@ -2776,7 +2776,7 @@ for each edge e in G /* Initialization */
 - as the pass proceeds from vertex to vertex.
 - The details are left as an exercise.
 
-### p. 109 - Chain method overview, “reprise 2”
+p. 109 - Chain method overview, “reprise 2”
 - PSLG G
 - Monotone complete
 - set of chains C for G
@@ -2788,33 +2788,33 @@ for each edge e in G /* Initialization */
 - Queries
 - Preprocessing
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.
 - Explain the invariant or ordering that makes the method work.
 - Trace the method by hand on a small example.
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 Polynomial preprocessing with the goal of supporting logarithmic-style queries later.
 
 ## Common mistakes and danger points
 - Do not confuse balancing weights with already having the chains. The modified second pass is what actually constructs them.
 - Chain completeness matters: the structure must cover the searchable regions without gaps.
 
-## Professor emphasis from recordings
+Professor emphasis from recordings
 These points are distilled from the related recordings and focus on what the professor slowed down for, warned about, or connected to homework/exam reasoning.
 
 - He stresses that clockwise/counterclockwise ordering of incident edges matters when constructing chains; if you lose that order, the chain extraction logic breaks.
 - The lecture also mentions that the textbook/slides have a few small mistakes here, so you should trust the geometric invariant, not blindly memorize a corrupted line of pseudo-code.
 - This is one of the places most naturally connected to homework, because the balancing information must be turned into an actual monotone complete set of chains.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 Existing drill reminders from the earlier pack:
 - Modify the graph-weight balancing procedure so the second pass constructs the monotone complete set of chains, not just weights.
 - Adapted from HW2-Q4: Modify graph-weight balancing so the second pass constructs a monotone complete set of chains.
 
-### HW2-Q4 adapted
+HW2-Q4 adapted
 **Question.** Modify the graph weight balancing method so that the second pass constructs a monotone complete set of chains.
 
 **How to answer.** The balancing pass computes how many chains must traverse each edge; the modified second pass should explicitly extract those chains while preserving monotonicity and coverage.
@@ -2834,20 +2834,20 @@ Existing drill reminders from the earlier pack:
 - What a regular PSLG is.
 - Edge orientation by vertex order.
 - Graph-weight balancing idea behind constructing a monotone complete chain family.
-### Core test / key idea
+Core test / key idea
 - Edges are directed from lower to higher ordered vertex.
 - Weights are assigned so that for each non-extreme vertex, total incoming and outgoing weight balance.
 - The second pass peels off chains according to these weights until a monotone complete set is produced.
-### Complexity
+Complexity
 - Polynomial preprocessing with the goal of supporting logarithmic-style queries later.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Do not confuse balancing weights with already having the chains. The modified second pass is what actually constructs them.
 - Chain completeness matters: the structure must cover the searchable regions without gaps.
-### Professor emphasis (from recordings)
+Professor emphasis (from recordings)
 - He stresses that clockwise/counterclockwise ordering of incident edges matters when constructing chains; if you lose that order, the chain extraction logic breaks.
 - The lecture also mentions that the textbook/slides have a few small mistakes here, so you should trust the geometric invariant, not blindly memorize a corrupted line of pseudo-code.
 - This is one of the places most naturally connected to homework, because the balancing information must be turned into an actual monotone complete set of chains.
-## End-of-file summary
+End-of-file summary
 - What a regular PSLG is.
 - Edge orientation by vertex order.
 - Graph-weight balancing idea behind constructing a monotone complete chain family.
@@ -2855,7 +2855,7 @@ Existing drill reminders from the earlier pack:
 - Do not confuse balancing weights with already having the chains. The modified second pass is what actually constructs them.
 - Chain completeness matters: the structure must cover the searchable regions without gaps.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Chain method: basics, definitions, and query idea](02_Geometric_Search/17_chain-method-basics-and-query.md)
 - **Next file in reading order:** [Chain method: regularization of arbitrary PSLGs](02_Geometric_Search/19_chain-method-regularization.md)
 - **Source slide range:** pp. 102-109 of `comp_geometry_slides_new.pdf`
@@ -2873,7 +2873,7 @@ Existing drill reminders from the earlier pack:
 - **Recording files touching this material:** CS 564 - 02.06 5.2.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 Regularization is the unpleasant but necessary surgery step. Arbitrary PSLGs do not automatically satisfy the assumptions the chain method wants, so the structure is repaired first.
 
 ## What you must know cold
@@ -2881,11 +2881,11 @@ Regularization is the unpleasant but necessary surgery step. Arbitrary PSLGs do 
 - How adding structure or splitting edges/vertices restores regularity.
 - Why this preprocessing does not change the point-location answer.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - The regularization pass removes problematic local configurations that would break monotone-chain decomposition.
 - The goal is to preserve the subdivision semantics while making the combinatorics suitable for binary search.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 112
@@ -2906,7 +2906,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - The process may add “artificial” faces by splitting existing ones.
 - The two faces share the same identity for point location purposes.
 
-### p. 111 - Regularizing a vertex, part 1
+p. 111 - Regularizing a vertex, part 1
 - Consider a nonregular vertex v with no outgoing edges.
 - A horizontal line through v will intersect at least one
 - and at most two edges adjacent to v on either side.
@@ -2918,7 +2918,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - and let v2 be the upper endpoint of e2.
 - (These indices are for the example, they are not the regular indices.)
 
-### p. 112 - Regularizing a vertex, part 2
+p. 112 - Regularizing a vertex, part 2
 - Text, p. 52:
 - “Then the segment vv* does not cross any edge of G and therefore
 - can be added to the PSLG, thereby regularizing vertex v.”
@@ -2928,7 +2928,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - vertex v along the horizontal line, but edge vv* can not
 - be added to G.
 
-### p. 113 - Regularizing a vertex, part 3
+p. 113 - Regularizing a vertex, part 3
 - We turn from the observation to the regularization process.
 - In overview:
 - Regularization requires two plane sweeps of the PSLG:
@@ -2940,7 +2940,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - 1. the left-to-right order of the intersections of the sweep-line with
 - the PSLG, which induce intervals along the sweep-line, and
 
-### p. 114 - Regularizing a vertex, part 4
+p. 114 - Regularizing a vertex, part 4
 - For each event (each vertex v):
 - 1. Find the interval in the sweep-line status that contains v.
 - 2. Update the sweep-line status.
@@ -2952,7 +2952,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - and during the sweep there will be O(N) insertions and deletions,
 - each requiring O(log N) time.
 
-### p. 115 - Regularizing a vertex, part 5
+p. 115 - Regularizing a vertex, part 5
 - Does the process actually run in O(N log N) time? I’m not sure.
 - How do we know whether to connect v to v1 or v2 ?
 - By whether v is to right or to the left of the intersection of edge e
@@ -2964,31 +2964,31 @@ These are cropped from the main slide PDF. Do not skip them.
 - ⇒O(N2) total processing.
 - sweep-line
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.
 - Explain the invariant or ordering that makes the method work.
 - Trace the method by hand on a small example.
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 This preprocessing can dominate implementation complexity; the query benefit comes afterward.
 
 ## Common mistakes and danger points
 - Textbook/slides may gloss over details. If a configuration breaks regularity, you must say how it is fixed.
 - Regularization should preserve face containment answers.
 
-## Professor emphasis from recordings
+Professor emphasis from recordings
 These points are distilled from the related recordings and focus on what the professor slowed down for, warned about, or connected to homework/exam reasoning.
 
 - Regularization is treated as the repair step that forces an arbitrary PSLG into the conditions required by the chain method.
 - The key thing to remember is not the cosmetic picture change, but why regularity is needed so each horizontal slice behaves predictably.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 Existing drill reminders from the earlier pack:
 - Adapted from HW2-Q4: Modify graph-weight balancing so the second pass constructs a monotone complete set of chains.
 
-### Core exam drill
+Core exam drill
 **Question.** State the problem solved by chain method: regularization of arbitrary pslgs, describe preprocessing/query/update steps if any, and give the time and space bounds.
 
 **How to answer.** An excellent answer names the input, the output, the invariant or ordering exploited by the method, and the exact asymptotic costs.
@@ -3003,18 +3003,18 @@ Existing drill reminders from the earlier pack:
 - Why arbitrary PSLGs may violate regularity assumptions.
 - How adding structure or splitting edges/vertices restores regularity.
 - Why this preprocessing does not change the point-location answer.
-### Core test / key idea
+Core test / key idea
 - The regularization pass removes problematic local configurations that would break monotone-chain decomposition.
 - The goal is to preserve the subdivision semantics while making the combinatorics suitable for binary search.
-### Complexity
+Complexity
 - This preprocessing can dominate implementation complexity; the query benefit comes afterward.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Textbook/slides may gloss over details. If a configuration breaks regularity, you must say how it is fixed.
 - Regularization should preserve face containment answers.
-### Professor emphasis (from recordings)
+Professor emphasis (from recordings)
 - Regularization is treated as the repair step that forces an arbitrary PSLG into the conditions required by the chain method.
 - The key thing to remember is not the cosmetic picture change, but why regularity is needed so each horizontal slice behaves predictably.
-## End-of-file summary
+End-of-file summary
 - Why arbitrary PSLGs may violate regularity assumptions.
 - How adding structure or splitting edges/vertices restores regularity.
 - Why this preprocessing does not change the point-location answer.
@@ -3022,7 +3022,7 @@ Existing drill reminders from the earlier pack:
 - Textbook/slides may gloss over details. If a configuration breaks regularity, you must say how it is fixed.
 - Regularization should preserve face containment answers.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Chain method: regular PSLGs and constructing the chain family](02_Geometric_Search/18_chain-method-constructing-chains.md)
 - **Next file in reading order:** [Chain method: analysis and wrap-up](02_Geometric_Search/20_chain-method-analysis.md)
 - **Source slide range:** pp. 110-115 of `comp_geometry_slides_new.pdf`
@@ -3040,7 +3040,7 @@ Existing drill reminders from the earlier pack:
 - **Recording files touching this material:** CS 564 - 02.06 5.2.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This short range is where you convert the construction story into formal performance claims. The method is only exam-safe when you can say what preprocessing buys you and at what cost.
 
 ## What you must know cold
@@ -3048,11 +3048,11 @@ This short range is where you convert the construction story into formal perform
 - How many binary-search steps happen during a query.
 - Trade-off relative to simpler point-location methods like slabs.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - Query time comes from binary search over an ordered family of chains plus local search on a chain.
 - Preprocessing and storage are more involved than brute force, but the pay-off is sublinear query time.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 117
@@ -3069,7 +3069,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Space: O(N)
 - See text pp. 54-55 for details of space analysis.
 
-### p. 117 - Chain method overview, “finale and segue”
+p. 117 - Chain method overview, “finale and segue”
 - PSLG G
 - Monotone complete
 - set of chains C for G
@@ -3081,23 +3081,23 @@ These are cropped from the main slide PDF. Do not skip them.
 - Queries
 - Preprocessing
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the claim precisely before giving the argument.
 - Identify the known lower bound / recurrence / invariant you are using.
 - Keep the direction of the argument correct.
 - End with the exact asymptotic conclusion.
 
-## Complexity and performance facts
+Complexity and performance facts
 State the course version of preprocessing, storage, and query bounds exactly as given in the slides.
 
 ## Common mistakes and danger points
 - Do not describe the query bound without also describing what was precomputed to achieve it.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 Existing drill reminders from the earlier pack:
 - Adapted from HW2-Q4: Modify graph-weight balancing so the second pass constructs a monotone complete set of chains.
 
-### Proof drill
+Proof drill
 **Question.** Explain the main argument in chain method: analysis and wrap-up in a logically correct order.
 
 **How to answer.** Do not jump from intuition to conclusion. State the reduction/invariant/recurrence first, then derive the claimed bound.
@@ -3107,21 +3107,21 @@ Existing drill reminders from the earlier pack:
 - What data is stored after preprocessing.
 - How many binary-search steps happen during a query.
 - Trade-off relative to simpler point-location methods like slabs.
-### Core test / key idea
+Core test / key idea
 - Query time comes from binary search over an ordered family of chains plus local search on a chain.
 - Preprocessing and storage are more involved than brute force, but the pay-off is sublinear query time.
-### Complexity
+Complexity
 - State the course version of preprocessing, storage, and query bounds exactly as given in the slides.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Do not describe the query bound without also describing what was precomputed to achieve it.
-## End-of-file summary
+End-of-file summary
 - What data is stored after preprocessing.
 - How many binary-search steps happen during a query.
 - Trade-off relative to simpler point-location methods like slabs.
 - State the course version of preprocessing, storage, and query bounds exactly as given in the slides.
 - Do not describe the query bound without also describing what was precomputed to achieve it.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Chain method: regularization of arbitrary PSLGs](02_Geometric_Search/19_chain-method-regularization.md)
 - **Next file in reading order:** [Triangle refinement: setup and triangulation](02_Geometric_Search/21_triangle-refinement-setup.md)
 - **Source slide range:** pp. 116-117 of `comp_geometry_slides_new.pdf`
@@ -3139,7 +3139,7 @@ Existing drill reminders from the earlier pack:
 - **Recording files touching this material:** CS 564 - 02.11 6.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 Triangle refinement is the second major point-location framework. Instead of chains, it builds a hierarchy of triangulations plus a search DAG.
 
 ## What you must know cold
@@ -3147,11 +3147,11 @@ Triangle refinement is the second major point-location framework. Instead of cha
 - Build a sequence of coarser/finer triangulations.
 - Interpret the links between levels as a directed acyclic search graph.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - A triangle at one level points to the few triangles that refine it at the next level.
 - The hierarchy turns point location into a descent through progressively smaller containing triangles.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 119
@@ -3174,7 +3174,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - (PS pp. 56-58)
 - Queries
 
-### p. 119 - Triangulation
+p. 119 - Triangulation
 - A planar subdivision (e.g., a PSLG) is a triangulation
 - if all its bounded regions are triangles.
 - Not a triangulation
@@ -3186,7 +3186,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - where N is the number of vertices. (Prove this statement by
 - applying induction on N).
 
-### p. 120 - Triangulating G, part 1
+p. 120 - Triangulating G, part 1
 - We assume that the PSLG given in the point location problem is
 - a triangulation; if not, it is transformed into one in O(N) time.
 - We will study triangulation algorithms later.
@@ -3197,7 +3197,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - number of edges 3N-6. ( Prove this statement)
 - Triangulation
 
-### p. 121 - Triangulating G, part 2
+p. 121 - Triangulating G, part 2
 - Note that the text, published in 1985, says O(N log N) time is
 - needed for the triangulation (p. 56).
 - Chazelle published an O(N) triangulation algorithm in 1991;
@@ -3209,7 +3209,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - 2. G has a triangular boundary
 - 3. G has exactly 3N - 6 edges (∈O(N))
 
-### p. 122 - Triangle refinement method
+p. 122 - Triangle refinement method
 - PSLG G
 - Directed acyclic
 - search graph T
@@ -3221,21 +3221,21 @@ These are cropped from the main slide PDF. Do not skip them.
 - (PS pp. 56-58)
 - Queries
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.
 - Explain the invariant or ordering that makes the method work.
 - Trace the method by hand on a small example.
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 Preprocessing constructs the triangulations and DAG; query follows one path down the DAG.
 
 ## Common mistakes and danger points
 - The hierarchy is over triangulations, not arbitrary faces.
 - You need the containment/refinement relationship to justify the search path.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### Core exam drill
 **Question.** State the problem solved by triangle refinement: setup and triangulation, describe preprocessing/query/update steps if any, and give the time and space bounds.
 
@@ -3251,15 +3251,15 @@ Preprocessing constructs the triangulations and DAG; query follows one path down
 - Triangulate the PSLG.
 - Build a sequence of coarser/finer triangulations.
 - Interpret the links between levels as a directed acyclic search graph.
-### Core test / key idea
+Core test / key idea
 - A triangle at one level points to the few triangles that refine it at the next level.
 - The hierarchy turns point location into a descent through progressively smaller containing triangles.
-### Complexity
+Complexity
 - Preprocessing constructs the triangulations and DAG; query follows one path down the DAG.
-### Common mistakes / danger points
+Common mistakes / danger points
 - The hierarchy is over triangulations, not arbitrary faces.
 - You need the containment/refinement relationship to justify the search path.
-## End-of-file summary
+End-of-file summary
 - Triangulate the PSLG.
 - Build a sequence of coarser/finer triangulations.
 - Interpret the links between levels as a directed acyclic search graph.
@@ -3267,7 +3267,7 @@ Preprocessing constructs the triangulations and DAG; query follows one path down
 - The hierarchy is over triangulations, not arbitrary faces.
 - You need the containment/refinement relationship to justify the search path.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Chain method: analysis and wrap-up](02_Geometric_Search/20_chain-method-analysis.md)
 - **Next file in reading order:** [Triangle refinement: hierarchy, query, storage, and analysis](02_Geometric_Search/22_triangle-refinement-query-and-analysis.md)
 - **Source slide range:** pp. 118-122 of `comp_geometry_slides_new.pdf`
@@ -3285,7 +3285,7 @@ Preprocessing constructs the triangulations and DAG; query follows one path down
 - **Recording files touching this material:** CS 564 - 02.11 6.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This is the operative part of triangle refinement: how you descend the DAG, what you store, and why the path length stays logarithmic or near-logarithmic in the course analysis.
 
 ## What you must know cold
@@ -3293,12 +3293,12 @@ This is the operative part of triangle refinement: how you descend the DAG, what
 - Why each level narrows the search region.
 - Storage and search-graph size issues.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - Start from a top-level triangle covering the subdivision.
 - At each level, perform point-in-triangle tests on the few candidate children and move to the unique containing child.
 - Stop at a leaf triangle and recover the face in the original PSLG.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 125
@@ -3321,7 +3321,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - become adjacent. How this set is chosen will determine the
 - performance of the algorithm.
 
-### p. 124 - Notation
+p. 124 - Notation
 - The notation Rj denotes a triangle.
 - A triangle Rj may appear in more than one triangulation in
 - the sequence, but is said to belong to triangulation Si
@@ -3333,10 +3333,10 @@ These are cropped from the main slide PDF. Do not skip them.
 - when “the node of T that represents Rj” is meant.
 - In T, there is an arc from triangle Rk to triangle Rj if,
 
-### p. 125 - Geometric Search, Point location, Triangle refinement method
+p. 125 - Geometric Search, Point location, Triangle refinement method
 - This slide is mainly visual. Use the figure crop in this file and make sure you can explain what the diagram is showing.
 
-### p. 126 - Triangle refinement method
+p. 126 - Triangle refinement method
 - PSLG G
 - Directed acyclic
 - search graph T
@@ -3348,7 +3348,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - (PS pp. 56-58)
 - Queries
 
-### p. 127 - Query process, informal
+p. 127 - Query process, informal
 - The query process uses a primitive operation, triangle inclusion,
 - which can be computed in O(1) with 3 Left tests.
 - The query begins by determining if the query point q is
@@ -3360,10 +3360,10 @@ These are cropped from the main slide PDF. Do not skip them.
 - The search advances along the arc to that node,
 - which becomes the current node, and the process repeats.
 
-### p. 128 - Query starts here
+p. 128 - Query starts here
 - This slide is mainly visual. Use the figure crop in this file and make sure you can explain what the diagram is showing.
 
-### p. 129 - Query process
+p. 129 - Query process
 - Define Γ(v) to be a list of all descendants of node v of T,
 - and TRIANGLE(v) to the triangle represented by node v.
 
@@ -3390,7 +3390,7 @@ for each u ∈Γ(v)
 - i.e., each successive triangulation Si is smaller than Si-1.
 - All are smaller than their predecessor by at least α.
 
-### p. 131 - Storage
+p. 131 - Storage
 - Properties (1) and (2) imply O(N) storage required for T.
 - Here’s why:
 - Storage for T includes storage for nodes and for pointers.
@@ -3402,7 +3402,7 @@ for each u ∈Γ(v)
 - ≤ 2N1 + 2αN1 + 2α2N1 + ... + 2αi-1Ni + ... + 2αh(N)-1N1
 - Sh(N)
 
-### p. 132 - Justifying the properties, part 1
+p. 132 - Justifying the properties, part 1
 - Having shown that properties (1) and (2)
 - lead to a query time ∈O(log N) and storage ∈O(N),
 - the question remains:
@@ -3414,7 +3414,7 @@ for each u ∈Γ(v)
 - The order of selection at each stage is not important. Procedure:
 - (1) Arbitrarily select one vertex with degree less than K to remove.
 
-### p. 133 - Justifying the properties, part 2
+p. 133 - Justifying the properties, part 2
 - To show property (1) we use properties of planar graphs.
 - Euler’s formula for a triangulation with a 3 edge boundary is
 - e = 3v - 6
@@ -3426,7 +3426,7 @@ for each u ∈Γ(v)
 - ⇒Sum of vertex degrees=2*e < 6N.
 - ⇒∃at least N/2 vertices of degree < 12.
 
-### p. 134 - Analysis
+p. 134 - Analysis
 - Query time: O(log N)
 - Storage: O(N)
 - Preprocessing: O(N log N) or O(N)?
@@ -3438,14 +3438,14 @@ for each u ∈Γ(v)
 - the new polygon takes O(1) time and we repeat this for at
 - most the size of the independent set < N. The creation of the
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.
 - Explain the invariant or ordering that makes the method work.
 - Trace the method by hand on a small example.
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 The course presentation emphasizes search depth and search-graph size; use the slide statements, not vague guesses.
 
 ## Common mistakes and danger points
@@ -3453,7 +3453,7 @@ The course presentation emphasizes search depth and search-graph size; use the s
 - Remember the relationship between triangulation leaves and original subdivision faces.
 - Textual Big-O phrasing: statements should be read as asymptotic membership (e.g., belongs to `O(log N)`), not mathematical equality; do not turn bounds into false exact equalities.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### Core exam drill
 **Question.** State the problem solved by triangle refinement: hierarchy, query, storage, and analysis, describe preprocessing/query/update steps if any, and give the time and space bounds.
 
@@ -3469,17 +3469,17 @@ The course presentation emphasizes search depth and search-graph size; use the s
 - How to test which child triangle contains the query point.
 - Why each level narrows the search region.
 - Storage and search-graph size issues.
-### Core test / key idea
+Core test / key idea
 - Start from a top-level triangle covering the subdivision.
 - At each level, perform point-in-triangle tests on the few candidate children and move to the unique containing child.
 - Stop at a leaf triangle and recover the face in the original PSLG.
-### Complexity
+Complexity
 - The course presentation emphasizes search depth and search-graph size; use the slide statements, not vague guesses.
-### Common mistakes / danger points
+Common mistakes / danger points
 - “Move to the child containing q” is the conceptual step. In implementation the child set must be explicitly stored and searched.
 - Remember the relationship between triangulation leaves and original subdivision faces.
 - Textual Big-O phrasing: statements should be read as asymptotic membership (e.g., belongs to `O(log N)`), not mathematical equality; do not turn bounds into false exact equalities.
-## End-of-file summary
+End-of-file summary
 - How to test which child triangle contains the query point.
 - Why each level narrows the search region.
 - Storage and search-graph size issues.
@@ -3487,7 +3487,7 @@ The course presentation emphasizes search depth and search-graph size; use the s
 - “Move to the child containing q” is the conceptual step. In implementation the child set must be explicitly stored and searched.
 - Remember the relationship between triangulation leaves and original subdivision faces.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Triangle refinement: setup and triangulation](02_Geometric_Search/21_triangle-refinement-setup.md)
 - **Next file in reading order:** [Range searching: problem statement and design space](02_Geometric_Search/23_range-searching-intro.md)
 - **Source slide range:** pp. 123-134 of `comp_geometry_slides_new.pdf`
@@ -3505,7 +3505,7 @@ The course presentation emphasizes search depth and search-graph size; use the s
 - **Recording files touching this material:** CS 564 - 02.11 6.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This is the design-space intro for orthogonal range searching. After this point the course starts comparing data structures by the usual three costs: preprocessing, storage, query time.
 
 ## What you must know cold
@@ -3513,11 +3513,11 @@ This is the design-space intro for orthogonal range searching. After this point 
 - Query: axis-parallel rectangle or orthogonal range.
 - Output modes: report all points or count them.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - The same problem admits multiple structures depending on assumptions about data distribution and how much space you can afford.
 - You should be able to compare structures, not just memorize isolated formulas.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 135
@@ -3535,7 +3535,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - (x, y) satisfy lx ≤x ≤rx, ly ≤y ≤ry, for given lx, rx, ly, ry?
 - Answer: 6
 
-### p. 136 - Introduction to range searching
+p. 136 - Introduction to range searching
 - General range searching problem
 - Given a data set of N objects, each consisting of an ordered d-tuple
 - of values (x1, x2, ..., xd), and a query domain consisting of d ranges
@@ -3547,7 +3547,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Cartesian space (d-space) and the range as a region in that space.
 - For example, in 2-space the objects and the range are points and
 
-### p. 137 - Standard range searching problem
+p. 137 - Standard range searching problem
 - INSTANCE: Set S = {p1, p2, ..., pN} of N points in the plane,
 - pi = (xi, yi) for 1 ≤i ≤N, and rectangular range R = [lx, rx] × [ly, ry],
 - also in the plane.
@@ -3559,19 +3559,19 @@ These are cropped from the main slide PDF. Do not skip them.
 - 1. Two dimensional, all points and range within plane.
 - 2 All
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - Give the precise definitions.
 - Distinguish similar notions cleanly.
 - Use the right primitive test or formula on a concrete example.
 
-## Complexity and performance facts
+Complexity and performance facts
 Always state preprocessing, storage, and query/reporting time separately.
 
 ## Common mistakes and danger points
 - The range is [lx, rx] x [ly, ry], not “the two corners” unless the notation is explicitly converted.
 - Orthogonal range notation pitfall: the query range is the Cartesian product `[lx, rx] x [ly, ry]`; do not reinterpret the endpoints as two arbitrary corners unless you explicitly convert the notation.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### Definition drill
 **Question.** Give the precise definitions and the most important consequences from range searching: problem statement and design space.
 
@@ -3582,15 +3582,15 @@ Always state preprocessing, storage, and query/reporting time separately.
 - Input: static point set S.
 - Query: axis-parallel rectangle or orthogonal range.
 - Output modes: report all points or count them.
-### Core test / key idea
+Core test / key idea
 - The same problem admits multiple structures depending on assumptions about data distribution and how much space you can afford.
 - You should be able to compare structures, not just memorize isolated formulas.
-### Complexity
+Complexity
 - Always state preprocessing, storage, and query/reporting time separately.
-### Common mistakes / danger points
+Common mistakes / danger points
 - The range is [lx, rx] x [ly, ry], not “the two corners” unless the notation is explicitly converted.
 - Orthogonal range notation pitfall: the query range is the Cartesian product `[lx, rx] x [ly, ry]`; do not reinterpret the endpoints as two arbitrary corners unless you explicitly convert the notation.
-## End-of-file summary
+End-of-file summary
 - Input: static point set S.
 - Query: axis-parallel rectangle or orthogonal range.
 - Output modes: report all points or count them.
@@ -3598,7 +3598,7 @@ Always state preprocessing, storage, and query/reporting time separately.
 - The range is [lx, rx] x [ly, ry], not “the two corners” unless the notation is explicitly converted.
 - Orthogonal range notation pitfall: the query range is the Cartesian product `[lx, rx] x [ly, ry]`; do not reinterpret the endpoints as two arbitrary corners unless you explicitly convert the notation.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Triangle refinement: hierarchy, query, storage, and analysis](02_Geometric_Search/22_triangle-refinement-query-and-analysis.md)
 - **Next file in reading order:** [Grid method](02_Geometric_Search/24_grid-method.md)
 - **Source slide range:** pp. 135-137 of `comp_geometry_slides_new.pdf`
@@ -3616,7 +3616,7 @@ Always state preprocessing, storage, and query/reporting time separately.
 - **Recording files touching this material:** CS 564 - 02.13 7.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 The grid method is the simplest spatial subdivision approach. It is fast when the data is well behaved and can be awful in the worst case, which is the recurring moral of the early range-search structures.
 
 ## What you must know cold
@@ -3624,11 +3624,11 @@ The grid method is the simplest spatial subdivision approach. It is fast when th
 - Store points by cell.
 - A query range is decomposed into fully covered interior cells plus a boundary strip.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - For interior cells, report or count all stored points directly.
 - For boundary cells, examine points individually because the cell may only partially overlap the query.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 138
@@ -3644,7 +3644,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Point data set S = {p1, p2, ..., pN}, pi = (xi, yi)
 - Subdivision of plane into m × m grid (m is grid parameter)
 
-### p. 139 - Grid method
+p. 139 - Grid method
 - Preprocessing
 
 ```text
@@ -3685,26 +3685,26 @@ endfor
 - is allowed only when only points to be reported are checked.
 - Al
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.
 - Explain the invariant or ordering that makes the method work.
 - Trace the method by hand on a small example.
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 Good average behavior under uniform assumptions; worst-case query can degrade because many points may fall in a small number of cells.
 
 ## Common mistakes and danger points
 - Grid parameter choice matters.
 - Worst-case behavior is poor when data is clustered.
 
-## Professor emphasis from recordings
+Professor emphasis from recordings
 These points are distilled from the related recordings and focus on what the professor slowed down for, warned about, or connected to homework/exam reasoning.
 
 - For the grid method the lecture frames average-case behavior as the attraction, but not as a worst-case guarantee. Bad point distributions can still hurt.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### Core exam drill
 **Question.** State the problem solved by grid method, describe preprocessing/query/update steps if any, and give the time and space bounds.
 
@@ -3720,17 +3720,17 @@ These points are distilled from the related recordings and focus on what the pro
 - Partition the plane into an m x m regular grid.
 - Store points by cell.
 - A query range is decomposed into fully covered interior cells plus a boundary strip.
-### Core test / key idea
+Core test / key idea
 - For interior cells, report or count all stored points directly.
 - For boundary cells, examine points individually because the cell may only partially overlap the query.
-### Complexity
+Complexity
 - Good average behavior under uniform assumptions; worst-case query can degrade because many points may fall in a small number of cells.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Grid parameter choice matters.
 - Worst-case behavior is poor when data is clustered.
-### Professor emphasis (from recordings)
+Professor emphasis (from recordings)
 - For the grid method the lecture frames average-case behavior as the attraction, but not as a worst-case guarantee. Bad point distributions can still hurt.
-## End-of-file summary
+End-of-file summary
 - Partition the plane into an m x m regular grid.
 - Store points by cell.
 - A query range is decomposed into fully covered interior cells plus a boundary strip.
@@ -3738,7 +3738,7 @@ These points are distilled from the related recordings and focus on what the pro
 - Grid parameter choice matters.
 - Worst-case behavior is poor when data is clustered.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Range searching: problem statement and design space](02_Geometric_Search/23_range-searching-intro.md)
 - **Next file in reading order:** [Quadtree method](02_Geometric_Search/25_quadtree-method.md)
 - **Source slide range:** pp. 138-141 of `comp_geometry_slides_new.pdf`
@@ -3756,7 +3756,7 @@ These points are distilled from the related recordings and focus on what the pro
 - **Recording files touching this material:** CS 564 - 02.13 7.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 Quadtrees adapt the grid idea recursively. Instead of fixing one uniform resolution everywhere, they subdivide only where needed, up to the chosen cutoff rule.
 
 ## What you must know cold
@@ -3764,11 +3764,11 @@ Quadtrees adapt the grid idea recursively. Instead of fixing one uniform resolut
 - Leaf stopping criterion such as occupancy threshold or maximum depth.
 - Query visits only nodes whose regions intersect the search range.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - A quadtree is still space subdivision, not data-balanced subdivision.
 - This makes it more adaptive than a fixed grid, but still vulnerable to bad worst-case distributions.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 146
@@ -3791,7 +3791,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - one subquadrant of its parent’s quad.
 - Subdivision of a quad recurses until:
 
-### p. 143 - Quadtree method
+p. 143 - Quadtree method
 - Point data set S.
 - Quadtree subdivision
 - for S with M = 2 and
@@ -3800,7 +3800,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - cut off further
 - subdivision.
 
-### p. 144 - Quadtree method
+p. 144 - Quadtree method
 - Quadtree subdivision
 - for S with M = 2 and
 - D = 3.
@@ -3812,7 +3812,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Branch numbering convention
 - Attached point list (showing number of points)
 
-### p. 145 - Quadtree method
+p. 145 - Quadtree method
 - Construction
 - A quadtree is built over a square subset of the plane, or domain,
 - defined to include all points of S; domain = [Lx, Rx] × [Ly, Ry].
@@ -3824,15 +3824,15 @@ These are cropped from the main slide PDF. Do not skip them.
 - level λ + 1 that represent its subquadrants are “combined”.
 - To “combine” quadtrees q0, q1, q2, q3 at level λ + 1:
 
-### p. 146 - Quadtree method
+p. 146 - Quadtree method
 - Level 4.
 - Level 3.
 
-### p. 147 - Quadtree method
+p. 147 - Quadtree method
 - Level 2.
 - Levels 1 and 0.
 
-### p. 148 - Quadtree method
+p. 148 - Quadtree method
 - Preprocessing
 - Quadtree node q
 - q.points
@@ -3859,7 +3859,7 @@ procedure ConstructQuadtree(G, M, D, level, imin, imax, jmin, jmax, quad)
 - imax
 - (ly + ry) / 2
 
-### p. 150 - Quadtree method
+p. 150 - Quadtree method
 - Query
 - QueryQuadtree(root(Q),R)
 
@@ -3886,21 +3886,21 @@ report pi
 - ConstructQuadtree, is O(m2 + N).
 - Th
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.
 - Explain the invariant or ordering that makes the method work.
 - Trace the method by hand on a small example.
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 Often better in practice than a flat grid, but worst-case bounds remain distribution-sensitive.
 
 ## Common mistakes and danger points
 - Leaves need not be at the same depth.
 - Boundary overlap handling matters when deciding whether to recurse, report a whole subtree, or inspect stored points.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### Core exam drill
 **Question.** State the problem solved by quadtree method, describe preprocessing/query/update steps if any, and give the time and space bounds.
 
@@ -3916,15 +3916,15 @@ Often better in practice than a flat grid, but worst-case bounds remain distribu
 - Recursive subdivision into four quadrants.
 - Leaf stopping criterion such as occupancy threshold or maximum depth.
 - Query visits only nodes whose regions intersect the search range.
-### Core test / key idea
+Core test / key idea
 - A quadtree is still space subdivision, not data-balanced subdivision.
 - This makes it more adaptive than a fixed grid, but still vulnerable to bad worst-case distributions.
-### Complexity
+Complexity
 - Often better in practice than a flat grid, but worst-case bounds remain distribution-sensitive.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Leaves need not be at the same depth.
 - Boundary overlap handling matters when deciding whether to recurse, report a whole subtree, or inspect stored points.
-## End-of-file summary
+End-of-file summary
 - Recursive subdivision into four quadrants.
 - Leaf stopping criterion such as occupancy threshold or maximum depth.
 - Query visits only nodes whose regions intersect the search range.
@@ -3932,7 +3932,7 @@ Often better in practice than a flat grid, but worst-case bounds remain distribu
 - Leaves need not be at the same depth.
 - Boundary overlap handling matters when deciding whether to recurse, report a whole subtree, or inspect stored points.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Grid method](02_Geometric_Search/24_grid-method.md)
 - **Next file in reading order:** [k-d tree method](02_Geometric_Search/26_kd-tree-method.md)
 - **Source slide range:** pp. 142-151 of `comp_geometry_slides_new.pdf`
@@ -3950,7 +3950,7 @@ Often better in practice than a flat grid, but worst-case bounds remain distribu
 - **Recording files touching this material:** CS 564 - 02.13 7.2.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 The k-d tree is the first range-search structure in this block that subdivides based on the data rather than the ambient space. That is why its worst-case story is better.
 
 ## What you must know cold
@@ -3958,12 +3958,12 @@ The k-d tree is the first range-search structure in this block that subdivides b
 - Choose splitting points/medians so subproblems are roughly balanced.
 - Query recursively visits only subtrees whose regions intersect the search range.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - Each node stores a point and induces an axis-aligned region for its subtree.
 - Balance comes from splitting by median coordinate, not by a fixed background grid.
 - This is why the structure supports logarithmic-style search behavior in the balanced case.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 154
@@ -3986,7 +3986,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - bisecting line, allowing bisecting (binary) search.
 - Th
 
-### p. 153 - A two-dimensional binary search tree is constructed associated
+p. 153 - A two-dimensional binary search tree is constructed associated
 - with the given set of points S (pre-processing step).
 - A node v in the tree is associated with a point P(v) of S and a
 - line l(v) [ parallel to x- or y-axis] is assumed to pass through it.
@@ -3998,7 +3998,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Search must continue in both R1
 - and R2.
 
-### p. 154 - k-D tree method
+p. 154 - k-D tree method
 - P(v)=p6
 - t(v)=vert
 - M(v)=x6
@@ -4010,7 +4010,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - P(v)=p2
 - M(v)=x2
 
-### p. 155 - k-D tree method
+p. 155 - k-D tree method
 - Preprocessing
 - Data associated with each node v of k-D tree:
 - Explicit
@@ -4022,7 +4022,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - R(v) Rectangle (half-plane) on P(v)’s side of
 - the bisecting line associated with Parent(v).
 
-### p. 156 - k-D tree method
+p. 156 - k-D tree method
 - Preprocessing
 
 ```text
@@ -4049,7 +4049,7 @@ SL = {pj ∈S - {pi} xj < xi}
 - 3.Search L2 with x-coordinate value of point 6..say xm,from left to right.
 - If the x-coordinate of the element is less than xm then put the element
 
-### p. 158 - k-D tree method
+p. 158 - k-D tree method
 - Query
 - range
 - P(v)=p6
@@ -4061,7 +4061,7 @@ SL = {pj ∈S - {pi} xj < xi}
 - P(v)=p3
 - M(v)=y3
 
-### p. 159 - k-D tree method
+p. 159 - k-D tree method
 - Query
 - SearchkDTree(root(T),R)
 
@@ -4086,21 +4086,21 @@ begin
 - Query: O(dN1-1/d + K); e.g. for d = 2, O(√N + K).
 - Storage: O(dN).
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.
 - Explain the invariant or ordering that makes the method work.
 - Trace the method by hand on a small example.
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 Balanced construction supports efficient range searching with query time depending on visited nodes plus reported points.
 
 ## Common mistakes and danger points
 - The split direction alternates by level. The recordings mention a common coding/slide confusion exactly here.
 - Do not describe it as a quadtree with two children. The construction principle is different.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### Core exam drill
 **Question.** State the problem solved by k-d tree method, describe preprocessing/query/update steps if any, and give the time and space bounds.
 
@@ -4116,16 +4116,16 @@ Balanced construction supports efficient range searching with query time dependi
 - Alternate vertical and horizontal splits.
 - Choose splitting points/medians so subproblems are roughly balanced.
 - Query recursively visits only subtrees whose regions intersect the search range.
-### Core test / key idea
+Core test / key idea
 - Each node stores a point and induces an axis-aligned region for its subtree.
 - Balance comes from splitting by median coordinate, not by a fixed background grid.
 - This is why the structure supports logarithmic-style search behavior in the balanced case.
-### Complexity
+Complexity
 - Balanced construction supports efficient range searching with query time depending on visited nodes plus reported points.
-### Common mistakes / danger points
+Common mistakes / danger points
 - The split direction alternates by level. The recordings mention a common coding/slide confusion exactly here.
 - Do not describe it as a quadtree with two children. The construction principle is different.
-## End-of-file summary
+End-of-file summary
 - Alternate vertical and horizontal splits.
 - Choose splitting points/medians so subproblems are roughly balanced.
 - Query recursively visits only subtrees whose regions intersect the search range.
@@ -4133,7 +4133,7 @@ Balanced construction supports efficient range searching with query time dependi
 - The split direction alternates by level. The recordings mention a common coding/slide confusion exactly here.
 - Do not describe it as a quadtree with two children. The construction principle is different.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Quadtree method](02_Geometric_Search/25_quadtree-method.md)
 - **Next file in reading order:** [Direct access methods](02_Geometric_Search/27_direct-access-methods.md)
 - **Source slide range:** pp. 152-160 of `comp_geometry_slides_new.pdf`
@@ -4151,7 +4151,7 @@ Balanced construction supports efficient range searching with query time dependi
 - **Recording files touching this material:** CS 564 - 02.13 7.2.txt, CS 564 - 02.18 8.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 These methods are the space-hungry extreme of the design space: precompute answers so aggressively that queries become very fast. This is conceptually important even if it looks absurdly expensive.
 
 ## What you must know cold
@@ -4159,12 +4159,12 @@ These methods are the space-hungry extreme of the design space: precompute answe
 - Normalization of coordinates / ranks.
 - Single-stage and multi-stage direct access as precomputation strategies.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - The extreme idea is to precompute answers for every possible normalized query range.
 - Single-stage direct access spends a huge amount of storage for very small query time.
 - Multi-stage direct access reduces storage by factoring the query into stages.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 165
@@ -4185,7 +4185,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - ⇒The number of distinct ranges is bounded above by
 - N + 1 2 ∈O(N4).
 
-### p. 162 - Direct access method (brute force)
+p. 162 - Direct access method (brute force)
 - Preprocessing
 - Compute and save answer for each of O(N4) different pairs of cells.
 - Query
@@ -4197,7 +4197,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Query: O(log N + K); O(log N) to find cells for range corners.
 - Storage: O(N5); O(N4) cells, O(N) elements for each cell.
 
-### p. 163 - Normalization
+p. 163 - Normalization
 - Normalization of coordinates
 - It will be useful to have available normalized coordinates for both
 - ranges and points. For points ∈ S, normalized x coordinate is
@@ -4209,7 +4209,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - points ∈ S
 - normalized coordinates
 
-### p. 164 - Direct access method (single stage)
+p. 164 - Direct access method (single stage)
 - Concept
 - One-dimensional binary search is optimal in storage θ(N) and
 - time O(log N + K). Combine direct access on one coordinate (x)
@@ -4221,16 +4221,16 @@ These are cropped from the main slide PDF. Do not skip them.
 - Each array entry points to a binary search tree which holds points
 - of S with normalized coordinates in [i, j], stored in ascending
 
-### p. 165 - Direct access method (single stage)
+p. 165 - Direct access method (single stage)
 - x-range
 - y-range
 - x-range array
 - Pointer to binary search tree for y-range
 
-### p. 166 - Direct access method (single stage)
+p. 166 - Direct access method (single stage)
 - This slide is mainly visual. Use the figure crop in this file and make sure you can explain what the diagram is showing.
 
-### p. 167 - Direct access method (single stage)
+p. 167 - Direct access method (single stage)
 - Preprocessing
 - For each pair of normalized x coordinates (i, j), build a threaded
 - binary tree storing the subset of S with normalized x coordinates
@@ -4242,7 +4242,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - 4. Report points within y-range by following threads in tree
 - until y ≥ ry. O(K)
 
-### p. 168 - Direct access method (multistage)
+p. 168 - Direct access method (multistage)
 - Concept
 - We would like to improve the O(N3) storage of single stage direct
 - access method. Instead of precomputing answers for all possible
@@ -4254,7 +4254,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - gauge
 - Point set S x-ranges
 
-### p. 169 - Direct access method (multistage)
+p. 169 - Direct access method (multistage)
 - Data structure
 - Multiple direct access arrays, one for each gauge
 - ⇒1 array for coarse level, multiple at fine level.
@@ -4266,7 +4266,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - For each level (coarse and fine)
 - for each gauge at the level
 
-### p. 170 - Direct access method (multistage)
+p. 170 - Direct access method (multistage)
 - Query (Explanation)
 - • Find the beginning and end of the query x-range. This will
 - correspond to three intervals: one in the coarse gauge and
@@ -4278,10 +4278,10 @@ These are cropped from the main slide PDF. Do not skip them.
 - (binary searches), go to the direct access array for the
 - coarse subdivision and follow the array element to access
 
-### p. 171 - Direct access method (multistage)
+p. 171 - Direct access method (multistage)
 - This slide is mainly visual. Use the figure crop in this file and make sure you can explain what the diagram is showing.
 
-### p. 172 - Direct access method (multistage)
+p. 172 - Direct access method (multistage)
 - Example (storage and query cost):
 - N = 100, α = 0.5, coarse gauge contains N 0.5 =10 divisions. N
 - (100) possible coarse-gauge intervals. N (100) binary trees
@@ -4293,7 +4293,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - structure in the fine division is N 0.5 x 2 =100. For a total storage
 - of N 0.5 x N 0.5 x 2 x N 0.5 = 10,000 points. Total storage cost for
 
-### p. 173 - Direct access method (multistage)
+p. 173 - Direct access method (multistage)
 - Analysis
 - Preprocessing: O(N2 log N); O(N) trees, O(N log N) each.
 - Query: O(log N + K); see comments.
@@ -4305,32 +4305,32 @@ These are cropped from the main slide PDF. Do not skip them.
 - Divisions per gauge
 - N1−α
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.
 - Explain the invariant or ordering that makes the method work.
 - Trace the method by hand on a small example.
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 Query time is excellent; storage is the real issue and is the entire reason later structures exist.
 
 ## Common mistakes and danger points
 - Do not praise a direct-access method without also admitting its brutal storage cost.
 - Normalization is essential; otherwise the number of possible raw coordinates is meaningless.
 
-## Professor emphasis from recordings
+Professor emphasis from recordings
 These points are distilled from the related recordings and focus on what the professor slowed down for, warned about, or connected to homework/exam reasoning.
 
 - The direct-access methods are taught as a precomputation-for-speed tradeoff: brilliant when query volume is huge, ridiculous when storage is the bottleneck.
 - He points out just how brutal the storage explosion can become, which is exactly the sort of comparison the exam likes.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 Existing drill reminders from the earlier pack:
 - Design a structure for a laminar family of non-crossing rectangles that answers containment-count queries faster than scanning all rectangles.
 - Adapted from HW2-Q3: Store a laminar set of rectangles so that a query point reports how many rectangles contain it, and support insertion of a new rectangle.
 
-### HW2-Q3 adapted
+HW2-Q3 adapted
 **Question.** Design a structure for non-intersecting rectangles so that a query point P returns how many rectangles contain P, and describe insertion of a new rectangle.
 
 **How to answer.** Exploit the non-intersection assumption to reduce overlap complexity. The intended answer should preprocess boundaries so a query does much less than checking all rectangles.
@@ -4350,19 +4350,19 @@ Existing drill reminders from the earlier pack:
 - Brute force baseline.
 - Normalization of coordinates / ranks.
 - Single-stage and multi-stage direct access as precomputation strategies.
-### Core test / key idea
+Core test / key idea
 - The extreme idea is to precompute answers for every possible normalized query range.
 - Single-stage direct access spends a huge amount of storage for very small query time.
 - Multi-stage direct access reduces storage by factoring the query into stages.
-### Complexity
+Complexity
 - Query time is excellent; storage is the real issue and is the entire reason later structures exist.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Do not praise a direct-access method without also admitting its brutal storage cost.
 - Normalization is essential; otherwise the number of possible raw coordinates is meaningless.
-### Professor emphasis (from recordings)
+Professor emphasis (from recordings)
 - The direct-access methods are taught as a precomputation-for-speed tradeoff: brilliant when query volume is huge, ridiculous when storage is the bottleneck.
 - He points out just how brutal the storage explosion can become, which is exactly the sort of comparison the exam likes.
-## End-of-file summary
+End-of-file summary
 - Brute force baseline.
 - Normalization of coordinates / ranks.
 - Single-stage and multi-stage direct access as precomputation strategies.
@@ -4370,7 +4370,7 @@ Existing drill reminders from the earlier pack:
 - Do not praise a direct-access method without also admitting its brutal storage cost.
 - Normalization is essential; otherwise the number of possible raw coordinates is meaningless.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [k-d tree method](02_Geometric_Search/26_kd-tree-method.md)
 - **Next file in reading order:** [Range trees](02_Geometric_Search/28_range-trees.md)
 - **Source slide range:** pp. 161-173 of `comp_geometry_slides_new.pdf`
@@ -4388,7 +4388,7 @@ Existing drill reminders from the earlier pack:
 - **Recording files touching this material:** CS 564 - 02.18 8.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 Range trees are the most exam-worthy structure in the range-search block because they explicitly reuse segment-tree ideas and then add a second search structure inside each node. Tree of trees, because apparently one tree was not enough.
 
 ## What you must know cold
@@ -4396,12 +4396,12 @@ Range trees are the most exam-worthy structure in the range-search block because
 - Range-tree query decomposes the x-range into canonical nodes and then searches y inside each associated structure.
 - Semi-open interval convention and why it matters.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - Think of a range tree as a segment tree whose allocation lists have been replaced by searchable ordered trees.
 - The x-range decomposition produces O(log N) canonical nodes.
 - At each canonical node, query the y-ordered associated structure to report or count exactly the points whose x-values are already known to be valid.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 177
@@ -4424,7 +4424,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - For that reason the range tree for S = {p1, p2, ..., pN} is
 - T(1, N + 1).
 
-### p. 175 - Range tree method
+p. 175 - Range tree method
 - Query
 - Informally, traverse the segment tree as if inserting the x-range;
 - at each allocation node, search the allocation tree of the node
@@ -4451,42 +4451,42 @@ begin
 - Observe that once the query y-range starting point in S has been
 - found (via a binary search at one node) there is no need to find it
 
-### p. 177 - Range tree method
+p. 177 - Range tree method
 - This slide is mainly visual. Use the figure crop in this file and make sure you can explain what the diagram is showing.
 
-### p. 178 - Range tree method
+p. 178 - Range tree method
 - This slide is mainly visual. Use the figure crop in this file and make sure you can explain what the diagram is showing.
 
-### p. 179 - Range tree method
+p. 179 - Range tree method
 - This slide is mainly visual. Use the figure crop in this file and make sure you can explain what the diagram is showing.
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.
 - Explain the invariant or ordering that makes the method work.
 - Trace the method by hand on a small example.
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 Typical course version: near-linear or O(N log N) storage, logarithmic decomposition cost, plus per-node secondary search and output term.
 
 ## Common mistakes and danger points
 - Do not forget that the associated structures are ordered by y, while the primary decomposition is by x.
 - Use the exact interval convention from the slides. Endpoint sloppiness leaks points.
 
-## Professor emphasis from recordings
+Professor emphasis from recordings
 These points are distilled from the related recordings and focus on what the professor slowed down for, warned about, or connected to homework/exam reasoning.
 
 - The lecture links range trees back to one-dimensional search structures. The right mental model is layered searching: first narrow the x-range, then search corresponding y-structures.
 - This is also the natural place to think about the homework question on closest neighbors in a one-dimensional range tree, because the whole point is understanding what information each node can cache.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 Existing drill reminders from the earlier pack:
 - Given a point on the line stored in a perfect range tree, explain why only predecessor and successor matter for the nearest neighbor.
 - Describe an augmentation that stores enough local information to answer the closest-neighbor query in O(1) after maintenance.
 - Adapted from HW2-Q2: For points on one axis stored in a range tree, find the closest neighbor in O(log N), then augment the structure to answer in O(1).
 
-### HW2-Q2 adapted
+HW2-Q2 adapted
 **Question.** A set of points on one axis is stored in a perfect binary range tree. Given a pointer to a node, find the closest neighbor in O(log N), then explain how to augment the tree so the answer becomes O(1).
 
 **How to answer.** Without augmentation, move through ancestor/sibling structure and compare the nearest predecessor/successor candidates. With augmentation, store closest-neighbor information per node and maintain it under updates.
@@ -4506,19 +4506,19 @@ Existing drill reminders from the earlier pack:
 - Primary structure by x-intervals, secondary ordered structure by y-values at each node.
 - Range-tree query decomposes the x-range into canonical nodes and then searches y inside each associated structure.
 - Semi-open interval convention and why it matters.
-### Core test / key idea
+Core test / key idea
 - Think of a range tree as a segment tree whose allocation lists have been replaced by searchable ordered trees.
 - The x-range decomposition produces O(log N) canonical nodes.
 - At each canonical node, query the y-ordered associated structure to report or count exactly the points whose x-values are already known to be valid.
-### Complexity
+Complexity
 - Typical course version: near-linear or O(N log N) storage, logarithmic decomposition cost, plus per-node secondary search and output term.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Do not forget that the associated structures are ordered by y, while the primary decomposition is by x.
 - Use the exact interval convention from the slides. Endpoint sloppiness leaks points.
-### Professor emphasis (from recordings)
+Professor emphasis (from recordings)
 - The lecture links range trees back to one-dimensional search structures. The right mental model is layered searching: first narrow the x-range, then search corresponding y-structures.
 - This is also the natural place to think about the homework question on closest neighbors in a one-dimensional range tree, because the whole point is understanding what information each node can cache.
-## End-of-file summary
+End-of-file summary
 - Primary structure by x-intervals, secondary ordered structure by y-values at each node.
 - Range-tree query decomposes the x-range into canonical nodes and then searches y inside each associated structure.
 - Semi-open interval convention and why it matters.
@@ -4526,7 +4526,7 @@ Existing drill reminders from the earlier pack:
 - Do not forget that the associated structures are ordered by y, while the primary decomposition is by x.
 - Use the exact interval convention from the slides. Endpoint sloppiness leaks points.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Direct access methods](02_Geometric_Search/27_direct-access-methods.md)
 - **Next file in reading order:** [Range searching summary](02_Geometric_Search/29_range-searching-summary.md)
 - **Source slide range:** pp. 174-179 of `comp_geometry_slides_new.pdf`
@@ -4544,7 +4544,7 @@ Existing drill reminders from the earlier pack:
 - **Recording files touching this material:** None identified
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This page is the comparison table. Study it as a comparative diagnosis, not as isolated numbers.
 
 ## What you must know cold
@@ -4552,11 +4552,11 @@ This page is the comparison table. Study it as a comparative diagnosis, not as i
 - Trade-offs among preprocessing, storage, and query time.
 - When average-case assumptions rescue a method that is weak in the worst case.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - The whole point of the block is comparison.
 - If asked to recommend a structure, justify it using the problem constraints rather than reciting a complexity line.
 
-## Slide-by-slide digestion
+Slide-by-slide digestion
 
 ### p. 180 - Summary
 - Summary of this topic
@@ -4570,18 +4570,18 @@ This page is the comparison table. Study it as a comparative diagnosis, not as i
 - Intersection counting (simple)
 - Wedges (convex and star shaped)
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - Give the precise definitions.
 - Distinguish similar notions cleanly.
 - Use the right primitive test or formula on a concrete example.
 
-## Complexity and performance facts
+Complexity and performance facts
 Know the summary table from the slides.
 
 ## Common mistakes and danger points
 - Do not mix average-case comments with worst-case guarantees.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### Definition drill
 **Question.** Give the precise definitions and the most important consequences from range searching summary.
 
@@ -4592,21 +4592,21 @@ Know the summary table from the slides.
 - Which methods subdivide space vs subdivide the data.
 - Trade-offs among preprocessing, storage, and query time.
 - When average-case assumptions rescue a method that is weak in the worst case.
-### Core test / key idea
+Core test / key idea
 - The whole point of the block is comparison.
 - If asked to recommend a structure, justify it using the problem constraints rather than reciting a complexity line.
-### Complexity
+Complexity
 - Know the summary table from the slides.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Do not mix average-case comments with worst-case guarantees.
-## End-of-file summary
+End-of-file summary
 - Which methods subdivide space vs subdivide the data.
 - Trade-offs among preprocessing, storage, and query time.
 - When average-case assumptions rescue a method that is weak in the worst case.
 - Know the summary table from the slides.
 - Do not mix average-case comments with worst-case guarantees.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Range trees](02_Geometric_Search/28_range-trees.md)
 - **Next file in reading order:** [Convex hull motivation and why the topic matters](03_Convex_Hulls/30_convex-hull-motivation.md)
 - **Source slide range:** pp. 180-180 of `comp_geometry_slides_new.pdf`
@@ -4624,7 +4624,7 @@ Know the summary table from the slides.
 - **Recording files touching this material:** CS 564 - 02.20 9.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This is the entry point to the convex-hull block. The hull is both a geometric object and a recurring subroutine for other problems.
 
 ## What you must know cold
@@ -4632,11 +4632,11 @@ This is the entry point to the convex-hull block. The hull is both a geometric o
 - Why it is a canonical summary of a point set.
 - Why many other geometric problems reduce to or use the hull.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - The hull is the smallest convex polygon containing the set in 2D.
 - It captures the extreme boundary structure of the set.
 
-## Slide-by-slide digestion
+Slide-by-slide digestion
 
 ### p. 181 - Topic overview
 - Chapter 3 in Preparata, Chapter 3 in O’Rourke.
@@ -4650,7 +4650,7 @@ This is the entry point to the convex-hull block. The hull is both a geometric o
 - Lower bound, convex hull
 - Lower bound, extreme points
 
-### p. 182 - Convex Hull
+p. 182 - Convex Hull
 - - most ubiquitous structure in
 - computational geometry
 - -useful to construct other structures
@@ -4662,18 +4662,18 @@ This is the entry point to the convex-hull block. The hull is both a geometric o
 - among Computer Scientists by
 - the invention of O(nlogn) algorithm
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - Give the precise definitions.
 - Distinguish similar notions cleanly.
 - Use the right primitive test or formula on a concrete example.
 
-## Complexity and performance facts
+Complexity and performance facts
 Sets up the rest of the block where optimal O(N log N) algorithms appear.
 
 ## Common mistakes and danger points
 - The hull is determined by extreme points; interior points are irrelevant to the boundary.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### HW2-Q6 adapted
 **Question.** Design an O(n + X/d) algorithm for a d-approximate convex hull when the x-span is X.
 
@@ -4689,21 +4689,21 @@ Sets up the rest of the block where optimal O(N log N) algorithms appear.
 - What the convex hull represents geometrically.
 - Why it is a canonical summary of a point set.
 - Why many other geometric problems reduce to or use the hull.
-### Core test / key idea
+Core test / key idea
 - The hull is the smallest convex polygon containing the set in 2D.
 - It captures the extreme boundary structure of the set.
-### Complexity
+Complexity
 - Sets up the rest of the block where optimal O(N log N) algorithms appear.
-### Common mistakes / danger points
+Common mistakes / danger points
 - The hull is determined by extreme points; interior points are irrelevant to the boundary.
-## End-of-file summary
+End-of-file summary
 - What the convex hull represents geometrically.
 - Why it is a canonical summary of a point set.
 - Why many other geometric problems reduce to or use the hull.
 - Sets up the rest of the block where optimal O(N log N) algorithms appear.
 - The hull is determined by extreme points; interior points are irrelevant to the boundary.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Range searching summary](02_Geometric_Search/29_range-searching-summary.md)
 - **Next file in reading order:** [Convex hull intuition and preliminaries](03_Convex_Hulls/31_convex-hull-intuition.md)
 - **Source slide range:** pp. 181-182 of `comp_geometry_slides_new.pdf`
@@ -4721,7 +4721,7 @@ Sets up the rest of the block where optimal O(N log N) algorithms appear.
 - **Recording files touching this material:** CS 564 - 02.20 9.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 These slides fix the geometric meaning of convex hull before the algorithms start. If you cannot state what the hull is in three different ways, later proofs feel like spellcasting.
 
 ## What you must know cold
@@ -4729,11 +4729,11 @@ These slides fix the geometric meaning of convex hull before the algorithms star
 - Convex vs reflex vertices.
 - The hull as the smallest convex polygon containing the set.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - Interior points do not appear as hull vertices.
 - Reflex behavior belongs to non-convex polygons; the hull itself is convex.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 184
@@ -4752,7 +4752,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Imagine nails pounded halfway into the plane at the points of S.
 - The convex hull corresponds to a rubber band stretch around them.
 
-### p. 184 - Preliminaries and definitions
+p. 184 - Preliminaries and definitions
 - Convex polygon
 - A polygon is convex iff for any two points in the polygon
 - (interior ∪boundary) the segment connecting the points is
@@ -4760,7 +4760,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - convex
 - not convex
 
-### p. 185 - Preliminaries and definitions
+p. 185 - Preliminaries and definitions
 - Vertices
 - A polygon vertex is convex if its interior angle ≤ π (180°).
 - It is reflex if its interior angle > π (180°).
@@ -4768,18 +4768,18 @@ These are cropped from the main slide PDF. Do not skip them.
 - In a convex polygon, all the vertices are convex.
 - In other words, any polygon with a reflex vertex is not convex.
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - Give the precise definitions.
 - Distinguish similar notions cleanly.
 - Use the right primitive test or formula on a concrete example.
 
-## Complexity and performance facts
+Complexity and performance facts
 Definition stage.
 
 ## Common mistakes and danger points
 - Do not confuse the hull of the input point set with a polygon formed by connecting points in arbitrary order.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### HW2-Q5 adapted
 **Question.** Given the vertices of a non-convex simple polygon in clockwise order, explain how to obtain its convex hull in linear time.
 
@@ -4795,21 +4795,21 @@ Definition stage.
 - Rubber-band intuition.
 - Convex vs reflex vertices.
 - The hull as the smallest convex polygon containing the set.
-### Core test / key idea
+Core test / key idea
 - Interior points do not appear as hull vertices.
 - Reflex behavior belongs to non-convex polygons; the hull itself is convex.
-### Complexity
+Complexity
 - Definition stage.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Do not confuse the hull of the input point set with a polygon formed by connecting points in arbitrary order.
-## End-of-file summary
+End-of-file summary
 - Rubber-band intuition.
 - Convex vs reflex vertices.
 - The hull as the smallest convex polygon containing the set.
 - Definition stage.
 - Do not confuse the hull of the input point set with a polygon formed by connecting points in arbitrary order.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Convex hull motivation and why the topic matters](03_Convex_Hulls/30_convex-hull-motivation.md)
 - **Next file in reading order:** [Convex combinations and dimension-sensitive definitions](03_Convex_Hulls/32_convex-combinations-and-dimension.md)
 - **Source slide range:** pp. 183-185 of `comp_geometry_slides_new.pdf`
@@ -4827,7 +4827,7 @@ Definition stage.
 - **Recording files touching this material:** CS 564 - 02.20 9.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This is the algebraic definition of convex hull, and it is one of the cleanest pieces of theory in the block.
 
 ## What you must know cold
@@ -4835,11 +4835,11 @@ This is the algebraic definition of convex hull, and it is one of the cleanest p
 - Hull as the set of all convex combinations of input points.
 - Dimension-sensitive idea that only up to d+1 points are needed in d-space.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - Affine combinations give the full affine span; convex combinations restrict you to the convex region.
 - In the plane, every hull point can be represented using at most 3 input points.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 188
@@ -4862,7 +4862,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Multiplying through gives the coordinates of points
 - {αx0 + (1 - α)x1, αy0 + (1 - α)y1 }
 
-### p. 187 - Preliminaries and definitions
+p. 187 - Preliminaries and definitions
 - Convex combination
 - We generalize from the parametric equation of a line,
 - which suggests the idea of a convex combination.
@@ -4874,14 +4874,14 @@ These are cropped from the main slide PDF. Do not skip them.
 - of its endpoints(k=2). (The same is not true of a line, why not?)
 - A triangle consists of convex combinations of its three corners (k=3).
 
-### p. 188 - Preliminaries and definitions
+p. 188 - Preliminaries and definitions
 - Convex hull, definition 4
 - The convex hull H(S) of a set of points S
 - is the set of all convex combinations of the points of S.
 - It should be intuitively clear that a hull defined in this way
 - can not have a “dent” (reflex vertex).
 
-### p. 189 - Preliminaries and definitions
+p. 189 - Preliminaries and definitions
 - Convex hull, definition 5
 - The convex hull H(S) of a set of points S in d dimensions
 - is the set of all convex combinations of d + 1 or fewer points of S.
@@ -4892,18 +4892,18 @@ These are cropped from the main slide PDF. Do not skip them.
 - contained by the triangles of the given points,
 - which are the convex combination of all d + 1 = 3 points.
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - Give the precise definitions.
 - Distinguish similar notions cleanly.
 - Use the right primitive test or formula on a concrete example.
 
-## Complexity and performance facts
+Complexity and performance facts
 No algorithm yet; this is representational theory used in later equivalence proofs.
 
 ## Common mistakes and danger points
 - Nonnegative coefficients and sum-to-1 are both required. Drop either condition and you leave the convex hull.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### Definition drill
 **Question.** Give the precise definitions and the most important consequences from convex combinations and dimension-sensitive definitions.
 
@@ -4914,21 +4914,21 @@ No algorithm yet; this is representational theory used in later equivalence proo
 - Convex combination: coefficients are nonnegative and sum to 1.
 - Hull as the set of all convex combinations of input points.
 - Dimension-sensitive idea that only up to d+1 points are needed in d-space.
-### Core test / key idea
+Core test / key idea
 - Affine combinations give the full affine span; convex combinations restrict you to the convex region.
 - In the plane, every hull point can be represented using at most 3 input points.
-### Complexity
+Complexity
 - No algorithm yet; this is representational theory used in later equivalence proofs.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Nonnegative coefficients and sum-to-1 are both required. Drop either condition and you leave the convex hull.
-## End-of-file summary
+End-of-file summary
 - Convex combination: coefficients are nonnegative and sum to 1.
 - Hull as the set of all convex combinations of input points.
 - Dimension-sensitive idea that only up to d+1 points are needed in d-space.
 - No algorithm yet; this is representational theory used in later equivalence proofs.
 - Nonnegative coefficients and sum-to-1 are both required. Drop either condition and you leave the convex hull.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Convex hull intuition and preliminaries](03_Convex_Hulls/31_convex-hull-intuition.md)
 - **Next file in reading order:** [Equivalent formulations and problem statement](03_Convex_Hulls/33_convex-hull-equivalent-formulations.md)
 - **Source slide range:** pp. 186-189 of `comp_geometry_slides_new.pdf`
@@ -4946,7 +4946,7 @@ No algorithm yet; this is representational theory used in later equivalence proo
 - **Recording files touching this material:** CS 564 - 02.20 9.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 The course gives several equivalent ways to think about the hull because different algorithms and proofs use different one-liners: smallest convex set, intersection of half-planes, union of triangles, and so on.
 
 ## What you must know cold
@@ -4955,10 +4955,10 @@ The course gives several equivalent ways to think about the hull because differe
 - Hull as smallest enclosing convex polygon.
 - Formal problem statement: given S, construct H(S).
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - These equivalences justify multiple algorithm paradigms: half-plane tests, supporting-line arguments, or combinatorial constructions.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 190
@@ -4974,12 +4974,12 @@ These are cropped from the main slide PDF. Do not skip them.
 - The convex hull H(S) is the intersection of all convex sets
 - that contain S.
 
-### p. 191 - Preliminaries and definitions
+p. 191 - Preliminaries and definitions
 - Convex hull, definition 7
 - The convex hull H(S) is the intersection of all halfspaces
 - (for d = 2, halfplanes) that contain S.
 
-### p. 192 - Preliminaries and definitions
+p. 192 - Preliminaries and definitions
 - Convex hull, definition 8
 - The convex hull H(S) of a set of points S in the plane
 - is the smallest convex polygon P that encloses S,
@@ -4987,7 +4987,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - such that P ⊃P′ ⊇S.
 - P′
 
-### p. 193 - Preliminaries and definitions
+p. 193 - Preliminaries and definitions
 - Convex hull, definition 9
 - The convex hull H(S) of a set of points S in the plane
 - is the enclosing convex polygon P with the smallest area.
@@ -4999,14 +4999,14 @@ These are cropped from the main slide PDF. Do not skip them.
 - S exist such that p is between the line segment ab.
 - Thus, in Definition 5 example, the points (1, 2, 3, 4, 5, 6, 7) are
 
-### p. 194 - Preliminaries and definitions
+p. 194 - Preliminaries and definitions
 - Convex hull, definition 11
 - The convex hull H(S) of a set of points S in the plane
 - is the union of all the triangles defined by points in S.
 - This is a restatement of definition 5.
 - Many triangles are not shown in the figure.
 
-### p. 195 - Preliminaries and definitions
+p. 195 - Preliminaries and definitions
 - Problem definitions
 - CONVEX HULL
 - INSTANCE. A set S = {p1, p2, …, pN} of d-dimensional points.
@@ -5018,18 +5018,18 @@ These are cropped from the main slide PDF. Do not skip them.
 - QUESTION. Identify the points of S that are vertices of
 - the convex hull H(S). (Here, the ordering is not required.)
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - Give the precise definitions.
 - Distinguish similar notions cleanly.
 - Use the right primitive test or formula on a concrete example.
 
-## Complexity and performance facts
+Complexity and performance facts
 Pre-algorithm theory.
 
 ## Common mistakes and danger points
 - Equivalent formulations are not separate definitions of different objects; they describe the same hull.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### Definition drill
 **Question.** Give the precise definitions and the most important consequences from equivalent formulations and problem statement.
 
@@ -5041,20 +5041,20 @@ Pre-algorithm theory.
 - Hull as the intersection of all containing half-planes / half-spaces.
 - Hull as smallest enclosing convex polygon.
 - Formal problem statement: given S, construct H(S).
-### Core test / key idea
+Core test / key idea
 - These equivalences justify multiple algorithm paradigms: half-plane tests, supporting-line arguments, or combinatorial constructions.
-### Complexity
+Complexity
 - Pre-algorithm theory.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Equivalent formulations are not separate definitions of different objects; they describe the same hull.
-## End-of-file summary
+End-of-file summary
 - Hull as the intersection of all convex sets containing S.
 - Hull as the intersection of all containing half-planes / half-spaces.
 - Hull as smallest enclosing convex polygon.
 - Pre-algorithm theory.
 - Equivalent formulations are not separate definitions of different objects; they describe the same hull.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Convex combinations and dimension-sensitive definitions](03_Convex_Hulls/32_convex-combinations-and-dimension.md)
 - **Next file in reading order:** [Lower bound for convex hull via reduction from sorting](03_Convex_Hulls/34_convex-hull-lower-bound.md)
 - **Source slide range:** pp. 190-195 of `comp_geometry_slides_new.pdf`
@@ -5072,7 +5072,7 @@ Pre-algorithm theory.
 - **Recording files touching this material:** CS 564 - 02.20 9.1.txt, CS 564 - 02.20 9.2.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This is a favorite exam idea because it tests actual reduction logic rather than memory. The punchline is that convex hull construction cannot beat Ω(N log N) in the comparison model because sorting reduces to it.
 
 ## What you must know cold
@@ -5080,12 +5080,12 @@ This is a favorite exam idea because it tests actual reduction logic rather than
 - How to map numbers x_i to points on a parabola so sorted order can be read from the hull.
 - Why O(N) transformation cost plus a hypothetical faster hull algorithm would imply a faster sorting algorithm.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - Transform the sorting instance x_1, ..., x_N into points (x_i, x_i^2).
 - All points lie on a convex parabola, so their hull order reveals the sorted order by x.
 - Therefore sorting reduces to convex hull, and convex hull has Ω(N log N) lower bound.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 199
@@ -5108,7 +5108,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - transformation of problems.
 - Suppose there are two problems A and B, which are related
 
-### p. 197 - Preliminaries and definitions
+p. 197 - Preliminaries and definitions
 - Lower and upper bounds via transformation
 - Under the assumption that the transformation preserves the
 - order of the instance size, the transformation has two properties:
@@ -5120,7 +5120,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - solved in T(N) time and A is τ(N)-transformable to B,
 - then A requires at most T(N) + O(τ(N)) time.
 
-### p. 198 - Preliminaries and definitions
+p. 198 - Preliminaries and definitions
 - A known problem
 - Note that the technique assumes that there is a problem with a
 - known lower bound (to use property 1).
@@ -5131,7 +5131,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Upper bound O(f(N))
 - Lower bound Ω(f(N))
 
-### p. 199 - Preliminaries and definitions
+p. 199 - Preliminaries and definitions
 - Lower bound for CONVEX HULL
 - Can we get a lower bound for time for CONVEX HULL?
 - Recall that that the constructed hull H(S) must be given in order.
@@ -5143,14 +5143,14 @@ These are cropped from the main slide PDF. Do not skip them.
 - SORTING is the set of N real numbers {x1, x2, …, xN}.
 - Transform that set to an instance of CONVEX HULL
 
-### p. 200 - Preliminaries and definitions
+p. 200 - Preliminaries and definitions
 - Lower bound for CONVEX HULL
 - The convex hull of the converted instance will consist of a
 - list of points, sorted by abscissa. At most one pass through the list
 - will find the smallest and the answer to SORTING can be
 - read off from there in one pass. O(N)
 
-### p. 201 - Preliminaries and definitions
+p. 201 - Preliminaries and definitions
 - Lower bound for CONVEX HULL
 - Note that the O(N) transformation is dominated by the O(N log N)
 - complexity of the problem.
@@ -5162,32 +5162,32 @@ These are cropped from the main slide PDF. Do not skip them.
 - Upper bound O(N log N)
 - Lower bound Ω(N log N)
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the claim precisely before giving the argument.
 - Identify the known lower bound / recurrence / invariant you are using.
 - Keep the direction of the argument correct.
 - End with the exact asymptotic conclusion.
 
-## Complexity and performance facts
+Complexity and performance facts
 Lower bound Ω(N log N) for planar convex hull in the standard model.
 
 ## Common mistakes and danger points
 - Direction matters: reduce from a problem with known lower bound to the problem whose lower bound you want.
 - Do not propose an algorithm for sorting and call that a lower-bound proof. Professors develop headaches from this.
 
-## Professor emphasis from recordings
+Professor emphasis from recordings
 These points are distilled from the related recordings and focus on what the professor slowed down for, warned about, or connected to homework/exam reasoning.
 
 - The professor emphasizes that lower bounds are proved by transforming a problem with a known lower bound into the target problem, not the other way around.
 - The most common mistake here is reversing the roles of the source and target problems and accidentally 'proving' nonsense.
 - He presents this reduction as a template you are supposed to reuse later, not as a one-off trick for convex hull only.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 Existing drill reminders from the earlier pack:
 - Write the full input transformation, output extraction, and complexity argument for sorting ≤ convex hull.
 - Explain why a reduction must not cost more than the lower bound you are trying to transfer.
 
-### Proof drill
+Proof drill
 **Question.** Explain the main argument in lower bound for convex hull via reduction from sorting in a logically correct order.
 
 **How to answer.** Do not jump from intuition to conclusion. State the reduction/invariant/recurrence first, then derive the claimed bound.
@@ -5197,20 +5197,20 @@ Existing drill reminders from the earlier pack:
 - What a problem transformation/reduction is.
 - How to map numbers x_i to points on a parabola so sorted order can be read from the hull.
 - Why O(N) transformation cost plus a hypothetical faster hull algorithm would imply a faster sorting algorithm.
-### Core test / key idea
+Core test / key idea
 - Transform the sorting instance x_1, ..., x_N into points (x_i, x_i^2).
 - All points lie on a convex parabola, so their hull order reveals the sorted order by x.
 - Therefore sorting reduces to convex hull, and convex hull has Ω(N log N) lower bound.
-### Complexity
+Complexity
 - Lower bound Ω(N log N) for planar convex hull in the standard model.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Direction matters: reduce from a problem with known lower bound to the problem whose lower bound you want.
 - Do not propose an algorithm for sorting and call that a lower-bound proof. Professors develop headaches from this.
-### Professor emphasis (from recordings)
+Professor emphasis (from recordings)
 - The professor emphasizes that lower bounds are proved by transforming a problem with a known lower bound into the target problem, not the other way around.
 - The most common mistake here is reversing the roles of the source and target problems and accidentally 'proving' nonsense.
 - He presents this reduction as a template you are supposed to reuse later, not as a one-off trick for convex hull only.
-## End-of-file summary
+End-of-file summary
 - What a problem transformation/reduction is.
 - How to map numbers x_i to points on a parabola so sorted order can be read from the hull.
 - Why O(N) transformation cost plus a hypothetical faster hull algorithm would imply a faster sorting algorithm.
@@ -5218,7 +5218,7 @@ Existing drill reminders from the earlier pack:
 - Direction matters: reduce from a problem with known lower bound to the problem whose lower bound you want.
 - Do not propose an algorithm for sorting and call that a lower-bound proof. Professors develop headaches from this.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Equivalent formulations and problem statement](03_Convex_Hulls/33_convex-hull-equivalent-formulations.md)
 - **Next file in reading order:** [Extreme points algorithm](03_Convex_Hulls/35_extreme-points-algorithm.md)
 - **Source slide range:** pp. 196-201 of `comp_geometry_slides_new.pdf`
@@ -5236,7 +5236,7 @@ Existing drill reminders from the earlier pack:
 - **Recording files touching this material:** CS 564 - 02.20 9.2.txt, CS 564 - 02.25 10.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This is the brute-force hull algorithm you study mostly to understand what efficient algorithms are trying to avoid.
 
 ## What you must know cold
@@ -5244,12 +5244,12 @@ This is the brute-force hull algorithm you study mostly to understand what effic
 - A point is non-extreme if it lies inside some triangle formed by other input points.
 - Brute-force test by checking many triangles.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - For each point p, ask whether p lies inside any triangle determined by other points.
 - If yes, p cannot be a hull vertex.
 - Collect all extreme points, then order them angularly to obtain the hull.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 202
@@ -5272,7 +5272,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - 1. Find the extreme points E of S.
 - 2. Order the points E so that they form a convex polygon.
 
-### p. 203 - Extreme points algorithm
+p. 203 - Extreme points algorithm
 - Determining if a point is an extreme point
 - If we could determine whether a given point p ∈S was an
 - extreme point in S, then we could find E by testing each point in S.
@@ -5282,7 +5282,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - p ∈E
 - p ∉E
 
-### p. 204 - Extreme points algorithm
+p. 204 - Extreme points algorithm
 - Determining if a point is an extreme point
 - There are O(N3) triangles determined by the N points of S.
 - Point enclosure in a triangle can be performed in O(1) time.
@@ -5294,7 +5294,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - O’Rourke p.67)
 - p ∈E
 
-### p. 205 - Extreme points algorithm
+p. 205 - Extreme points algorithm
 - Ordering the vertices of the hull
 - E has been found (in O(N4)) time.
 - We already know that the vertices of a convex polygon
@@ -5304,25 +5304,25 @@ These are cropped from the main slide PDF. Do not skip them.
 - Sort the points of E on polar angle. O(N log N)
 - Overall time complexity for this algorithm: O(N4).
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.
 - Explain the invariant or ordering that makes the method work.
 - Trace the method by hand on a small example.
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 Naive version is O(N^4) or similar brute-force order depending on the exact implementation and ordering step.
 
 ## Common mistakes and danger points
 - Finding extreme points is not enough; you still need them in boundary order to output the hull.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 Existing drill reminders from the earlier pack:
 - Given a simple polygon in boundary order, explain why a general point-set hull algorithm is wasteful and why a linear-time polygon-specific method can do better.
 - Adapted from HW2-Q5: Given vertices of a non-convex simple polygon in clockwise order, find its convex hull in O(N).
 
-### Core exam drill
+Core exam drill
 **Question.** State the problem solved by extreme points algorithm, describe preprocessing/query/update steps if any, and give the time and space bounds.
 
 **How to answer.** An excellent answer names the input, the output, the invariant or ordering exploited by the method, and the exact asymptotic costs.
@@ -5337,22 +5337,22 @@ Existing drill reminders from the earlier pack:
 - Extreme points are the minimal subset whose hull is the full hull.
 - A point is non-extreme if it lies inside some triangle formed by other input points.
 - Brute-force test by checking many triangles.
-### Core test / key idea
+Core test / key idea
 - For each point p, ask whether p lies inside any triangle determined by other points.
 - If yes, p cannot be a hull vertex.
 - Collect all extreme points, then order them angularly to obtain the hull.
-### Complexity
+Complexity
 - Naive version is O(N^4) or similar brute-force order depending on the exact implementation and ordering step.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Finding extreme points is not enough; you still need them in boundary order to output the hull.
-## End-of-file summary
+End-of-file summary
 - Extreme points are the minimal subset whose hull is the full hull.
 - A point is non-extreme if it lies inside some triangle formed by other input points.
 - Brute-force test by checking many triangles.
 - Naive version is O(N^4) or similar brute-force order depending on the exact implementation and ordering step.
 - Finding extreme points is not enough; you still need them in boundary order to output the hull.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Lower bound for convex hull via reduction from sorting](03_Convex_Hulls/34_convex-hull-lower-bound.md)
 - **Next file in reading order:** [Graham’s scan: concept and preparation](03_Convex_Hulls/36_graham-scan-algorithm.md)
 - **Source slide range:** pp. 202-205 of `comp_geometry_slides_new.pdf`
@@ -5370,7 +5370,7 @@ Existing drill reminders from the earlier pack:
 - **Recording files touching this material:** CS 564 - 02.25 10.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This is the central convex-hull algorithm for the midterm. Learn the invariant, not just the pseudo-code. The invariant is what saves you when the exam wording mutates slightly, as it always does out of spite.
 
 ## What you must know cold
@@ -5378,12 +5378,12 @@ This is the central convex-hull algorithm for the midterm. Learn the invariant, 
 - Process points in order while maintaining a stack/deque of candidate hull vertices.
 - Whenever the last turn is not a left turn, pop until convexity is restored.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - After angular sorting, the scan walks boundary candidates in order.
 - The stack invariant is that the current stack is always the convex hull of the processed prefix.
 - A right turn or collinear bad case means the middle point cannot remain a hull vertex, so it is removed.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 208
@@ -5406,7 +5406,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - The essential idea: if a point p is not a vertex of the convex hull,
 - then it is internal to some triangle Op1p2,
 
-### p. 207 - Graham’s scan
+p. 207 - Graham’s scan
 - Centroid
 - The centroid of a finite set of points p1, p2, …, pN is their
 - arithmetic mean (p1 + p2 + … + pN) / N.
@@ -5418,11 +5418,11 @@ These are cropped from the main slide PDF. Do not skip them.
 - If second keys are equal, …
 - farther
 
-### p. 208 - Polar angles
+p. 208 - Polar angles
 - This slide is mainly visual: it fixes the meaning of polar angle as the counterclockwise angle from the x-axis.
 - You must understand the ordering picture because the next slides show how to compare these angles without calling trigonometric functions.
 
-### p. 209 - Graham’s scan
+p. 209 - Graham’s scan
 - θ1
 - θ2
 - Comparing polar angles
@@ -5434,7 +5434,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Equivalently, ... iff 0p2p1 is a left turn.
 - Note that this means polar angles can be compared without
 
-### p. 210 - Graham’s scan
+p. 210 - Graham’s scan
 - Preparation
 - The preparation for Graham’s scan is as follows:
 - 1. Find a point O internal to H(S) (the centroid of S). O(N)
@@ -5444,7 +5444,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - (1) polar angle and (2) distance from O. O(N log N)
 - 3. Arrange the sorted points in a doubly-linked circular list. O(N)
 
-### p. 211 - Graham’s scan
+p. 211 - Graham’s scan
 - Basic idea of the scan
 - Recall that if a point p is not a vertex of the convex hull,
 - then it is internal to some triangle Op1p2.
@@ -5455,7 +5455,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Equivalently, eliminate p2 from H(S) iff p1p2p3 is not a left turn.
 - Point p2 is within triangle Op1p3 and is eliminated.
 
-### p. 212 - Graham’s scan
+p. 212 - Graham’s scan
 - Scan algorithm (informal)
 - The scan begins at the rightmost smallest ordinate
 - (minimum y coordinate) point; call it START.
@@ -5467,14 +5467,14 @@ These are cropped from the main slide PDF. Do not skip them.
 - What about p1p2p3 collinear? Eliminate, p2 ∉H(S).
 - Scan ends when it advances to start (i.e., p4 = START).
 
-### p. 213 - Graham’s scan
+p. 213 - Graham’s scan
 - Advancing and backtracking
 - Backtracking may occur more than once in succession,
 - eliminating a sequence of points.
 - Backtracking sure to stop at START.
 - No point can be eliminated more than once.
 
-### p. 214 - Graham’s scan
+p. 214 - Graham’s scan
 - Algorithm
 - (See Preparata, p. 108.)
 - 1. Find an internal point O.
@@ -5496,27 +5496,27 @@ begin
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 Sorting O(N log N) dominates; the scan itself is linear because each point is pushed once and popped at most once.
 
 ## Common mistakes and danger points
 - Be clear about what you do with collinear points. Different tie rules give different boundary outputs.
 - The orientation test must use the points in the correct order.
 
-## Professor emphasis from recordings
+Professor emphasis from recordings
 These points are distilled from the related recordings and focus on what the professor slowed down for, warned about, or connected to homework/exam reasoning.
 
 - The lecture motivation is that the old extreme-point thinking is too expensive, so Graham's scan exists to preserve the Ω(N log N) lower-bound target instead of wasting O(N^4) work.
 - The elimination rule is the heart of the method: once the last triple is not a left turn, the middle point cannot stay on the hull.
 - Collinear handling is not cosmetic. The tie-breaking rule changes which boundary points survive, so you must state the policy clearly.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 Existing drill reminders from the earlier pack:
 - Trace Graham scan on a concrete point set and show each push/pop with the orientation values.
 - State and prove the stack invariant used by Graham scan.
 - Adapted from HW2-Q5: Given vertices of a non-convex simple polygon in clockwise order, find its convex hull in O(N).
 
-### HW2-Q5 drill
+HW2-Q5 drill
 **Question.** Explain why Graham's scan normally needs sorting, and why a simple polygon given in boundary order is a special case that can be solved faster.
 
 **How to answer.** Sorting is needed to order points radially, but an already-ordered boundary gives structure that can replace the sort.
@@ -5536,20 +5536,20 @@ Existing drill reminders from the earlier pack:
 - Choose an anchor/internal point or sort points by polar angle around an anchor, depending on the slide variant.
 - Process points in order while maintaining a stack/deque of candidate hull vertices.
 - Whenever the last turn is not a left turn, pop until convexity is restored.
-### Core test / key idea
+Core test / key idea
 - After angular sorting, the scan walks boundary candidates in order.
 - The stack invariant is that the current stack is always the convex hull of the processed prefix.
 - A right turn or collinear bad case means the middle point cannot remain a hull vertex, so it is removed.
-### Complexity
+Complexity
 - Sorting O(N log N) dominates; the scan itself is linear because each point is pushed once and popped at most once.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Be clear about what you do with collinear points. Different tie rules give different boundary outputs.
 - The orientation test must use the points in the correct order.
-### Professor emphasis (from recordings)
+Professor emphasis (from recordings)
 - The lecture motivation is that the old extreme-point thinking is too expensive, so Graham's scan exists to preserve the Ω(N log N) lower-bound target instead of wasting O(N^4) work.
 - The elimination rule is the heart of the method: once the last triple is not a left turn, the middle point cannot stay on the hull.
 - Collinear handling is not cosmetic. The tie-breaking rule changes which boundary points survive, so you must state the policy clearly.
-## End-of-file summary
+End-of-file summary
 - Choose an anchor/internal point or sort points by polar angle around an anchor, depending on the slide variant.
 - Process points in order while maintaining a stack/deque of candidate hull vertices.
 - Whenever the last turn is not a left turn, pop until convexity is restored.
@@ -5557,7 +5557,7 @@ Existing drill reminders from the earlier pack:
 - Be clear about what you do with collinear points. Different tie rules give different boundary outputs.
 - The orientation test must use the points in the correct order.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Extreme points algorithm](03_Convex_Hulls/35_extreme-points-algorithm.md)
 - **Next file in reading order:** [Graham’s scan: analysis, upper-lower hull view, and summary](03_Convex_Hulls/37_graham-scan-analysis.md)
 - **Source slide range:** pp. 206-214 of `comp_geometry_slides_new.pdf`
@@ -5575,7 +5575,7 @@ Existing drill reminders from the earlier pack:
 - **Recording files touching this material:** CS 564 - 02.25 10.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This follow-up page is where you turn the stack behavior into a proof and connect Graham scan to upper/lower hull thinking.
 
 ## What you must know cold
@@ -5583,11 +5583,11 @@ This follow-up page is where you turn the stack behavior into a proof and connec
 - Upper hull / lower hull decomposition viewpoint.
 - Why the overall algorithm is optimal in 2D.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - Every point enters the stack once and leaves at most once, so the scan is linear.
 - Another view is to construct upper and lower hulls separately in x-order; this foreshadows monotone-chain variants.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 217
@@ -5610,7 +5610,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - After each test, either advance or backtrack.
 - The scan will advance at most O(N) times,
 
-### p. 216 - Graham’s scan
+p. 216 - Graham’s scan
 - Lower and upper hulls
 - We introduce the notions of upper and lower hulls,
 - which will be useful later, here in the context of Graham’s scan.
@@ -5622,7 +5622,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - L partitions the remaining points S into two subsets, upper and lower,
 - each of which include l and r.
 
-### p. 217 - Graham’s scan
+p. 217 - Graham’s scan
 - Constructing the upper hull
 - Sort the points of the upper subset of S on decreasing x coordinate.
 - (Note error, text p. 109 says “increasing”.)
@@ -5632,13 +5632,13 @@ These are cropped from the main slide PDF. Do not skip them.
 - so decreasing x coordinate is same as increasing polar angle.
 - Upper subset
 
-### p. 218 - Graham’s scan
+p. 218 - Graham’s scan
 - Constructing the lower hull
 - Sort the points of the lower subset of S on increasing x coordinate.
 - Apply Graham’s scan from l to r.
 - Lower subset
 
-### p. 219 - Graham’s scan
+p. 219 - Graham’s scan
 - Summary
 - We have achieved best possible time for problem, O(N log N).
 - But we will continue to examine additional algorithms. Why?
@@ -5650,29 +5650,29 @@ These are cropped from the main slide PDF. Do not skip them.
 - before the hull is constructed.
 - 4. For a parallel environment, a recursive algorithm
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the claim precisely before giving the argument.
 - Identify the known lower bound / recurrence / invariant you are using.
 - Keep the direction of the argument correct.
 - End with the exact asymptotic conclusion.
 
-## Complexity and performance facts
+Complexity and performance facts
 O(N log N) time, O(N) space; optimal because of the Ω(N log N) lower bound.
 
 ## Common mistakes and danger points
 - Do not say “because there is a loop inside a loop it is quadratic.” The amortized push/pop argument is the proof.
 
-## Professor emphasis from recordings
+Professor emphasis from recordings
 These points are distilled from the related recordings and focus on what the professor slowed down for, warned about, or connected to homework/exam reasoning.
 
 - He highlights the amortized logic behind the scan: backtracking can happen many times in a row, but each point is deleted at most once.
 - That is the reason the scan phase stays linear after sorting.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 Existing drill reminders from the earlier pack:
 - Adapted from HW2-Q5: Given vertices of a non-convex simple polygon in clockwise order, find its convex hull in O(N).
 
-### Proof drill
+Proof drill
 **Question.** Explain the main argument in graham’s scan: analysis, upper-lower hull view, and summary in a logically correct order.
 
 **How to answer.** Do not jump from intuition to conclusion. State the reduction/invariant/recurrence first, then derive the claimed bound.
@@ -5682,17 +5682,17 @@ Existing drill reminders from the earlier pack:
 - Why the scan phase is O(N) after sorting.
 - Upper hull / lower hull decomposition viewpoint.
 - Why the overall algorithm is optimal in 2D.
-### Core test / key idea
+Core test / key idea
 - Every point enters the stack once and leaves at most once, so the scan is linear.
 - Another view is to construct upper and lower hulls separately in x-order; this foreshadows monotone-chain variants.
-### Complexity
+Complexity
 - O(N log N) time, O(N) space; optimal because of the Ω(N log N) lower bound.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Do not say “because there is a loop inside a loop it is quadratic.” The amortized push/pop argument is the proof.
-### Professor emphasis (from recordings)
+Professor emphasis (from recordings)
 - He highlights the amortized logic behind the scan: backtracking can happen many times in a row, but each point is deleted at most once.
 - That is the reason the scan phase stays linear after sorting.
-## End-of-file summary
+End-of-file summary
 - Why the scan phase is O(N) after sorting.
 - Upper hull / lower hull decomposition viewpoint.
 - Why the overall algorithm is optimal in 2D.
@@ -5700,7 +5700,7 @@ Existing drill reminders from the earlier pack:
 - Do not say “because there is a loop inside a loop it is quadratic.” The amortized push/pop argument is the proof.
 - He highlights the amortized logic behind the scan: backtracking can happen many times in a row, but each point is deleted at most once.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Graham’s scan: concept and preparation](03_Convex_Hulls/36_graham-scan-algorithm.md)
 - **Next file in reading order:** [Jarvis march (gift wrapping) in 2D](03_Convex_Hulls/38_jarvis-march.md)
 - **Source slide range:** pp. 215-219 of `comp_geometry_slides_new.pdf`
@@ -5718,7 +5718,7 @@ Existing drill reminders from the earlier pack:
 - **Recording files touching this material:** CS 564 - 02.25 10.1.txt, CS 564 - 02.27 11.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 Jarvis march wraps the hull edge by edge instead of filtering vertices. It is conceptually simple and output-sensitive.
 
 ## What you must know cold
@@ -5726,11 +5726,11 @@ Jarvis march wraps the hull edge by edge instead of filtering vertices. It is co
 - At each step, choose the point that makes all other points lie to one side of the candidate edge.
 - Repeat until returning to the start.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - Given current hull vertex p, search all points for the next point q such that every other point lies to the same side of pq.
 - This is edge finding rather than vertex filtering.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 220
@@ -5753,7 +5753,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - of the convex hull iff all other points of the set lie on
 - the line defined by l or to one side of it.
 
-### p. 221 - Jarvis’ march
+p. 221 - Jarvis’ march
 - Naïve approach
 - There are O(N2) lines determined by all pairs of points.
 - For each of those lines, it is possible to test all the remaining
@@ -5765,7 +5765,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - To improve on this, observe that once it is established that
 - some segment pq is a edge of H(S),
 
-### p. 222 - Jarvis’ march
+p. 222 - Jarvis’ march
 - Marching (up)
 - Assume that the rightmost smallest ordinate point p1 has been found.
 - Point p1 is certainly ∈H(S).
@@ -5777,13 +5777,13 @@ These are cropped from the main slide PDF. Do not skip them.
 - In this manner, H(S) can be constructed from the lowest point
 - to the highest point (p1 to p4 in the example).
 
-### p. 223 - Jarvis’ march
+p. 223 - Jarvis’ march
 - Marching (down)
 - When marching down, the least polar angle is found
 - w.r.t. to the point as usual, but relative to the negative x axis,
 - because relative to the x axis will give erroneous results.
 
-### p. 224 - Jarvis’ march
+p. 224 - Jarvis’ march
 - Analysis
 - Time: O(N2); O(N) points in hull, N comparisons at each
 - to find least polar angle.
@@ -5795,24 +5795,24 @@ These are cropped from the main slide PDF. Do not skip them.
 - Let h be |H(S)|; of course h ∈O(N), but often h << N.
 - Expected time for Jarvis’ march algorithm is O(hN),
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.
 - Explain the invariant or ordering that makes the method work.
 - Trace the method by hand on a small example.
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 O(Nh) where h is the number of hull vertices; good when h is small, worst case O(N^2).
 
 ## Common mistakes and danger points
 - Do not accidentally test against the segment only; the one-side condition is relative to the full supporting line.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 Existing drill reminders from the earlier pack:
 - Adapted from HW2-Q5: Given vertices of a non-convex simple polygon in clockwise order, find its convex hull in O(N).
 
-### Core exam drill
+Core exam drill
 **Question.** State the problem solved by jarvis march (gift wrapping) in 2d, describe preprocessing/query/update steps if any, and give the time and space bounds.
 
 **How to answer.** An excellent answer names the input, the output, the invariant or ordering exploited by the method, and the exact asymptotic costs.
@@ -5827,21 +5827,21 @@ Existing drill reminders from the earlier pack:
 - Start from an extreme point.
 - At each step, choose the point that makes all other points lie to one side of the candidate edge.
 - Repeat until returning to the start.
-### Core test / key idea
+Core test / key idea
 - Given current hull vertex p, search all points for the next point q such that every other point lies to the same side of pq.
 - This is edge finding rather than vertex filtering.
-### Complexity
+Complexity
 - O(Nh) where h is the number of hull vertices; good when h is small, worst case O(N^2).
-### Common mistakes / danger points
+Common mistakes / danger points
 - Do not accidentally test against the segment only; the one-side condition is relative to the full supporting line.
-## End-of-file summary
+End-of-file summary
 - Start from an extreme point.
 - At each step, choose the point that makes all other points lie to one side of the candidate edge.
 - Repeat until returning to the start.
 - O(Nh) where h is the number of hull vertices; good when h is small, worst case O(N^2).
 - Do not accidentally test against the segment only; the one-side condition is relative to the full supporting line.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Graham’s scan: analysis, upper-lower hull view, and summary](03_Convex_Hulls/37_graham-scan-analysis.md)
 - **Next file in reading order:** [Quickhull](03_Convex_Hulls/39_quickhull.md)
 - **Source slide range:** pp. 220-224 of `comp_geometry_slides_new.pdf`
@@ -5859,7 +5859,7 @@ Existing drill reminders from the earlier pack:
 - **Recording files touching this material:** CS 564 - 02.25 10.1.txt, CS 564 - 02.27 11.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 Quickhull is the quicksort-flavored hull algorithm: choose extreme points, split the set by a line, recurse on the outside sets, and pray your partitions are kind. Mathematics remains unmoved by your optimism.
 
 ## What you must know cold
@@ -5867,12 +5867,12 @@ Quickhull is the quicksort-flavored hull algorithm: choose extreme points, split
 - Find the farthest point from a hull edge / supporting line.
 - Partition remaining points into recursive subproblems.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - The farthest point from segment ab becomes a hull vertex.
 - Points inside the triangle formed by a, b, and the farthest point can be discarded from that recursive branch.
 - Recurse on the two outer subsets.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 227
@@ -5895,7 +5895,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Two pointers to the array cells (LEFT and RIGHT)
 - initially point to the opposite extreme ends of the array. We
 
-### p. 226 - Quickhull
+p. 226 - Quickhull
 - Quickhull overview
 - Quickhull operates in a similar manner.
 - It recursively partitions the point set S,
@@ -5903,7 +5903,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - The hull at each level of the recursion is formed by
 - concatenating the hulls found at the next level down.
 
-### p. 227 - Quickhull
+p. 227 - Quickhull
 - Initial partition
 - The initial partition of S is determined by a line L
 - through the points l, r ∈S with the smallest and largest abscissa.
@@ -5915,7 +5915,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - then concatenate them to get H(S).
 - The process is the same for S(1) and S(2), we consider S(1).
 
-### p. 228 - Quickhull
+p. 228 - Quickhull
 - Finding the “apex”
 - Find the point h ∈S(1) such that
 - (1) triangle hlr has the maximum area of all triangles {plr : p ∈S(1)},
@@ -5927,7 +5927,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - There may be other points on L′, but h will be the leftmost,
 - by condition (2),
 
-### p. 229 - Quickhull
+p. 229 - Quickhull
 - Partitioning the point set
 - Construct two directed lines, L1 from l to h, and L2 from h to r.
 - Each point of S(1) is classified relative to L1 and L2
@@ -5939,7 +5939,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Points left of L1 are S(1,1).
 - Points left of L2 are S(1,2).
 
-### p. 230 - Quickhull
+p. 230 - Quickhull
 - Recursion
 - The process recurses on S(1,1) and are S(1,2).
 - (set, left endpoint, right endpoint)
@@ -5950,14 +5950,14 @@ These are cropped from the main slide PDF. Do not skip them.
 - which implies that segment lr is an edge of H(S).
 - S(1,2,2)
 
-### p. 231 - Quickhull
+p. 231 - Quickhull
 - Geometric primitives
 - The geometric primitives used by this algorithm are:
 - 1. Point-line classification
 - 2. Area of a triangle
 - Both of these require O(1) time.
 
-### p. 232 - Quickhull
+p. 232 - Quickhull
 - Initial partition, revisited
 - The preceding explanation, while intuitive and thus useful,
 - introduces an anomaly: l, r are in both S(1) and S(2).
@@ -5966,7 +5966,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - the point of S with smallest abscissa,
 - and r0 = (x0, y0 - ε), where ε is an arbitrarily small constant.
 
-### p. 233 - Quickhull
+p. 233 - Quickhull
 - General function
 - S is assumed to have at least 2 elements
 - (the recursion ends otherwise).
@@ -5993,30 +5993,30 @@ S = {l, r} then
 - However, those criteria do not apply;
 - S(1) and S(2) may have size in O(N) (they are not balanced).
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.
 - Explain the invariant or ordering that makes the method work.
 - Trace the method by hand on a small example.
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 Expected around O(N log N) with good splits; worst case O(N^2).
 
 ## Common mistakes and danger points
 - Do not claim guaranteed balanced recursion. That is exactly the algorithm’s weakness.
 
-## Professor emphasis from recordings
+Professor emphasis from recordings
 These points are distilled from the related recordings and focus on what the professor slowed down for, warned about, or connected to homework/exam reasoning.
 
 - Quickhull is repeatedly compared to Quicksort in the lecture, so the intended mental model is partition-recursion, not stack-based scanning.
 - The exam risk here is forgetting that the appealing recursion picture does not automatically give the same worst-case guarantees as Graham's scan.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 Existing drill reminders from the earlier pack:
 - Adapted from HW2-Q5: Given vertices of a non-convex simple polygon in clockwise order, find its convex hull in O(N).
 
-### Core exam drill
+Core exam drill
 **Question.** State the problem solved by quickhull, describe preprocessing/query/update steps if any, and give the time and space bounds.
 
 **How to answer.** An excellent answer names the input, the output, the invariant or ordering exploited by the method, and the exact asymptotic costs.
@@ -6031,18 +6031,18 @@ Existing drill reminders from the earlier pack:
 - Initial split using extreme x-points.
 - Find the farthest point from a hull edge / supporting line.
 - Partition remaining points into recursive subproblems.
-### Core test / key idea
+Core test / key idea
 - The farthest point from segment ab becomes a hull vertex.
 - Points inside the triangle formed by a, b, and the farthest point can be discarded from that recursive branch.
 - Recurse on the two outer subsets.
-### Complexity
+Complexity
 - Expected around O(N log N) with good splits; worst case O(N^2).
-### Common mistakes / danger points
+Common mistakes / danger points
 - Do not claim guaranteed balanced recursion. That is exactly the algorithm’s weakness.
-### Professor emphasis (from recordings)
+Professor emphasis (from recordings)
 - Quickhull is repeatedly compared to Quicksort in the lecture, so the intended mental model is partition-recursion, not stack-based scanning.
 - The exam risk here is forgetting that the appealing recursion picture does not automatically give the same worst-case guarantees as Graham's scan.
-## End-of-file summary
+End-of-file summary
 - Initial split using extreme x-points.
 - Find the farthest point from a hull edge / supporting line.
 - Partition remaining points into recursive subproblems.
@@ -6050,7 +6050,7 @@ Existing drill reminders from the earlier pack:
 - Do not claim guaranteed balanced recursion. That is exactly the algorithm’s weakness.
 - Quickhull is repeatedly compared to Quicksort in the lecture, so the intended mental model is partition-recursion, not stack-based scanning.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Jarvis march (gift wrapping) in 2D](03_Convex_Hulls/38_jarvis-march.md)
 - **Next file in reading order:** [Divide-and-conquer convex hulls and hull union](03_Convex_Hulls/40_divide-and-conquer-hull.md)
 - **Source slide range:** pp. 225-234 of `comp_geometry_slides_new.pdf`
@@ -6068,7 +6068,7 @@ Existing drill reminders from the earlier pack:
 - **Recording files touching this material:** CS 564 - 02.27 11.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This is the clean divide-and-conquer hull algorithm the course wants you to contrast with Quickhull. The subproblems are balanced, and the merge is a hull-union computation.
 
 ## What you must know cold
@@ -6076,11 +6076,11 @@ This is the clean divide-and-conquer hull algorithm the course wants you to cont
 - Recursively compute each hull.
 - Merge the two convex hulls by finding common tangents / supporting lines.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - The identity is H(S1 ∪ S2) = H(H(S1) ∪ H(S2)).
 - Once each subproblem returns a convex polygon, merging is a geometric tangent-finding problem rather than a point-set problem.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 237
@@ -6103,7 +6103,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - 1. Inability to control or guarantee subproblem size
 - results in suboptimum worst case time performance.
 
-### p. 236 - Divide-and-conquer
+p. 236 - Divide-and-conquer
 - Union of convex hulls, 1
 - Suppose we have S and want to compute H(S).
 - Further suppose S has been partitioned into S1 and S2,
@@ -6115,7 +6115,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - given H(S1) and H(S2) than to find H(S) directly?
 - To do so, we use the relation:
 
-### p. 237 - Divide-and-conquer
+p. 237 - Divide-and-conquer
 - Union of convex hulls, 2
 - The relation is: H(S1 ∪S2) = H(H(S1) ∪H(S2))
 - Computing the convex hull of the union of convex hulls is
@@ -6127,7 +6127,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - This problem is the merge step of a divide-and-conquer
 - algorithm for convex hull construction.
 
-### p. 238 - Divide-and-conquer
+p. 238 - Divide-and-conquer
 - Overview of divide-and-conquer algorithm
 - 1. If |S|  k0 (k0 is a small integer), construct the convex hull
 - directly by some method and stop, else go to step 2.
@@ -6139,7 +6139,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Let U(N) denote the time needed to find the hull of the union of
 - two convex polygons (convex hulls), each with N/2 vertices.
 
-### p. 239 - Divide-and-conquer
+p. 239 - Divide-and-conquer
 - Merge algorithm, 1
 
 ```text
@@ -6166,7 +6166,7 @@ occur in sorted angular order about p.
 - The chain convex towards p can be discarded,
 - because its vertices will be internal to H(S1 ∪S2).
 
-### p. 241 - Divide-and-conquer
+p. 241 - Divide-and-conquer
 - Merge algorithm, 3
 - 5. Use the Graham scan on the sorted list to construct the
 - convex hull of the vertices on the list, which requires O(N) time.
@@ -6175,25 +6175,25 @@ occur in sorted angular order about p.
 - As mentioned, an O(N) merge gives an O(N log N)
 - divide-and-conquer algorithm for convex hull.
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.
 - Explain the invariant or ordering that makes the method work.
 - Trace the method by hand on a small example.
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 Balanced divide and conquer gives O(N log N) overall when the merge is linear.
 
 ## Common mistakes and danger points
 - Do not merge raw point sets; merge the two hulls.
 - The merge step must preserve cyclic order around the output hull.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 Existing drill reminders from the earlier pack:
 - Adapted from HW2-Q5: Given vertices of a non-convex simple polygon in clockwise order, find its convex hull in O(N).
 
-### Core exam drill
+Core exam drill
 **Question.** State the problem solved by divide-and-conquer convex hulls and hull union, describe preprocessing/query/update steps if any, and give the time and space bounds.
 
 **How to answer.** An excellent answer names the input, the output, the invariant or ordering exploited by the method, and the exact asymptotic costs.
@@ -6208,15 +6208,15 @@ Existing drill reminders from the earlier pack:
 - Split points into two roughly equal subsets, usually by x-order.
 - Recursively compute each hull.
 - Merge the two convex hulls by finding common tangents / supporting lines.
-### Core test / key idea
+Core test / key idea
 - The identity is H(S1 ∪ S2) = H(H(S1) ∪ H(S2)).
 - Once each subproblem returns a convex polygon, merging is a geometric tangent-finding problem rather than a point-set problem.
-### Complexity
+Complexity
 - Balanced divide and conquer gives O(N log N) overall when the merge is linear.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Do not merge raw point sets; merge the two hulls.
 - The merge step must preserve cyclic order around the output hull.
-## End-of-file summary
+End-of-file summary
 - Split points into two roughly equal subsets, usually by x-order.
 - Recursively compute each hull.
 - Merge the two convex hulls by finding common tangents / supporting lines.
@@ -6224,7 +6224,7 @@ Existing drill reminders from the earlier pack:
 - Do not merge raw point sets; merge the two hulls.
 - The merge step must preserve cyclic order around the output hull.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Quickhull](03_Convex_Hulls/39_quickhull.md)
 - **Next file in reading order:** [Supporting lines from hull union](03_Convex_Hulls/41_supporting-lines.md)
 - **Source slide range:** pp. 235-241 of `comp_geometry_slides_new.pdf`
@@ -6242,7 +6242,7 @@ Existing drill reminders from the earlier pack:
 - **Recording files touching this material:** CS 564 - 02.27 11.1.txt, CS 564 - 02.27 11.2.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 Supporting lines are both a geometric concept and a merge primitive. They are the tangent lines that touch hulls without cutting through them.
 
 ## What you must know cold
@@ -6250,11 +6250,11 @@ Supporting lines are both a geometric concept and a merge primitive. They are th
 - Upper and lower common tangents.
 - Why the hull of a union reveals these lines.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - A common supporting line touches both polygons and leaves each polygon entirely on the same side.
 - Finding upper/lower tangents is the key to linear-time hull merge.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 242
@@ -6274,7 +6274,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - lies entirely to one side of L.
 - The idea is analogous to the notion of tangent for circles.
 
-### p. 243 - Divide-and-conquer
+p. 243 - Divide-and-conquer
 - Supporting lines, 2
 - Two convex polygons P1 and P2, with n and m vertices,
 - such that one is not entirely contained within the other,
@@ -6283,7 +6283,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - (Maximum is achieved when convex polygons are partially
 - overlapping.)
 
-### p. 244 - Divide-and-conquer
+p. 244 - Divide-and-conquer
 - Supporting lines, 3
 - Once the convex hull of the union of P1 and P2 has been
 - constructed, common supporting lines can be found.
@@ -6291,18 +6291,18 @@ These are cropped from the main slide PDF. Do not skip them.
 - any pair of consecutive vertices where one originated in P1
 - and the other in P2 defines a common supporting line.
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - Give the precise definitions.
 - Distinguish similar notions cleanly.
 - Use the right primitive test or formula on a concrete example.
 
-## Complexity and performance facts
+Complexity and performance facts
 Used as a linear-time merge primitive once hulls are already in cyclic order.
 
 ## Common mistakes and danger points
 - Do not confuse supporting lines with arbitrary lines through hull vertices.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### Definition drill
 **Question.** Give the precise definitions and the most important consequences from supporting lines from hull union.
 
@@ -6313,21 +6313,21 @@ Used as a linear-time merge primitive once hulls are already in cyclic order.
 - Definition of a supporting line for a convex polygon or two convex polygons.
 - Upper and lower common tangents.
 - Why the hull of a union reveals these lines.
-### Core test / key idea
+Core test / key idea
 - A common supporting line touches both polygons and leaves each polygon entirely on the same side.
 - Finding upper/lower tangents is the key to linear-time hull merge.
-### Complexity
+Complexity
 - Used as a linear-time merge primitive once hulls are already in cyclic order.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Do not confuse supporting lines with arbitrary lines through hull vertices.
-## End-of-file summary
+End-of-file summary
 - Definition of a supporting line for a convex polygon or two convex polygons.
 - Upper and lower common tangents.
 - Why the hull of a union reveals these lines.
 - Used as a linear-time merge primitive once hulls are already in cyclic order.
 - Do not confuse supporting lines with arbitrary lines through hull vertices.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Divide-and-conquer convex hulls and hull union](03_Convex_Hulls/40_divide-and-conquer-hull.md)
 - **Next file in reading order:** [Dynamic/on-line convex hull insertion: problem setting and core idea](03_Convex_Hulls/42_dynamic-hull-core-idea.md)
 - **Source slide range:** pp. 242-244 of `comp_geometry_slides_new.pdf`
@@ -6345,7 +6345,7 @@ Used as a linear-time merge primitive once hulls are already in cyclic order.
 - **Recording files touching this material:** CS 564 - 02.27 11.2.txt, CS 564 - 03.04 12.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 Now the hull is no longer static. The question becomes: if a new point arrives, how much of the current hull survives? The answer is “all of it except the visible chain between two support vertices.”
 
 ## What you must know cold
@@ -6353,11 +6353,11 @@ Now the hull is no longer static. The question becomes: if a new point arrives, 
 - Case distinction: inserted point inside current hull vs outside it.
 - Support lines from the new point to the current hull.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - If the new point lies inside the hull, nothing changes.
 - If it lies outside, exactly the chain of hull vertices visible from the new point is replaced by the new point together with two support edges.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 246
@@ -6372,11 +6372,11 @@ These are cropped from the main slide PDF. Do not skip them.
 - Hull maintenance during insertion, 1
 - Maintain H(S) as points are added to S.
 
-### p. 246 - Dynamic hull (insertion)
+p. 246 - Dynamic hull (insertion)
 - Hull maintenance during insertion, 2
 - Maintain H(S) as points are added to S.
 
-### p. 247 - Dynamic hull (insertion)
+p. 247 - Dynamic hull (insertion)
 - Definitions
 - Preparata
 - static
@@ -6388,7 +6388,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - but sometimes constrained.
 - Implies S must be in some updatable data structure.
 
-### p. 248 - Dynamic hull (insertion)
+p. 248 - Dynamic hull (insertion)
 - Problem definitions
 - ON-LINE CONVEX HULL
 - INSTANCE: Sequence of N points in the plane p1, p2, …, pN.
@@ -6400,7 +6400,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - The algorithm must maintain some representation of the hull and
 - update it as points are inserted. Can this be done and still achieve
 
-### p. 249 - Dynamic hull (insertion)
+p. 249 - Dynamic hull (insertion)
 - Algorithms
 - Shamos (1978), mentioned in text p. 119, not covered.
 - Preparata (1979), presented in text pp. 119-124, covered.
@@ -6412,7 +6412,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - if they exist (i.e., pi is external to Ci-1).
 - (If pi is internal to Ci-1, then Ci = Ci-1.)
 
-### p. 250 - Dynamic hull (insertion)
+p. 250 - Dynamic hull (insertion)
 - Key idea, 2
 - Finding Ci requires finding the supporting lines from pi to Ci-1,
 - if they exist (i.e., pi is external to Ci-1).
@@ -6423,7 +6423,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Right supporting line
 - Supporting vertices
 
-### p. 251 - Dynamic hull (insertion)
+p. 251 - Dynamic hull (insertion)
 - Algorithm overview
 - For each pi,
 - If pi is internal to Ci-1, then Ci = Ci-1, and pi is eliminated.
@@ -6450,7 +6450,7 @@ The data structure for the vertices of Ci-1 will be given soon,
 - (c) Reflex;
 - segment pv does not intersect
 
-### p. 253 - Dynamic hull (insertion)
+p. 253 - Dynamic hull (insertion)
 - Searching for a supporting vertex
 - Suppose we have pi and v a vertex of Ci-1.
 - Assume we seek l, the left supporting vertex.
@@ -6462,31 +6462,31 @@ The data structure for the vertices of Ci-1 will be given soon,
 - Eventually the supporting vertex l will be found.
 - Finding r is analogous.
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.
 - Explain the invariant or ordering that makes the method work.
 - Trace the method by hand on a small example.
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 Core geometric task is locating left/right support vertices quickly.
 
 ## Common mistakes and danger points
 - Do not recompute the full hull from scratch unless the question explicitly allows the naive method.
 
-## Professor emphasis from recordings
+Professor emphasis from recordings
 These points are distilled from the related recordings and focus on what the professor slowed down for, warned about, or connected to homework/exam reasoning.
 
 - For on-line hull insertion, the lecture separates the easy case from the real work: if the new point is inside the current hull, nothing changes.
 - When the point is outside, the whole problem becomes finding the two supporting lines/tangents that bracket the visible chain.
 - He also notes that a careful case analysis is required, because support/reflex combinations determine the update.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 Existing drill reminders from the earlier pack:
 - Adapted from HW2-Q6: Design an O(n + X/d) algorithm for a d-approximate convex hull, where X is x-span of the point set.
 
-### Dynamic hull insertion drill
+Dynamic hull insertion drill
 **Question.** A new point arrives. Explain how to decide whether it changes the hull and what supporting-line information must be found before updating the vertex sequence.
 
 **How to answer.** If the point is inside the current hull, ignore it. Otherwise locate left and right tangents, delete the obscured chain, and splice the new point in.
@@ -6506,18 +6506,18 @@ Existing drill reminders from the earlier pack:
 - Static vs dynamic / online hull problem.
 - Case distinction: inserted point inside current hull vs outside it.
 - Support lines from the new point to the current hull.
-### Core test / key idea
+Core test / key idea
 - If the new point lies inside the hull, nothing changes.
 - If it lies outside, exactly the chain of hull vertices visible from the new point is replaced by the new point together with two support edges.
-### Complexity
+Complexity
 - Core geometric task is locating left/right support vertices quickly.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Do not recompute the full hull from scratch unless the question explicitly allows the naive method.
-### Professor emphasis (from recordings)
+Professor emphasis (from recordings)
 - For on-line hull insertion, the lecture separates the easy case from the real work: if the new point is inside the current hull, nothing changes.
 - When the point is outside, the whole problem becomes finding the two supporting lines/tangents that bracket the visible chain.
 - He also notes that a careful case analysis is required, because support/reflex combinations determine the update.
-## End-of-file summary
+End-of-file summary
 - Static vs dynamic / online hull problem.
 - Case distinction: inserted point inside current hull vs outside it.
 - Support lines from the new point to the current hull.
@@ -6525,7 +6525,7 @@ Existing drill reminders from the earlier pack:
 - Do not recompute the full hull from scratch unless the question explicitly allows the naive method.
 - For on-line hull insertion, the lecture separates the easy case from the real work: if the new point is inside the current hull, nothing changes.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Supporting lines from hull union](03_Convex_Hulls/41_supporting-lines.md)
 - **Next file in reading order:** [Dynamic/on-line convex hull insertion: data structure, search, update, and analysis](03_Convex_Hulls/43_dynamic-hull-data-structure.md)
 - **Source slide range:** pp. 245-253 of `comp_geometry_slides_new.pdf`
@@ -6543,7 +6543,7 @@ Existing drill reminders from the earlier pack:
 - **Recording files touching this material:** CS 564 - 02.27 11.2.txt, CS 564 - 03.04 12.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This section is about making dynamic hull updates fast by storing the hull in a searchable, concatenable structure rather than a raw cyclic list.
 
 ## What you must know cold
@@ -6551,11 +6551,11 @@ This section is about making dynamic hull updates fast by storing the hull in a 
 - Balanced-tree or concatenable-queue representation of hull vertices.
 - Locate support vertices, remove visible chain, insert new point, restore cyclic order.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - The hull is maintained in cyclic order in a structure supporting logarithmic search and logarithmic local surgery.
 - Update = find support vertices + split at supports + discard visible chain + insert the new point + concatenate the remaining pieces.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 257
@@ -6578,7 +6578,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - all in O(log N) time, where N is the number of items stored.
 - (For more information, see [Aho,1974] or [Reingold,1977].)
 
-### p. 255 - Dynamic hull (insertion)
+p. 255 - Dynamic hull (insertion)
 - Search tree for Ci-1
 - A concatenable queue is a height balanced search tree, call it T.
 - It stores the vertices of Ci-1 in (counterclockwise) order.
@@ -6590,7 +6590,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Each node of T corresponds
 - to a vertex of Ci-1.
 
-### p. 256 - Dynamic hull (insertion)
+p. 256 - Dynamic hull (insertion)
 - Search combinations
 - If we examine the classifications of m, M, and α,
 - there are 18 possible combinations.
@@ -6602,7 +6602,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - supporting
 - The action to take to find l and r depends on the combination.
 
-### p. 257 - Dynamic hull (insertion)
+p. 257 - Dynamic hull (insertion)
 - Search cases
 - The 18 possible combinations reduce to 8 cases
 - where distinct actions are required.
@@ -6614,11 +6614,11 @@ These are cropped from the main slide PDF. Do not skip them.
 - Figure 3.16, text p. 122, illustrates the cases.
 - In Figure 3.16:
 
-### p. 258 - Dynamic hull (insertion)
+p. 258 - Dynamic hull (insertion)
 - T-R(M)
 - T-L(M)
 
-### p. 259 - Dynamic hull (insertion)
+p. 259 - Dynamic hull (insertion)
 - Finding l and r, 1
 - A distinct action is required to locate l and r in each of the 8 cases.
 - Consider cases 2, 4, 6, and 8.
@@ -6645,7 +6645,7 @@ procedure LEFTSEARCH(T)
 - Subtree
 - The search calls itself recursively on that subtree until one of cases
 
-### p. 261 - Dynamic hull (insertion)
+p. 261 - Dynamic hull (insertion)
 - Finding l and r, 3
 - In general, finding l and r for pi involves tracing a single path in T
 - from the root to the node where l and r must be in separate subtrees,
@@ -6655,7 +6655,7 @@ procedure LEFTSEARCH(T)
 - and O(1) time is expended at each node on the two paths,
 - the entire search requires O(log N) time.
 
-### p. 262 - Dynamic hull (insertion)
+p. 262 - Dynamic hull (insertion)
 - Inserting pi into the hull
 - If pi is external to Ci-1, it must be added,
 - and possibly some other vertices removed, to produce Ci.
@@ -6667,7 +6667,7 @@ procedure LEFTSEARCH(T)
 - Vertex sequence
 - Split
 
-### p. 263 - Dynamic hull (insertion)
+p. 263 - Dynamic hull (insertion)
 - Analysis
 - Each insertion requires O(log N) time:
 - 1. O(log N) to find l and r
@@ -6675,26 +6675,26 @@ procedure LEFTSEARCH(T)
 - For N insertions, the overall time is O(N log N).
 - The storage required is O(N) for T.
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.
 - Explain the invariant or ordering that makes the method work.
 - Trace the method by hand on a small example.
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 O(log N) per insertion in the course presentation; O(N log N) total for N insertions.
 
 ## Common mistakes and danger points
 - The data structure is there to make the visible-chain replacement fast; explain that connection explicitly.
 
-## Professor emphasis from recordings
+Professor emphasis from recordings
 These points are distilled from the related recordings and focus on what the professor slowed down for, warned about, or connected to homework/exam reasoning.
 
 - The recording explicitly mentions that the many local cases can be reduced to a smaller set once equivalent support/reflex situations are merged.
 - This topic is procedural: if you cannot say how the search walks the structure and how the hull list is updated, you do not really know it.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### Core exam drill
 **Question.** State the problem solved by dynamic/on-line convex hull insertion: data structure, search, update, and analysis, describe preprocessing/query/update steps if any, and give the time and space bounds.
 
@@ -6710,17 +6710,17 @@ These points are distilled from the related recordings and focus on what the pro
 - Operations needed: search, split, splice/concatenate.
 - Balanced-tree or concatenable-queue representation of hull vertices.
 - Locate support vertices, remove visible chain, insert new point, restore cyclic order.
-### Core test / key idea
+Core test / key idea
 - The hull is maintained in cyclic order in a structure supporting logarithmic search and logarithmic local surgery.
 - Update = find support vertices + split at supports + discard visible chain + insert the new point + concatenate the remaining pieces.
-### Complexity
+Complexity
 - O(log N) per insertion in the course presentation; O(N log N) total for N insertions.
-### Common mistakes / danger points
+Common mistakes / danger points
 - The data structure is there to make the visible-chain replacement fast; explain that connection explicitly.
-### Professor emphasis (from recordings)
+Professor emphasis (from recordings)
 - The recording explicitly mentions that the many local cases can be reduced to a smaller set once equivalent support/reflex situations are merged.
 - This topic is procedural: if you cannot say how the search walks the structure and how the hull list is updated, you do not really know it.
-## End-of-file summary
+End-of-file summary
 - Operations needed: search, split, splice/concatenate.
 - Balanced-tree or concatenable-queue representation of hull vertices.
 - Locate support vertices, remove visible chain, insert new point, restore cyclic order.
@@ -6728,7 +6728,7 @@ These points are distilled from the related recordings and focus on what the pro
 - The data structure is there to make the visible-chain replacement fast; explain that connection explicitly.
 - The recording explicitly mentions that the many local cases can be reduced to a smaller set once equivalent support/reflex situations are merged.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Dynamic/on-line convex hull insertion: problem setting and core idea](03_Convex_Hulls/42_dynamic-hull-core-idea.md)
 - **Next file in reading order:** [Gift wrapping in higher dimensions: background and setup](03_Convex_Hulls/44_higher-dimensional-hull-background.md)
 - **Source slide range:** pp. 254-263 of `comp_geometry_slides_new.pdf`
@@ -6746,7 +6746,7 @@ These points are distilled from the related recordings and focus on what the pro
 - **Recording files touching this material:** CS 564 - 03.04 12.1.txt, CS 564 - 03.06 13.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 The moment d becomes bigger than 2, hull representation changes completely. You no longer output a cyclic list of vertices; you output a polytope boundary made of facets.
 
 ## What you must know cold
@@ -6754,11 +6754,11 @@ The moment d becomes bigger than 2, hull representation changes completely. You 
 - Representation of the hull in higher dimensions by facets/subfacets.
 - Beneath relation for facets.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - In 2D the hull is a cycle; in higher dimensions the boundary is a complex of facets.
 - Gift wrapping in higher dimensions grows the hull facet by facet.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 269
@@ -6781,7 +6781,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - How is the hull represented for d > 2?
 - To answer that, and describe the algorithm,
 
-### p. 265 - Gift wrapping, d > 2
+p. 265 - Gift wrapping, d > 2
 - Polyhedron
 - In E3 a polyhedron is defined by a finite set of planar polygons
 - such that every edge of a polygon is shared by exactly one
@@ -6793,7 +6793,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - The polygons are the facets of the polyhedron.
 - A polyhedron is simple if there is no pair of nonadjacent
 
-### p. 266 - Gift wrapping, d > 2
+p. 266 - Gift wrapping, d > 2
 - Polytope
 - A half-space is the portion of Ed lying on one side of a hyperplane.
 - A polyhedral set in Ed is the intersection of a finite set of
@@ -6805,7 +6805,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - A bounded d-dimensional polyhedral set is a polytope.
 - Note that polytopes are convex by definition.
 
-### p. 267 - Gift wrapping, d > 2
+p. 267 - Gift wrapping, d > 2
 - Affine set
 - Given k distinct points p1, p2, …, pk in Ed, the set of points
 - p = α1p1 + α2p2 + . . . + αkpk
@@ -6817,7 +6817,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - i.e., a line is an affine set.
 - For k = 3, the affine set is a plane.
 
-### p. 268 - Gift wrapping, d > 2
+p. 268 - Gift wrapping, d > 2
 - Faces of a polytope
 - A d-polytope is described by its boundary,
 - which consists of faces. For a d-polytope,
@@ -6829,7 +6829,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Name of face
 - d-face
 
-### p. 269 - Gift wrapping, d > 2
+p. 269 - Gift wrapping, d > 2
 - Simplex
 - A d-polytope P is a d-simplex (or just simplex)
 - iff it is the convex hull of (d + 1) affinely independent points.
@@ -6841,7 +6841,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - triangle
 - tetrahedron
 
-### p. 270 - Gift wrapping, d > 2
+p. 270 - Gift wrapping, d > 2
 - Simplicial
 - A d-polytope is simplicial if each of its facets is a (d-1)-simplex.
 - For example, for d = 3:
@@ -6853,7 +6853,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - the hull is not simplicial.
 - For example, the second and third cases below.
 
-### p. 271 - Gift wrapping, d > 2
+p. 271 - Gift wrapping, d > 2
 - Beneath
 - A point p is beneath a facet F of a polytope P if the point p
 - lies in the open half-space determined by hyperplane aff(F)
@@ -6865,18 +6865,18 @@ These are cropped from the main slide PDF. Do not skip them.
 - The figure shows these relationships for d = 2.
 - Note error in text, 2nd paragraph of 3.4, “the P” should be “p”.
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - Give the precise definitions.
 - Distinguish similar notions cleanly.
 - Use the right primitive test or formula on a concrete example.
 
-## Complexity and performance facts
+Complexity and performance facts
 Representation complexity now depends on the number of facets and on dimension d.
 
 ## Common mistakes and danger points
 - Do not describe the d>2 hull as an ordered list of vertices. That loses the boundary structure.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### Definition drill
 **Question.** Give the precise definitions and the most important consequences from gift wrapping in higher dimensions: background and setup.
 
@@ -6887,21 +6887,21 @@ Representation complexity now depends on the number of facets and on dimension d
 - Point set in E^d, affine sets, faces, facets, simplices, simplicial polytopes.
 - Representation of the hull in higher dimensions by facets/subfacets.
 - Beneath relation for facets.
-### Core test / key idea
+Core test / key idea
 - In 2D the hull is a cycle; in higher dimensions the boundary is a complex of facets.
 - Gift wrapping in higher dimensions grows the hull facet by facet.
-### Complexity
+Complexity
 - Representation complexity now depends on the number of facets and on dimension d.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Do not describe the d>2 hull as an ordered list of vertices. That loses the boundary structure.
-## End-of-file summary
+End-of-file summary
 - Point set in E^d, affine sets, faces, facets, simplices, simplicial polytopes.
 - Representation of the hull in higher dimensions by facets/subfacets.
 - Beneath relation for facets.
 - Representation complexity now depends on the number of facets and on dimension d.
 - Do not describe the d>2 hull as an ordered list of vertices. That loses the boundary structure.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Dynamic/on-line convex hull insertion: data structure, search, update, and analysis](03_Convex_Hulls/43_dynamic-hull-data-structure.md)
 - **Next file in reading order:** [Gift wrapping in higher dimensions: algorithm and adjacent facets](03_Convex_Hulls/45_higher-dimensional-hull-algorithm.md)
 - **Source slide range:** pp. 264-271 of `comp_geometry_slides_new.pdf`
@@ -6919,7 +6919,7 @@ Representation complexity now depends on the number of facets and on dimension d
 - **Recording files touching this material:** CS 564 - 03.06 13.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This is Jarvis/gift wrapping generalized to facets. Instead of walking from one hull edge to the next, you walk from one hull facet to adjacent facets across shared subfacets.
 
 ## What you must know cold
@@ -6927,12 +6927,12 @@ This is Jarvis/gift wrapping generalized to facets. Instead of walking from one 
 - How to find the next facet adjacent to a known facet.
 - Queue/frontier view of the search over unprocessed boundary pieces.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - Starting from one known hull facet, examine its frontier subfacets.
 - For each frontier subfacet, find the adjacent supporting facet that keeps all points on the correct side.
 - Continue until all frontier subfacets are resolved.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 275
@@ -6955,7 +6955,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - For example, in d = 3, imagine wrapping a sheet of 2-dimensional
 - wrapping paper around a 3-dimensional gift box.
 
-### p. 273 - Gift wrapping, d > 2
+p. 273 - Gift wrapping, d > 2
 - Simplicial assumption
 - As presented (here and in the text), the algorithm assumes that
 - the resulting polytope (the convex hull) is simplicial.
@@ -6967,7 +6967,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - two facets, and two facets F1 and F2 share a subfacet e
 - iff e is determined by a common subset, with d - 1 vertices,
 
-### p. 274 - Gift wrapping, d > 2
+p. 274 - Gift wrapping, d > 2
 - Finding an adjacent facet, in general
 - Let S = { p1, p2, … pN} be a finite set of points in d-space (Ed).
 - Assume a facet F1 of H(S) is known, with all its subfacets.
@@ -6979,7 +6979,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - In other words, from among all the hyperplanes determined by e
 - and a point p′ ∈S but not in F,
 
-### p. 275 - Gift wrapping, d > 2
+p. 275 - Gift wrapping, d > 2
 - Finding an adjacent facet, for d = 3
 - Facet F is known. Consider the set of planes determined by edge e
 - and the points of S and select the one which forms the largest
@@ -6988,7 +6988,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Compare the planes determined by e and p4, p5, p6, and p7.
 - aff(F)
 
-### p. 276 - Gift wrapping, d > 2
+p. 276 - Gift wrapping, d > 2
 - Finding the largest angle
 - The angle comparison is carried out by comparing cotangents
 - for each point pk ∈S not part of F.
@@ -6999,7 +6999,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - O(Nd) computing and comparing cotangents for O(N) points.
 - aff(F)
 
-### p. 277 - Gift wrapping, d > 2
+p. 277 - Gift wrapping, d > 2
 - Finding the largest angle
 - The angle comparison is carried out by comparing cotangents
 - for each point pk ∈S not part of F.
@@ -7011,7 +7011,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - -|Up2 | / |UV|, where |Up2 |= vk . aT and |UV| = vk . nT. Thus
 - for each pk not in F, we compute the quantity
 
-### p. 278 - Gift wrapping, d > 2
+p. 278 - Gift wrapping, d > 2
 - Overview of the algorithm
 - The algorithm starts from an initial facet.
 - For each subfacet of it, construct the adjacent facets.
@@ -7021,7 +7021,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - A subfacet e, shared by facets F and F′, is a candidate to be used
 - iff F or F′ but not both have been constructed.
 
-### p. 279 - Gift wrapping, d > 2
+p. 279 - Gift wrapping, d > 2
 - Algorithm
 - Queue Q stores facets. File ℑstores the “pool” of subfacets.
 
@@ -7043,13 +7043,13 @@ while (Q ≠∅) do
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 Depends on dimension and number of produced facets/subfacets.
 
 ## Common mistakes and danger points
 - Facet adjacency is more subtle than edge adjacency in 2D; be clear what object is shared.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### Core exam drill
 **Question.** State the problem solved by gift wrapping in higher dimensions: algorithm and adjacent facets, describe preprocessing/query/update steps if any, and give the time and space bounds.
 
@@ -7065,22 +7065,22 @@ Depends on dimension and number of produced facets/subfacets.
 - Facet adjacency via shared (d-2)-dimensional subfacets.
 - How to find the next facet adjacent to a known facet.
 - Queue/frontier view of the search over unprocessed boundary pieces.
-### Core test / key idea
+Core test / key idea
 - Starting from one known hull facet, examine its frontier subfacets.
 - For each frontier subfacet, find the adjacent supporting facet that keeps all points on the correct side.
 - Continue until all frontier subfacets are resolved.
-### Complexity
+Complexity
 - Depends on dimension and number of produced facets/subfacets.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Facet adjacency is more subtle than edge adjacency in 2D; be clear what object is shared.
-## End-of-file summary
+End-of-file summary
 - Facet adjacency via shared (d-2)-dimensional subfacets.
 - How to find the next facet adjacent to a known facet.
 - Queue/frontier view of the search over unprocessed boundary pieces.
 - Depends on dimension and number of produced facets/subfacets.
 - Facet adjacency is more subtle than edge adjacency in 2D; be clear what object is shared.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Gift wrapping in higher dimensions: background and setup](03_Convex_Hulls/44_higher-dimensional-hull-background.md)
 - **Next file in reading order:** [Gift wrapping in higher dimensions: supporting hyperplanes, initialization, candidates, and analysis](03_Convex_Hulls/46_higher-dimensional-hull-init-analysis.md)
 - **Source slide range:** pp. 272-279 of `comp_geometry_slides_new.pdf`
@@ -7098,7 +7098,7 @@ Depends on dimension and number of produced facets/subfacets.
 - **Recording files touching this material:** CS 564 - 03.06 13.2.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This range covers the hard parts in d>2: getting the first facet, generating candidate subfacets, and accounting for the cost in terms of facets and dimension.
 
 ## What you must know cold
@@ -7107,11 +7107,11 @@ This range covers the hard parts in d>2: getting the first facet, generating can
 - Candidate subfacets and frontier maintenance.
 - Final cost accounting.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - Initialization is not trivial: you need one valid hull facet before adjacency expansion can begin.
 - Each processed facet generates subfacet candidates; some are already internal, others remain frontier pieces.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 283
@@ -7134,7 +7134,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - intersection is vertex
 - intersection is edge
 
-### p. 281 - Gift wrapping, d > 2
+p. 281 - Gift wrapping, d > 2
 - Step 2. “Find an initial convex hull facet.”, 1
 - The idea is to obtain a hyperplane containing a facet of the
 - convex hull polytope H(S) by successive approximations.
@@ -7146,7 +7146,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - A supporting hyperplane intersects the polytope
 - such that the entire polytope is to one side of the hyperplane.
 
-### p. 282 - Gift wrapping, d > 2
+p. 282 - Gift wrapping, d > 2
 - Step 2. “Find an initial convex hull facet.”, 2
 - For d = 3 (E3) the successive hyperplanes intersect
 - the convex hull as follows:
@@ -7158,7 +7158,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - object
 - π0
 
-### p. 283 - Gift wrapping, d > 2
+p. 283 - Gift wrapping, d > 2
 - Step 2. “Find an initial convex hull facet.”, 3
 - Thus we begin by determining a point of least x1-coordinate
 - (call it p1′); p1′ is certainly a vertex (a 0-face) of the convex hull.
@@ -7170,7 +7170,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - This “initializes” the process of finding
 - the initial supporting hyperplane.
 
-### p. 284 - Gift wrapping, d > 2
+p. 284 - Gift wrapping, d > 2
 - Step 2. “Find an initial convex hull facet.”, 4
 - At the jth iteration, 2 ≤j ≤d, the hyperplane πj-1 has
 - normal vector nj-1 and contains vertices p1′, p2′, …, pj-1′.
@@ -7182,7 +7182,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - There are d iterations, so finding the initial supporting
 - hyperplane πd required by step 2 of the overall algorithm
 
-### p. 285 - Gift wrapping, d > 2
+p. 285 - Gift wrapping, d > 2
 - Step 7. “Generate the subfacets of facet F.”
 - Because we have assumed that the convex hull polytope H(S)
 - is simplicial, each facet of H(S) is determined by exactly d vertices,
@@ -7194,7 +7194,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Each facet will be described by a d-component vector
 - of the indices of its vertices,
 
-### p. 286 - Gift wrapping, d > 2
+p. 286 - Gift wrapping, d > 2
 - Step 8. “Check if a subfacet e is a candidate.”, 1
 - A subfacet is a candidate iff it is contained in just one facet
 - generated by the algorithm.
@@ -7204,7 +7204,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - then both of its adjacent facets have been found,
 - and the subfacet is of no further use.
 
-### p. 287 - Gift wrapping, d > 2
+p. 287 - Gift wrapping, d > 2
 - Step 8. “Check if a subfacet e is a candidate.”, 2
 - Recall that ℑis a file of subfacets.
 - Given a newly generated subfacet e,
@@ -7216,7 +7216,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Store ℑas a height-balanced binary tree,
 - ordered lexicographically on the vertex indices.
 
-### p. 288 - Gift wrapping, d > 2
+p. 288 - Gift wrapping, d > 2
 - Analysis, 1
 - We analyze the algorithm in steps.
 - Let ϕd-1 be the actual number of facets of the polytope H(S).
@@ -7228,7 +7228,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - number of facets
 - components of the vector representing the facet
 
-### p. 289 - Gift wrapping, d > 2
+p. 289 - Gift wrapping, d > 2
 - Analysis, 2
 - It can be shown that both ϕd-1, ϕd-2 ∈O(N⎣d/2⎦).
 - Using this the previous analysis simplifies to:
@@ -7239,19 +7239,19 @@ These are cropped from the main slide PDF. Do not skip them.
 - it remains in the final order expression where it is an exponent
 - of the input size N.
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the claim precisely before giving the argument.
 - Identify the known lower bound / recurrence / invariant you are using.
 - Keep the direction of the argument correct.
 - End with the exact asymptotic conclusion.
 
-## Complexity and performance facts
+Complexity and performance facts
 State the course bound in terms of N, dimension d, number of facets, and number of subfacets.
 
 ## Common mistakes and danger points
 - Do not quote a simple O(N log N) style bound from 2D. The higher-dimensional complexity depends heavily on output size.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### Proof drill
 **Question.** Explain the main argument in gift wrapping in higher dimensions: supporting hyperplanes, initialization, candidates, and analysis in a logically correct order.
 
@@ -7263,21 +7263,21 @@ State the course bound in terms of N, dimension d, number of facets, and number 
 - Initialization by successively finding supporting hyperplanes.
 - Candidate subfacets and frontier maintenance.
 - Final cost accounting.
-### Core test / key idea
+Core test / key idea
 - Initialization is not trivial: you need one valid hull facet before adjacency expansion can begin.
 - Each processed facet generates subfacet candidates; some are already internal, others remain frontier pieces.
-### Complexity
+Complexity
 - State the course bound in terms of N, dimension d, number of facets, and number of subfacets.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Do not quote a simple O(N log N) style bound from 2D. The higher-dimensional complexity depends heavily on output size.
-## End-of-file summary
+End-of-file summary
 - Supporting hyperplanes as the higher-dimensional version of supporting lines.
 - Initialization by successively finding supporting hyperplanes.
 - Candidate subfacets and frontier maintenance.
 - State the course bound in terms of N, dimension d, number of facets, and number of subfacets.
 - Do not quote a simple O(N log N) style bound from 2D. The higher-dimensional complexity depends heavily on output size.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Gift wrapping in higher dimensions: algorithm and adjacent facets](03_Convex_Hulls/45_higher-dimensional-hull-algorithm.md)
 - **Next file in reading order:** [Proximity problem family: survey and relations](04_Proximity/47_proximity-problem-survey.md)
 - **Source slide range:** pp. 280-289 of `comp_geometry_slides_new.pdf`
@@ -7295,7 +7295,7 @@ State the course bound in terms of N, dimension d, number of facets, and number 
 - **Recording files touching this material:** CS 564 - 03.06 13.2.txt, CS 564 - 03.11 14.1.txt, CS 564 - 03.13 15.1a.txt, CS 564 - 03.25 16.1.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This file is the conceptual map for the last midterm block. Closest pair, nearest neighbors, EMST, triangulations, Voronoi, and search variants are introduced as one family of related proximity questions.
 
 ## What you must know cold
@@ -7303,12 +7303,12 @@ This file is the conceptual map for the last midterm block. Closest pair, neares
 - Difference between one-shot proximity problems and search/data-structure versions.
 - How these problems reduce to one another conceptually.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - The block’s main message is not just a list of problems; it is that many of them share lower bounds and structural reductions.
 - Nearest-neighbor relation need not be symmetric.
 - Voronoi and Delaunay later become universal structures for many proximity queries, although later pages are outside your midterm.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 294
@@ -7331,7 +7331,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - in a set of points in the plane.
 - Overview of the topic
 
-### p. 291 - CLOSEST PAIR
+p. 291 - CLOSEST PAIR
 - INSTANCE: Set S = {p1, p2, ..., pN} of N points in the plane.
 - QUESTION: Determine the two points of S whose mutual
 - distance is smallest.
@@ -7343,7 +7343,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - A brute force solution is to compute the distance for every pair
 - of points, saving the smallest; this requires O(d N^2) time.
 
-### p. 292 - All nearest neighbors
+p. 292 - All nearest neighbors
 - ALL NEAREST NEIGHBORS
 - INSTANCE: Set S = {p1, p2, ..., pN} of N points in the plane.
 - QUESTION: Determine the “nearest neighbor” (point of
@@ -7351,7 +7351,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Proximity
 - Proximity problems
 
-### p. 293 - “Nearest neighbor” is a relation on a set S as follows:
+p. 293 - “Nearest neighbor” is a relation on a set S as follows:
 - point b is a nearest neighbor of point a, denoted a →b, if
 - distance(a,b) = min distance(a,c)
 - c ∈S - a
@@ -7363,7 +7363,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - (i.e., “→” is not a function).”
 - Perhaps slightly clearer:
 
-### p. 294 - Footnote 2 on Preparata, p. 186:
+p. 294 - Footnote 2 on Preparata, p. 186:
 - “Although a point can be the nearest neighbor of every other point,
 - a point can have at most six nearest neighbors in two dimensions…”
 - I think that is backwards, and should be:
@@ -7375,7 +7375,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Point c has every other point
 - as its nearest neighbor.
 
-### p. 295 - Euclidean minimum spanning tree
+p. 295 - Euclidean minimum spanning tree
 - EUCLIDEAN MINIMUM SPANNING TREE
 - INSTANCE: Set S = {p1, p2, ..., pN} of N points in the plane.
 - QUESTION: Construct a tree of minimum total length
@@ -7387,7 +7387,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Given a graph G with N nodes and E weighted edges,
 - find the subtree of G that includes every vertex
 
-### p. 296 - Triangulation
+p. 296 - Triangulation
 - TRIANGULATION
 - INSTANCE: Set S = {p1, p2, ..., pN} of N points in the plane.
 - QUESTION: Join the points in S with nonintersecting straight
@@ -7398,7 +7398,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - A triangulation for a set S is not necessarily unique.
 - As a planar graph, a triangulation on N vertices has ≤3N - 6 edges.
 
-### p. 297 - Single-shot vs. search
+p. 297 - Single-shot vs. search
 - The previous problems (CLOSEST PAIR, ALL NEAREST
 - NEIGHBORS, EUCLIDEAN MINIMUM SPANNING TREE,
 - and TRIANGULATION) have been single shot.
@@ -7410,7 +7410,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - INSTANCE: Set S = {p1, p2, ..., pN} of N points in the plane.
 - QUESTION: Given a query point q, which point p ∈S is a
 
-### p. 298 - k nearest neighbors
+p. 298 - k nearest neighbors
 - k-NEAREST NEIGHBORS
 - INSTANCE: Set S = {p1, p2, ..., pN} of N points in the plane.
 - QUESTION: Given a query point q, determine the k points of
@@ -7420,7 +7420,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Proximity
 - Proximity problems
 
-### p. 299 - Proximity
+p. 299 - Proximity
 - Proximity problems
 - Element uniqueness
 - Preparata defines a computational prototype as an archetypal
@@ -7432,28 +7432,28 @@ These are cropped from the main slide PDF. Do not skip them.
 - ELEMENT UNIQUENESS
 - INSTANCE: Set S = {x1, x2, ..., xN} of N real numbers.
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - Give the precise definitions.
 - Distinguish similar notions cleanly.
 - Use the right primitive test or formula on a concrete example.
 
-## Complexity and performance facts
+Complexity and performance facts
 This range mostly sets up relationships and why O(N log N) keeps reappearing.
 
 ## Common mistakes and danger points
 - Do not assume “A is nearest to B” implies “B is nearest to A”.
 - Separate static problem statements from query-data-structure versions.
 
-## Professor emphasis from recordings
+Professor emphasis from recordings
 These points are distilled from the related recordings and focus on what the professor slowed down for, warned about, or connected to homework/exam reasoning.
 
 - The lecture treats the proximity chapter as a family of related problems rather than a single isolated algorithm, so you should know how closest pair, nearest neighbor, Voronoi, and MST-type questions sit in the same neighborhood.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 Existing drill reminders from the earlier pack:
 - Adapted from HW2-Q2: For points on one axis stored in a range tree, find the closest neighbor in O(log N), then augment the structure to answer in O(1).
 
-### Definition drill
+Definition drill
 **Question.** Give the precise definitions and the most important consequences from proximity problem family: survey and relations.
 
 **How to answer.** A strong answer distinguishes similar objects and uses the course terminology exactly.
@@ -7463,18 +7463,18 @@ Existing drill reminders from the earlier pack:
 - Closest pair, all nearest neighbors, nearest-neighbor relation, EMST, triangulation, k-nearest neighbors.
 - Difference between one-shot proximity problems and search/data-structure versions.
 - How these problems reduce to one another conceptually.
-### Core test / key idea
+Core test / key idea
 - The block’s main message is not just a list of problems; it is that many of them share lower bounds and structural reductions.
 - Nearest-neighbor relation need not be symmetric.
 - Voronoi and Delaunay later become universal structures for many proximity queries, although later pages are outside your midterm.
-### Complexity
+Complexity
 - This range mostly sets up relationships and why O(N log N) keeps reappearing.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Do not assume “A is nearest to B” implies “B is nearest to A”.
 - Separate static problem statements from query-data-structure versions.
-### Professor emphasis (from recordings)
+Professor emphasis (from recordings)
 - The lecture treats the proximity chapter as a family of related problems rather than a single isolated algorithm, so you should know how closest pair, nearest neighbor, Voronoi, and MST-type questions sit in the same neighborhood.
-## End-of-file summary
+End-of-file summary
 - Closest pair, all nearest neighbors, nearest-neighbor relation, EMST, triangulation, k-nearest neighbors.
 - Difference between one-shot proximity problems and search/data-structure versions.
 - How these problems reduce to one another conceptually.
@@ -7482,7 +7482,7 @@ Existing drill reminders from the earlier pack:
 - Do not assume “A is nearest to B” implies “B is nearest to A”.
 - Separate static problem statements from query-data-structure versions.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Gift wrapping in higher dimensions: supporting hyperplanes, initialization, candidates, and analysis](03_Convex_Hulls/46_higher-dimensional-hull-init-analysis.md)
 - **Next file in reading order:** [Proximity lower bounds and transformations](04_Proximity/48_proximity-lower-bounds.md)
 - **Source slide range:** pp. 290-299 of `comp_geometry_slides_new.pdf`
@@ -7500,7 +7500,7 @@ Existing drill reminders from the earlier pack:
 - **Recording files touching this material:** CS 564 - 03.11 14.1.txt, CS 564 - 03.13 15.1a.txt, CS 564 - 03.13 15.1b.txt, CS 564 - 03.25 16.1.txt, Mar 13, 1.47 PM​.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This section extends the reduction logic from convex hull to proximity problems. It is extremely exam-friendly because it tests understanding of transformations, not memorization of geometry.
 
 ## What you must know cold
@@ -7508,12 +7508,12 @@ This section extends the reduction logic from convex hull to proximity problems.
 - Input transformation vs output extraction.
 - Why transformation direction matters.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - For example, element uniqueness reduces to closest pair by mapping x_i to points (x_i,0). Duplicate numbers produce zero-distance pairs.
 - Closest pair can reduce to all-nearest-neighbors by scanning the nearest-neighbor pairs for the minimum distance.
 - The transformation cost must not dominate the lower bound you want to transfer.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 300
@@ -7536,7 +7536,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Ω(N log N)
 - SORTING
 
-### p. 301 - Search problems
+p. 301 - Search problems
 - BINARY SEARCH ∝O(1) NEAREST NEIGHBOR SEARCH
 - BINARY SEARCH ∝O(1) k-NEAREST NEIGHBORS
 - Preparata defines BINARY SEARCH in a slightly unusual way,
@@ -7548,7 +7548,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - QUESTION (Usual): Find xi such that xi ≤q < xi+1.
 - QUESTION (Preparata): Find xi closest to q.
 
-### p. 302 - BINARY SEARCH has lower bound in Ω(log N).
+p. 302 - BINARY SEARCH has lower bound in Ω(log N).
 - Transform BINARY SEARCH
 - to NEAREST NEIGHBOR SEARCH as follows:
 - 1. Transform instance of BINARY SEARCH:
@@ -7560,7 +7560,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - 3. Transform solution point (xi,0) to real number xi,
 - which is the solution to BINARY SEARCH. O(1) time.
 
-### p. 303 - But, there seems to be a problem with this proof,
+p. 303 - But, there seems to be a problem with this proof,
 - as given in Preparata, p. 193:
 - The O(N) transformation dominates the Ω(log N) lower bound,
 - voiding the result.
@@ -7572,7 +7572,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - SEARCH has the same lower bound as the 1-dimensional
 - version (this is probably easily proven).
 
-### p. 304 - ELEMENT UNIQUENESS has lower bound in Ω(N log N).
+p. 304 - ELEMENT UNIQUENESS has lower bound in Ω(N log N).
 - Transform ELEMENT UNIQUENESS
 - to CLOSEST PAIR as follows:
 - 1. Transform instance of ELEMENT UNIQUENESS:
@@ -7584,7 +7584,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - 3. Transform this into a solution to ELEMENT UNIQUENESS:
 - If xi = xj, return FALSE, else return TRUE.
 
-### p. 305 - All nearest neighbors
+p. 305 - All nearest neighbors
 - CLOSEST PAIR has lower bound in Ω(N log N).
 - Transform CLOSEST PAIR
 - to ALL NEAREST NEIGHBORS as follows:
@@ -7596,7 +7596,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - let A = {(p1,q1), (p2,q2), …, (pN,qN)} be the solution
 - (qi ∈S, a nearest neighbor for each point in S).
 
-### p. 306 - Euclidean minimum spanning tree
+p. 306 - Euclidean minimum spanning tree
 - SORTING has lower bound in Ω(N log N).
 - Transform SORTING
 - to EUCLIDEAN MINIMUM SPANNING TREE (EMST) as follows:
@@ -7608,7 +7608,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - A set of points along the x axis has a unique EMST,
 - where there is an edge ((xi,0),(xj,0))
 
-### p. 307 - Triangulation
+p. 307 - Triangulation
 - SORTING has lower bound in Ω(N log N).
 - Transform SORTING to TRIANGULATION as follows:
 - 1. An instance of SORTING:
@@ -7620,32 +7620,32 @@ These are cropped from the main slide PDF. Do not skip them.
 - shown in the figure.
 - Let T = {(xi1,xj1), (xi2,xj2), …, (xiN,xjN)} be the solution
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the claim precisely before giving the argument.
 - Identify the known lower bound / recurrence / invariant you are using.
 - Keep the direction of the argument correct.
 - End with the exact asymptotic conclusion.
 
-## Complexity and performance facts
+Complexity and performance facts
 Course claim: these proximity problems inherit Ω(N log N) lower bounds in the standard model.
 
 ## Common mistakes and danger points
 - Students often reverse the reduction direction or produce an algorithm instead of a reduction proof.
 - Output extraction must actually reconstruct the original problem answer.
 
-## Professor emphasis from recordings
+Professor emphasis from recordings
 These points are distilled from the related recordings and focus on what the professor slowed down for, warned about, or connected to homework/exam reasoning.
 
 - Again the professor returns to transformation direction: to transfer a lower bound, you need a fast transformation from the known-hard problem to the target problem.
 - A classic trap mentioned in lecture is proposing a transformation whose conversion step is already too expensive, which destroys the claimed lower bound.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 Existing drill reminders from the earlier pack:
 - Show element uniqueness ≤ closest pair using an explicit input and output transformation.
 - Show closest pair ≤ all nearest neighbors and conclude a lower bound.
 - Explain why a failed reverse transformation does not disprove the correct reduction direction.
 
-### Lower-bound drill
+Lower-bound drill
 **Question.** Use a problem transformation to transfer a known Ω(N log N) lower bound to another proximity problem.
 
 **How to answer.** You must name the source problem, the target problem, the transformation cost, and the contradiction that would arise if the target were asymptotically faster.
@@ -7660,19 +7660,19 @@ Existing drill reminders from the earlier pack:
 - How reductions transfer lower bounds among element uniqueness, closest pair, all nearest neighbors, EMST, and triangulation.
 - Input transformation vs output extraction.
 - Why transformation direction matters.
-### Core test / key idea
+Core test / key idea
 - For example, element uniqueness reduces to closest pair by mapping x_i to points (x_i,0). Duplicate numbers produce zero-distance pairs.
 - Closest pair can reduce to all-nearest-neighbors by scanning the nearest-neighbor pairs for the minimum distance.
 - The transformation cost must not dominate the lower bound you want to transfer.
-### Complexity
+Complexity
 - Course claim: these proximity problems inherit Ω(N log N) lower bounds in the standard model.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Students often reverse the reduction direction or produce an algorithm instead of a reduction proof.
 - Output extraction must actually reconstruct the original problem answer.
-### Professor emphasis (from recordings)
+Professor emphasis (from recordings)
 - Again the professor returns to transformation direction: to transfer a lower bound, you need a fast transformation from the known-hard problem to the target problem.
 - A classic trap mentioned in lecture is proposing a transformation whose conversion step is already too expensive, which destroys the claimed lower bound.
-## End-of-file summary
+End-of-file summary
 - How reductions transfer lower bounds among element uniqueness, closest pair, all nearest neighbors, EMST, and triangulation.
 - Input transformation vs output extraction.
 - Why transformation direction matters.
@@ -7680,7 +7680,7 @@ Existing drill reminders from the earlier pack:
 - Students often reverse the reduction direction or produce an algorithm instead of a reduction proof.
 - Output extraction must actually reconstruct the original problem answer.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Proximity problem family: survey and relations](04_Proximity/47_proximity-problem-survey.md)
 - **Next file in reading order:** [Closest pair: problem setup and 1D version](04_Proximity/49_closest-pair-setup-1d.md)
 - **Source slide range:** pp. 300-307 of `comp_geometry_slides_new.pdf`
@@ -7698,7 +7698,7 @@ Existing drill reminders from the earlier pack:
 - **Recording files touching this material:** CS 564 - 03.13 15.2.txt, CS 564 - 03.25 16.1.txt, Mar 13, 2.34 PM​.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This file sets up the closest-pair algorithm by solving the easy 1D case first and then using divide and conquer as the template for 2D.
 
 ## What you must know cold
@@ -7706,12 +7706,12 @@ This file sets up the closest-pair algorithm by solving the easy 1D case first a
 - 1D closest pair after sorting: adjacent points only need to be checked.
 - How divide and conquer splits the 2D set by median x-coordinate.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - In 1D, once points are sorted, the closest pair must be adjacent in sorted order.
 - This suggests that order structure can drastically reduce comparisons.
 - In 2D, divide into left and right halves, solve recursively, then handle cross-border pairs in the merge step.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 308
@@ -7731,7 +7731,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - 1. Sorting
 - 2. Divide-and-conquer
 
-### p. 309 - Using the divide-and-conquer paradigm,
+p. 309 - Using the divide-and-conquer paradigm,
 - time in O(N log N) can be achieved by:
 - 1. Dividing the problem into two equal-sized subproblems
 - 2. Solving those subproblems recursively
@@ -7743,7 +7743,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - where S1 ∪S2 = S, S1 ∩S2 = ∅, |S1| ≈|S2| ≈N/2;
 - giving a closest pair of points for S1 and another for S2.
 
-### p. 310 - We consider a divide-and-conquer algorithm for CLOSEST PAIR
+p. 310 - We consider a divide-and-conquer algorithm for CLOSEST PAIR
 - in 1 dimension (d = 1).
 - Partition S, a set of points on a line, into two sets S1 and S2
 - at some point m such that for every point p ∈S1 and q ∈S2, p < q.
@@ -7755,7 +7755,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - The closest pair in S is either {p1, p2} or {q1, q2}
 - or some {p3, q3} with p3 ∈S1 and q3 ∈S2.
 
-### p. 311 - Divide-and-conquer for d = 1, 2
+p. 311 - Divide-and-conquer for d = 1, 2
 - To check for such a point {p3, q3}, is it necessary to test
 - every possible pair of points in S1 and S2?
 - Note that if {p3, q3} is to be closer than δ (i.e., |q3 - p3| < δ),
@@ -7767,7 +7767,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - For the same reason, there can be at most 1 point of S2
 - within δ of m, i.e., in the interval [m, m + δ).
 
-### p. 312 - procedure CPAIR1(S)
+p. 312 - procedure CPAIR1(S)
 - Input: X[1:N], N points of S in one dimension.
 - Output: δ, the distance between the two closest points.
 
@@ -7794,31 +7794,31 @@ Construct(S1, S2) /* S1 = {p: p ≤m}, S2 = {p: p > m} */
 - Proximity
 - Closest pair, divide-and-conquer
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.
 - Explain the invariant or ordering that makes the method work.
 - Trace the method by hand on a small example.
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 1D: O(N log N) by sorting then linear scan, or O(N) after presorted input.
 
 ## Common mistakes and danger points
 - Do not assume sorting by one coordinate alone solves the 2D problem. The merge step is the real content.
 
-## Professor emphasis from recordings
+Professor emphasis from recordings
 These points are distilled from the related recordings and focus on what the professor slowed down for, warned about, or connected to homework/exam reasoning.
 
 - The 1D closest-pair version is used in lecture as the warm-up that makes the divide-and-conquer recurrence feel obvious before the 2D merge complication appears.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 Existing drill reminders from the earlier pack:
 - For points on a line, prove why only predecessor and successor can be closest candidates.
 - Describe how an ordered structure can answer nearest-neighbor-on-a-line queries.
 - Adapted from HW2-Q2: For points on one axis stored in a range tree, find the closest neighbor in O(log N), then augment the structure to answer in O(1).
 
-### Closest-pair setup drill
+Closest-pair setup drill
 **Question.** State the divide-and-conquer recurrence for closest pair and explain the easy 1D version completely.
 
 **How to answer.** In 1D the closest pair is adjacent after sorting; in higher dimensions the merge is the hard part.
@@ -7838,17 +7838,17 @@ Existing drill reminders from the earlier pack:
 - Closest pair problem statement.
 - 1D closest pair after sorting: adjacent points only need to be checked.
 - How divide and conquer splits the 2D set by median x-coordinate.
-### Core test / key idea
+Core test / key idea
 - In 1D, once points are sorted, the closest pair must be adjacent in sorted order.
 - This suggests that order structure can drastically reduce comparisons.
 - In 2D, divide into left and right halves, solve recursively, then handle cross-border pairs in the merge step.
-### Complexity
+Complexity
 - 1D: O(N log N) by sorting then linear scan, or O(N) after presorted input.
-### Common mistakes / danger points
+Common mistakes / danger points
 - Do not assume sorting by one coordinate alone solves the 2D problem. The merge step is the real content.
-### Professor emphasis (from recordings)
+Professor emphasis (from recordings)
 - The 1D closest-pair version is used in lecture as the warm-up that makes the divide-and-conquer recurrence feel obvious before the 2D merge complication appears.
-## End-of-file summary
+End-of-file summary
 - Closest pair problem statement.
 - 1D closest pair after sorting: adjacent points only need to be checked.
 - How divide and conquer splits the 2D set by median x-coordinate.
@@ -7856,7 +7856,7 @@ Existing drill reminders from the earlier pack:
 - Do not assume sorting by one coordinate alone solves the 2D problem. The merge step is the real content.
 - The 1D closest-pair version is used in lecture as the warm-up that makes the divide-and-conquer recurrence feel obvious before the 2D merge complication appears.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Proximity lower bounds and transformations](04_Proximity/48_proximity-lower-bounds.md)
 - **Next file in reading order:** [Closest pair: 2D merge step](04_Proximity/50_closest-pair-2d-merge.md)
 - **Source slide range:** pp. 308-313 of `comp_geometry_slides_new.pdf`
@@ -7874,7 +7874,7 @@ Existing drill reminders from the earlier pack:
 - **Recording files touching this material:** CS 564 - 03.13 15.2.txt, CS 564 - 03.25 16.1.txt, Mar 13, 2.34 PM​.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This is the heart of the closest-pair algorithm. The recursive halves are easy. The strip argument is where the theorem lives.
 
 ## What you must know cold
@@ -7882,12 +7882,12 @@ This is the heart of the closest-pair algorithm. The recursive halves are easy. 
 - Sort or maintain strip points by y-coordinate.
 - Each strip point needs to be compared with only a constant number of following points.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - Let δ = min(δ_L, δ_R). Any cross pair closer than δ must lie in the vertical strip of width 2δ around the divide.
 - Within that strip, geometric packing shows each point needs comparison with only a bounded number of later points in y-order.
 - That bounded-neighbor fact turns the merge from quadratic into linear.
 
-## Figures to actually look at
+Figures to actually look at
 These are cropped from the main slide PDF. Do not skip them.
 
 ### Figure from slide p. 315
@@ -7910,7 +7910,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - as long as each is within δ of l.
 - This seems to imply that O(N/2) ⋅ O(N/2) ∈ O(N2)
 
-### p. 315 - Closing in on the closest pair
+p. 315 - Closing in on the closest pair
 - But is it really necessary for some p ∈S1 and within P1,
 - to determine the distance to every point q ∈S2 and within P2?
 - No. We really only need to do so for those points
@@ -7921,7 +7921,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - Proximity
 - Closest pair, divide-and-conquer
 
-### p. 316 - Distance computations required
+p. 316 - Distance computations required
 - How many points can there be in rectangle R?
 - Recall that no two points in P2 are closer than δ.
 - Because rectangle R has size δ × 2δ,
@@ -7933,7 +7933,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - in the merge step, not O(N2).
 - ⇒An O(N log N) algorithm for CLOSEST PAIR is possible.
 
-### p. 317 - Proximity
+p. 317 - Proximity
 - Closest pair, divide-and-conquer
 - Which points much be checked?
 - Though an O(N log N) algorithm is possible, we do not have it yet.
@@ -7945,7 +7945,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - By sorting the points of S in order on y coordinate,
 - the nearest neighbor candidates for a point p can be found
 
-### p. 318 - Algorithm from Preparata, p. 198:
+p. 318 - Algorithm from Preparata, p. 198:
 - 1. Partition S into two subsets, S1 and S2,
 - about the vertical median line l.
 - 2. Find the closest pair separations δ1 and δ2 recursively.
@@ -7957,7 +7957,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - * and P2
 - * be the two sorted sequences, respectively.
 
-### p. 319 - Merge process algorithm
+p. 319 - Merge process algorithm
 - Preparata p. 199 says: “… when executing Step 4, extract the
 - points from the list in sorted order in only O(N) time.”
 - One way to assemble P1
@@ -7979,14 +7979,14 @@ These are cropped from the main slide PDF. Do not skip them.
 - Give the exact time and space bounds.
 - Mention one edge case, degeneracy, or limitation.
 
-## Complexity and performance facts
+Complexity and performance facts
 Merge O(N) after maintaining the needed coordinate order; full recurrence gives O(N log N).
 
 ## Common mistakes and danger points
 - Do not compare every strip point with every other strip point.
 - The constant-neighbor argument depends on the recursive δ guarantee inside each half.
 
-## Professor emphasis from recordings
+Professor emphasis from recordings
 These points are distilled from the related recordings and focus on what the professor slowed down for, warned about, or connected to homework/exam reasoning.
 
 - The whole lecture pressure point is the merge step: without a linear merge, divide-and-conquer gives you an ugly algorithm instead of an optimal one.
@@ -7994,13 +7994,13 @@ These points are distilled from the related recordings and focus on what the pro
 - The sorted-by-y view is not an implementation detail. It is what lets the merge remain linear.
 - Closest-pair merge pitfall: when extracting the 'active' points for the merge, mark only points in the strip (within the `delta` neighborhood of the dividing line), not every point from one recursive half.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 Existing drill reminders from the earlier pack:
 - State and justify the strip lemma used in the closest-pair merge step.
 - Trace the merge step on a small point set and show which comparisons are actually made.
 - Adapted from HW2-Q2: For points on one axis stored in a range tree, find the closest neighbor in O(log N), then augment the structure to answer in O(1).
 
-### Closest-pair merge drill
+Closest-pair merge drill
 **Question.** In the 2D closest-pair algorithm, explain why only a constant number of candidates per point need to be checked in the strip.
 
 **How to answer.** Use the δ-by-2δ strip geometry and the packing argument. The proof is not optional on an exam.
@@ -8020,21 +8020,21 @@ Existing drill reminders from the earlier pack:
 - After recursive calls return δ, only points within distance δ of the dividing line can form a cross pair.
 - Sort or maintain strip points by y-coordinate.
 - Each strip point needs to be compared with only a constant number of following points.
-### Core test / key idea
+Core test / key idea
 - Let δ = min(δ_L, δ_R). Any cross pair closer than δ must lie in the vertical strip of width 2δ around the divide.
 - Within that strip, geometric packing shows each point needs comparison with only a bounded number of later points in y-order.
 - That bounded-neighbor fact turns the merge from quadratic into linear.
-### Complexity
+Complexity
 - Merge O(N) after maintaining the needed coordinate order; full recurrence gives O(N log N).
-### Common mistakes / danger points
+Common mistakes / danger points
 - Do not compare every strip point with every other strip point.
 - The constant-neighbor argument depends on the recursive δ guarantee inside each half.
-### Professor emphasis (from recordings)
+Professor emphasis (from recordings)
 - The whole lecture pressure point is the merge step: without a linear merge, divide-and-conquer gives you an ugly algorithm instead of an optimal one.
 - He emphasizes the packing argument in the strip. You are not allowed to just say 'check a few points'; you need the geometric reason that only a constant number matter.
 - The sorted-by-y view is not an implementation detail. It is what lets the merge remain linear.
 - Closest-pair merge pitfall: when extracting the 'active' points for the merge, mark only points in the strip (within the `delta` neighborhood of the dividing line), not every point from one recursive half.
-## End-of-file summary
+End-of-file summary
 - After recursive calls return δ, only points within distance δ of the dividing line can form a cross pair.
 - Sort or maintain strip points by y-coordinate.
 - Each strip point needs to be compared with only a constant number of following points.
@@ -8042,7 +8042,7 @@ Existing drill reminders from the earlier pack:
 - Do not compare every strip point with every other strip point.
 - The constant-neighbor argument depends on the recursive δ guarantee inside each half.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Closest pair: problem setup and 1D version](04_Proximity/49_closest-pair-setup-1d.md)
 - **Next file in reading order:** [Closest pair: analysis and higher dimensions](04_Proximity/51_closest-pair-analysis.md)
 - **Source slide range:** pp. 314-319 of `comp_geometry_slides_new.pdf`
@@ -8060,7 +8060,7 @@ Existing drill reminders from the earlier pack:
 - **Recording files touching this material:** CS 564 - 03.13 15.2.txt, CS 564 - 03.25 16.1.txt, Mar 13, 2.34 PM​.txt
 - **Goal of this file:** You should be able to study this topic without reopening the slide deck.
 
-## Big picture
+Big picture
 This final in-scope page closes the recurrence and points forward to higher dimensions. The key fact is that the algorithm matches the lower bound.
 
 ## What you must know cold
@@ -8068,11 +8068,11 @@ This final in-scope page closes the recurrence and points forward to higher dime
 - Solution T(N) = O(N log N).
 - Idea of higher-dimensional extension via sparsity/packing.
 
-## Core ideas and reasoning
+Core ideas and reasoning
 - Since the merge is linear and the recursion is balanced, the Master-Theorem style solution is O(N log N).
 - Combined with the Ω(N log N) lower bound, closest pair is θ(N log N) in 2D.
 
-## Slide-by-slide digestion
+Slide-by-slide digestion
 
 ### p. 320 - Analysis
 - Let T(N) be the running time of the algorithm on N points.
@@ -8086,7 +8086,7 @@ This final in-scope page closes the recurrence and points forward to higher dime
 - Thus, T(N) = 2T(N/2) + O(N) ∈O(N log N).
 - The presort of S on y coordinate also requires O(N log N) time.
 
-### p. 321 - Preparata p. 199-204 discusses solving CLOSEST PAIR using a
+p. 321 - Preparata p. 199-204 discusses solving CLOSEST PAIR using a
 - divide-and-conquer algorithm for d > 3.
 - The approach depends on the notion of sparsity,
 - a measure of how many points can be in a d-dimensional
@@ -8097,26 +8097,26 @@ This final in-scope page closes the recurrence and points forward to higher dime
 - Proximity
 - Closest pair, divide-and-conquer
 
-## What you must be able to say or do in an exam
+What you must be able to say or do in an exam
 - State the claim precisely before giving the argument.
 - Identify the known lower bound / recurrence / invariant you are using.
 - Keep the direction of the argument correct.
 - End with the exact asymptotic conclusion.
 
-## Complexity and performance facts
+Complexity and performance facts
 2D closest pair is optimal at θ(N log N).
 
 ## Common mistakes and danger points
 - Do not forget that maintaining y-order efficiently is part of the full argument.
 - Higher-dimensional extensions keep the same divide-and-conquer spirit but the packing constant changes.
 
-## Professor emphasis from recordings
+Professor emphasis from recordings
 These points are distilled from the related recordings and focus on what the professor slowed down for, warned about, or connected to homework/exam reasoning.
 
 - The concluding point is that the recurrence solves to O(N log N) because the merge is linear; if you lose that fact, the whole optimality story collapses.
 - You should also be ready to state how the dimension changes the constant/packing argument instead of pretending 2D and higher dimensions are identical.
 
-## Exam-style drills and answer skeletons
+Exam-style drills and answer skeletons
 ### Proof drill
 **Question.** Explain the main argument in closest pair: analysis and higher dimensions in a logically correct order.
 
@@ -8127,18 +8127,18 @@ These points are distilled from the related recordings and focus on what the pro
 - Recurrence T(N) = 2T(N/2) + O(N) after presorting / stable maintenance.
 - Solution T(N) = O(N log N).
 - Idea of higher-dimensional extension via sparsity/packing.
-### Core test / key idea
+Core test / key idea
 - Since the merge is linear and the recursion is balanced, the Master-Theorem style solution is O(N log N).
 - Combined with the Ω(N log N) lower bound, closest pair is θ(N log N) in 2D.
-### Complexity
+Complexity
 - 2D closest pair is optimal at θ(N log N).
-### Common mistakes / danger points
+Common mistakes / danger points
 - Do not forget that maintaining y-order efficiently is part of the full argument.
 - Higher-dimensional extensions keep the same divide-and-conquer spirit but the packing constant changes.
-### Professor emphasis (from recordings)
+Professor emphasis (from recordings)
 - The concluding point is that the recurrence solves to O(N log N) because the merge is linear; if you lose that fact, the whole optimality story collapses.
 - You should also be ready to state how the dimension changes the constant/packing argument instead of pretending 2D and higher dimensions are identical.
-## End-of-file summary
+End-of-file summary
 - Recurrence T(N) = 2T(N/2) + O(N) after presorting / stable maintenance.
 - Solution T(N) = O(N log N).
 - Idea of higher-dimensional extension via sparsity/packing.
@@ -8146,7 +8146,7 @@ These points are distilled from the related recordings and focus on what the pro
 - Do not forget that maintaining y-order efficiently is part of the full argument.
 - Higher-dimensional extensions keep the same divide-and-conquer spirit but the packing constant changes.
 
-## Everything related to this topic
+Everything related to this topic
 - **Previous file in reading order:** [Closest pair: 2D merge step](04_Proximity/50_closest-pair-2d-merge.md)
 - **Source slide range:** pp. 320-321 of `comp_geometry_slides_new.pdf`
 - **Related recordings:** CS 564 - 03.13 15.2.txt, CS 564 - 03.25 16.1.txt, Mar 13, 2.34 PM​.txt
