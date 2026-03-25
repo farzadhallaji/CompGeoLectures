@@ -8,6 +8,27 @@ docs_dir: Lectures/docs
 
 theme:
   name: material
+  font:
+    text: Source Serif 4
+    code: JetBrains Mono
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - toc.follow
+    - content.code.copy
 
 markdown_extensions:
   - attr_list
