@@ -1,13 +1,12 @@
 /*
- * Slide figures: use the full reading column width (Material default) and
- * block layout so tall PNGs are not clipped by inline/baseline line-box quirks
- * in some browsers.
+ * Slide figures: render at 70% of content width (centered), block layout so
+ * tall PNGs are not clipped by inline/baseline line-box quirks in some browsers.
  */
 .md-typeset img {
   display: block;
-  max-width: 100%;
+  max-width: 70%;
   height: auto;
-  margin: 0.75em 0;
+  margin: 0.75em auto;
 }
 
 /* Material sets overflow:hidden on article; allow vertical overflow for in-flow figures */
