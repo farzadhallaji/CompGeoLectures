@@ -94,7 +94,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - to a set of points C. Then C is said to be
 - convex if for all pairs (p, q) in C, the set
 - of points
-- [p + (1- α)q] ε C for 0<= α <=1
+- [p + (1- α)q] ε C for \(0 \le \alpha \le 1\)
 - That is, if two points p and q belong to C,
 - then the set of points on the line segments
 - connecting p and q also belong to C.

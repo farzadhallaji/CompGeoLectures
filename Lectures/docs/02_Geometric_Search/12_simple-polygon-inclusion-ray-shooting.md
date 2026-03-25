@@ -40,16 +40,18 @@ These are cropped from the main slide PDF. Do not skip them.
 - the boundary of P an odd number of times.
 
 ### p. 73 - Simple polygon inclusion by Intersection counting
-- procedure SimpleInclusion(P,q) /* Incomplete version */
-- begin
-- c = 0
-- for
-- i = 0 to N /* Check each edge */
-- edge vi,v(i+1) mod N ∩ray -∞,q
-- c = (c + 1) mod 2
-- endfor
-- c = 1
-- return TRUE
+```text
+procedure SimpleInclusion(P,q) /* Incomplete version */
+begin
+c = 0
+for
+i = 0 to N /* Check each edge */
+edge vi,v(i+1) mod N ∩ray -∞,q
+c = (c + 1) mod 2
+endfor
+c = 1
+return TRUE
+```
 
 ### p. 74 - Simple polygon inclusion by Intersection counting
 - Special cases, not explicitly handled by given procedure:

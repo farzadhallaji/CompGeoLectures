@@ -61,16 +61,18 @@ These are cropped from the main slide PDF. Do not skip them.
 - preceding slide HV=(1, 1, 2, 3, 7, 5, 6, 10, 11)
 
 ### p. 50 - procedure EdgesIncident(j) /* VERTEX in text */
-- begin
-- a = HV[j]
-- /* Get first DCEL entry for vj, a is index. */
-- a0 = a
-- /* Save starting index. */
-- A[1] = a
-- i = 2
-- /* i is index for A */
-- if (V1[a] = j) then
-- a =PredE[a]
+```text
+begin
+a = HV[j]
+/* Get first DCEL entry for vj, a is index. */
+a0 = a
+/* Save starting index. */
+A[1] = a
+i = 2
+/* i is index for A */
+if (V1[a] = j) then
+a =PredE[a]
+```
 
 ### p. 51 - DCEL notes
 - Error in text, p. 16: “... scan of arrays V1 and F1 ...”

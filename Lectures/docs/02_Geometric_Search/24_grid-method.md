@@ -36,26 +36,32 @@ These are cropped from the main slide PDF. Do not skip them.
 
 ### p. 139 - Grid method
 - Preprocessing
-- procedure ConstructGrid
-- begin
-- Initialize m × m array of lists g to NULL.
-- for i = 1 to N
-- add pi to list g[xi /size(m)][yi /size(m)]
-- Quantity size(m) is the coordinate distance represented by
-- one grid interval.
-- m × m array of pointers to lists
-- Lists associated with grid cells
+
+```text
+procedure ConstructGrid
+begin
+Initialize m × m array of lists g to NULL.
+for i = 1 to N
+add pi to list g[xi /size(m)][yi /size(m)]
+Quantity size(m) is the coordinate distance represented by
+one grid interval.
+m × m array of pointers to lists
+Lists associated with grid cells
+```
 
 ### p. 140 - Grid method
 - Query
-- procedure QueryGrid
-- begin
-- for i = lx/size(m) to rx/size(m) 
-- for j = ly/size(m) to ry/size(m) 
-- for each point pk on list g[i][j]
-- lx ≤xk ≤rx and ly ≤yk ≤ry
-- report pk
-- endfor
+
+```text
+procedure QueryGrid
+begin
+for i = lx/size(m) to rx/size(m) 
+for j = ly/size(m) to ry/size(m) 
+for each point pk on list g[i][j]
+lx ≤xk ≤rx and ly ≤yk ≤ry
+report pk
+endfor
+```
 
 ### p. 141 - Grid method
 - Analysis

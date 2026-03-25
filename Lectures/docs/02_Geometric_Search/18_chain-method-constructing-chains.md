@@ -84,9 +84,12 @@ These are cropped from the main slide PDF. Do not skip them.
 - The second pass ensures WIN(vj) ≥WOUT(vj), for 1 < j < N.
 - Together these give the desired balancing.
 - Let vIN(v) = |IN(v)| and vOUT(v) = |OUT(v)|.
-- procedure WeightBalancingInRegularPSLG(G)
-- begin
-- for each edge e in G /* Initialization */
+
+```text
+procedure WeightBalancingInRegularPSLG(G)
+begin
+for each edge e in G /* Initialization */
+```
 
 ### p. 107 - Constructing C, part 4
 - The figures show the weights after each pass.

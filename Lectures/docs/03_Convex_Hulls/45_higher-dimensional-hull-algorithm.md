@@ -111,14 +111,17 @@ These are cropped from the main slide PDF. Do not skip them.
 ### p. 279 - Gift wrapping, d > 2
 - Algorithm
 - Queue Q stores facets. File ℑstores the “pool” of subfacets.
-- procedure GiftWrapping(S)
-- begin
-- Q = ∅
-- ℑ= ∅
-- F = find an initial convex hull facet
-- insert into ℑall subfacets of F
-- insert(F,Q) /* insert F into Q */
-- while (Q ≠∅) do
+
+```text
+procedure GiftWrapping(S)
+begin
+Q = ∅
+ℑ= ∅
+F = find an initial convex hull facet
+insert into ℑall subfacets of F
+insert(F,Q) /* insert F into Q */
+while (Q ≠∅) do
+```
 
 ## What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.

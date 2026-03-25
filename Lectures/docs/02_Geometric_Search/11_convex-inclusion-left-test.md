@@ -38,16 +38,18 @@ These are cropped from the main slide PDF. Do not skip them.
 - (This is true iff P is convex.)
 
 ### p. 71 - Convex polygon inclusion by Left test
-- procedure ConvexInclusion(P,q)
-- begin
-- for
-- i = 0 to N /* Check each edge */
-- c = PointLineClassify(vi,v(i+1) mod N,q)
-- c = RIGHT
-- return FALSE
-- endfor
-- return TRUE
-- Left(v(i+1) mod N,vi,q) /* Backwards edge */
+```text
+procedure ConvexInclusion(P,q)
+begin
+for
+i = 0 to N /* Check each edge */
+c = PointLineClassify(vi,v(i+1) mod N,q)
+c = RIGHT
+return FALSE
+endfor
+return TRUE
+Left(v(i+1) mod N,vi,q) /* Backwards edge */
+```
 
 ## What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.

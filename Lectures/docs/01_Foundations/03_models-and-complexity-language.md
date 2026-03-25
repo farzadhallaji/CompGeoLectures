@@ -74,13 +74,16 @@ These are cropped from the main slide PDF. Do not skip them.
 - SEGMENT INTERSECTION COUNTING
 - INSTANCE: Set S = {s1, s2, ..., sN} of line segments in the plane.
 - QUESTION: Count the number of intersections of segments in S.
-- procedure SegmentIntersectionCounting(S)
-- begin
-- count = 0
-- for i = 1 to N
-- for j = 1 to N
-- if i ≠j and si ∩sj ≠∅
-- count = count + 1
+
+```text
+procedure SegmentIntersectionCounting(S)
+begin
+count = 0
+for i = 1 to N
+for j = 1 to N
+if i ≠j and si ∩sj ≠∅
+count = count + 1
+```
 
 ### p. 34 - Algorithmic complexity measures
 - Preprocessing. Time spent organizing the data set, usually into

@@ -120,7 +120,10 @@ These are cropped from the main slide PDF. Do not skip them.
 - with pointers NEXT and PRED for each entry,
 - and with pointer START pointing to the starting point.
 - 3. Scan:
-- begin
+
+```text
+begin
+```
 
 ## What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.

@@ -50,9 +50,12 @@ These are cropped from the main slide PDF. Do not skip them.
 - More formally, to perform range query R = [lx, rx] × [ly, ry]
 - in range tree T:
 - SearchRangeTree(lx, rx + 1, ly, ry, root(T))
-- procedure SearchRangeTree(lx, rx , ly, ry, v)
-- begin
-- (lx ≤B(v) and E(v) ≤rx) then
+
+```text
+procedure SearchRangeTree(lx, rx , ly, ry, v)
+begin
+(lx ≤B(v) and E(v) ≤rx) then
+```
 
 ### p. 176 - Range tree method
 - Analysis

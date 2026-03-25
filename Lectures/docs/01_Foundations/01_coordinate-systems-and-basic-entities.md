@@ -17,7 +17,7 @@ This file is the foundation layer. The slides fix the language used everywhere e
 
 ## Core ideas and reasoning
 - A point in d-space is an ordered d-tuple. This is the data representation that lets algorithms compare, sort, and test geometry.
-- A line through p0 and p1 is represented parametrically as p(α) = p0 + α(p1 - p0). The segment is the same expression with 0 ≤ α ≤ 1.
+- A line through p0 and p1 is represented parametrically as \(p(\alpha)=p_0+\alpha(p_1-p_0)\). The segment is the same expression with 0 ≤ α ≤ 1.
 - The parametric view is more useful than slope-intercept form in geometry algorithms because vertical lines do not need a special case.
 - Later primitive tests such as point-line classification and segment intersection reduce to this representation.
 
@@ -96,7 +96,7 @@ These are cropped from the main slide PDF. Do not skip them.
 - the sense that it includes the end points.
 - The equation of the line segment is the same
 - as the parametric equation of a line with the
-- restriction that α has the value 0<=α<=1.
+- restriction that α has the value \(0 \le \alpha \le 1\).
 - This is also called the convex combination
 - of the two end points.
 
@@ -173,7 +173,7 @@ No main algorithm here. What matters is having constant-time primitive operation
 - Plane and axis-parallel / rectilinear rectangles as standard objects used in search problems.
 ### Core test / key idea
 - A point in d-space is an ordered d-tuple. This is the data representation that lets algorithms compare, sort, and test geometry.
-- A line through p0 and p1 is represented parametrically as p(α) = p0 + α(p1 - p0). The segment is the same expression with 0 ≤ α ≤ 1.
+- A line through p0 and p1 is represented parametrically as \(p(\alpha)=p_0+\alpha(p_1-p_0)\). The segment is the same expression with 0 ≤ α ≤ 1.
 - The parametric view is more useful than slope-intercept form in geometry algorithms because vertical lines do not need a special case.
 - Later primitive tests such as point-line classification and segment intersection reduce to this representation.
 ### Complexity

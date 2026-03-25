@@ -84,13 +84,16 @@ These are cropped from the main slide PDF. Do not skip them.
 - Deletion is symmetric with insertion.
 - To delete interval [b, e] from segment tree T:
 - DeleteSegmentTree(b, e, root(T))
-- procedure DeleteSegmentTree(b, e, v)
-- begin
-- (b ≤B(v) and E(v) ≤e) then
-- remove [b, e] from A(v)
-- if (b < (B(v) + E(v)) / 2) then
-- D l t S
-- tT
+
+```text
+procedure DeleteSegmentTree(b, e, v)
+begin
+(b ≤B(v) and E(v) ≤e) then
+remove [b, e] from A(v)
+if (b < (B(v) + E(v)) / 2) then
+D l t S
+tT
+```
 
 ## What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.

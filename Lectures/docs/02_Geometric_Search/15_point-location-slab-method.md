@@ -43,11 +43,15 @@ These are cropped from the main slide PDF. Do not skip them.
 - We represent PSLG G with a DCEL
 - (which requires O(N) preprocessing to construct, as seen).
 - Query
-- for each face f of G /* found via HF */
-- assemble a simple polygon P from edges of f
-- retrieved using FACE operation /* p. 17 */
-- test simple polygon inclusion for q within P
-- endfor
+
+```text
+for each face f of G /* found via HF */
+assemble a simple polygon P from edges of f
+retrieved using FACE operation /* p. 17 */
+test simple polygon inclusion for q within P
+endfor
+```
+
 - Analysis
 
 ### p. 82 - Point location by Slab method

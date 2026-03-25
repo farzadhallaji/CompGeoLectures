@@ -92,7 +92,10 @@ These are cropped from the main slide PDF. Do not skip them.
 - q.quad
 - Boundaries of the quad represented by this node; format [lx, rx] × [ly, ry].
 - Q = ConstructQuadtree(G, M, D, 0, 0, m-1, 0, m-1, domain)
-- procedure ConstructQuadtree(G, M, D, level, imin, imax, jmin, jmax, quad)
+
+```text
+procedure ConstructQuadtree(G, M, D, level, imin, imax, jmin, jmax, quad)
+```
 
 ### p. 149 - Quadtree method
 - jmid + 1
@@ -109,14 +112,17 @@ These are cropped from the main slide PDF. Do not skip them.
 ### p. 150 - Quadtree method
 - Query
 - QueryQuadtree(root(Q),R)
-- /* Q is quadtree, R = [lx, rx] × [ly, ry] is range. */
-- procedure QueryQuadtree(q, R)
-- begin
-- (q.quad ∩R) then /* Query range overlaps node’s quad. */
-- (q.child[0] = NULL) then /*Node q is a leaf. */
-- for each point pi on q.points /* Scan the point list. */
-- (pi within R) then
-- report pi
+
+```text
+/* Q is quadtree, R = [lx, rx] × [ly, ry] is range. */
+procedure QueryQuadtree(q, R)
+begin
+(q.quad ∩R) then /* Query range overlaps node’s quad. */
+(q.child[0] = NULL) then /*Node q is a leaf. */
+for each point pi on q.points /* Scan the point list. */
+(pi within R) then
+report pi
+```
 
 ### p. 151 - Quadtree method
 - Analysis

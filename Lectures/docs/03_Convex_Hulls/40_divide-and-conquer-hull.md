@@ -79,15 +79,18 @@ These are cropped from the main slide PDF. Do not skip them.
 
 ### p. 239 - Divide-and-conquer
 - Merge algorithm, 1
-- This procedure finds the convex hull of the union
-- of two convex polygons P1 and P2.
-- 1. Find a point p that is internal to P1 (e.g. centroid).
-- Note that this point p will be internal to H(P1  P2).
-- 2. Determine whether or not p is internal to P2.
-- This can be done in O(N) time (convex polygon inclusion).
-- If p is not internal to P2, go to step 4.
-- 3. Point p is internal to P2. The vertices of both P1 and P2
-- occur in sorted angular order about p.
+
+```text
+This procedure finds the convex hull of the union
+of two convex polygons P1 and P2.
+1. Find a point p that is internal to P1 (e.g. centroid).
+Note that this point p will be internal to H(P1  P2).
+2. Determine whether or not p is internal to P2.
+This can be done in O(N) time (convex polygon inclusion).
+If p is not internal to P2, go to step 4.
+3. Point p is internal to P2. The vertices of both P1 and P2
+occur in sorted angular order about p.
+```
 
 ### p. 240 - Divide-and-conquer
 - Merge algorithm, 2

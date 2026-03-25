@@ -91,10 +91,13 @@ These are cropped from the main slide PDF. Do not skip them.
 - If pi is external to Ci-1, then we must
 - 1. Find the supporting lines from pi to Ci-1.
 - 2. Ci = pi || r … l
-- /* vertices of Ci-1 from r to l */
-- The problem reduces to finding the supporting lines,
-- i.e., finding the supporting vertices l and r.
-- The data structure for the vertices of Ci-1 will be given soon,
+
+```text
+/* vertices of Ci-1 from r to l */
+The problem reduces to finding the supporting lines,
+i.e., finding the supporting vertices l and r.
+The data structure for the vertices of Ci-1 will be given soon,
+```
 
 ### p. 252 - Dynamic hull (insertion)
 - Classifying a vertex

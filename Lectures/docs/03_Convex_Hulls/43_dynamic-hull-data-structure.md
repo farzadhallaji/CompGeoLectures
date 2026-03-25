@@ -91,7 +91,10 @@ These are cropped from the main slide PDF. Do not skip them.
 - (one of the subtrees is extended to include the root in each case).
 - Thus l and r can be found by analogous searches of the two subtrees.
 - For example, l is found by the following function:
-- procedure LEFTSEARCH(T)
+
+```text
+procedure LEFTSEARCH(T)
+```
 
 ### p. 260 - Dynamic hull (insertion)
 - Finding l and r, 2

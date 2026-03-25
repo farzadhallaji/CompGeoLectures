@@ -87,14 +87,17 @@ These are cropped from the main slide PDF. Do not skip them.
 ### p. 129 - Query process
 - Define Γ(v) to be a list of all descendants of node v of T,
 - and TRIANGLE(v) to the triangle represented by node v.
-- procedure PointLocation(T,q)
-- begin
-- (q ∉TRIANGLE(root(T)))
-- “q in unbounded face”
-- v = root(T)
-- while (Γ(v) ≠ ∅)
-- for each u ∈Γ(v)
-- (q ∈TRIANGLE(u))
+
+```text
+procedure PointLocation(T,q)
+begin
+(q ∉TRIANGLE(root(T)))
+“q in unbounded face”
+v = root(T)
+while (Γ(v) ≠ ∅)
+for each u ∈Γ(v)
+(q ∈TRIANGLE(u))
+```
 
 ### p. 130 - Query time
 - The choice of the triangulation vertices to be removed

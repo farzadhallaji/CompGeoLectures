@@ -78,14 +78,17 @@ These are cropped from the main slide PDF. Do not skip them.
 ### p. 312 - procedure CPAIR1(S)
 - Input: X[1:N], N points of S in one dimension.
 - Output: δ, the distance between the two closest points.
-- begin
-- (|S| = 2) then
-- δ = |X[2] - X[1]|
-- else if (|S| = 1) then
-- δ = ∞
-- Construct(S1, S2) /* S1 = {p: p ≤m}, S2 = {p: p > m} */
-- δ1 = CPAIR1(S1)
-- δ2 = CPAIR1(S2)
+
+```text
+begin
+(|S| = 2) then
+δ = |X[2] - X[1]|
+else if (|S| = 1) then
+δ = ∞
+Construct(S1, S2) /* S1 = {p: p ≤m}, S2 = {p: p > m} */
+δ1 = CPAIR1(S1)
+δ2 = CPAIR1(S2)
+```
 
 ### p. 313 - Generalizing to d = 2
 - Partition two dimensional set S into subsets S1 and S2

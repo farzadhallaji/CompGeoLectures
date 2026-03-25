@@ -47,12 +47,12 @@ These are cropped from the main slide PDF. Do not skip them.
 - QUESTION: Determine the two points of S whose mutual
 - distance is smallest.
 - Distance is defined as the usual Euclidean distance:
-- distance(pi,pj) = sqrt((xi - xj)2 + (yi - yj)2).
+- \(d(p_i,p_j)=\sqrt{(x_i-x_j)^2+(y_i-y_j)^2}\).
 - This problem is described as “one of the fundamental questions
 - of computational geometry” in Preparata.
 - Brute force
 - A brute force solution is to compute the distance for every pair
-- of points, saving the smallest; this requires O(dN2) time.
+- of points, saving the smallest; this requires O(d N^2) time.
 
 ### p. 292 - All nearest neighbors
 - ALL NEAREST NEIGHBORS

@@ -121,9 +121,12 @@ These are cropped from the main slide PDF. Do not skip them.
 - that finds the apex point h as previously defined.
 - The operator || denotes list concatenation.
 - Procedure QUICKHULL returns an ordered list of points.
-- procedure QUICKHULL(S, l, r)
-- begin
-- S = {l, r} then
+
+```text
+procedure QUICKHULL(S, l, r)
+begin
+S = {l, r} then
+```
 
 ### p. 234 - Quickhull
 - Analysis

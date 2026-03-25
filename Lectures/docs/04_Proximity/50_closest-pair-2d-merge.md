@@ -99,7 +99,10 @@ These are cropped from the main slide PDF. Do not skip them.
 - each entry has three fields: x, y, and active.
 - Let P1
 - * be an array of size N with two fields: index and y.
-- 1 for i = 1 to N /* Initialize P1
+
+```text
+1 for i = 1 to N /* Initialize P1
+```
 
 ## What you must be able to say or do in an exam
 - State the input, output, preprocessing, and query/update model precisely.

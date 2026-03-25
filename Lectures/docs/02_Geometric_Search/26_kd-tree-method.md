@@ -80,15 +80,18 @@ These are cropped from the main slide PDF. Do not skip them.
 
 ### p. 156 - k-D tree method
 - Preprocessing
-- procedure CreatekDNode(S,t) /* S is set of points, t is direction. */
-- begin
-- S = ∅then
-- return NULL /* Leaf nodes are NULL pointers. */
-- Allocate new node v
-- t = vert then
-- Find pi ∈S ∋xi is median for all x ∈S
-- M(v) = xi /* x coordinate of bisecting line */
-- SL = {pj ∈S - {pi} xj < xi}
+
+```text
+procedure CreatekDNode(S,t) /* S is set of points, t is direction. */
+begin
+S = ∅then
+return NULL /* Leaf nodes are NULL pointers. */
+Allocate new node v
+t = vert then
+Find pi ∈S ∋xi is median for all x ∈S
+M(v) = xi /* x coordinate of bisecting line */
+SL = {pj ∈S - {pi} xj < xi}
+```
 
 ### p. 157 - Analysis
 - The preprocessing time is O(nlogn) for d=2. The argument goes
@@ -117,14 +120,17 @@ These are cropped from the main slide PDF. Do not skip them.
 ### p. 159 - k-D tree method
 - Query
 - SearchkDTree(root(T),R)
-- /* T is k-D tree. */
-- /* R = [lx, rx] × [ly, ry] is search range. */
-- procedure SearchkDTree(v,R) /* v is a tree node, R is range. */
-- begin
-- (v ≠NULL) then
-- (t(v) = vert) then
-- [l, r] = [lx, rx]
-- [l, r] = [ly, ry]
+
+```text
+/* T is k-D tree. */
+/* R = [lx, rx] × [ly, ry] is search range. */
+procedure SearchkDTree(v,R) /* v is a tree node, R is range. */
+begin
+(v ≠NULL) then
+(t(v) = vert) then
+[l, r] = [lx, rx]
+[l, r] = [ly, ry]
+```
 
 ### p. 160 - k-D tree method
 - Analysis
